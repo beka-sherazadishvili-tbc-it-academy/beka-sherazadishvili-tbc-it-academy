@@ -1,0 +1,6 @@
+[submodule "task-1/git-day-2-branching-homework"]
+	path = task-1/git-day-2-branching-homework
+	url = https://github.com/beka-sherazadishvili-tbc-it-academy/git-day-2-github-homework.git
+[submodule "git-day-2-github-homework"]
+	path = git-day-2-github-homework
+	url = https://github.com/beka-sherazadishvili-tbc-it-academy/git-day-2-github-homework.git
