@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Mini Documentation Portal</h1>
-    <p>Welcome to the <b>Portal</b>. This page demonstrates only the requested tags&mdash;no CSS, no scripts. Use the navigation below or <a href="#p5">special anchor #p5</a> to jump around.<small>(All formatting is purely semantic.)</small></p>
+    <p>Welcome to the <b>Portal</b>. This page demonstrates only the requested tags &mdash; no CSS, no scripts. Use the navigation below or <a id="anchor" href="#p5">special anchor #p5</a> to jump around.<small>(All formatting is purely semantic.)</small></p>
     <hr>
 
     <h2>Contents</h2>
@@ -16,7 +16,7 @@
         <li><a href="#p1">Math & Chemistry</a></li>
         <li><a href="#p2">Quotes</a></li>
         <li><a href="#p3">Lists</a></li>
-        <li><a href="#p4">Link (opens new tab)</a></li>
+        <li><a href="#p4" target="_blank">Link (opens new tab)</a></li>
         <li><a href="#p5">Jump to #p5</a></li>
     </ul>
     <hr>
@@ -25,7 +25,7 @@
     <p>This is a short demo of inline and block elements. For example, an inline quotation: "HTML is about meaning, not look". you can also force a line break<br> like this.</p>
 
     <h4 id="p1">Math & Chemistry</h4>
-    <p>Albert said: E = mc<sup>2</sup>. Water is H<sub>2</sub>O. <i>Inline emphasis</i> can be combined with <b>importance</b> and even <small>smaller hints.</small></p>
+    <p>Albert said: E = mc<sup>2</sup>. Water is H<sub>2</sub>O. <i>Inline emphasis</i> can be combined with <b>importance</b> and even <small>smaller hints</small>.</p>
 
     <h5 id="p2">Quotations</h5>
     <blockquote><p><q>Good design is as little design as possible.</q> - Dieter Rams. As a reminder, "less is more" also applies to markup.</p></blockquote>
@@ -62,17 +62,17 @@
     <hr>
 
     <h2>Deep Anchor Demo</h2>
-    <p>Click here to jump to the special anchor: <a href="#p5">#p5</a>.</p>
+    <p>Click here to jump to the special anchor: <a href="#anchor">#p5</a>.</p>
 
     <h3 id="p5">Section P5</h3>
-    <p>You've reached the <b>#p5</b> anchor. From here you can go back to the <a href="#p0">Introduction</a> or continue exploring via the <a href="">Links</a>.</p>
+    <p>You've reached the <b>#p5</b> anchor. From here you can go back to the <a href="#p0">Introduction</a> or continue exploring via the <a href="#p4">Links</a>.</p>
     <hr>
 
     <h4>Final Notes</h4>
     <p>This page intentionally uses only: <b>h1-h6</b>, <b>b</b>, <i>i</i>,
         <small>small</small>, <sub>sub</sub>, <sup>sup</sup>, <blockquote>blockquote</blockquote>,
-        <span>span</span>, <b>&lt;br&gt</b>, <b>&lt;hr&gt</b>, <b>&lt;a&gt</b>,
-        <b>&lt;ul&gt</b>, <b>&lt;ol&gt</b> and <b>&lt;dl&gt</b>. No CSS was used. <br>
+        "q",span, <b>br</b>, <b>hr</b>, <b>a</b>,
+        <b>ul</b>, <b>ol</b>, and <b>dl</b>. No CSS was used. <br>
         <small>End of demo.</small>
     </p>
 </body>
