@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - homework-1</title>
+</head>
+<body>
+    <h1>Tell us about your peoject</h1>
+    <p>Fill this brief. We'll get back to you with ideas, timing, and ballpark estimate.</p>
+
+    <fieldset>
+        <legend>Who are you?</legend>
+        <p>
+            <label for="first">First name *</label>
+            <input type="text" name="first_name" id="first" placeholder="Alex" required autocomplete="given-name">
+        </p>
+
+        <p>
+            <label for="last">Last name *</label>
+            <input type="text" name="lat_name" id="last" placeholder="Rivera" required autocomplete="family-name">
+        </p>
+
+        <p>
+            <label for="email">Email *</label>
+            <input type="email" name="email" id="email" placeholder="you@domain.com" required autocomplete="email">
+        </p>
+        
+        <p>
+            <label for="phone">Phone</label>
+            <input type="tel" name="tel" id="tel" placeholder="(555) 555-1212" autocomplete="tel">
+        </p>
+
+        <p>Optional &mdash; but helpful if we need a quick question answered.</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Project basics</legend>
+        <p>
+            <label for="web_link">Current website or domain</label>
+            <input type="text" name="web_link" id="web_link" placeholder="https://example.com" autocomplete="lin">
+        </p>
+
+        <p>
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address" placeholder="123 Maple St." autocomplete="street-address">
+        </p>
+
+        <p>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" placeholder="City" autocomplete="address-level2">
+        </p>
+        
+        <p>
+            <label for="state_region">State / Region</label>
+            <select name="state_region" id="state_region">
+                <option selected>Please choose...</option>
+                <option>New Yourk</option>
+                <option>San Diego</option>
+                <option>Las Vegas</option>
+                <option>West Ham</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="postal-code">Zip / Postal code</label>
+            <input type="text" name="postal-code" id="postal-code" placeholder="12345" autocomplete="postal-code">
+        </p>
+
+        <p>
+            <label for="launch_date">Ideal launch date</label>
+            <input type="date" name="launch_date" id="launch_date">
+        </p>
+    </fieldset>
+
+     <fieldset>
+        <legend>Preferences</legend>
+        <p>
+            <label for="budget">Estimated budget (move the slider)</label><br>
+            <input type="range" name="budget" id="budget" min="10" max="100" step="5" value="25">
+        </p>
+
+        <p>
+            <label for="hosting">Do you already have hosting? *</label><br>
+        </p>
+        <label for="hosting"><input type="radio" name="hosting" value="yes" required>Yes</label>
+        <label for="hosting"><input type="radio" name="hosting" value="no">No</label>
+        <label for="hosting"><input type="radio" name="hosting" value="not_sure">Not sure</label>
+
+        <p>
+            <label for="contact">Prefered contact method *</label><br>
+        </p>
+        <label for="contact"><input type="radio" name="contact" value="email" required>Email</label>
+        <label for="contact"><input type="radio" name="contact" value="phone">Phone</label>
+        <label for="contact"><input type="radio" name="contact" value="video_call">Video call</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Project desription</legend>
+
+        <p>
+            <label for="description">Describe your project *</label>
+            <textarea name="description" rows="2" id="description" required placeholder="Tell us what you're building, who it's"></textarea>
+        </p>
+
+        <p>
+            Good prompts: goals, audiance, 3-5 features, inspiration links.
+        </p>
+    </fieldset>
+
+    <input type="checkbox" name="terms" id="terms" required>
+    <label for="terms">I agree to be contracted about this inquiry *</label><br>
+
+    <button id="reset">Reset</button>
+    <button id="Submit">Send request</button>
+</body>
+</html>
