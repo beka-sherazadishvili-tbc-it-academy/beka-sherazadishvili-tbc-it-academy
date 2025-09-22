@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - homework-1</title>
+</head>
+<body>
+     <h1>Participants</h1>
+    <p>
+        <label for="first">First name *</label>
+        <input type="text" name="first_name" id="first" required autocomplete="given-name">
+    </p>
+
+    <p>
+        <label for="last">Last name *</label>
+        <input type="text" name="lat_name" id="last" required autocomplete="family-name">
+    </p>
+
+    <p>
+        <label for="email">Email *</label>
+        <input type="email" name="email" id="email" placeholder="you@domain.com" required autocomplete="email">
+    </p>
+
+    <p>
+        Format: TBC-2025-0000
+    </p>
+    
+    <p>
+        <label for="phone">Phone</label>
+        <input type="tel" name="tel" id="tel" placeholder="(555) 555-1212" autocomplete="tel">
+    </p>
+
+    <p>
+        <label for="city">City (type to search)</label>
+        <input list="cities" name="city" id="city" placeholder="Start typing..." autocomplete="address-level2">
+        <datalist id="cities">
+            <option value="Tbilisi">
+            <option value="Rustavi">
+            <option value="Qutaisi">
+            <option value="Batumi">
+            <option value="Safari">
+        </datalist>
+    </p>
+
+    <h1>Workshop Preferences</h1>
+    <p>
+        <label for="track">Do you already have hosting? *</label><br>
+    </p>
+    <label for="track"><input type="radio" name="track" value="html" required>HTML Essentials</label>
+    <label for="track"><input type="radio" name="track" value="css">CSS Layouts</label>
+    <label for="track"><input type="radio" name="track" value="vanilla">Vanilla JS</label>
+
+    <p>
+        <label for="skills">Current skills (hold Ctrl to choose multiple)</label>
+        <select name="skils" id="skills" multiple size="5">
+            <option>Semantics</option>
+            <option>Forms</option>
+            <option>Flexbox</option>
+            <option>Grid</option>
+            <option>Accessibility</option>
+            <option>Demo</option>
+            <option>Demo</option>
+        </select>
+    </p>
+
+    <p>
+        <label for="portfolio">Portfolio link</label>
+        <input type="text" name="portfolio" id="portfolio" placeholder="https://...">
+    </p>
+
+    <p>Optional, but helpful.</p>
+
+    <p>
+        <label for="date">Prefered date *</label>
+        <input type="date" name="date" id="date">
+    </p>
+
+    <p>
+        <label for="time">Prefered start time *</label>
+        <input type="time" name="time" id="time">
+    </p>
+
+    <p>
+        <label for="file">Upload pre-work (PDF/PNG, max 5MB)</label>
+        <input type="file" name="file" id="file" accept=".PNG, .PDF">
+    </p>
+
+    <p>
+        <label for="confidence">Confidence level</label>
+        <input type="range" name="confidence" id="confidence" min="0" max="10" step="1" value="5">
+    </p>
+
+    <h1>Notes</h1>
+
+    <p>
+        <label for="description">What would you like to learn most?</label>
+        <textarea name="description" rows="6" id="description" required placeholder="Tell us about your goals, blockers, and any accommodations you need."></textarea>
+    </p>
+
+    <input type="checkbox" name="terms1" id="terms1" required>
+    <label for="terms1">I agree to be contacted about myregistration *</label><br>
+    <input type="checkbox" name="terms2" id="terms2" required>
+    <label for="terms2">I agree to the code of conduct *</label><br>
+
+    <button id="reset">Reset</button>
+    <button id="Submit">Send registration</button>
+</body>
+</html>
