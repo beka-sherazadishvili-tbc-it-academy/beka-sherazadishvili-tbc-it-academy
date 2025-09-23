@@ -23,12 +23,17 @@
     </p>
 
     <p>
+        <label for="student_id">Student ID *</label>
+        <input type="text" name="student_id" id="student_id" placeholder="TBC-2025-0000" required>
+    </p>
+
+    <p>
         Format: TBC-2025-0000
     </p>
     
     <p>
         <label for="phone">Phone</label>
-        <input type="tel" name="tel" id="tel" placeholder="(555) 555-1212" autocomplete="tel">
+        <input type="tel" name="tel" id="tel" placeholder="+995 555 12 34 56" autocomplete="tel">
     </p>
 
     <p>
@@ -45,7 +50,7 @@
 
     <h1>Workshop Preferences</h1>
     <p>
-        <label for="track">Do you already have hosting? *</label><br>
+        <label for="track">Track *</label><br>
     </p>
     <label for="track"><input type="radio" name="track" value="html" required>HTML Essentials</label>
     <label for="track"><input type="radio" name="track" value="css">CSS Layouts</label>
@@ -53,7 +58,7 @@
 
     <p>
         <label for="skills">Current skills (hold Ctrl to choose multiple)</label>
-        <select name="skils" id="skills" multiple size="5">
+        <select name="skills" id="skills" multiple size="5">
             <option>Semantics</option>
             <option>Forms</option>
             <option>Flexbox</option>
@@ -72,12 +77,12 @@
     <p>Optional, but helpful.</p>
 
     <p>
-        <label for="date">Prefered date *</label>
+        <label for="date">Preferred date *</label>
         <input type="date" name="date" id="date">
     </p>
 
     <p>
-        <label for="time">Prefered start time *</label>
+        <label for="time">Preferred start time *</label>
         <input type="time" name="time" id="time">
     </p>
 
@@ -99,11 +104,11 @@
     </p>
 
     <input type="checkbox" name="terms1" id="terms1" required>
-    <label for="terms1">I agree to be contacted about myregistration *</label><br>
+    <label for="terms1">I agree to be contacted about my registration *</label><br>
     <input type="checkbox" name="terms2" id="terms2" required>
     <label for="terms2">I agree to the code of conduct *</label><br>
 
     <button id="reset">Reset</button>
-    <button id="Submit">Send registration</button>
+    <button id="Submit">Submit registration</button>
 </body>
 </html>
