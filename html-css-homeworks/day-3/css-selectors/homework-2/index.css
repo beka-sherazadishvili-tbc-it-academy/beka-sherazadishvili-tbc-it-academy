@@ -1,0 +1,38 @@
+/* tag selector */
+h1 {
+    color: red;
+}
+
+/* id selector */
+#navbar {
+    background-color: aqua;
+}
+
+/* class selector */
+.section_header {
+    color: green;
+}
+
+/* context selector */
+section .iframe {
+    border: 5px solid red;
+}
+
+/* childs selector */
+th > .test {
+    border: 10px solid rgb(23, 23, 20);
+}
+
+/* adjanent sibling combinator */
+nav + main {
+    background-color: rgb(0, 255, 21);
+}
+
+h2 ~ iframe {
+    background-color: rgb(227, 105, 164);
+}
+
+/* pseudo classes */
+h1:hover {
+    color: blue;
+}

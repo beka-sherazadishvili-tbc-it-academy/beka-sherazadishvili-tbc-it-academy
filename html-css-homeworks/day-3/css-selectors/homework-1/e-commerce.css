@@ -1,0 +1,38 @@
+/* tag selector */
+h1 {
+    color: red;
+}
+
+/* id selector */
+#navbar {
+    background-color: aqua;
+}
+
+/* class selector */
+.section_header {
+    color: green;
+}
+
+/* context selector */
+figure .carsImg {
+    border: 5px solid red;
+}
+
+/* childs selector */
+figure > .tech {
+    border: 10px solid yellow;
+}
+
+/* adjanent sibling combinator */
+nav + main {
+    background-color: rgb(0, 255, 21);
+}
+
+img ~ figcaption {
+    background-color: rgb(227, 105, 164);
+}
+
+/* pseudo classes */
+h1:active {
+    color: blue;
+}
