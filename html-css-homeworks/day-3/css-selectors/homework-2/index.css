@@ -33,6 +33,6 @@ h2 ~ iframe {
 }
 
 /* pseudo classes */
-h1:active {
+h1:hover {
     color: blue;
 }
