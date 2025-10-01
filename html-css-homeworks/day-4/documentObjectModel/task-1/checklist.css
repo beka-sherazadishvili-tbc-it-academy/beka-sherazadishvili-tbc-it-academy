@@ -34,6 +34,10 @@ body {
     border-radius: 4.8px;
 }
 
+#box1 {
+    border: 2px solid #22C55E;
+}
+
 .checkbox {
     margin: -9px 21px 5.6px 21px;
     padding-bottom: 5px;
@@ -146,7 +150,7 @@ body {
     height: 59.59px;
     margin: 0px 21px 0px 21px;
     padding: 0px 12px;
-    background-color: #F8FAFC;
+    background-color: #FFFFFF;
     border: 1px solid #E5E7EB;
 }
 

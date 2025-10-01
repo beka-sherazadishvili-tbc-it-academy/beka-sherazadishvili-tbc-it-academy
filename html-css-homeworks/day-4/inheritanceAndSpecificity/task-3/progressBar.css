@@ -220,7 +220,7 @@ body {
 }
 
 #extra_large_title {
-    font-size: 25px;
+    font-size: 25.1px;
     padding-bottom: 28px;
 }
 
@@ -269,7 +269,7 @@ body {
 }
 
 #mega_title {
-    font-size: 24.6px;
-    padding-bottom: 28px;
+    font-size: 24.1px;
+    padding: 0px 0px 28px 0px;
     margin-top: 1px;
 }
