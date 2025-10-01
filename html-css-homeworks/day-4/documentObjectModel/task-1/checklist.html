@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./checklist.css">
+    <title>Checklist</title>
+</head>
+<body>
+    <div class="main_container">
+        <div id="checklist" class="checklist">
+            <div class="header"><h4>Checklist</h4></div>
+            <div id="checkbox1" class="checkbox">
+                <div class="box"></div>
+                <div class="labels"><span>Initialize repo <small>(git init)</small></span></div>
+            </div>
+
+            <div id="checkbox2" class="checkbox">
+                <div class="box"></div>
+                <div class="labels"><span>Set up CI</span></div>
+            </div>
+
+            <div id="checkbox3" class="checkbox">
+                <div class="box"></div>
+                <div class="labels"><span>Write unit tests</span></div>
+            </div>
+
+            <div id="checkbox4" class="checkbox">
+                <div class="box"></div>
+                <div class="labels"><span>Deploy preview environment</span></div>
+            </div>
+        </div>
+
+        <div id="stepper" class="stepper_box">
+            <div class="header"><h4>Stepper</h4></div>
+
+            <div id="stepper1" class="stepper">
+                <div id="box1" class="colored_box"></div>
+                <div class="stepper_header">
+                    <span><h4>Create ticket</h4></span>
+                </div>
+
+                <div class="stepper_label">
+                    <span>Describe scope and acceptence criteria.</span>
+                </div>
+            </div>
+
+            <div id="stepper2" class="stepper">
+                <div id="box2" class="colored_box"></div>
+                <div class="stepper_header">
+                    <span><h4>Implement feature</h4></span>
+                </div>
+
+                <div class="stepper_label">
+                    <span>Waiting on API schema.</span>
+                </div>
+            </div>
+
+            <div id="stepper3" class="stepper">
+                <div id="box3" class="colored_box"></div>
+                <div class="stepper_header">
+                    <span><h4>Write tests</h4></span>
+                </div>
+
+                <div class="stepper_label">
+                    <span>Aim for 90%+ coverage.</span>
+                </div>
+            </div>
+
+            <div id="stepper4" class="stepper">
+                <div id="box4" class="colored_box"></div>
+                <div class="stepper_header">
+                    <span><h4>Ship</h4></span>
+                </div>
+
+                <div class="stepper_label">
+                    <span>Blocked by release freeze.</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu" class="menu_box">
+            <div id="menu_header" class="header"><h4>Menu List</h4></div>
+
+             <div class="profile_cell">
+                 <div><b>Profile</b></div>
+            </div>
+
+            <div class="regular_cell">
+                <div class="cell_header">
+                    <p>Account</p>
+                </div>
+                <div class="cell_content">
+                    <p>Change email, password</p>
+                </div>
+            </div>
+
+            <div class="regular_cell">
+                <div id="notifications" class="cell_header">
+                    <p>Notifications</p>
+                </div>
+                <div id="email" class="cell_content">
+                    <p>Email, in-app</p>
+                </div>
+            </div>
+
+            <div class="regular_cell">
+                <div id="" class="cell_header">
+                    <p>Security</p>
+                </div>
+                <div id="security" class="cell_content">
+                    <p>2FA, devices</p>
+                </div>
+            </div>
+
+            <div id="prof_cell" class="regular_cell">
+                <div id="second_header" class="cell_header">
+                    <p><b>Workspace</b></p>
+                </div>
+            </div>
+
+             <div class="regular_cell">
+                <div id="members" class="cell_header">
+                    <p>Members</p>
+                </div>
+                <div id="invite" class="cell_content">
+                    <p>Invite, roles</p>
+                </div>
+            </div>
+
+             <div id="last_cell" class="regular_cell">
+                <div id="" class="cell_header">
+                    <p>Billing</p>
+                </div>
+                <div id="billing" class="cell_content">
+                    <p>Plan, invoices</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

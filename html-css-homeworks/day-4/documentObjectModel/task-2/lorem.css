@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(#F9F9F9, #F9F9F9), linear-gradient(#FFFFFF, #FFFFFF);
+}
+
+.main_container {
+    display: block;
+}
+
+.blog_posts_container {
+    display: block;
+    margin: 16px 0px;
+    padding: 0px 16px;
+}
+
+.blog_posts{
+    display: block;
+}
+
+.blog {
+    width: 1408px;
+    height: 108px;
+    background-color: #FFFFFF;
+    border-left: 5px solid #1976D2;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 10%);
+}
+
+h3 {
+    padding: 15px 16px 0px 17px;
+}
+
+.blog p {
+    font-size: 14.93px;
+    padding: 0px 16px 0px 17px;
+    color: #333333;
+}
+
+#blog1 {
+    margin-bottom: -3px;
+}
+
+#blog2 h3 {
+    font-size: 18.1px;
+    padding: 17px 0px 0px 17px;
+}
+
+#blog2 p {
+    font-size: 15px;
+    padding: 1px 0px 0px 17px;
+    color: #333333;
+}
+
+#blog3 p {
+    font-size: 15.02px;
+    padding: 0px 0px 0px 17px;
+    color: #333333;
+}
+
+.dotted_container {
+    width: 1408px;
+    height: 52px;
+    border: 1px dotted #FF9800;
+    background-color: #FFF3E0;
+    margin: -1px 16px 16px 16px;
+    padding: 0px 0px 18px 17px;
+}
+
+span:first-child {
+    font-size: 15.39px;
+    color: #333333;
+}
+
+span:nth-child(2){
+    width: 96px;
+    height: 24.4px;
+    font-size: 14.6px;
+    background-color: #FF9800;
+    color: #FFFFFF;
+    padding: 3.2px 8px;
+    border-radius: 3px;
+}
+
+span:nth-child(3) {
+    font-size: 15.3px;
+    padding: 0px 0px 0px 2px;
+    color: #333333;
+}
+
+span:nth-child(4) {
+    width: 96px;
+    height: 24.4px;
+    font-size: 14.6px;
+    background-color: #FFFF00;
+    color: #333333;
+    padding: 3.2px 8px;
+    border-radius: 3px;
+}
+
+span:nth-child(5) {
+    font-size: 15.4px;
+    padding: 0px 0px 0px 4px;
+    color: #333333;
+}
+
+span:nth-child(6) {
+    width: 46px;
+    height: 21.4px;
+    font-size: 12.5px;
+    background-color: #E53935;
+    color: #FFFFFF;
+    padding: 3.2px 8px;
+    border-radius: 3px;
+}
+
+.cards_container {
+    width: 1408px;
+    height: 174px;
+    border: 2px solid #43A047;
+    background-color: #E8F5E9;  
+    margin: 0px 0px 18px 17px; 
+    padding: 24px 0px 26px 24px; 
+}
+
+.cards_box {
+    display: block;
+}
+
+.cards {
+    display: inline-block;
+    text-align: center;
+    width: 152px;
+    height: 122px;
+    padding-top: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #43A047;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 10%);
+}
+
+.cards:not(:last-child) {
+  margin-right: 16px;
+}
