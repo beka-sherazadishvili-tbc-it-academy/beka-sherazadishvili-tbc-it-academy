@@ -8,9 +8,11 @@ body {
 
 #header{
     text-align: center;
-    font-weight: 880;
-    font-size: 34.73px;
-    padding: 16px 144px 28px 144px;
+    font-weight: 900;
+    font-size: 33.8px;
+    padding: 17px 133px 28px 131px;
+    letter-spacing: -0.18px;
+    font-optical-sizing: none;
 }
 
 .container {
