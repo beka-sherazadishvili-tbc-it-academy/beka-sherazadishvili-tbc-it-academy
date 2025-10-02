@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 1902px;
+    width: 1440px;
+    margin: 0 auto;
+    background-color: #0A0B0F;
+}
+
+/* header styling */
+.header-container {
+    position: fixed;
+    height: 55px;
+    width: 1440px;
+    margin-left: -1px;
+    background-color: #0A0B0F;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.header-box {
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    width: 1280px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    position: absolute;
+    font-size: 14px;
+    letter-spacing: 3px;
+    width: 180.14px;
+    height: 20px;
+    color: #D1D5DB;
+    top: 50%;
+    left: 32px;
+    transform: translateY(-50%);
+    margin-top: -1px;
+}
+
+.navigation {
+    position: absolute;
+    width: 244px;
+    height: 20px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -1px;
+}
+
+.navbar div {
+    display: inline-block;
+    position: relative;
+    color: #9CA3AF;
+    font-size: 14.1px;
+    margin: 0px 0px 0px -21px;
+    padding: 0px 0px 0px 9px;
+}
+
+.navbar img{
+    margin: 0px 0px 0px -12px;
+    padding: 0px 20px 0px 21px;
+}
+
+#current_directory {
+    color: #FFFFFF;
+}
+
+/* nav box styling */
+.nav-box {
+    position: relative;
+    height: 788px;
+    width: 1440px;
+    top: 0;
+    background-color: #10121A;
+    margin-left: -1px;
+}
+
+/* main styling */
+.main-container {
+    position: relative;
+    height: 1102px;
+    width: 1440px;
+}
+
+.banner-container {
+    position: absolute;
+    height: 386px;
+    width: 896px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* banner header */
+.banner-header {
+    position: absolute;
+    width: 179.25px;
+    height: 26px;
+    border: 1px solid #6B7280;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: -7px 0px 0px 0px;
+}
+
+.banner-header-sub-container {
+    position: absolute;
+    width: 159px;
+    height: 16px;
+    color: #D0D0D0;
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    margin: 6px 7px 3px 17px;
+}
+
+.banner-content {
+    position: absolute;
+    width: 801px;
+    height: 304px; 
+    font-size: 128px;
+    color: #FFFFFF;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-content h1:first-of-type {
+    letter-spacing: 0em;
+    font-optical-sizing: none;
+    margin: -6px -9px 0px 0px;
+}
+
+.banner-content h1:last-of-type {
+    letter-spacing: 0em;
+    font-optical-sizing: none;
+    margin: 0px -7px 0px 0px;
+}
+
+.custom_padding{ 
+    display: inline-block;
+    padding: 0px 0px 0px 2px
+}
+
+.custom_style {
+    font-size: 100px;
+    color: #9CA3AF;
+}
+
+/* banner comment part */
+.banner-comment {
+    position: absolute;
+    color: #D1D5DB;
+    font-size: 18px;
+    width: 565px;
+    height: 56px;
+    bottom: 185px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner-comment p {
+    color: #D1D5DB;
+    letter-spacing: 0em;
+    font-optical-sizing: none;
+}
+
+.banner-comment p:first-of-type {
+    margin: 4px 0px 11px 4px;
+}
+
+.banner-comment p:last-of-type {
+    margin: 0px 0px 0px 113px;
+}
+
+.banner-comment span {
+    display: inline-block;
+    letter-spacing: 0em;
+    font-optical-sizing: none;
+    margin: 0px 0px 0px -1px;
+}
+
+/* button */
+.button {
+    position: absolute;
+    color: #E5E7EB;
+    background-color: #F97316;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    width: 232.28px;
+    height: 52px;
+    bottom: 97px;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.button p {
+    margin: 19px 0px 0px 45px;
+}
+
+/* arrows */
+.arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #E5E7EB;
+}
+
+.arrow img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#left_arrow {
+    top: 50%;
+    left: 33px;
+    transform: translateY(-50%);
+    margin: -7px 0px 0px 0px;
+}
+
+#right_arrow {
+    top: 50%;
+    right: 31px;
+    transform: translateY(-50%);
+    margin: -7px 0px 0px 0px;
+}
+
+/* brief */
+.brief {
+    position: absolute;
+    top: 50px;
+    right: -65px;
+    width: 252px;
+    height: 42px;
+    color: white;
+    background-color: #3B82F6;
+    transform: rotate(45deg);
+}
+
+.brief p {
+    padding: 13px 80px 10px 54px;
+}
+
+.hidden {
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    right: -50px;
+    background-color: #0A0B0F;
+    z-index: 12;
+}
