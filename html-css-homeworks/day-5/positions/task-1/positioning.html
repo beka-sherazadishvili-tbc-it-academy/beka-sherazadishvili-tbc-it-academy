@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./positioning.css">
+    <link rel="stylesheet" href="./main-positioning.css">
+    <title>Positioning Lab</title>
+</head>
+<body>
+    <!-- header part -->
+    <div aria-label="header" id="header_container" class="header-container">
+        <div class="header-box">
+            <div class="logo">
+                <p>POSITIONING LAB</p>
+            </div>
+
+            <div class="navigation">
+                <div class="navbar">
+                    <div><p>Home</p></div>
+                    <img src="../../../../assets/html-css/day-5/arrow.svg" alt="">
+                    <div><p>Week 3</p></div>
+                    <img src="../../../../assets/html-css/day-5/arrow.svg" alt="">
+                    <div id="current_directory"><p>Hero Layout</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- nav box part -->
+    <div id="nav_box" class="nav-box">
+        <!-- arrows -->
+        <div id="left_arrow" class="arrow">
+            <img src="../../../../assets/html-css/day-5/left.svg" alt="">
+        </div>
+
+        <div id="right_arrow" class="arrow">
+            <img src="../../../../assets/html-css/day-5/right.svg" alt="">
+        </div>
+
+        <!-- banner part -->
+        <div id="banner_container" class="banner-container">
+            <div class="banner-header">
+                <div class="banner-header-sub-container">
+                    <p>SPORT · STRENGTH</p>
+                </div>
+            </div>
+
+            <div class="banner-content">
+                <h1>Mast<span class="custom_padding">er</span>ing</h1>
+                <h1><span class="custom_style">CSS</span> Positions</h1>
+            </div>
+        </div>
+
+        <!-- comment part -->
+        <div class="banner-comment">
+            <p>Recreate this hero exactly: layered overlay, <span>corner ribbon, floating</span></p>
+            <p>stats, centered CTA, and arrow controls.</p>
+        </div>
+
+        <!-- button -->
+         <div class="button">
+            <p>ENTER WORKOUTS</p>
+         </div>
+
+         <div class="brief">
+            <p>BRIEF · 2025</p>
+         </div>
+
+        <div class="hidden"></div>
+    </div>
+
+    <!-- main part -->
+    <div id="main_container" class="main-container" aria-label="main">
+
+        <div class="main-box">
+            <div class="sticky-box">
+                <div class="stick-header">
+                    <h3>Your task:</h3>
+                </div>
+
+                <div class="sticky-context">
+                    <p>Make this box sticky</p>
+                </div>
+            </div>
+
+            <div class="decription">
+                <div class="desc-header">
+                    <h1>Why this matters</h1>
+                </div>
+
+                <div class="desc-parahraph">
+                    <p> Positioning is the backbone of complex UI. This brief forces you to combine multiple techniques: a fixed header that</p>
+                    <p>persists on scroll, an absolute hero overlay layered via z-index, arrows vertically centered with transform, a horizontally</p>
+                    <p>centered CTA, a rotated corner ribbon, and several floating stat cards. Below, we add enough content to make scrolling <br></p>
+                    <p> meaningful so you can compare <span>fixed vs sticky</span> behavior.</p>
+                </div>
+
+                <div id="par1" class="desc-parahraph">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium sodales libero, sit amet congue </p>
+                    <p>mauris pretium et. Integer vestibulum eleifend hendrerit. Curabitur volutpat est orci, at rutrum felis </p>
+                    <p>tincidunt in. Donec id gravida lorem. In aliquet pulvinar mi, non pulvinar turpis pretium sed. Suspendisse</p>
+                    <p>lobortis augue varius, gravida ipsum non, malesuada dolor. Vestibulum mattis risus tellus, nec aliquet </p>
+                    <p>mauris varius id. Sed volutpat efficitur massa. Integer vitae consequat tortor.</p>
+                </div>
+
+                <div id="par2" class="desc-parahraph">
+                    <p>Scroll further to observe the sticky note behavior relative to the fixed header.</p>
+                </div>
+
+                <div id="par3" class="desc-parahraph">
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                    <p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet </p>
+                    <p>quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est </p>
+                    <p>et sapien ullamcorper pharetra.</p>
+                </div>
+
+                <div id="par4" class="desc-parahraph">
+                    <p>Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit </p>
+                    <p>eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim</p>
+                    <p>in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas</p>
+                    <p>augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan</p>
+                    <p>porttitor, facilisis luctus, metus.</p>
+                </div>
+
+                <div id="par5" class="desc-parahraph">
+                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique </p>
+                    <p>cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. Pellentesque fermentum dolor.</p>
+                    <p>Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
+                </div>
+
+                <div id="par6" class="desc-parahraph">
+                    <p>Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel, velit. Pellentesque </p>
+                    <p>egestas sem. Suspendisse commodo ullamcorper magna.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
