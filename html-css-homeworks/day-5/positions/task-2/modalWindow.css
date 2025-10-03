@@ -19,6 +19,7 @@ body {
     transform: translate(-50%, -50%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     border: 1px solid rgb(209, 208, 208);
+    z-index: 10;
 }
 
 .main-body {
