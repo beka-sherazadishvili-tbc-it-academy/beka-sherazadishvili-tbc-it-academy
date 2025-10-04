@@ -301,6 +301,7 @@ body {
     background-color: #161B22;
     font-size: 14px;
     padding: 0px 9px;
+    position: relative;
 }
 
 .search {
@@ -326,12 +327,12 @@ body {
 .assignee img {
     padding-left: 9px;
     position: absolute;
-    left: 897px;
+    left: 490px;
 }
 
 .assignee span {
      position: absolute;
-    left: 836px;
+    left: 430px;
 }
 
 .status {
