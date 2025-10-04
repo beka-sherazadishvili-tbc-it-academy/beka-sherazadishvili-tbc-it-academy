@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./flexbox.css">
+    <title>Flexboard</title>
+</head>
+<body>
+    <header role="banner" class="dashboard-header">
+        <div aria-label="Main view controls logo" class="main-controls">
+            <div>
+                <h1 class="logo">FLEXBOARD</h1>
+            </div>
+
+            <div>
+                <nav class="view-controls">
+                    <span>View:</span>
+
+                    <div aria-label="controls" class="controls">
+                        <div class="current-control"><span>Board</span></div>
+                        <div class="regular-controls"><span>List</span></div>
+                        <div class="timeline"><span>Timeline</span></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div aria-label="Grouping options" class="side-controls">
+            <div>
+                <nav class="group-control">
+                    <span id="group_header">Group by:</span>
+
+                    <div aria-label="group-control" class="controls" id="group">
+                        <div class="current-control" id="status"><span>Status</span></div>
+                        <div id="owner" class="regular-controls"><span>Owner</span></div>
+                        <div id="priority" class="timeline"><span>Priority</span></div>
+                    </div>
+                </nav>
+            </div>
+
+            <button class="invite">Invite</button>
+            <button class="new-board">New Board</button>
+        </div>
+    </header>
+
+    <main aria-label="Main body content" class="main-body">
+        <aside aria-label="side-navigation" class="side-navigation">
+            <nav class="navigation">
+                <ul>
+                    <li>Navigation</li>
+                    <li>
+                        <img id="nav" src="../../../assets/html-css/day-5/dashboard.svg" alt="">
+                        <span>Dashboard</span>
+                    </li>
+                    <li>
+                        <img src="../../../assets/html-css/day-5/board.svg" alt="">
+                        <span>Board</span>
+                    </li>
+                    <li>
+                        <img src="../../../assets/html-css/day-5/backlog.svg" alt="">
+                        <span>Backlog</span>
+                    </li>
+                    <li>
+                        <img src="../../../assets/html-css/day-5/sprints.svg" alt="">
+                        <span>Sprints</span>
+                    </li>
+                    <li>
+                        <img src="../../../assets/html-css/day-5/reports.svg" alt="">
+                        <span>Reports</span>
+                    </li>
+                    <li>
+                        <img src="../../../assets/html-css/day-5/settings.svg" alt="">
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <div class="main-header">
+                <span>Projects</span>
+                <span>42 items</span>
+            </div>
+
+            <section aria-label="Search">
+                <div class="search-box">
+                    <div class="search">
+                        <img src="../../../assets/html-css/day-5/search.svg" alt="">
+                        <span>Search...</span>
+                    </div>
+                    <div class="assignee">
+                        <span>Assignee</span>
+                        <img src="../../../assets/html-css/day-5/drowpdown.svg" alt="">
+                    </div>
+                    <div aria-label="group-control" class="status">
+                        <div id="status-all"><span>All</span></div>
+                        <div id="active"><span>Active</span></div>
+                        <div id="done"><span>Done</span></div>
+                    </div>
+                    <div id="export" class="export">Export</div>
+                </div>
+            </section>
+
+            <section aria-label="Projects" class="Projects">
+                <div class="project-container">
+                    <div class="project">
+                        <div class="project-design"></div>
+                        <div class="project-title">
+                            <h1>Alpha</h1>
+                            <p>12 tasks</p>
+                        </div>
+                        <div class="project-desc">
+                            <p>Description of the project that may be <br>
+                                longer than the card width.</p>
+                        </div>
+                        <div class="labels">
+                            <p>Frontend</p>
+                            <p>Priority: High</p>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                         <div class="project-design"></div>
+                        <div class="project-title">
+                            <h1>Beta</h1>
+                            <p>7 tasks</p>
+                        </div>
+                        <div id="backend_desc" class="project-desc">
+                            <p>Short note about Beta.</p>
+                        </div>
+                        <div id="backend" class="labels">
+                            <p>Backend</p>
+                            <p>Infra</p>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                         <div class="project-design"></div>
+                        <div class="project-title">
+                            <h1>Gamma</h1>
+                            <p>23 tasks</p>
+                        </div>
+                        <div id="research" class="project-desc">
+                            <p>Exploratory work and research.</p>
+                        </div>
+                        <div class="labels">
+                            <p>Research</p>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                         <div class="project-design"></div>
+                        <div class="project-title">
+                            <h1>Delta</h1>
+                            <p>4 tasks</p>
+                        </div>
+                        <div id="mobile-dec" class="project-desc">
+                            <p>A brief blurb with more context on scope <br>
+                                and risks.</p>
+                        </div>
+                        <div id="mobile" class="labels">
+                            <p>Mobile</p>
+                            <p>iOS</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-label="Note" class="notes">
+                <div class="zoom review">
+                    <div class="note-description">
+                        <div class="note-icon">
+                            <img src="../../../assets/html-css/day-5/zoom.svg" alt="">
+                        </div>
+
+                        <div class="note-text">
+                            <p>Weekly Standup Recording</p>
+                            <p>Notes: refactor auth flow, roll out A/B test to 10% of traffic, monitor error spikes...</p>
+                        </div>
+                    </div>
+
+                    <div class="note-button">
+                        <p>Open</p>
+                    </div>
+                </div>
+
+                <div class="design review">
+                    <div class="note-description">
+                        <div class="note-icon">
+                            <img id="design" src="../../../assets/html-css/day-5/design.svg" alt="">
+                        </div>
+
+                        <div id="note-review" class="note-text">
+                            <p>Design Review</p>
+                            <p>Action items: icon pass, empty states, progressive disclosure on settings panel.</p>
+                        </div>
+                    </div>
+
+                    <div class="note-button">
+                        <p>Open</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside aria-label="Insights" class="insight-container">
+            <div class="insight-header">
+                <p>Insights</p>
+                <div class="header-righ-part">
+                    <span>This week</span>
+                    <img src="../../../assets/html-css/day-5/drowpdown.svg" alt="">
+                </div>
+            </div>
+
+            <div class="insights-box">
+                <div class="insights">
+                    <div class="filter-header">
+                        <p>Quick Filters</p>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <div class="filter-button" id="btn1">Mine</div>
+                        <div class="filter-button" id="btn2">Unassigned</div>
+                        <div class="filter-button" id="btn3">Overdue</div>
+                        <div class="filter-button" id="btn4">Blocked</div>
+                        <div class="filter-button" id="btn5">Recently Updated</div>
+                    </div>
+                </div>
+
+                <div id="ins1" class="insights">
+                    <div id="team_header" class="filter-header">
+                        <p>Team</p>
+                    </div>
+
+                    <div class="users-teams">
+                        <div class="user-container">
+                            <div class="user">
+                                <div class="colored-block"></div>
+                                <div id="first" class="user-info">
+                                    <p>Alex</p>
+                                    <p>3 items due today</p>
+                                </div>
+                            </div>
+
+                            <div class="ping-tbn">
+                                <p>Ping</p>
+                            </div>
+                        </div>
+
+                        <div class="user-container">
+                            <div class="user">
+                                <div id="green" class="colored-block"></div>
+                                <div id="second" class="user-info">
+                                    <p>Jordan</p>
+                                    <p>Out of office t...</p>
+                                </div>
+                            </div>
+
+                            <div class="ping-tbn">
+                                <p>Ping</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer aria-label="">
+        <div class="footer">
+            <p>© 2025 Flexboard Inc.</p>
+            <p>Made with pure Flexbox</p>
+        </div>
+    </footer>  
+</body>
+</html>
