@@ -752,6 +752,7 @@ body {
 }
 
 #first p:nth-child(2) {
+    color: #848D97;
     font-size: 14px;
     padding: 8px 0px 0px 12px;
 }
@@ -761,6 +762,7 @@ body {
 }
 
 #second p:nth-child(2) {
+    color: #848D97;
     font-size: 14px;
     padding: 8px 0px 0px 12px;
 }
