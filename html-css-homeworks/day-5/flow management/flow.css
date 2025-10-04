@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.main-box {
+    position: relative;
+    width: 506px;
+    height: 1010px;
+    left: 30%;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+.block {
+    width: 63px;
+    height: 63px;
+    float: left;
+}
+
+.next {
+    border-right: 2px solid black;
+}
+
+.below {
+    border-bottom: 2px solid black;
+}
+
+.yellow {
+    background-color: #f4d35e;
+}
+
+.blue {
+    background-color: #8bd3dd;
+}
+
+.orange {
+    background-color: #ee964b;
+}
+
+.green {
+    background-color: #4a7856;
+}
+
+
+
+
+
+
+
