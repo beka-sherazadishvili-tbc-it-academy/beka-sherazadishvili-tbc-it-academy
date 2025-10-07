@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    width: 1440px;
+    height: 900px;
+    margin: 20px;
+    font-size: 15px;
+}
+
+.main-calendar-container {
+    display: grid;
+    row-gap: 12px;
+    width: 919.27px;
+    height: 777.66px;
+}
+
+/* calendar day container */
+.calendar-container {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    gap: 10px;
+    width: 919.27px;
+    height: 497.25px;
+    background-color: #0F172A;
+    border: 1px solid #1F2A3A;
+    border-radius: 14px;
+    padding: 13px;
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 45%);
+}
+
+.calendar-header-container {
+    display: grid;
+    grid-template-columns: 767.81px 54.69px 54.77px;
+    gap: 7.62px 8px;
+}
+
+.calendar-title {
+    display: grid;
+    color: #C7D2FE;
+    padding: 12.5px 12.2px 7.75px 1.2px;
+}
+
+.calendar-btn {
+    display: grid;
+    width: 54.69px;
+    height: 39.25px;
+    padding: 12.5px 12.2px 7.75px 12.2px;
+    border-radius: 10px;
+    color: #0E0720;
+    background: linear-gradient(149.422deg, #8B5CF6 0%, #A78BFA 100%);
+    box-shadow: 0px 10px 30px 0px rgba(139, 92, 246, 35%);
+    cursor: pointer;
+}
+
+#next {
+    width: 54.77px;
+    background: linear-gradient(149.443deg, #EC4899 0%, #FB7185 100%);
+    box-shadow: 0px 10px 30px 0px rgba(236, 72, 153, 35%);
+}
+
+.calendar-days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 120.75px);
+    grid-template-rows: repeat(4, 77.75px);
+    gap: 8.5px 8px;
+    width: 893.27px;
+    height: 422px;
+}
+
+.calendar-days-container div {
+    display: grid;
+    grid-template-rows: 22px 40px;
+    width: 120.75px;
+    height: 77.75px;
+    background-color: #0B1A33;
+    border: 1px solid #1F2A3A;
+    color: #A5B4FC;
+    border-radius: 10px;
+    padding: 10px 7px 7px 6px;
+}
+
+.calendar-day-topic {
+    font-size: 13.6px;
+    color: #94F2DF;
+    padding: 0px 7px 7px 0px;
+}
+
+.custom-font-1 {
+    font-size: 13px;
+}
+.custom-font-2 {
+    font-size: 13.5px;
+}
+
+.custom-font-3 {
+    font-size: 12.7px;
+    padding: 1px 0px 0px 0px;
+}
+
+.custom-font-4 {
+    font-size: 13.1px;
+    letter-spacing: 0.2px;
+}
+
+/* todo list */
+.todo-list-container {
+    display: grid;
+    grid-template-rows: 42px 190.41px;
+    height: 268.41px;
+}
+
+.todo-list {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 217.32px);
+    column-gap: 8px;
+}
+
+.todo-list-status div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F0B24;
+    border: 1px solid #3B2A68;
+    color: #DBEAFE;
+    font-size: 15px;
+    border-radius: 10px;
+    height: 42px;
+}
+
+#progress {
+    background-color: #031C18;
+    border: 1px solid #064E47;
+}
+
+#review {
+    background-color: #230912;
+    border: 1px solid #5B0E2B;
+}
+
+#done {
+    background-color: #221705;
+    border: 1px solid #614300;
+}
+
+.todo-list {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 217.32px);
+    column-gap: 8px;
+}
+
+.todo-list-content div {
+    display: grid;
+    background-color: #0C1526;
+    border: 1px solid #1F2A3A;
+    color: #A5B4FC;
+    border-radius: 8px;
+    padding: 13px 9px 9px 7px;
+    row-gap: 11px;
+}
+
+#build {
+    font-size: 15.8px;
+}
+
+#ideas {
+    font-size: 15.2px
+}
+
+.sub-content-list {
+    display: grid;
+    grid-template-rows: repeat(2, 66.58px);
+    row-gap: 8px;
+}
+
+.sub-content-list div {
+    display: grid;
+    row-gap: 3px;
+    border: 1px solid #1F2A3A;
+    background-color: #0B1A33;
+    padding: 13px 10px 9px 9px
+}
+
+.sub-text {
+    font-size: 13.6px;
+    color: #93C5FD;
+}
+
+.sub-header {
+    color: #E2E8F0;
+    font-size: 15px;
+}
+
+#article-header {
+    padding: 0px 0px 0px 1px;
+    letter-spacing: 0.2px;
+}
+
+#violet {
+    padding: 1px 0px 0px;
+    letter-spacing: 0.1px;
+}
+
+#theme {
+    font-size: 14.8px;
+}
+
+#feature {
+    font-size: 14.5px;
+    letter-spacing: 0.05px;
+}
+
+#responsive {
+    font-size: 13.5px;
+}
+
+#review_container {
+    height: 141.16px;
+}
