@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./calendar.css">
+    <title>Calendar</title>
+</head>
+<body>
+    <div class="main-calendar-container">
+        <div class="calendar-container">
+            <div class="calendar-header-container">
+                <div class="calendar-title"><p>July 2025</p></div>
+                <div class="calendar-btn"><p><b>Prev</b></p></div>
+                <div id="next" class="calendar-btn"><p><b>Next</b></p></div>
+            </div>
+            <div class="calendar-days-container">
+                <div>
+                    <p>1</p>
+                    <p class="calendar-day-topic custom-font-1">Design Review</p>
+                </div>
+                <div>
+                    <p>2</p>
+                </div>
+                <div>
+                    <p>3</p>
+                    <p id="day3" class="calendar-day-topic custom-font-2">Docs Sprint</p>
+                </div>
+                <div>
+                    <p>4</p>
+                </div>
+                <div>
+                    <p>5</p>
+                </div>
+                <div>
+                    <p>6</p>
+                    <p class="calendar-day-topic custom-font-1">Release</p>
+                </div>
+                <div>
+                    <p>7</p>
+                </div>
+                <div>
+                    <p>8</p>
+                    <p class="calendar-day-topic custom-font-3">UX Sync</p>
+                </div>
+                <div>
+                    <p>9</p>
+                </div>
+                <div>
+                    <p>10</p>
+                </div>
+                <div>
+                    <p>11</p>
+                    <p class="calendar-day-topic custom-font-4">Team Offsite</p>
+                </div>
+                <div>
+                    <p>12</p>
+                </div>
+                <div>
+                    <p>13</p>
+                </div>
+                <div>
+                    <p>14</p>
+                    <p class="calendar-day-topic">AMA</p>
+                </div>
+                <div>
+                    <p>15</p>
+                </div>
+                <div>
+                    <p>16</p>
+                </div>
+                <div>
+                    <p>17</p>
+                </div>
+                <div>
+                    <p>18</p>
+                    <p class="calendar-day-topic custom-font-1">Beta Opens</p>
+                </div>
+                <div>
+                    <p>19</p>
+                </div>
+                <div>
+                    <p>20</p>
+                </div>
+                <div>
+                    <p>21</p>
+                </div>
+                <div>
+                    <p>22</p>
+                </div>
+                <div>
+                    <p>23</p>
+                </div>
+                <div>
+                    <p>24</p>
+                    <p class="calendar-day-topic custom-font-1">Retro</p>
+                </div>
+                <div>
+                    <p>25</p>
+                </div>
+                <div>
+                    <p>26</p>
+                </div>
+                <div>
+                    <p>27</p>
+                </div>
+                <div>
+                    <p>28</p>
+                </div>
+                <div>
+                    <p>29</p>
+                    <p class="calendar-day-topic custom-font-1">Docs Freeze</p>
+                </div>
+                <div>
+                    <p>30</p>
+                </div>
+                <div>
+                    <p>31</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="calendar-container todo-list-container">
+            <div class="todo-list todo-list-status">
+                <div><p><b>Backlog</b></p></div>
+                <div id="progress"><p><b>In Progress</b></p></div>
+                <div id="review"><p><b>Review</b></p></div>
+                <div id="done"><p><b>Done</b></p></div>
+            </div>
+            <div class="todo-list todo-list-content">
+                <div id="ideas">
+                    <p>Ideas</p>
+                    <section class="sub-content-list">
+                        <div>
+                            <p class="sub-header"><b>Grid-only header</b></p>
+                            <p class="sub-text">No flex</p>
+                        </div>
+                        <div>
+                            <p class="sub-header"><b>Mag layout</b></p>
+                            <p class="sub-text">12-col spans</p>
+                        </div>
+                    </section>
+                </div>
+                <div id="build">
+                    <p>Build</p>
+                    <section class="sub-content-list">
+                        <div>
+                            <p id="feature" class="sub-header"><b>Feature band</b></p>
+                            <p id="responsive" class="sub-text">Responsive + spans</p>
+                        </div>
+                        <div>
+                            <p class="sub-header"><b>KPI Tiles</b></p>
+                            <p class="sub-text">Auto rows</p>
+                        </div>
+                    </section>
+                </div>
+                <div>
+                    <p>Review</p>
+                    <section class="sub-content-list">
+                        <div id="review_container">
+                            <p id="theme" class="sub-header"><b>Calendar</b></p>
+                            <p id="violet" class="sub-text">7x5 grid</p>
+                        </div>
+                    </section>
+                </div>
+                <div>
+                    <p>Done</p>
+                    <section class="sub-content-list">
+                        <div>
+                            <p id="theme" class="sub-header"><b>Dark Neon Theme</b></p>
+                            <p id="violet" class="sub-text">Violet/Teal</p>
+                        </div>
+                        <div>
+                            <p id="article-header" class="sub-header"><b>Article Stream</b></p>
+                            <p class="sub-text">Chips via grid</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
