@@ -17,7 +17,7 @@
             <div class="calendar-header-container">
                 <div class="calendar-title"><p>July 2025</p></div>
                 <div class="calendar-btn"><p><b>Prev</b></p></div>
-                <div id="next" class="calendar-btn"><p><b>Next</b></p></div>
+                <div class="calendar-btn next-btn"><p><b>Next</b></p></div>
             </div>
             <div class="calendar-days-container">
                 <div>
@@ -29,7 +29,7 @@
                 </div>
                 <div>
                     <p>3</p>
-                    <p id="day3" class="calendar-day-topic custom-font-2">Docs Sprint</p>
+                    <p class="calendar-day-topic custom-font-2">Docs Sprint</p>
                 </div>
                 <div>
                     <p>4</p>
@@ -128,12 +128,12 @@
         <div class="calendar-container todo-list-container">
             <div class="todo-list todo-list-status">
                 <div><p><b>Backlog</b></p></div>
-                <div id="progress"><p><b>In Progress</b></p></div>
-                <div id="review"><p><b>Review</b></p></div>
-                <div id="done"><p><b>Done</b></p></div>
+                <div id="progress-status"><p><b>In Progress</b></p></div>
+                <div id="review-status"><p><b>Review</b></p></div>
+                <div id="done-status"><p><b>Done</b></p></div>
             </div>
             <div class="todo-list todo-list-content">
-                <div id="ideas">
+                <div class="ideas-container">
                     <p>Ideas</p>
                     <section class="sub-content-list">
                         <div>
@@ -146,12 +146,12 @@
                         </div>
                     </section>
                 </div>
-                <div id="build">
+                <div class="build-container">
                     <p>Build</p>
                     <section class="sub-content-list">
                         <div>
-                            <p id="feature" class="sub-header"><b>Feature band</b></p>
-                            <p id="responsive" class="sub-text">Responsive + spans</p>
+                            <p class="sub-header feature"><b>Feature band</b></p>
+                            <p class="sub-text responsive">Responsive + spans</p>
                         </div>
                         <div>
                             <p class="sub-header"><b>KPI Tiles</b></p>
@@ -163,8 +163,8 @@
                     <p>Review</p>
                     <section class="sub-content-list">
                         <div id="review_container">
-                            <p id="theme" class="sub-header"><b>Calendar</b></p>
-                            <p id="violet" class="sub-text">7x5 grid</p>
+                            <p class="sub-header theme"><b>Calendar</b></p>
+                            <p class="sub-text violet">7x5 grid</p>
                         </div>
                     </section>
                 </div>
@@ -172,11 +172,11 @@
                     <p>Done</p>
                     <section class="sub-content-list">
                         <div>
-                            <p id="theme" class="sub-header"><b>Dark Neon Theme</b></p>
-                            <p id="violet" class="sub-text">Violet/Teal</p>
+                            <p class="sub-header theme"><b>Dark Neon Theme</b></p>
+                            <p class="sub-text violet">Violet/Teal</p>
                         </div>
                         <div>
-                            <p id="article-header" class="sub-header"><b>Article Stream</b></p>
+                            <p class="sub-header article-header"><b>Article Stream</b></p>
                             <p class="sub-text">Chips via grid</p>
                         </div>
                     </section>

@@ -55,7 +55,7 @@ body {
     cursor: pointer;
 }
 
-#next {
+.next-btn {
     width: 54.77px;
     background: linear-gradient(149.443deg, #EC4899 0%, #FB7185 100%);
     box-shadow: 0px 10px 30px 0px rgba(236, 72, 153, 35%);
@@ -131,17 +131,17 @@ body {
     height: 42px;
 }
 
-#progress {
+#progress-status {
     background-color: #031C18;
     border: 1px solid #064E47;
 }
 
-#review {
+#review-status {
     background-color: #230912;
     border: 1px solid #5B0E2B;
 }
 
-#done {
+#done-status {
     background-color: #221705;
     border: 1px solid #614300;
 }
@@ -156,11 +156,11 @@ body {
     row-gap: 11px;
 }
 
-#build {
+.build-container {
     font-size: 15.8px;
 }
 
-#ideas {
+.ideas-container {
     font-size: 15.2px
 }
 
@@ -188,26 +188,26 @@ body {
     font-size: 15px;
 }
 
-#article-header {
+.article-header {
     padding: 0px 0px 0px 1px;
     letter-spacing: 0.2px;
 }
 
-#violet {
+.violet {
     padding: 1px 0px 0px;
     letter-spacing: 0.1px;
 }
 
-#theme {
+.theme {
     font-size: 14.8px;
 }
 
-#feature {
+.feature {
     font-size: 14.5px;
     letter-spacing: 0.05px;
 }
 
-#responsive {
+.responsive {
     font-size: 13.5px;
 }
 
