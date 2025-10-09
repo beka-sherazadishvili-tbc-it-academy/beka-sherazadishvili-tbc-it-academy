@@ -11,10 +11,10 @@
     <title>GRID-NEON</title>
 </head>
 <body>
-    <header aria-label="" class="header-container flex-center">
+    <header class="header-container flex-center">
         <div class="header-main-box flex-center">
             <div class="header-logo">GRID-NEON</div>
-            <nav aria-label="Navigation" class="header-navigation">
+            <nav class="header-navigation">
                 <div>Home</div>
                 <div class="header-nav-library">Library</div>
                 <div>Guides</div>
@@ -66,7 +66,7 @@
                             <div class="main-grid-article-img-container border-radius-top">
                                 <div></div>
                             </div>
-                            <div aria-label="feature article" class="main-grid-article-context border-radius-bottom">
+                            <div class="main-grid-article-context border-radius-bottom">
                                 <h3>FEATURE</h3>
                                 <p>Grids that bend without breaking</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer<br>posuere erat a ante venenatis dapibus.</p>
@@ -77,8 +77,8 @@
                             <div class="main-grid-article-img-container border-radius-top">
                                 <div></div>
                             </div>
-                            <div aria-label="feature article" class="main-grid-article-context border-radius-bottom">
-                                <h3>Deep Dive</h3>
+                            <div class="main-grid-article-context border-radius-bottom">
+                                <h3>DEEP DIVE</h3>
                                 <p>Twelve columns, infinite outcomes</p>
                                 <p>Curabitur blandit tempus porttitor. Maecenas<br>faucibus mollis interdum.</p>
                             </div>
@@ -90,10 +90,10 @@
                             <div class="main-grid-article-img-container border-radius-top">
                                 <div></div>
                             </div>
-                            <div aria-label="feature article" class="main-grid-article-context border-radius-bottom">
-                                <h3>FEATURE</h3>
-                                <p>Grids that bend without breaking</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer<br>posuere erat a ante venenatis dapibus.</p>
+                            <div class="main-grid-article-context border-radius-bottom">
+                                <h3>OPINION</h3>
+                                <p>Grid replaces the last float</p>
+                                <p>Aenean lacinia bibendum nulla sed<br>consectetur.</p>
                             </div>
                         </div>
 
@@ -101,10 +101,10 @@
                             <div class="main-grid-article-img-container border-radius-top">
                                 <div></div>
                             </div>
-                            <div aria-label="feature article" class="main-grid-article-context border-radius-bottom">
-                                <h3>Deep Dive</h3>
-                                <p>Twelve columns, infinite outcomes</p>
-                                <p>Curabitur blandit tempus porttitor. Maecenas<br>faucibus mollis interdum.</p>
+                            <div class="main-grid-article-context border-radius-bottom">
+                                <h3 class="main-grid-news">NEWS</h3>
+                                <p>Layout performance at scale</p>
+                                <p>Donec id elit non mi porta gravida at eget metus.</p>
                             </div>
                         </div>
                     </div>
@@ -114,23 +114,60 @@
                             <div class="main-grid-article-img-container border-radius-top">
                                 <div class="modified-context"></div>
                             </div>
-                            <div aria-label="feature article" class="main-grid-article-context border-radius-bottom">
-                                <h3>Deep Dive</h3>
-                                <p>Twelve columns, infinite outcomes</p>
-                                <p>Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.</p>
+                            <div class="main-grid-article-context border-radius-bottom">
+                                <h3>SPOTLIGHT</h3>
+                                <p id="card-spanning">One card spanning the whole row</p>
+                                <p>Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <aside class="grid-side-boxes">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div>
+                        <h3>Morbi in sem placerat ornare</h3>
+                        <p>Alex · Jun 12, 2025 · 6 min</p>
+                        <p class="side-text-1">Cras mattis consectetur purus sit amet fermentum.<br>Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                        <div class="grid-side-options">
+                            <div>Patterns</div>
+                            <div>Grid</div>
+                            <div>Accessibility</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Nam convallis pellentesque nisl</h3>
+                        <p>Jane · Jun 9, 2025 · 5 min</p>
+                        <p class="side-text-2">Aenean lacinia bibendum nulla sed consectetur. Nullam id<br>dolor id nibh ultricies vehicula ut id elit.</p>
+                        <div class="grid-side-options">
+                            <div>Guides</div>
+                            <div>12-col</div>
+                            <div>Spacing</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Integer posuere erat a ante</h3>
+                        <p>Lee · Jun 4, 2025 · 8 min</p>
+                        <p class="side-text-3">Curabitur blandit tempus porttitor. Maecenas faucibus<br>mollis interdum.</p>
+                        <div class="grid-side-options">
+                            <div>Opinion</div>
+                            <div>CSS</div>
+                            <div>Future</div>
+                        </div>
+                    </div>
                 </aside>
             </div>
 
-            <div class="">
-
+            <div class="full-bleed-container">
+                <div></div>
+                <div class="full-bleed">
+                    <h1>Across the grid — a full-bleed feature</h1>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec<br>elit.</p>
+                    <div class="full-bleed-options grid-side-options">
+                        <div>Layouts</div>
+                        <div>Components</div>
+                        <div>Performance</div>
+                        <div>Tooling</div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
