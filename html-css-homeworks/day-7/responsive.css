@@ -1,0 +1,566 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-gradient: linear-gradient(90deg, #581C87 0%, #1E3A8A 50%, #312E81 100%);
+    --header-color: #22D3EE;
+    --nav-color: #FFFFFF;
+    --hero-header-color: #67E8F9;
+    --hero-header-warpper-color: #F9A8D4;
+    --first-border: #06B6D4;
+    --second-border: #EC4899;
+    --third-border: #EAB308;
+    --fourth-border: #22C55E;
+    --hero-btn-color: linear-gradient(90deg, #EC4899 0%, #8B5CF6 100%);
+    --reverse-color: linear-gradient(90deg, #8B5CF6 0%, #EC4899 100%);
+    --hero-text-shadow: 0px 0px 10px #67e8f9, 0px 0px 20px #67e8f9, 0px 0px 30px #67e8f9;
+    --hero-section-background: linear-gradient(334.01deg, #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%, #96ceb4 75%, #ffecd2 100%);
+    --header-text-shadow: 0px 0px 10px #22d3ee, 0px 0px 20px #22d3ee, 0px 0px 30px #22d3ee;
+    --amazing-background: linear-gradient(171.169deg, #E0E7FF 0%, #FAF5FF 50%, #FCE7F3 100%);
+    --amazing-header: linear-gradient(90deg, #9333EA 0%, #DB2777 100%);
+    --feature-shadows: 0px 25px 50px -12px rgba(0, 0, 0, 25%);
+    --visual-background: linear-gradient(90deg, #581C87 0%, #1E3A8A 50%, #312E81 100%);
+    --visual-shadows: 0px 0px 10px #ffffff, 0px 0px 20px #ffffff, 0px 0px 30px #ffffff;
+    --statistics-background: linear-gradient(174.862deg, #FCE7F3 0%, #F3E8FF 50%, #E0E7FF 100%);
+    --stat-names: #1F2937;
+    --footer-background: linear-gradient(90deg, #111827 0%, #581C87 50%, #4C1D95 100%);
+}
+
+@font-face {
+    font-family: 'Orbitron bold';
+    src: url('./font/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron extra bold';
+    src: url('./font/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dancing';
+    src: url('./font/Dancing_Script/DancingScript-VariableFont_wght.ttf') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dancing light';
+    src: url('./font/Dancing_Script/DancingScript-VariableFont_wght.ttf') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'my popins';
+    src: url('./font/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+
+.section-header-font {
+    font-size: 6rem;
+    line-height: 6rem;  
+}
+
+/* header container */
+.header-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 6.9rem;
+    background: var(--header-gradient);
+    z-index: 1;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.8rem;
+    width: 77.3%;
+}
+
+.header-container h1 {
+    font-family: 'Orbitron bold', sans-serif;
+    color: var(--header-color);
+    font-size: 3rem;
+    text-shadow: var(--header-text-shadow);
+    cursor: pointer;
+}
+
+.header-main-container:has(h1:hover) {
+    font-size: 3.3rem;
+    height: 7.5rem;
+}
+
+.header-container ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.4rem;
+    color: var(--nav-color);
+    font-size: 1.53rem;
+    letter-spacing: 0.03rem;
+}
+
+.header-container li {
+    position: relative;
+    cursor: pointer;
+}
+
+.header-container li:hover {
+    font-size: 1.69rem;
+    color: var(--header-color);
+}
+
+/* hero section */
+.main-hero-section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 73rem;
+    background: var(--hero-section-background);
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 22.3%;
+    gap: 2.6rem;
+    width: 64.2rem;
+    animation: hidden-animation 2s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.hero-section h1 {
+    font-family: 'Orbitron extra bold', sans-serif;;
+    font-size: 9.6rem;
+    line-height: 9.6rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    text-align: center;
+    color: var(--hero-header-color);
+    text-shadow: var(--hero-text-shadow);
+}
+
+.hero-section span{
+    color: var(--hero-header-warpper-color);
+}
+
+.hero-section p{
+    font-family: "dancing";
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    color: var(--nav-color);
+    margin: -0.51rem 0rem 0.51rem 0rem;
+}
+
+.hero-section div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--hero-btn-color);
+    color: var(--nav-color);
+    font-size: 1.95rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    width: 23.1rem;
+    height: 6rem;
+    border-radius: 9999rem;
+    cursor: pointer;
+}
+
+.hero-section div:hover {
+    background: var(--reverse-color);
+    transform: scale(1.2);
+}
+
+.circle {
+    position: absolute;
+    width: 12.8rem;
+    height: 12.8rem;
+    border-radius: 9999rem;
+    top: 1rem;
+    left: 8rem;
+    background: rgba(250, 204, 21, 30%);
+}
+
+.circle1 {
+    width: 6.4rem;
+    height: 6.4rem; 
+    top: 33rem;
+    left: 4rem;
+    background: rgba(34, 211, 238, 50%);
+}
+
+.circle2 {
+    width: 9.6rem;
+    height: 9.6rem;
+    top: 63%;
+    left: 88.5%; 
+    background: rgba(244, 114, 182, 40%);
+}
+
+
+@keyframes hidden-animation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  85% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* amazing features */
+ .amazing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6.4rem;
+    position: relative;
+    padding: 8rem 19.2rem;
+    background: var(--amazing-background);
+}
+
+.amazing-section h1 {
+    text-align: center;
+    font-family: 'Orbitron extra bold', sans-serif;
+    background: var(--amazing-header);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: hidden-animation 2s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2.4rem;
+    gap: 3.2rem;
+}
+
+.features div {
+    display: flex;
+    flex-direction: column;
+    width: 47.5rem;
+    height: 28.8rem;
+    border-radius: 2.4rem;
+    padding: 3.2rem 3.2rem 3.25rem 3rem;
+    background-color: white;
+    box-shadow: var(--feature-shadows);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    cursor: pointer;
+}
+
+.features div:first-child:hover {
+      transform: translateZ(3rem) scale(1.03) rotateZ(-5deg);
+}
+
+.features div:nth-child(2):hover {
+      transform: translateZ(3rem) scale(1.03) rotateZ(5deg);
+}
+
+.features div:nth-child(3):hover {
+      transform: translateZ(1rem) scale(1.03) rotateZ(-3deg);
+}
+
+.features div:first-child {
+    border-left: 0.8rem solid var(--first-border);
+}
+
+.features div:nth-child(2) {
+    border-left: 0.8rem solid var(--second-border);
+
+}
+
+.features div:nth-child(3) {
+     border-left: 0.8rem solid var(--third-border);
+}
+
+.features img {
+    width: 6.52rem;
+    height: 6.52rem;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.features div:first-child > img {
+    margin-top: 1rem;
+}
+
+.features img:hover {
+    transform: translatex(-70%) translateY(-10%) scale(1.05);
+}
+
+.features h3 {
+    font-size: 3rem;
+    font-family: "my popins", sans-serif;
+    line-height: 3.6rem;
+    padding: 1.9rem 0rem 0rem 0.2rem;
+    letter-spacing: 0.08rem;
+}
+
+
+.features div:first-child > h3 {
+    padding: 1rem 0rem 0rem 0.4rem;
+}
+
+.features p {
+    font-size: 1.6rem;
+    line-height: 2.93rem;
+    padding: 1.5rem 0rem 0rem 0.2rem;
+    letter-spacing: 0.09rem;
+}
+
+
+/* visual section */
+.visual-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 6.4rem;
+    position: relative;
+    padding: 8rem 19.2rem;
+    background: var(--visual-background);
+}
+
+.visual-section h1 {
+    font-family: 'Orbitron extra bold', sans-serif;
+    color: var(--nav-color);
+    text-shadow: var(--visual-shadows);
+}
+
+.visuals {
+    display: flex;
+    gap: 2.4rem;
+    padding: 0rem 2.4rem;
+}
+
+.visuals div {
+    width: 35.4rem;
+    height: 25.6rem;
+    border-radius: 1.6rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size 0.6s ease;
+    cursor: pointer;
+}
+
+.visuals div:hover {
+    width: 38.9rem;
+    background-size: 150%;
+}
+
+.visuals div:first-child {
+    background-image: url('./assets/visual-1.svg');
+}
+
+.visuals div:nth-child(2) {
+    background-image: url('./assets/visual-2.svg');
+}
+
+.visuals div:nth-child(3) {
+    background-image: url('./assets/visual-3.svg');
+}
+
+.visuals div:nth-child(4) {
+    background-image: url('./assets/visual-4.svg');
+}
+
+/* statistics container */
+.statistics-container {
+    display: flex;
+    gap: 3.2rem;
+    position: relative;
+    padding: 8rem 21.6rem;
+    background: var(--statistics-background);
+}
+
+.statistics-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 34.8rem;
+    height: 18rem;
+    border-radius: 2.4rem;
+    padding: 4rem 3.2rem 3.2rem 3.2rem;
+    background-color: var(--nav-color);
+    cursor: pointer;
+}
+
+.statistics-container h1 {
+    font-family: 'Orbitron extra bold', sans-serif;
+    font-size: 6rem;
+    line-height: 5rem;
+    margin-top: 1rem;
+}
+
+.statistics-container p {
+    font-size: 2.4rem;
+    font-family: "my popins", sans-serif;
+    line-height: 3.2rem;
+    color: var(--stat-names);
+    margin-bottom: 2rem;
+}
+
+.statistics-container div:first-child {
+    border-top: 8px solid var(--first-border);
+    color: var(--first-border);
+}
+
+.statistics-container div:nth-child(2) {
+    border-top: 8px solid var(--second-border);
+    color: var(--second-border);
+}
+
+.statistics-container div:nth-child(3) {
+    border-top: 8px solid var(--third-border);
+    color: var(--third-border);
+}
+
+.statistics-container div:nth-child(4) {
+    border-top: 8px solid var(--fourth-border);
+    color: var(--fourth-border);
+}
+
+.statistics-container div:first-child:hover {
+    transform: translateZ(3rem) scale(1.1) rotateZ(5deg);
+}
+
+.statistics-container div:nth-child(2):hover {
+    transform: translateZ(3rem) scale(1.1) rotateZ(-5deg);
+}
+
+.statistics-container div:nth-child(3):hover {
+    transform: translateZ(1rem) scale(1.1) rotateZ(5deg);
+}
+
+.statistics-container div:nth-child(4):hover {
+    transform: translateZ(1rem) scale(1.1) rotateZ(-5deg);
+}
+
+/* footer section */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 6rem 19.2rem 9rem 19.2rem;
+    background: var(--footer-background);
+}
+
+.footer-container h1 {
+    font-family: 'Orbitron bold', sans-serif;;
+    font-size: 3.6rem;
+    line-height: 4rem;
+    color: var(--hero-header-color);
+    text-shadow: var(--hero-text-shadow);
+}
+
+.footer-container p {
+    font-family: "dancing light";
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    font-weight: 400;
+    color: var(--nav-color);
+}
+
+.footer-container span{
+    color: var(--hero-header-warpper-color);
+}
+
+.footer-container div {
+    display: flex;
+    gap: 3.2rem;
+    padding: 2.5rem 0rem;
+}
+.social-networks div {
+    width: 3rem;
+    height: 3.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+.social-networks div:first-child {
+    background-image: url('./assets/facebook.svg');
+}
+
+.social-networks div:nth-child(2) {
+    background-image: url('./assets/insta.svg');
+}
+
+.social-networks div:nth-child(3) {
+    background-image: url('./assets/twiter.svg');
+}
+
+.social-networks div:nth-child(4) {
+    background-image: url('./assets/linkdin.svg');
+}
+
+.social-networks:hover {
+    transform: scale(1.1);
+}
+
+.social-networks div:first-child:hover {
+    transform: scale(1.4);
+    background-image: url('./assets/fb-hover.svg');
+}
+
+.social-networks div:nth-child(2):hover {
+    transform: scale(1.4);
+    background-image: url('./assets/insta-hover.svg');
+}
+
+.social-networks div:nth-child(3):hover {
+    transform: scale(1.4);
+    background-image: url('./assets/twiter-hover.svg');
+}
+
+.social-networks div:nth-child(4):hover {
+    transform: scale(1.4);
+    background-image: url('./assets/linkdin-hover.svg');
+}
+
