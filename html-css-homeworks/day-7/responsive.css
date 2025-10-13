@@ -26,30 +26,42 @@
     --stat-names: #1F2937;
     --footer-background: linear-gradient(90deg, #111827 0%, #581C87 50%, #4C1D95 100%);
 }
-/* @font-face {
-    font-family: 'Orbitron';
-    src: url('path/to/orbitron.woff2') format('woff2'),
-         url('path/to/orbitron.woff') format('woff');
+
+@font-face {
+    font-family: 'Orbitron bold';
+    src: url('./font/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron extra bold';
+    src: url('./font/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dancing';
+    src: url('./font/Dancing_Script/DancingScript-VariableFont_wght.ttf') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dancing light';
+    src: url('./font/Dancing_Script/DancingScript-VariableFont_wght.ttf') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'my inter';
-    src: url('path/to/inter-regular.woff2') format('woff2'),
-            url('path/to/inter-regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Orbitron1';
-    src: url('path/to/Orbitron-Bold.woff2') format('woff2'),
-        url('path/to/Orbitron-Bold.woff') format('woff');
+    font-family: 'my popins';
+    src: url('./font/Poppins/Poppins-Regular.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-} */
+}
 
 html {
     font-size: 10px;
@@ -58,6 +70,11 @@ html {
 body {
     font-family: "Inter", sans-serif;
     position: relative;
+}
+
+.section-header-font {
+    font-size: 6rem;
+    line-height: 6rem;  
 }
 
 /* header container */
@@ -82,11 +99,11 @@ body {
 }
 
 .header-container h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron bold', sans-serif;
     color: var(--header-color);
-    font-weight: 700;
     font-size: 3rem;
     text-shadow: var(--header-text-shadow);
+    cursor: pointer;
 }
 
 .header-main-container:has(h1:hover) {
@@ -105,6 +122,7 @@ body {
 
 .header-container li {
     position: relative;
+    cursor: pointer;
 }
 
 .header-container li:hover {
@@ -115,10 +133,9 @@ body {
 /* hero section */
 .main-hero-section {
     display: flex;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 80rem;
+    justify-content: center;
+    position: relative;
+    height: 73rem;
     background: var(--hero-section-background);
 }
 
@@ -127,19 +144,17 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    top: 22.3%;
     gap: 2.6rem;
     width: 64.2rem;
-    top: 23rem;
-    left: 63.9rem;
     animation: hidden-animation 2s ease-in forwards;
     animation-delay: 1s;
 }
 
 .hero-section h1 {
-    font-family: 'Orbitron', sans-serif;;
+    font-family: 'Orbitron extra bold', sans-serif;;
     font-size: 9.6rem;
     line-height: 9.6rem;
-    font-weight: 900;
     white-space: normal;
     overflow: visible;
     text-overflow: unset;
@@ -153,11 +168,11 @@ body {
 }
 
 .hero-section p{
-    font-family: "Dancing Script", cursive;
-    font-weight: 600;
+    font-family: "dancing";
     font-size: 2.4rem;
     line-height: 3.2rem;
     color: var(--nav-color);
+    margin: -0.51rem 0rem 0.51rem 0rem;
 }
 
 .hero-section div {
@@ -172,6 +187,7 @@ body {
     width: 23.1rem;
     height: 6rem;
     border-radius: 9999rem;
+    cursor: pointer;
 }
 
 .hero-section div:hover {
@@ -184,7 +200,7 @@ body {
     width: 12.8rem;
     height: 12.8rem;
     border-radius: 9999rem;
-    top: 8rem;
+    top: 1rem;
     left: 8rem;
     background: rgba(250, 204, 21, 30%);
 }
@@ -192,7 +208,7 @@ body {
 .circle1 {
     width: 6.4rem;
     height: 6.4rem; 
-    top: 40rem;
+    top: 33rem;
     left: 4rem;
     background: rgba(34, 211, 238, 50%);
 }
@@ -200,8 +216,8 @@ body {
 .circle2 {
     width: 9.6rem;
     height: 9.6rem;
-    top: 57.6rem;
-    left: 169.6rem; 
+    top: 63%;
+    left: 88.5%; 
     background: rgba(244, 114, 182, 40%);
 }
 
@@ -237,17 +253,13 @@ body {
     flex-direction: column;
     gap: 6.4rem;
     position: relative;
-    top: 73.1rem;
     padding: 8rem 19.2rem;
     background: var(--amazing-background);
 }
 
 .amazing-section h1 {
     text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 6rem;
-    line-height: 6rem;
-    font-weight: 900;
+    font-family: 'Orbitron extra bold', sans-serif;
     background: var(--amazing-header);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -275,6 +287,7 @@ body {
     box-shadow: var(--feature-shadows);
     transform-style: preserve-3d;
     transition: transform 0.6s ease, box-shadow 0.6s ease;
+    cursor: pointer;
 }
 
 .features div:first-child:hover {
@@ -319,9 +332,8 @@ body {
 
 .features h3 {
     font-size: 3rem;
-    font-family: "Poppins", sans-serif;
+    font-family: "my popins", sans-serif;
     line-height: 3.6rem;
-    font-weight: 700;
     padding: 1.9rem 0rem 0rem 0.2rem;
     letter-spacing: 0.08rem;
 }
@@ -346,16 +358,12 @@ body {
     text-align: center;
     gap: 6.4rem;
     position: relative;
-    top: 73.2rem;
     padding: 8rem 19.2rem;
     background: var(--visual-background);
 }
 
 .visual-section h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 6rem;
-    line-height: 6rem;
-    font-weight: 900;
+    font-family: 'Orbitron extra bold', sans-serif;
     color: var(--nav-color);
     text-shadow: var(--visual-shadows);
 }
@@ -373,6 +381,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     transition: background-size 0.6s ease;
+    cursor: pointer;
 }
 
 .visuals div:hover {
@@ -402,7 +411,6 @@ body {
     gap: 3.2rem;
     position: relative;
     padding: 8rem 21.6rem;
-    top: 73.2rem;
     background: var(--statistics-background);
 }
 
@@ -417,21 +425,20 @@ body {
     border-radius: 2.4rem;
     padding: 4rem 3.2rem 3.2rem 3.2rem;
     background-color: var(--nav-color);
+    cursor: pointer;
 }
 
 .statistics-container h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron extra bold', sans-serif;
     font-size: 6rem;
     line-height: 5rem;
-    font-weight: 900;
     margin-top: 1rem;
 }
 
 .statistics-container p {
     font-size: 2.4rem;
-    font-family: "Poppins", sans-serif;
+    font-family: "my popins", sans-serif;
     line-height: 3.2rem;
-    font-weight: 700;
     color: var(--stat-names);
     margin-bottom: 2rem;
 }
@@ -479,22 +486,20 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    top: 73.2rem;
     padding: 6rem 19.2rem 9rem 19.2rem;
     background: var(--footer-background);
 }
 
 .footer-container h1 {
-    font-family: 'Orbitron', sans-serif;;
+    font-family: 'Orbitron bold', sans-serif;;
     font-size: 3.6rem;
     line-height: 4rem;
-    font-weight: 700;
     color: var(--hero-header-color);
     text-shadow: var(--hero-text-shadow);
 }
 
 .footer-container p {
-    font-family: "Dancing Script", cursive;
+    font-family: "dancing light";
     font-size: 1.6rem;
     line-height: 2.8rem;
     font-weight: 400;
@@ -508,5 +513,54 @@ body {
 .footer-container div {
     display: flex;
     gap: 3.2rem;
-    padding: 3.1rem 0rem 3.5rem 0rem;
+    padding: 2.5rem 0rem;
 }
+.social-networks div {
+    width: 3rem;
+    height: 3.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+.social-networks div:first-child {
+    background-image: url('./assets/facebook.svg');
+}
+
+.social-networks div:nth-child(2) {
+    background-image: url('./assets/insta.svg');
+}
+
+.social-networks div:nth-child(3) {
+    background-image: url('./assets/twiter.svg');
+}
+
+.social-networks div:nth-child(4) {
+    background-image: url('./assets/linkdin.svg');
+}
+
+.social-networks:hover {
+    transform: scale(1.1);
+}
+
+.social-networks div:first-child:hover {
+    transform: scale(1.4);
+    background-image: url('./assets/fb-hover.svg');
+}
+
+.social-networks div:nth-child(2):hover {
+    transform: scale(1.4);
+    background-image: url('./assets/insta-hover.svg');
+}
+
+.social-networks div:nth-child(3):hover {
+    transform: scale(1.4);
+    background-image: url('./assets/twiter-hover.svg');
+}
+
+.social-networks div:nth-child(4):hover {
+    transform: scale(1.4);
+    background-image: url('./assets/linkdin-hover.svg');
+}
+

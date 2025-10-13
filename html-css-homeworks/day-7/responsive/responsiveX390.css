@@ -1,0 +1,136 @@
+@media (min-width: 376px) and (max-width: 746px) {
+    .header-container {
+        width: 87.75%;
+    }
+
+    .header-container nav {
+        display: none;
+    }
+
+    /* hero section */
+    .hero-section {
+        word-break: break-word;
+        padding: 0rem 1.6rem;
+        text-align: center;
+        top: 7.1%;
+    }
+
+    /* amazing features */
+    .amazing-section h1 {
+        font-size: 5rem;   
+    }
+
+    .features {
+        flex-direction: column;
+    }
+    
+    .features div {
+        width: 34.2rem;
+        height: 28.7rem;
+    }
+
+    .features div:first-child {
+        height: 31.7rem;
+    }
+
+    /* visuals container */
+    .visuals {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 15.9rem;
+    }
+
+    .visuals div:first-child {
+        background-image: url('../assets/responsive-390/visual-1-390.svg');
+    }
+
+    .visuals div:nth-child(2) {
+        background-image: url('../assets/responsive-390/visual-2-390.svg');
+    }
+
+    /* statistics container */
+    .statistics-container {
+        flex-direction: column;
+    }
+
+    .statistics-container div {
+        width: 34.2rem;
+        height: 18rem;
+        padding-top: 5rem;
+    }
+
+    /* footer container */
+    .footer-container {
+        padding: 6rem 0rem 7rem 0rem;
+    }
+
+    .footer-container div {
+        padding: 3.1rem 0rem 3rem 0rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .header-container {
+        width: 87.75%;
+    }
+
+    .header-container nav {
+        display: none;
+    }
+
+    /* hero section */
+    .hero-section {
+        word-break: break-word;
+        text-align: center;
+        top: 7.1%;
+    }
+
+    /* amazing features */
+    .amazing-section h1 {
+        font-size: 5rem;   
+    }
+
+    .features {
+        flex-direction: column;
+    }
+    
+    .features div {
+        width: 24.2rem;
+        height: 35.7rem;
+    }
+
+    .features p {
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    /* visuals container */
+    .visuals {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 15.9rem;
+    }
+
+    /* statistics container */
+    .statistics-container {
+        flex-direction: column;
+    }
+
+    .statistics-container div {
+        width: 25.2rem;
+        height: 18rem;
+        padding-top: 5rem;
+    }
+
+    /* footer container */
+    .footer-container {
+        padding: 6rem 0rem 7rem 0rem;
+    }
+
+    .footer-container h1 {
+        font-size: 2rem;
+    }
+    .footer-container p {
+        font-size: 1.6rem;
+    }
+}
