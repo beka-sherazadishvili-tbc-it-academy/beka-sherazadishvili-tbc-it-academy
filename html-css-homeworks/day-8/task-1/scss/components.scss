@@ -1,7 +1,6 @@
 @import './mixins';
 @import './variables';
-@import './';
-
+@import'./btn-components';
 body {
     width: $max-width;
     font-family: "Inter", sans-serif;
@@ -175,6 +174,10 @@ body {
                                 }
                             }
                         }
+
+                        div {
+                            gap: 10px
+                        }
                     }
                 }
 
@@ -196,7 +199,7 @@ body {
 
                             .btn-primary {
                                   @include flexbox(center, center);
-                                  text-align: center;      
+                                  text-align: center;
                             }
 
                             .btn-small {
