@@ -1,0 +1,96 @@
+@import './mixins';
+@import './variables';
+@import './';
+
+body {
+    width: $max-width;
+    font-family: "Inter", sans-serif;
+
+    header {
+        @include flexbox;
+        @include resolution($max-width, 77px);
+        border-bottom: 1px solid $main-background;
+
+        .header-container {
+            @include flexbox(space-between);
+            @include resolution(1376px, 44px);
+
+            div:first-child {
+                @include flexbox(start);
+                @include resolution(458.45px, 32px);
+                gap: 31.5px;
+
+                h1 {
+                    @include font(24.5px, 700, 0px, 32px);
+                }
+
+                p {
+                    @include font(17px);
+                    color: $header-btn;
+                }
+            }
+
+            div:last-child {
+                @include flexbox(space-between);
+                width: 73px;
+            }
+        }
+    }
+
+    .layout {
+        display: flex;
+        width: $max-width;
+
+        aside {
+            @include flexbox(start, start, column);
+            width: 255px;
+            gap: 16px;
+            padding: 26px 25px 24px 23px;
+
+            h3 {
+                font-size: $small-size;
+            }
+
+            nav {
+                @include flexbox(start, start, column);
+                font-size: $small-size;
+                gap: 25px;
+                margin: 3px 0px 0px 6px;
+                padding: 16px 0px 0px;
+                border-top: 1px solid $main-background;
+
+                > div {
+                    padding: 0px 7px;
+
+                    label {
+                        padding-left: 10px;
+                    }
+                }
+
+                > div:first-child {
+                    @include flexbox(start);
+                    @include resolution(203px, 36px);
+                    background-color: $buttons-background;
+                    border-radius: 8px;
+
+                    div {
+                        @include resolution(12.25px, 14px);
+                        background-color: $header-btn;
+                        border-radius: 2px;
+                    }
+
+                    label {
+                        color: $header-btn;
+                    }
+                }
+
+                > div:last-child {
+                    label {
+                        padding-left: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+}
