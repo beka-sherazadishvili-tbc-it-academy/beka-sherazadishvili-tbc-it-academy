@@ -1,0 +1,454 @@
+body {
+  width: 1440px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+}
+body > aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 255px;
+  border-right: 1px solid #E5E7EB;
+}
+body > aside > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 255px;
+  height: 89px;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 24px;
+  gap: 13.5px;
+}
+body > aside > div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #2563EB;
+}
+body > aside > div h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: auto;
+  color: #1F2937;
+}
+body > aside nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 255px;
+  height: auto;
+  padding: 24px;
+  gap: 13.5px;
+}
+body > aside nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 8px;
+}
+body > aside nav ul .active {
+  background-color: #EFF6FF;
+  border-radius: 8px;
+}
+body > aside nav ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 207px;
+  height: 48px;
+  padding-left: 17px;
+}
+body > aside nav ul li a {
+  text-decoration: none;
+  color: #4B5563;
+}
+body > aside nav ul li span {
+  padding-left: 7px;
+  letter-spacing: 0.2px;
+  font-size: 16px;
+}
+body > aside nav ul li .active-font {
+  color: #2563EB;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+body main header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1184px;
+  height: 89px;
+  padding: 25px 32px 16px;
+  border-bottom: 1px solid #E5E7EB;
+}
+body main header .header-text {
+  width: 471.6px;
+  height: 56px;
+}
+body main header .header-text h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: auto;
+  margin-bottom: 8px;
+}
+body main header .header-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 186px;
+  height: 44px;
+  gap: 21px;
+  margin-top: -9px;
+}
+body main header .header-actions .notification {
+  position: relative;
+  margin-left: 8px;
+}
+body main header .header-actions .notification div {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -14px;
+  right: -13px;
+  border-radius: 9999px;
+  background-color: #EF4444;
+}
+body main header .header-actions .user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+body main header .header-actions .user-profile div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+body main header .header-actions .user-profile div .user-name {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 22px;
+}
+body main header .header-actions .user-profile div .user-role {
+  font-size: 12px;
+  color: #6B7280;
+}
+body main .main-container {
+  background-color: #F9FAFB;
+  width: 1184px;
+  height: 864px;
+  padding: 32px;
+}
+body main .main-container .stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 1120px;
+  height: 134px;
+  gap: 25px;
+}
+body main .main-container .stats-container .stat-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 262px;
+  height: 134px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background-color: #FFFFFF;
+  padding: 26px 23px 25px 25px;
+}
+body main .main-container .stats-container .stat-card h3 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+body main .main-container .stats-container .stat-card h2 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 36px;
+  padding-bottom: 7px;
+}
+body main .main-container .stats-container .stat-card span {
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  color: #16A34A;
+}
+body main .main-container .stats-container .stat-card .negative {
+  color: #EF4444;
+}
+body main .main-container .stats-container .stat-card .stat-blue {
+  background-color: #DBEAFE;
+}
+body main .main-container .stats-container .stat-card .stat-green {
+  background-color: #DCFCE7;
+}
+body main .main-container .stats-container .stat-card .stat-yellow {
+  background-color: #FEF9C3;
+}
+body main .main-container .stats-container .stat-card .stat-purple {
+  background-color: #F3E8FF;
+}
+body main .main-container .stats-container .stat-card .stat-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+body main .main-container .main-content-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  width: 1120px;
+  height: 634px;
+  margin-top: 34px;
+  gap: 32px;
+}
+body main .main-container .main-content-area .featured-cars {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  display: flex;
+  width: 736px;
+  height: 479px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background-color: #FFFFFF;
+}
+body main .main-container .main-content-area .featured-cars .section-header {
+  width: 100%;
+  height: 97px;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 23px 24px 24px;
+}
+body main .main-container .main-content-area .featured-cars .section-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 30px;
+}
+body main .main-container .main-content-area .featured-cars .section-header p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: auto;
+  color: #4B5563;
+}
+body main .main-container .main-content-area .featured-cars .car-section {
+  width: 100%;
+  height: 380px;
+  padding: 23px 24px 24px;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  width: 686px;
+  height: 100px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  background-color: #F9FAFB;
+  padding: 16px 0px 16px 16px;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-details {
+  width: 490px;
+  margin-top: -10px;
+  position: relative;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 24px;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-details p {
+  font-size: 14px;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-details span {
+  font-weight: 600;
+  position: relative;
+  top: 9px;
+  color: #2563EB;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-status h3 {
+  line-height: 25px;
+  color: #16A34A;
+  margin-top: -3px;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-status span {
+  font-size: 14px;
+  margin-right: -6px;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-status .low-stock {
+  color: #CA8A04;
+}
+body main .main-container .main-content-area .featured-cars .car-section .car-card .car-status .low-amount {
+  margin-right: 6px;
+}
+body main .main-container .main-content-area aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 24px;
+}
+body main .main-container .main-content-area aside .recent-activity,
+body main .main-container .main-content-area aside .quick-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  display: flex;
+  width: 352px;
+  height: 315px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background-color: #FFFFFF;
+}
+body main .main-container .main-content-area aside .recent-activity h2,
+body main .main-container .main-content-area aside .quick-actions h2 {
+  width: 350px;
+  height: 77px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 28px;
+  padding: 24px;
+  border-bottom: 1px solid #E5E7EB;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list,
+body main .main-container .main-content-area aside .quick-actions .activity-list {
+  padding: 24px;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  width: 302px;
+  height: 52px;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-blue,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-blue {
+  background-color: #DBEAFE;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-green,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-green {
+  background-color: #DCFCE7;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-yellow,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-yellow {
+  background-color: #FEF9C3;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-purple,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-purple {
+  background-color: #F3E8FF;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-icon,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-content h3,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-content h3 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+body main .main-container .main-content-area aside .recent-activity .activity-list .activity-item .activity-content p,
+body main .main-container .main-content-area aside .quick-actions .activity-list .activity-item .activity-content p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 15px;
+  color: #6B7280;
+}
+body main .main-container .main-content-area aside .quick-actions {
+  display: flex;
+  width: 352px;
+  height: 295px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background-color: #FFFFFF;
+}
+body main .main-container .main-content-area aside .quick-actions .buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 350px;
+  height: 216px;
+  padding: 24px;
+  gap: 12px;
+}
+body main .main-container .main-content-area aside .quick-actions .buttons-container div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  width: 302px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  background-color: #F3F4F6;
+}
+body main .main-container .main-content-area aside .quick-actions .buttons-container .button-blue {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+/*# sourceMappingURL=cardealer.css.map */

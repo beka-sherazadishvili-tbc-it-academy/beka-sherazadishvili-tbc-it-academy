@@ -7,37 +7,241 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/cardealer.css">
     <title>Component Library</title>
 </head>
 <body>
-     <header>
-        <div class="header-container">
+    <aside>
+        <div>
             <div>
-                <h1>Component Library</h1>
-                <p>Buttons</p>
+                <img src="../assets/task-2/car.svg" alt="">
             </div>
-            <div>
-                <img src="../assets/task-1/notification.svg" alt="">
-                <img src="../assets/task-1/profile.svg" alt="">
-            </div>
+            <h1>CarDealer</h1>
         </div>
-     </header>
 
-     <div class="layout">
-        <aside>
-            <h3>Components</h3>
-            <nav>
-                <div>
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="#">
+                        <img src="../assets/task-2/dashboard.svg" alt="Active dashboard">
+                        <span class="active-font">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/task-2/inventory.svg" alt="inventory">
+                        <span>Inventory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/task-2/sales.svg" alt="sales">
+                        <span>Sales</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/task-2/customers.svg" alt="customers">
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/task-2/favorites.svg" alt="favorites">
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/task-2/settings.svg" alt="settings">
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header class="header">
+            <div class="header-text">
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back! Here's what's happening with your dealership.</p>
+            </div>
+            
+            <div class="header-actions">
+                <div class="notification">
+                    <img src="../assets/task-2/notification.svg" alt="notification">
                     <div></div>
-                    <label for="">Buttons</label>
                 </div>
-                <div>
-                    <img src="../assets/task-1/keyboards.svg" alt="">
-                    <label>Inputs</label>
+                
+                <div class="user-profile">
+                    <img src="../assets/task-2/avatar.svg" alt="John Smith">
+                    <div>
+                        <span class="user-name">John Smith</span>
+                        <span class="user-role">Sales Manager</span>
+                    </div>
                 </div>
-            </nav>
-        </aside>
-     </div>
+            </div>
+        </header>
+
+        <section class="main-container">
+            <section class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <h3>Total Cars</h3>
+                        <h2>247</h2>
+                        <span>+12% from last month</span>
+                    </div>
+                    <div class="stat-icon stat-blue">
+                        <img src="../assets/task-2/stat-car.svg" alt="car">
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <h3>Sales This Month</h3>
+                        <h2>34</h2>
+                        <span>+8% from last month</span>
+                    </div>
+                    <div class="stat-icon stat-green">
+                        <img src="../assets/task-2/stat-inventory.svg" alt="sales">
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <h3>Revenue</h3>
+                        <h2>$2.4M</h2>
+                        <span class="negative">-3% from last month</span>
+                    </div>
+                    <div class="stat-icon stat-yellow">
+                        <img src="../assets/task-2/stat-revenue.svg" alt="sales">
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <h3>Active Customers</h3>
+                        <h2>1,847</h2>
+                        <span>+15% from last month</span>
+                    </div>
+                    <div class="stat-icon stat-purple">
+                        <img src="../assets/task-2/stat-customers.svg" alt="sales">
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-content-area">
+                <div class="featured-cars">
+                    <div class="section-header">
+                        <h2>Featured Cars</h2>
+                        <p>Most popular vehicles in your inventory</p>
+                    </div>
+
+                    <div class="car-section">
+                        <div class="car-card">
+                            <img src="../assets/task-2/bmw.svg" alt="bmw">
+                            
+                            <div class="car-details">
+                                <h3>2023 BMW 3 Series</h3>
+                                <p>Luxury Sedan • 15,000 miles</p>
+                                <span>$45,999</span>
+                            </div>
+                            
+                            <div class="car-status">
+                                <h3>Available</h3>
+                                <span>Stock: 3</span>
+                            </div>
+                        </div>
+                        <div class="car-card">
+                            <img src="../assets/task-2/tesla.svg" alt="tesla">
+                            
+                            <div class="car-details">
+                                <h3>2023 Tesla Model 3</h3>
+                                <p>Electric Sedan • 8,500 miles</p>
+                                <span>$52,999</span>
+                            </div>
+                            
+                            <div class="car-status">
+                                <h3>Available</h3>
+                                <span>Stock: 2</span>
+                            </div>
+                        </div>
+                        <div class="car-card">
+                            <img src="../assets/task-2/ford.svg" alt="ford">
+                            
+                            <div class="car-details">
+                                <h3>2023 Ford F-150</h3>
+                                <p>Pickup Truck • 22,000 miles</p>
+                                <span>$38,999</span>
+                            </div>
+                            
+                            <div class="car-status">
+                                <h3 class="low-stock">Low Stock</h3>
+                                <span class="low-amount">Stock: 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="activities">
+                    <div class="recent-activity">
+                        <h2>Recent Activity</h2>
+                        
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon activity-green">
+                                    <img src="../assets/task-2/completed.svg" alt="completed">
+                                </div>
+                                <div class="activity-content">
+                                    <h3>Sale Completed</h3>
+                                    <p>2023 Honda Civic sold to Sarah Johnson</p>
+                                    <p>2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon activity-blue">
+                                    <img src="../assets/task-2/new.svg" alt="new">
+                                </div>
+                                <div class="activity-content">
+                                    <h3>New Inventary</h3>
+                                    <p>2023 Audi A4 added to inventory</p>
+                                    <p>4 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon activity-yellow">
+                                    <img src="../assets/task-2/heart.svg" alt="interests">
+                                </div>
+                                <div class="activity-content">
+                                    <h3>Customer Interest</h3>
+                                    <p>Mike Davis favorited BMW X5</p>
+                                    <p>6 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                         <div>
+                            <h2>Quick Actions</h2>
+                         </div>
+
+                         <div class="buttons-container">
+                            <div class="button-blue">
+                                <img src="../assets/task-2/add-car.svg" alt="add new car">
+                                <span>Add New Car</span>
+                            </div>
+                            <div>
+                                <img src="../assets/task-2/export.svg" alt="export report">
+                                <span>Export Report</span>
+                            </div>
+                            <div>
+                                <img src="../assets/task-2/send.svg" alt="send newsletter">
+                                <span>Send Newsletter</span>
+                            </div>
+                         </div>
+                    </div>
+                </aside>
+            </section>
+        </section>
+    </main>
 </body>
 </html>

@@ -1,96 +1,338 @@
 @import './mixins';
 @import './variables';
-@import './';
 
 body {
     width: $max-width;
     font-family: "Inter", sans-serif;
+    display: flex;
 
-    header {
-        @include flexbox;
-        @include resolution($max-width, 77px);
-        border-bottom: 1px solid $main-background;
+    > aside {
+        @include flexbox(start, center, column);
+        width: 255px;
+        border-right: 1px solid $lines-color;
 
-        .header-container {
-            @include flexbox(space-between);
-            @include resolution(1376px, 44px);
+        > div {
+            @include flexbox(start);
+            @include resolution(255px, 89px);
+            border-bottom: 1px solid $lines-color;
+            padding: 24px;
+            gap: 13.5px;
 
-            div:first-child {
-                @include flexbox(start);
-                @include resolution(458.45px, 32px);
-                gap: 31.5px;
-
-                h1 {
-                    @include font(24.5px, 700, 0px, 32px);
-                }
-
-                p {
-                    @include font(17px);
-                    color: $header-btn;
-                }
+            div {
+                @include flexbox;
+                @include resolution(40px, 40px);
+                border-radius: 8px;
+                background-color: $header-btn;
             }
 
-            div:last-child {
-                @include flexbox(space-between);
-                width: 73px;
+            h1 {
+                @include font($large-font, 700);
+                color: $header-color;
             }
         }
-    }
 
-    .layout {
-        display: flex;
-        width: $max-width;
+        nav {
+            @include flexbox(center, start, column);
+            @include resolution(255px, auto);
+            padding: 24px;
+            gap: 13.5px; 
 
-        aside {
-            @include flexbox(start, start, column);
-            width: 255px;
-            gap: 16px;
-            padding: 26px 25px 24px 23px;
+            ul {
+                @include flexbox(center, start, column);
+                gap: 8px;
 
-            h3 {
-                font-size: $small-size;
-            }
-
-            nav {
-                @include flexbox(start, start, column);
-                font-size: $small-size;
-                gap: 25px;
-                margin: 3px 0px 0px 6px;
-                padding: 16px 0px 0px;
-                border-top: 1px solid $main-background;
-
-                > div {
-                    padding: 0px 7px;
-
-                    label {
-                        padding-left: 10px;
-                    }
+                .active {
+                    background-color: $active-nav-bg;
+                    border-radius: 8px;
                 }
 
-                > div:first-child {
-                    @include flexbox(start);
-                    @include resolution(203px, 36px);
-                    background-color: $buttons-background;
-                    border-radius: 8px;
+                li {
+                    @include flexbox(start, center);
+                    @include resolution(207px, 48px);
+                    padding-left: 17px;
 
-                    div {
-                        @include resolution(12.25px, 14px);
-                        background-color: $header-btn;
-                        border-radius: 2px;
+                    a {
+                        text-decoration: none;
+                        color: $nav-text-color;
                     }
 
-                    label {
+                    span {
+                        padding-left: 7px;
+                        letter-spacing: 0.2px;
+                        font-size: $medium-size;
+                    }
+
+                    .active-font {
                         color: $header-btn;
                     }
                 }
-
-                > div:last-child {
-                    label {
-                        padding-left: 2px;
-                    }
-                }
             }
         }
     }
 
+    main {
+        @include flexbox(start, start, column);
+
+        header {
+            @include flexbox(space-between, center);
+            @include resolution(1184px, 89px);
+            padding: 25px 32px 16px;
+            border-bottom: 1px solid $lines-color;
+
+            .header-text {
+                @include resolution(471.6px, 56px);
+
+                h1 {
+                   @include font(24px, 700, 0.5px);
+                   margin-bottom: 8px;
+                }
+            }
+
+            .header-actions {
+                @include flexbox(space-between);
+                @include resolution(186px, 44px);
+                gap: 21px;
+                margin-top: -9px;
+
+                .notification {
+                    position: relative;
+                    margin-left: 8px; 
+
+                    div {
+                        @include resolution(12px, 12px);
+                        position: absolute;
+                        top: -14px;
+                        right: -13px;
+                        border-radius: 9999px;
+                        background-color: $badge-color;
+                    }
+                }
+
+                .user-profile {
+                    @include flexbox;
+                    gap: 10px;
+
+                    div {
+                        @include flexbox(start, start, column);
+
+                        .user-name {
+                            @include font(14px, 400, 0.2px, 22px);
+                        }
+
+                        .user-role {
+                            font-size: smallerFonts($medium-size, 4px);
+                            color: $role-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-container {
+            background-color: $main-bg-color;
+            @include resolution(1184px, 864px);
+            padding: 32px;
+
+            .stats-container {
+                @include flexbox(start);
+                @include resolution(1120px, 134px);
+                gap: 25px;
+
+                .stat-card {
+                    @include flexbox(space-between);
+                    @include box(262px, 134px);
+                    padding: 26px 23px 25px 25px;
+
+                    h3 {
+                        @include font(smallerFonts($medium-size, 2px), 400, 0, 20px);
+                    }
+
+                    h2 {
+                        @include font($extra-large-font, 700, 1.5px, 36px);
+                        padding-bottom: 7px;
+                    }
+
+                    span {
+                        @include font(smallerFonts($medium-size, 2.5px), 400, 0.1px, 20px);
+                        color: $stats-success;
+                    }
+
+                    .negative {
+                        color: $badge-color;
+                    }
+
+                    @each $name, $values in $stat-colors {
+                        .stat-#{$name} {
+                            background-color: $values;
+                        }
+                    }
+
+                    .stat-icon {
+                        @include flexbox;
+                        @include resolution(48px, 48px);
+                        border-radius: 8px;
+                    }
+                }
+            }
+
+            .main-content-area {
+                @include flexbox(start, start);
+                @include resolution(1120px, 634px);
+                margin-top: 34px;
+                gap: 32px;
+
+                .featured-cars {
+                    @include flexbox(start, start, column);
+                    @include box(736px, 479px);
+
+                    .section-header {
+                        @include resolution(100%, 97px);
+                        border-bottom: 1px solid $lines-color;
+                        padding: 23px 24px 24px;
+
+                        h2 {
+                            @include font(18px, 600, 0.3px, 30px);
+                        }
+
+                        p {
+                            @include font(14px);
+                            color: $nav-text-color;
+                        }
+                    }
+
+                    .car-section {
+                        @include resolution(100%, 380px);
+                        padding: 23px 24px 24px;
+
+                        .car-card {
+                            @include flexbox(start, center);
+                            @include box(686px, 100px, 8px, $main-bg-color);
+                            padding: 16px 0px 16px 16px;
+                            margin-bottom: 16px;
+                            gap: 16px;
+
+                            .car-details {
+                                width: 490px;
+                                margin-top: -10px;
+                                position: relative;
+
+                                h3 {
+                                    @include font(16px, 600, 0px, 24px);
+                                }
+
+                                p {
+                                    font-size: smallerFonts($medium-size, 2px);
+                                }
+
+                                span {
+                                    font-weight: 600;
+                                    position: relative;
+                                    top: 9px;
+                                    color: $header-btn;
+                                }
+                            }
+
+                            .car-status {
+                                @include flexbox(end, end, column);
+                                h3 {
+                                    line-height: 25px;
+                                    color: $stats-success;
+                                    margin-top: -3px;
+                                }
+
+                                span {
+                                    font-size: smallerFonts($medium-size, 2px);
+                                    margin-right: -6px;
+                                }
+
+                                .low-stock {
+                                    color: $low-stock;
+                                }
+
+                                .low-amount {
+                                    margin-right: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                aside {
+                    @include flexbox(start, start, column);
+                    gap: 24px;
+
+                    .recent-activity,
+                    .quick-actions {
+                        @include flexbox(start, start, column);
+                        @include box(352px, 315px);
+
+                        h2 {
+                            @include resolution(350px, 77px);
+                            @include font(18px, 600, 0.2px, 28px);
+                            padding: 24px;
+                            border-bottom: 1px solid $lines-color;
+                        }
+
+                        .activity-list {
+                            padding: 24px;
+
+                            .activity-item {
+                                @include flexbox(start, start);
+                                @include resolution(302px, 52px);
+                                gap: 14px;
+                                margin-bottom: 16px;
+
+                                @each $name, $values in $stat-colors {
+                                    .activity-#{$name} {
+                                        background-color: $values;
+                                    }
+                                }
+
+                                .activity-icon {
+                                    @include flexbox(center, center);
+                                    @include resolution(32px, 32px);
+                                    border-radius: 50%;
+                                }
+
+                                .activity-content {
+                                    h3 {
+                                        @include font(14px, 400, 0px, 20px)
+                                    }
+
+                                    p {
+                                        @include font(12px, 400, 0px, 15px);
+                                        color: $role-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .quick-actions {
+                        @include box(352px, 295px);
+
+                        .buttons-container {
+                            @include flexbox(start, center, column);
+                            @include resolution(350px, 216px);
+                            padding: 24px;
+                            gap: 12px;
+
+                            div {
+                                @include flexbox(center, center);
+                                gap: 10px;
+                                @include box(302px, 48px, 8px, $button-bg)
+                            }
+
+                            .button-blue {
+                                background-color: $header-btn;
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
 }

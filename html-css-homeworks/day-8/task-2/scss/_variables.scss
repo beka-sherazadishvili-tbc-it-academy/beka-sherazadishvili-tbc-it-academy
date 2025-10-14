@@ -4,17 +4,16 @@ $widths: 194px, 196px, 196px, 182px;
 
 // colors
 $header-btn: #2563EB;
-$main-background: #E5E7EB;
+$header-color: #1F2937;
+$lines-color: #E5E7EB;
+$nav-text-color: #4B5563;
+$active-nav-bg: #EFF6FF;
+$role-color: #6B7280;
+$badge-color: #EF4444;
 $main-bg-color: #F9FAFB;
-$buttons-background: #EFF6FF;
-$font-color: #FFFFFF;
-$dark-font: #111827;
-$disabled-color: #D1D5DB;
-$border-color: #9CA3AF;
-$green-color: #16A34A;
-$pl-color: #ADAEBC;
-$dark-color: #000000;
-$red-border: #EF4444;
+$stats-success: #16A34A;
+$low-stock: #CA8A04;
+$button-bg: #F3F4F6;
 
 
 // font sizes
@@ -22,4 +21,16 @@ $extra-large-font: 30px;
 $header-size: 24px;
 $large-font: 20px;
 $medium-size: 16px;
-$small-size: 15px;
+
+$stat-colors: (
+    blue: #DBEAFE,
+    green: #DCFCE7,
+    yellow: #FEF9C3,
+    purple: #F3E8FF,
+);
+
+$activity-colors: (
+    green: #DCFCE7,
+    blue: #DBEAFE,
+    yellow: #FEF9C3,
+);
