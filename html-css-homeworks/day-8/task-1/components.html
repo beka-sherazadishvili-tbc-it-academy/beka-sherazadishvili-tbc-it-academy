@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/components.css">
+    <title>Component Library</title>
+</head>
+<body>
+     <header>
+        <div class="header-container">
+            <div>
+                <h1>Component Library</h1>
+                <p>Buttons</p>
+            </div>
+            <div>
+                <img src="../assets/task-1/notification.svg" alt="">
+                <img src="../assets/task-1/profile.svg" alt="">
+            </div>
+        </div>
+     </header>
+
+     <div class="layout">
+        <aside>
+            <h3>Components</h3>
+            <nav>
+                <div>
+                    <div></div>
+                    <label for="">Buttons</label>
+                </div>
+                <div>
+                    <img src="../assets/task-1/keyboards.svg" alt="">
+                    <label>Inputs</label>
+                </div>
+            </nav>
+        </aside>
+
+        <main>
+            <div class="button-container">
+                <div class="buttons-header">
+                    <h1>Button Components</h1>
+                    <p>Various button states and styles for different use cases</p>
+                </div>
+                <div class="buttons-component buttons-component-1">
+                    <h1>
+                        Primary Buttons
+                    </h1>
+                    <div>
+                        <div class="button-type">
+                            <p>Default</p>
+                            <div class="btn-primary">Button</div>
+                        </div>
+                        <div class="button-type">
+                            <p>Hover</p>
+                            <div class="btn-secondary">Button</div>
+                        </div>
+                        <div class="button-type">
+                            <p>Active</p>
+                            <div class="btn-active">Button</div>
+                        </div>
+                        <div class="button-type">
+                            <p>Disabled</p>
+                            <div class="btn-disabled">Button</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-component buttons-component-2">
+                    <h1>
+                        Secondary Buttons
+                    </h1>
+                    <div>
+                        <div class="button-type">
+                            <p>Default</p>
+                            <div class="btn-primary">Button</div>
+                        </div>
+                        <div class="button-type">
+                            <p>Hover</p>
+                            <div class="btn-secondary">Button</div>
+                        </div>
+                        <div class="button-type">
+                            <p>Active</p>
+                            <div class="btn-active">Button</div>
+                        </div>
+                        <div class="button-type">
+                            <p>Disabled</p>
+                            <div class="btn-disabled">Button</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-component buttons-component-3">
+                    <h1>
+                        Icon Buttons
+                    </h1>
+                    <div>
+                        <div class="button-type">
+                            <p>With Icon Left</p>
+                            <div class="btn-primary"><img src="../assets/task-1/add.svg" alt="">Add Item</div>
+                        </div>
+                        <div class="button-type">
+                            <p>With Icon Right</p>
+                            <div class="btn-secondary">Download <img src="../assets/task-1/download.svg" alt=""></div>
+                        </div>
+                        <div class="button-type">
+                            <p>Icon Only</p>
+                            <div class="btn-active"><img src="../assets/task-1/heart.svg" alt=""></div>
+                        </div>
+                        <div class="button-type">
+                            <p>Loading</p>
+                            <div class="btn-disabled"><img src="../assets/task-1/loading.svg" alt="">Loading</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-component buttons-component-4">
+                    <h1>
+                        Button Sizes
+                    </h1>
+                    <div class="button-sizes">
+                        <div>
+                            <span>Small</span>
+                            <button class="btn-primary btn-small">Small</button>
+                        </div>
+
+                        <div>
+                            <span>Medium</span>
+                            <button class="btn-primary btn-medium">Medium</button>
+                        </div>
+
+                        <div>
+                            <span>Large</span>
+                            <button class="btn-primary btn-large">Large</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="inputs-header">
+                    <h1>Input Components</h1>
+                    <p>Text inputs with various states and configurations</p>
+                </div>
+
+                <div class="input-texts buttons-component">
+                    <h1>
+                        Text Inputs
+                    </h1>
+                    <div class="input-forms">
+                        <div>
+                            <span>Default</span>
+                            <input class="input-default" type="text" placeholder="Enter text...">
+                        </div>
+                        <div>
+                            <span>With Value</span>
+                            <input class="input-value" type="text" placeholder="Sample text content">
+                        </div>
+                        <div>
+                            <span>Focused</span>
+                            <input class="input-focused" type="text" placeholder="Enter text...">
+                        </div>
+                        <div>
+                            <span>Disabled</span>
+                            <input class="input-disabled" disabled type="text" placeholder="Disabled input">
+                        </div>
+                        <div>
+                            <span>Error State</span>
+                            <input class="input-invalid" class="input-focused" type="text" placeholder="Invalid input">
+                            <span class="error">This field is required</span>
+                        </div>
+                        <div>
+                            <span>Success State</span>
+                            <input class="input-valid" class="input-focused" type="text" placeholder="Valid input">
+                            <span class="success">Looks good!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+     </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.buttons-component {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 39px 33px 28px;
+    width: 1120px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+}
+
+.button-type {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 245.5px;
+    height: 76px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}

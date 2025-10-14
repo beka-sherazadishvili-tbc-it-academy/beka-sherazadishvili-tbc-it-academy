@@ -1,0 +1,55 @@
+$max-width: 1440px;
+$main-width: 1184px;
+$widths: 194px, 196px, 196px, 182px;
+
+// colors
+$header-btn: #2563EB;
+$main-background: #E5E7EB;
+$main-bg-color: #F9FAFB;
+$buttons-background: #EFF6FF;
+$font-color: #FFFFFF;
+$dark-font: #111827;
+$disabled-color: #D1D5DB;
+$border-color: #9CA3AF;
+$green-color: #16A34A;
+$pl-color: #ADAEBC;
+$dark-color: #000000;
+$red-border: #EF4444;
+
+
+// font sizes
+$extra-large-font: 30px;
+$header-size: 24px;
+$large-font: 20px;
+$medium-size: 16px;
+$small-size: 15px;
+
+$primary-button-data: (
+  primary: ($header-btn, $font-color),
+  secondary: (#1D4ED8, $font-color),
+  active: (#1E40AF, $font-color),
+  disabled: ($disabled-color, #6B7280)
+);
+
+$secondary-button-data: (
+  primary: (#F3F4F6, $dark-font, 43px, $disabled-color),
+  secondary: ($main-background, $dark-font, 43px, $disabled-color),
+  active: ($disabled-color, $dark-font, 43px, $border-color),
+  disabled: (#F9FAFB, $border-color, 43px, $main-background)
+);
+
+$icon-button-data: (
+  primary: ($header-btn, $font-color),
+  secondary: ($green-color, $font-color),
+  active: (#F3F4F6, $font-color, $border-color),
+  disabled: ($header-btn, $font-color)
+);
+
+$input-styles: (
+  default: (1px, $disabled-color, $pl-color),
+  value:  (1px, $disabled-color, $dark-color),
+  focused: (2px, $header-btn, $pl-color),
+  disabled: (1px, $disabled-color, $pl-color),
+  invalid: (2px, $red-border, $dark-color),
+  valid: (2px, $green-color, $dark-color)
+);
