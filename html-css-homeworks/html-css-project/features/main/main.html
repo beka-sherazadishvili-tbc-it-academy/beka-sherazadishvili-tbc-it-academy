@@ -14,7 +14,7 @@
     <header class="header-main-container">
         <div class="header-container">
             <div class="logo">
-                <img src="../../../assets/main/main/container.svg" alt="">
+                <img src="../../assets/main/container.svg" alt="">
                 <span>Bagstore</span>
             </div>
             <nav class="header-main-nav">
@@ -55,12 +55,10 @@
                     <span class="hero-label">2025 PRESENT</span>
                     <h1>Best Leather Bag Collection For You</h1>
                     <p>Discover the epitome of style and craftsmanship with our curated leather bag collection.</p>
-                    <div class="shopping-btn">
-                        <a href="#shop" class="shopping-btn">
-                            <span>Start Shopping </span>
-                            <img src="../../assets/main/arrow.svg" alt="">
-                        </a>
-                    </div>
+                    <a href="#shop" class="shopping-btn">
+                        <span>Start Shopping</span>
+                        <img src="../../assets/main/arrow.svg" alt="">
+                    </a>
                 </div>
             </div>
             <div class="image-section">
@@ -90,11 +88,20 @@
 
         <section class="main-collections">
             <nav class="collection-navbar">
-                <ul>
-                    <li class="current-collection">All Collection</li>
-                    <li>New Collection</li>
-                    <li>Popular Collection</li>
-                </ul>
+                <div class="collection-list">
+                    <div class="current-collection">
+                        <span></span>
+                        <p>All Collection</p>
+                    </div>
+                    <div>
+                        <span></span>
+                        <p>New Collection</p>
+                    </div>
+                    <div>
+                        <span></span>
+                        <p>Popular Collection</p>
+                    </div>
+                </div>
             </nav>
             <div class="collection-items">
                 <div class="collection-details">
@@ -110,9 +117,11 @@
                     <p>Hobo Small</p>
                     <p>$199.00 CAD</p>
                     <div class="circle-container">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="outer-circle ">
+                            <span class="inner-circle bg-color-black"></span>
+                        </div>
+                        <div class="bg-color-mercury"></div>
+                        <div class="bg-color-gray"></div>
                     </div>
                 </div>
                 <div class="collection-details">
@@ -120,29 +129,35 @@
                     <p>Satchel Medium</p>
                     <p>$249.00 CAD</p>
                     <div class="circle-container">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="bg-color-black"></div>
+                        <div class="outer-circle ">
+                            <span class="inner-circle bg-color-mercury"></span>
+                        </div>
+                        <div class="bg-color-gray"></div>
                     </div>
                 </div>
                 <div class="collection-details">
                     <img src="../../assets/main/bag-3.svg" alt="">
-                    <p>Tote Largel</p>
+                    <p>Tote Large</p>
                     <p>$299.00 CAD</p>
                     <div class="circle-container">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="bg-color-black"></div>
+                        <div class="bg-color-mercury"></div>
+                        <div class="outer-circle ">
+                            <span class="inner-circle bg-color-gray"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="collection-details">
                     <img src="../../assets/main/bag-4.svg" alt="">
                     <p>Crossbody Compact</p>
-                    <p>$199.00 CAD</p>
+                    <p>$179.00 CAD</p>
                     <div class="circle-container">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="outer-circle ">
+                            <span class="inner-circle bg-color-black"></span>
+                        </div>
+                        <div class="bg-color-mercury"></div>
+                        <div class="bg-color-gray"></div>
                     </div>
                 </div>
             </div>
@@ -166,11 +181,12 @@
                 <img src="../../assets/main/sales.svg" alt="">
             </div>
             <div>
-                <span>GET 20% OFF COUPON "BA</span>
+                <span>GET 20% OFF COUPON "BAG20"</span>
+                <img src="../../assets/main/sales.svg" alt="">
             </div>
         </section>
 
-        <section class="build-your-bag">
+        <!-- <section class="build-your-bag">
             <div>
                 <h1>Build Your Perfect Bag</h1>
                 <p>Customize every detail to create a bag that's uniquely yours.</p>
@@ -232,15 +248,15 @@
                     </div>
                 </div>
             </div>
-        </section>
-
+        </section> -->
+<!-- 
         <section class="featured-collection">
             <h1>Featured Collections</h1>
             <div>
                 <img src="../../assets/main/crossbody.png" alt="">
                 <span>Crossbody</span>
             </div>
-        </section>
+        </section>  -->
     </main>
 </body>
 </html>
