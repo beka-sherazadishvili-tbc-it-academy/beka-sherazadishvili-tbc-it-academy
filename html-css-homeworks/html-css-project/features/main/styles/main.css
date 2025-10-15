@@ -48,7 +48,6 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-    max-width: 1920px;
 }
 
 /* header main nav */
@@ -351,13 +350,13 @@ body {
     align-items: center;
     font-size: var(--medium-font-size);
     gap: 6.4rem;
-    padding: 7.6rem 0rem;
+    padding: 8rem 0rem;
     margin-right: 1.7rem;
 
 } 
 
 .collection-navbar {
-    margin-right: 4px;
+    margin-right: 0.2rem;
 }
 
 .collection-list {
@@ -463,7 +462,7 @@ body {
 
 .collection-details p:first-of-type {
     letter-spacing: 0.03rem;
-    margin: 1.6rem 0rem 0.9rem;
+    margin: 1.9rem 0rem 1.2rem;
 }
 
 .collection-details p:nth-of-type(2) {
@@ -476,7 +475,7 @@ body {
     display: flex;
     justify-content: start;
     gap: 0.7rem;
-    margin: -4px 0px 0px -1px;
+    margin: -0.2rem 0rem 0rem;
 }
 
 .circle-container div {
@@ -519,26 +518,49 @@ div.outer-circle {
 
 /* sale coupons */
 .main-sales-labels {
-    display: flex;
-    justify-content: space-between;
     background-color: var(--header-text);
     color: var(--general-color);
-    margin: 6.5rem 2rem 0rem 0rem;
-    padding: 2.2rem 0rem;
+    margin: 6.3rem 0 0 0;
+    padding: 2.2rem 0;
     border-radius: var(--img-radius);
-    gap: 4.3rem;
-    width: 1504px;
+    width: 100%;
+    max-width: var(--content-max-width);
+    overflow: hidden;
+    position: relative;
+    margin-right: 2rem;
 }
 
-.main-sales-labels div {
+.sale-items {
+    display: flex;
+    gap: 4.3rem;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+.sale-items div {
     display: flex;
     align-items: center;
     padding-left: 3.2rem;
     font-size: var(--extra-small-font-size);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.main-sales-labels img {
+.sales-item img {
     padding-left: 1rem;
+}
+
+.main-sales-labels:hover .sales-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 /* building bag */
@@ -550,7 +572,7 @@ div.outer-circle {
     width: var(--content-max-width);
     background: var(--hero-background);
     border-radius: var(--build-radius);
-    margin-top: 6.4rem;
+    margin: 6.5rem 1.2rem 0rem 0rem;
     padding: 8rem 0rem 1.3rem 0rem;
     box-shadow: var(--hero-box-shado);
 }
