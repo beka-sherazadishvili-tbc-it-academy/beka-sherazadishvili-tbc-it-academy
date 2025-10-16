@@ -1,0 +1,42 @@
+@media (max-width: 800px) {
+    /* resolutions X: -3, Y: -1 */
+    .footer-content {
+        grid-template-columns: repeat(2, 35.2rem);
+        grid-template-rows: 15.7rem 21.6rem;
+    }
+
+    .newsletter-section {
+        grid-column: 1 / -1;
+    }
+
+    .footer-container {
+        margin: 10.5rem 0rem 0rem -1rem;
+    }
+
+    .newsletter-section h2 {
+        line-height: 2.2rem;
+    }
+
+    .newsletter-section p {
+        margin: 1.9rem 0rem 1.5rem 0rem;
+    }
+
+    .submit-btn {
+        right: 1.2rem;
+    }
+
+    .email-input {
+        width: 95%;
+    }
+
+    .menu-section h3, .support-section h3 {
+        position: relative;
+        top: 0px;
+        margin-bottom: 2.2rem;
+    }
+
+    p.privacy-text {
+        line-height: 1.7rem;
+        margin-top: -0.5rem;
+    }
+}

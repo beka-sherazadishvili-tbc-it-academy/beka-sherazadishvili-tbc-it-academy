@@ -1,0 +1,110 @@
+@media (max-width: 800px) {
+    /* resolutions X: -3, Y: -1 */
+   .hero-section {
+        width: 73.6rem;
+        height: 65rem;
+        margin-left: -0.5rem;
+    }
+
+    /* text content */
+
+    .image-section div {
+        background-image: url('../.././../../assets/main/responsive/responsive-800/elegant-luxury-800.svg');
+    }
+
+    .text-content p {
+        letter-spacing: 0.02rem;
+    }
+
+    .text-content h1 {
+        overflow-wrap: break-word;
+    }
+
+    .text-content > div {
+        padding: 0rem 6rem 0rem 4rem;
+        margin: -0.7rem 0rem 0rem 1rem;
+    }
+
+    .text-content h1 span {
+        display: block;
+    }
+
+    /* brands */
+    .main-brands {
+        margin-top: -2rem;
+        gap: 3.4rem;
+    }
+
+    .main-brands-collection div {
+        width: 6.4rem;
+    }
+
+    /*  */
+    .main-collections {
+        gap: 6.1rem;
+    }
+
+    .collection-items {
+        margin-left: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .circle-container {
+        margin: -0.2rem -0.1rem 0rem;
+    }
+
+    .main-sales-labels {
+        margin: 6.1rem 0.3rem 0rem 0rem;
+        width: 73.5rem;
+    }
+
+    /* custom bags */
+
+    .build-your-bag {
+        width: 73.6rem;
+        margin: 6.3rem 0rem 0rem;
+    }
+
+    .custom-bag-img-container img {
+        border-radius: 1.2rem;
+    }
+
+    .custom-buttons div {
+        width: 21.7rem;
+    }
+
+    .custom-bag-choices > div:nth-child(3) h3 {
+        padding: 0.7rem 0rem 1.9rem 0rem;
+    }
+
+    .add-ons-buttons > div {
+        width: 100%;
+    }
+
+    .custom-bag-details {
+        padding: 0rem 3.3rem 3.2rem 3rem;
+        flex-direction: column;
+    }
+
+    .custom-bag-summary {
+        gap: 2.6rem;
+        padding-top: 3.6rem;
+    }
+
+    /*  */
+
+    .featured-collection {
+        margin: 6.4rem 0rem 0rem 1.8rem;
+        width: 73.6rem;
+    }
+
+    .featured-collection img {
+        width: 22.9rem;
+        height: 30.6rem;
+    }
+
+    .featured-collection span {
+        top: 48%;
+        left: 15.4%;
+    }
+}
