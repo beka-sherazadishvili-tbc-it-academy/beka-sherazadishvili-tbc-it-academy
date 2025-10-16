@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/featured.css">
+    <title>Bagstore</title>
+</head>
+<body>
+
+    <iframe src="../iframe/header/header.html" width="100%" height="81" frameborder="0"></iframe>
+    
+    <main class="main-container">
+        <section class="breadcrumb">
+            <p>Home / Women / <span>All Bags</span></p>
+        </section>
+
+        <section class="bags-main-container">
+            <aside class="search-container">
+                <div class="filter-box">
+                    <div class="filter-header">
+                        <h3>Filters</h3>
+                        <span>Clear all</span>
+                    </div>
+                    <div class="filter-categories">
+                        <h3>Category</h3>
+                        <div class="categories">
+                            <div class="custom-checkbox">
+                                <span></span>
+                                <p>All Bags</p>
+                            </div>
+                            <label><input type="checkbox">Totes</label>
+                            <label><input type="checkbox">Crossbody</label>
+                            <label><input type="checkbox">Satchels</label>
+                            <label><input type="checkbox">Clutches</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div>
+                            <input type="range" min="50" max="500" value="0">
+                            <div class="price-labels">
+                                <span>$50</span>
+                                <span>$500+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-colors">
+                        <h3>Color</h3>
+                        <div class="color-options">
+                            <div class="outer-circle ">
+                                <span class="inner-circle bg-color-black"></span>
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="filter-categories">
+                        <h3>Brand</h3>
+                        <div class="categories">
+                            <label><input type="checkbox">Bagstore</label>
+                            <label><input type="checkbox">Astisan Co.</label>
+                            <label><input type="checkbox">Urban Vogue</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="bags-container"></div>
+        </section>
+    </main>
+
+    <!-- <iframe src="../iframe/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe> -->
+</body>
+</html>

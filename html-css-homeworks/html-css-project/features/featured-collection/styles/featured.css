@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-border-color: #E5E5E5;
+    --hero-background: linear-gradient(167.88deg, #FAFAFA 0%, #F5F5F5 100%);
+    --brand-color: #A3A3A3;
+    --custom-bags-background: #D4D4D4;
+
+    /* font colors */
+    --secondary-text: #404040;
+    --header-text: #171717;
+    --label-text: #737373;
+    --general-text: #525252;
+    --general-color: #FFFFFF;
+    --hover-color: #FAFAFA;
+    --custom-bag-color: #262626;
+    --checkbox-color: #0075FF;
+    --following-background: #FEF2F2;
+    --notification-icon: #EF4444;
+    --footer-text-color: #9CA3AF;
+
+    /* font sizes */
+    --extra-small-font-size: 1.4rem;
+    --small-font-size: 1.6rem;
+    --medium-font-size: 1.8rem;
+    --large-font-size: 2rem;
+    --extra-large-font-size: 2.4rem;
+    --build-bag-font: 3.6rem;
+
+    /* width */
+    --content-max-width: 150.4rem;
+    --border-radius: 1.6rem;
+    --label-radius: 9999rem;
+    --button-radius: 1.2rem;
+    --img-radius: 1.6rem;
+    --build-radius: 2.4rem;
+
+    /* box shadows */
+    --filter-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 6%);
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+/* main container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 3.3rem 1.6rem;
+    margin-left: -0.8rem;
+    gap: 3.6rem;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: start;
+    width: var(--content-max-width);
+    max-width: 100%;
+    font-size: var(--extra-small-font-size);
+}
+
+.breadcrumb p {
+    color: var(--label-text);
+    font-weight: 400;
+    word-spacing: 0.9rem;
+}
+
+.breadcrumb span {
+    color: var(--header-text);
+    font-weight: 500;
+    word-spacing: 0rem;
+}
+
+.bags-main-container {
+    display: flex;
+    justify-content: start;
+    width: var(--content-max-width);
+    max-width: 100%;
+    gap: 3.2rem;
+}
+
+.search-container {
+    width: 36.8rem;
+    height: 100%;
+}
+
+.filter-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1px solid var(--header-border-color);
+    box-shadow: var(--filter-box-shadow);
+    width: 100%;
+    height: 76.9rem; 
+    border-radius: var(--button-radius);
+    padding: 2.5rem;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.9rem;
+}
+
+.filter-header h3 {
+    font-size: var(--medium-font-size);
+    line-height: 2.8rem;
+    color: var(--header-text);
+    font-weight: 600;
+}
+
+.filter-header span {
+    font-size: var(--extra-small-font-size);
+    line-height: 2rem;
+    color: var(--general-text);
+}
+
+.filter-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.filter-categories > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-size: var(--extra-small-font-size);
+    margin-left: -0.4rem;
+}
+
+.filter-categories input {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.custom-checkbox span {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem; 
+    background-color: var(--checkbox-color);
+}
+
+.custom-checkbox {
+    display: flex;
+    padding-left: 0.5rem;
+    gap: 1.1rem;
+}
+
+.filter-group input {
+    width: 100%;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* this part took from stack to remove slider on range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.8rem;
+  background: #ddd;
+  border-radius: 0.8rem;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+  margin-top: -8px;
+}
+
+.categories label {
+    display: flex;
+    gap: 1rem;
+}
+
+.categories {
+    margin-bottom: 5rem;
+}
+/*  */
+
+.filter-box h3 {
+    font-size: var(--small-font-size);
+}
+
+.filter-group span {
+    font-size: var(--extra-small-font-size);
+}
+
+.filter-group input {
+    margin: 2rem 0rem 1.5rem 0rem;
+}
+
+.filter-group {
+    margin-bottom: 8rem;
+}
+
+.color-options {
+    display: flex;
+    margin-left: -1rem;
+}
+
+.color-options div {
+    position: relative;
+    margin-top: 2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    margin-right: 1.2rem;
+}
+
+div.outer-circle {
+    position: relative;
+    margin-top: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: 1.2rem;
+    background-color: #F5F5F5;
+    border: 2px solid black;
+    z-index: 0;
+    top: -0.3rem;
+    left: 0.7rem;
+}
+
+span.inner-circle {
+    position: absolute;
+    width: 3.2rem;
+    height: 3.2rem;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: var(--header-text);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.color-options div:nth-child(2) {
+    background-color: #F5F5F5;
+    border: 1px solid var(--custom-bags-background);
+}
+
+.color-options div:nth-child(3) {
+    background-color: #FEF3C7;
+}
+
+.color-options div:nth-child(4) {
+    background-color: #991B1B;
+}
+
+.color-options div:nth-child(5) {
+    background-color: #1E3A8A;
+}
+
+.color-options div:nth-child(6) {
+    background-color: #166534;
+}
+
+.color-options div:nth-child(7) {
+    background-color: #6B21A8;
+}
+
+.filter-colo {
+    margin-bottom: 5.5rem;
+}
+
+.brands input {
+    position: relative;
+    top: -0.5rem;
+}
