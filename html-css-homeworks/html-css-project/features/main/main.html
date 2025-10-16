@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="../main/styles/responsive/main-1024.css">
     <link rel="stylesheet" href="../main/styles/responsive/main-800.css">
+    <link rel="stylesheet" href="./styles/responsive/main-450.css">
     <title>Bagstore</title>
 </head>
 <body>
@@ -20,8 +21,8 @@
             <div class="text-content">
                 <div>
                     <span class="hero-label">2025 PRESENT</span>
-                    <h1>Best Leather Bag Collection <span>For You</span></h1>
-                    <p>Discover the epitome of style and craftsmanship with our curated leather bag collection.</p>
+                    <h1>Best Leather Bag Collec<span>tion</span> <span>For You</span></h1>
+                    <p>Discover the epitome of style and craftsmanship <span>with our curated leather bag collection.</span></p>
                     <a href="#shop" class="shopping-btn">
                         <span>Start Shopping</span>
                         <img src="../../assets/main/arrow.svg" alt="">
@@ -80,7 +81,11 @@
                             <img src="../../assets/main/black-bucket.svg" alt="">
                         </div>
                     </div>
-                    <img src="../../assets/main/bag-1.svg" alt="">
+                    <div>
+                        <picture>
+                            <img src="../../assets/main/bag-1.svg" alt="">
+                        </picture>
+                    </div>
                     <p>Hobo Small</p>
                     <p>$199.00 CAD</p>
                     <div class="circle-container">
@@ -100,7 +105,10 @@
                             <img src="../../assets/main/black-bucket.svg" alt="">
                         </div>
                     </div>
-                    <img src="../../assets/main/bag-2.svg" alt="">
+                    <picture>
+                        <source srcset="../../assets/main/responsive/responsive-450/satchel-450.svg" media="(max-width: 450px)">
+                        <img src="../../assets/main/bag-2.svg" alt="">
+                    </picture>
                     <p>Satchel Medium</p>
                     <p>$249.00 CAD</p>
                     <div class="circle-container">
@@ -120,7 +128,10 @@
                             <img src="../../assets/main/black-bucket.svg" alt="">
                         </div>
                     </div>
-                    <img src="../../assets/main/bag-3.svg" alt="">
+                    <picture>
+                        <source srcset="../../assets/main/responsive/responsive-450/tote-450.svg" media="(max-width: 450px)">
+                        <img src="../../assets/main/bag-3.svg" alt="">
+                    </picture>
                     <p>Tote Large</p>
                     <p>$299.00 CAD</p>
                     <div class="circle-container">
@@ -140,7 +151,12 @@
                             <img src="../../assets/main/black-bucket.svg" alt="">
                         </div>
                     </div>
-                    <img src="../../assets/main/bag-4.svg" alt="">
+                    <div>
+                        <picture>
+                            <source srcset="../../assets/main/responsive/responsive-450/crossbody-450.svg" media="(max-width: 450px)">
+                            <img src="../../assets/main/bag-4.svg" alt="">
+                        </picture>
+                    </div>
                     <p>Crossbody Compact</p>
                     <p>$179.00 CAD</p>
                     <div class="circle-container">
@@ -207,7 +223,7 @@
             <div class="custom-bag-details">
                 <div class="custom-bag-img-container">
                     <picture>
-                    <source srcset="../../assets/main/custom-bag-390.jpg" media="(max-width: 390px)">
+                    <source srcset="../../assets/main/responsive/responsive-450/custom-bag-450.svg" media="(max-width: 450px)">
                     <source srcset="../../assets/main/responsive/responsive-800/custom-bag-800.svg" media="(max-width: 800px)">
                     <source srcset="../../assets/main/responsive/responsive-1024/custom-bag-1024.svg" media="(max-width: 1024px)">
                     <img src="../../assets/main/custom-bag.svg" alt="custom bags">
@@ -277,6 +293,6 @@
         </section> 
     </main>
 
-    <iframe src="../iframe/foter/footer.html" width="100%" height="600"  frameborder="0"></iframe>
+    <iframe src="../iframe/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe>
 </body>
 </html>

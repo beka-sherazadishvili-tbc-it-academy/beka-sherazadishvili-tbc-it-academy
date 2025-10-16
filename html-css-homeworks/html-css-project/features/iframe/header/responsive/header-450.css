@@ -1,0 +1,14 @@
+@media (max-width: 450px) {
+    /* header */
+    .header-container {
+        gap: 0rem;
+    }
+
+    .header-main-nav {
+        display: none;
+    }
+
+    .header-container {
+        gap: 13.1rem;
+    }
+}

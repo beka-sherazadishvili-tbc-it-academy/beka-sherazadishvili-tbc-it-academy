@@ -303,7 +303,6 @@ body, html {
     cursor: pointer;
 }
 
-
 .collection-details:hover .collection-hover-icons {
     opacity: 1;
 }
@@ -332,7 +331,13 @@ body, html {
     filter: invert(1) brightness(2);
 }
 
-.collection-details > img {
+/* .collection-details > img {
+    height: 35.2rem;
+    width: 35.2rem;
+    border-radius: var(--img-radius);
+} */
+
+.collection-details picture > img {
     height: 35.2rem;
     width: 35.2rem;
     border-radius: var(--img-radius);

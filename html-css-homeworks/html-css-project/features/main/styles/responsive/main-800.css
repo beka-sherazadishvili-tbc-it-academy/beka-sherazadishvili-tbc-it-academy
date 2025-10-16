@@ -25,7 +25,7 @@
         margin: -0.7rem 0rem 0rem 1rem;
     }
 
-    .text-content h1 span {
+    .text-content h1 span:not(:first-child) {
         display: block;
     }
 
@@ -67,6 +67,10 @@
 
     .custom-bag-img-container img {
         border-radius: 1.2rem;
+    }
+
+    .custom-bag-img-container {
+        width: 100%;
     }
 
     .custom-buttons div {

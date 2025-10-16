@@ -1,0 +1,30 @@
+@media (max-width: 450px) {
+    /* resolutions X: -3, Y: -1 */
+    .footer-content {
+        grid-template-columns: 41.8rem;
+        grid-template-rows: 18.95rem 21.6rem 10rem;
+        gap: 2.2rem;
+    }
+
+    .footer-container {
+        margin: 10.7rem 0rem 0rem -2.5rem;
+    }
+
+    .newsletter-section p {
+        margin: 1.6rem 0rem 1.6rem 0rem;
+        letter-spacing: -0.01rem;
+    }
+
+    .submit-btn {
+        right: 0.2rem;
+    }
+
+    p.privacy-text {
+        line-height: 1.7rem;
+        margin-top: -0.5rem;
+    }
+
+    .support-section {
+        margin-top: 1rem;
+    }
+}
