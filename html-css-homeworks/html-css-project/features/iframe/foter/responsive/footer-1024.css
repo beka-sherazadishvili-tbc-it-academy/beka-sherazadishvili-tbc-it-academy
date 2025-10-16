@@ -1,0 +1,36 @@
+@media (max-width: 1024px) {
+    /* resolutions X: -3, Y: -1 */
+    .footer-content {
+        grid-template-columns: repeat(3, 22.4rem);
+    }
+
+    .footer-container {
+        margin: 10.5rem 0rem 0rem -2.2rem;
+    }
+
+    .newsletter-section h2 {
+        line-height: 2.2rem;
+    }
+
+    .newsletter-section p {
+        margin: 2.5rem 0rem 1.3rem 0rem;
+    }
+
+    .submit-btn {
+        right: 1.2rem;
+    }
+
+    .email-input {
+        width: 95%;
+    }
+
+    .menu-section h3, .support-section h3 {
+        position: relative;
+        top: -3px;
+    }
+
+    p.privacy-text {
+        line-height: 1.7rem;
+        margin-top: -0.5rem;
+    }
+}

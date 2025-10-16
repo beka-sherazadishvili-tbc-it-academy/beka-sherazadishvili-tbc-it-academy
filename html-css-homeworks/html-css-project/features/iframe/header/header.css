@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-border-color: #E5E5E5;
+
+    /* font colors */
+    --secondary-text: #404040;
+    --header-text: #171717;
+    --general-color: #FFFFFF;
+    --notification-icon: #EF4444;
+
+    /* font sizes */
+    --extra-small-font-size: 1.4rem;
+    --extra-large-font-size: 2.4rem;
+
+    /* width */
+    --label-radius: 9999rem;
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+/* header main nav */
+.header-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 8rem;
+    border-bottom: 1px solid var(--header-border-color);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-right: 1.4rem;
+    gap: 23rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: var(--extra-large-font-size);
+    font-weight: 700;
+    gap: 3rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.14rem;
+}
+
+.header-main-nav ul {
+    display: flex;
+    font-size: var(--extra-small-font-size);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-main-nav a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.header-main-nav ul li:not(:first-child) {
+    padding-left: 3.2rem;
+}
+
+.header-main-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.9rem;
+    height: 0.2rem;
+    width: 100%;
+    background: #171717;
+}
+
+.active {
+    top: -0.3rem;
+}
+
+.header-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    gap: 2.6rem;
+}
+
+.header-search-box {
+    width: 22.4rem;
+    height: 4.2rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.8rem;
+    padding-left: 4.25rem;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    position: relative;
+    left: -1rem;
+}
+
+.info-container a {
+    text-decoration: none;
+    color: var(--secondary-text);
+}
+
+.header-nav-icons {
+    display: flex;
+    position: relative;
+    gap: 2.4rem;
+    left: 0.8rem;
+}
+
+.cart-icon {
+    position: relative;
+    margin-bottom: -4px;
+}
+
+.cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -1.2rem;
+    right: -1rem;
+    color: var(--general-color);
+    background-color: var(--header-text);
+    border-radius: var(--label-radius);
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.notification {
+    position: absolute;
+    right: -0.4rem;
+    top: -0.3rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--notification-icon);
+    border-radius: var(--label-radius);
+}

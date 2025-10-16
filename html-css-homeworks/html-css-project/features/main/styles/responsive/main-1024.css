@@ -1,50 +1,5 @@
 @media (max-width: 1024px) {
     /* resolutions X: -3, Y: -1 */
-    /* header */
-    .header-container {
-        gap: 0rem;
-    }
-
-    .logo {
-        gap: 0.8rem;
-        font-size: 2.2rem;
-    }
-
-    .info-container {
-        gap: 1.8rem;
-        left: -0.4rem;
-        top: -0.7rem;
-    }
-
-    .header-main-nav ul li:not(:first-child) {
-        padding-left: 1.5rem;
-    }
-
-    .header-main-nav ul {
-        padding: 0rem 1.8rem 0rem 8.5rem;
-    }
-
-    .header-search-box {
-        position: relative;
-        width: 15.7rem;
-        height: 4.2rem;
-        letter-spacing: 0.1rem;
-        padding-left: 0.5rem;
-        left: 7px;
-        top: 3px;
-    }
-
-    .header-main-nav a.active::after {
-        left: 0rem;
-    }
-
-    .custom-position {
-        position: relative;
-        top: -4px;
-        left: 3px;
-    }
-
-    /* hero section */
     .hero-section {
         width: 99.2rem;
         margin: 0rem;
@@ -100,7 +55,7 @@
     }
 
     .custom-buttons div {
-        margin: 0.4rem 0rem 0rem;
+        margin: 0.2rem 0rem 0rem;
         width: 8.5rem;
     }
 
@@ -129,39 +84,5 @@
     .featured-collection img {
         width: 31.5rem;
         height: 42rem;
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(3, 22.4rem);
-    }
-
-    .footer-container {
-        margin: 11rem 0rem 0rem -2.2rem;
-    }
-
-    .newsletter-section h2 {
-        line-height: 2.2rem;
-    }
-
-    .newsletter-section p {
-        margin: 2rem 0rem 1.3rem 0rem;
-    }
-
-    .submit-btn {
-        right: 1.2rem;
-    }
-
-    .email-input {
-        width: 95%;
-    }
-
-    .menu-section h3, .support-section h3 {
-        position: relative;
-        top: -3px;
-    }
-
-    p.privacy-text {
-        line-height: 1.7rem;
-        margin-top: -0.5rem;
     }
 }
