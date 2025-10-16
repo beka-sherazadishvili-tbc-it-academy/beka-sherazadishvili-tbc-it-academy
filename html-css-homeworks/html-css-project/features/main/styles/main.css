@@ -19,6 +19,7 @@
     --checkbox-color: #0075FF;
     --following-background: #FEF2F2;
     --notification-icon: #EF4444;
+    --footer-text-color: #9CA3AF;
 
     /* font sizes */
     --extra-small-font-size: 1.4rem;
@@ -42,13 +43,11 @@
     --hero-box-shado: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);
 }
 
-html {
+body, html {
+    width: 100%;
+    overflow-x: hidden;
     font-size: 10px;
-}
-
-body {
     font-family: "Inter", sans-serif;
-    margin: 0 auto;
 }
 
 /* header main nav */
@@ -282,12 +281,13 @@ body {
     display: flex;
 }
 
-.image-section img {
+.image-section div {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-bottom-right-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    background-image: url('../../../assets/main/elegant-luxury.svg');
 }
 
 /* brands */
@@ -386,10 +386,15 @@ body {
 .current-collection {
     background-color: var(--header-text);
     color: var(--general-color);
+}    
+
+.collection-list div:not(:first-child) {
+    color: var(--label-text);
 }
 
-.current-collection li::marker {
-    color: red;
+.collection-list div:not(:first-child):hover {
+    background-color: #eeeeee;
+    color: var(--header-text);
 }
 
 .collection-items {
@@ -413,7 +418,7 @@ body {
     height: 4rem;
 }
 
-.collection-hover-icons img {
+.collection-hover-icons div {
     width: 2rem;
     height: 2rem;
     padding: 1rem;
@@ -432,10 +437,19 @@ body {
     opacity: 1;
 }
 
-.hover-red img:hover {
+.hover-red div {
+    background-image: url('../../../assets/main/followings.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hover-red div:hover {
     border-radius: var(--label-radius);
     background-color: var(--following-background);
-    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(326deg) brightness(119%) contrast(119%);
+    background-image: url('../../../assets/main/following-hover.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .hover-black:hover {
@@ -521,14 +535,13 @@ div.outer-circle {
 .main-sales-labels {
     background-color: var(--header-text);
     color: var(--general-color);
-    margin: 6.3rem 0 0 0;
+    margin: 6.3rem 2rem 0 0;
     padding: 2.2rem 0;
     border-radius: var(--img-radius);
     width: 100%;
     max-width: var(--content-max-width);
     overflow: hidden;
     position: relative;
-    margin-right: 2rem;
 }
 
 .sale-items {
@@ -545,6 +558,8 @@ div.outer-circle {
     font-size: var(--extra-small-font-size);
     white-space: nowrap;
     flex-shrink: 0;
+    gap: 1.5rem;
+
 }
 
 .sales-item img {
@@ -783,6 +798,7 @@ div.chosen-add-on > div {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
+    margin-left: -1rem;
 }
 
 .featured-collection img {
@@ -805,4 +821,112 @@ div.chosen-add-on > div {
     font-size: 3rem;
     font-weight: 700;
     z-index: 2;
+}
+
+/* footer container */
+.footer-container {
+    padding: 4rem;
+    margin: 11rem 0rem 0rem 16rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 35.2rem);
+    gap: 3.2rem;
+}
+
+.newsletter-section h2 {
+    font-size: var(--medium-font-size);
+    font-weight: bold;
+    color: var(--header-text);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-section p {
+    color: var(--general-text);
+    font-size: var(--extra-small-font-size);
+    line-height: 1.7;
+    margin: 1.7rem 0rem 1.5rem 0rem;
+}
+
+.email-form {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.email-input {
+    width: 100%;
+    height: 4.72rem;
+    padding: 1.2rem 6rem 1.2rem 1rem;
+    border: 0.1rem solid var(--custom-bags-background);
+    border-radius: 1.2rem;
+    font-size: var(--extra-small-font-size);
+    color: var(--footer-text-color);
+}
+
+.submit-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4.5rem;
+    background: var(--header-text);
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    border: none;
+    color: var(--general-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.submit-btn:hover {
+    background: var(--custom-bag-color);
+}
+
+p.privacy-text {
+    font-size: 1.2rem;
+    color: var(--footer-text-color);
+    margin-top: -0.5rem;
+}
+
+.privacy-text a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+
+.privacy-text a:hover {
+    text-decoration: underline;
+}
+
+.menu-section h3,
+.support-section h3 {
+    font-size: var(--extra-small-font-size);
+    font-weight: 700;
+    color: var(--header-text);
+    margin-bottom: 2rem;
+}
+
+.menu-section ul,
+.support-section ul {
+    list-style: none;
+}
+
+.menu-section li,
+.support-section li {
+    margin-bottom: 1.8rem;
+}
+
+.menu-section a,
+.support-section a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    font-size: var(--extra-small-font-size);
+}
+
+.menu-section a:hover,
+.support-section a:hover {
+    color: var(--header-text);
 }

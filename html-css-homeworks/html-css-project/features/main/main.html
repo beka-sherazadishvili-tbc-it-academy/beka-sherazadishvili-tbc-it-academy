@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="../main/styles/responsive/main-1024.css">
     <title>Bagstore</title>
 </head>
 <body>
@@ -23,8 +24,8 @@
                     <li><a href="#">Women</a></li>
                     <li><a href="#">Children</a></li>
                     <li><a href="#">Brand</a></li>
-                    <li><a href="#" class="active">New</a></li>
-                    <li><a href="#">Popular</a></li>
+                    <li><a href="#" class="active custom-position">New</a></li>
+                    <li><a class="custom-position" href="#">Popular</a></li>
                 </ul>
             </nav>
             <div class="header-search-container">
@@ -62,7 +63,7 @@
                 </div>
             </div>
             <div class="image-section">
-                <img src="../../assets/main/elegant-luxury.svg" alt="Leather Bag Collection">
+                <div></div>
             </div>
         </section>
 
@@ -107,7 +108,7 @@
                 <div class="collection-details">
                     <div class="collection-hover-icons">
                         <div class="hover-red">
-                            <img src="../../assets/main/followings.svg" alt="">
+                            <div></div>
                         </div>
                         <div class="hover-black">
                             <img src="../../assets/main/black-bucket.svg" alt="">
@@ -125,6 +126,14 @@
                     </div>
                 </div>
                 <div class="collection-details">
+                    <div class="collection-hover-icons">
+                        <div class="hover-red">
+                            <div></div>
+                        </div>
+                        <div class="hover-black">
+                            <img src="../../assets/main/black-bucket.svg" alt="">
+                        </div>
+                    </div>
                     <img src="../../assets/main/bag-2.svg" alt="">
                     <p>Satchel Medium</p>
                     <p>$249.00 CAD</p>
@@ -137,6 +146,14 @@
                     </div>
                 </div>
                 <div class="collection-details">
+                    <div class="collection-hover-icons">
+                        <div class="hover-red">
+                            <div></div>
+                        </div>
+                        <div class="hover-black">
+                            <img src="../../assets/main/black-bucket.svg" alt="">
+                        </div>
+                    </div>
                     <img src="../../assets/main/bag-3.svg" alt="">
                     <p>Tote Large</p>
                     <p>$299.00 CAD</p>
@@ -149,6 +166,14 @@
                     </div>
                 </div>
                 <div class="collection-details">
+                    <div class="collection-hover-icons">
+                        <div class="hover-red">
+                            <div></div>
+                        </div>
+                        <div class="hover-black">
+                            <img src="../../assets/main/black-bucket.svg" alt="">
+                        </div>
+                    </div>
                     <img src="../../assets/main/bag-4.svg" alt="">
                     <p>Crossbody Compact</p>
                     <p>$179.00 CAD</p>
@@ -215,7 +240,12 @@
             </div>
             <div class="custom-bag-details">
                 <div class="custom-bag-img-container">
-                    <img src="../../assets/main/custom-bag.svg" alt="">
+                    <picture>
+                    <source srcset="../../assets/main/custom-bag-390.jpg" media="(max-width: 390px)">
+                    <source srcset="../../assets/main/custom-bag-768.jpg" media="(max-width: 768px)">
+                    <source srcset="../../assets/main/responsive/responsive-1024/custom-bag-1024.svg" media="(max-width: 1024px)">
+                    <img src="../../assets/main/custom-bag.svg" alt="custom bags">
+                    </picture>
                 </div>
                 <div class="custom-bag-choices">
                     <div>
@@ -280,5 +310,41 @@
             </div>
         </section> 
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="newsletter-section">
+                    <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+                    <p>AND BE THE FIRST TO KNOW ABOUT THE LATEST RELEASES, OFFERS AND NEWS FROM BAGSTORE.COM</p>
+                    <form class="email-form">
+                        <input type="email" class="email-input" placeholder="Enter your email here" required>
+                        <div type="submit" class="submit-btn">→</div>
+                    </form>
+                    <p class="privacy-text">I have read and agree to the <a href="#">bagstore privacy policy</a>.</p>
+                </div>
+
+                <div class="menu-section">
+                    <h3>MENU</h3>
+                    <ul>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Children</a></li>
+                        <li><a href="#">Brand</a></li>
+                        <li><a href="#">New</a></li>
+                        <li><a href="#">Popular</a></li>
+                    </ul>
+                </div>
+
+                <div class="support-section">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
