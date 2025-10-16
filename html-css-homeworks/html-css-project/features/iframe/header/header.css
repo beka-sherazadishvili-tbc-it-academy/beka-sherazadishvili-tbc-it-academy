@@ -102,6 +102,7 @@ body, html {
     border: 0.1rem solid #ccc;
     border-radius: 0.8rem;
     padding-left: 4.25rem;
+    outline: none;
 }
 
 .info-container {

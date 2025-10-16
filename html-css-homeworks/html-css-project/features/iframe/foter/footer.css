@@ -68,6 +68,7 @@ footer {
     border-radius: 1.2rem;
     font-size: var(--extra-small-font-size);
     color: var(--footer-text-color);
+    outline: none;
 }
 
 .submit-btn {

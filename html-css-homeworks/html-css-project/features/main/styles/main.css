@@ -268,7 +268,7 @@ body, html {
     color: var(--header-text);
 }
 
-.collection-items {
+/* .collection-items {
     display: flex;
     gap: 3.2rem;
 }
@@ -331,12 +331,6 @@ body, html {
     filter: invert(1) brightness(2);
 }
 
-/* .collection-details > img {
-    height: 35.2rem;
-    width: 35.2rem;
-    border-radius: var(--img-radius);
-} */
-
 .collection-details picture > img {
     height: 35.2rem;
     width: 35.2rem;
@@ -347,13 +341,14 @@ body, html {
     position: absolute;
 }
 
-.collection-details > img:hover {
+.collection-details img:hover {
     box-shadow: var(--custom-bag-shadow);
 }
 
 .collection-details p:first-of-type {
     letter-spacing: 0.03rem;
     margin: 1.9rem 0rem 1.2rem;
+    font-size: var(--medium-font-size);
 }
 
 .collection-details p:nth-of-type(2) {
@@ -365,6 +360,7 @@ body, html {
 .circle-container {
     display: flex;
     justify-content: start;
+    align-items: center;
     gap: 0.7rem;
     margin: -0.2rem 0rem 0rem;
 }
@@ -405,7 +401,7 @@ div.outer-circle {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-}
+} */
 
 /* sale coupons */
 .main-sales-labels {
