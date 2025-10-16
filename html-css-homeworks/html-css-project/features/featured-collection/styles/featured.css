@@ -109,7 +109,7 @@ body, html {
     margin-bottom: 2.9rem;
 }
 
-.filter-header h3 {
+.filter-header h2 {
     font-size: var(--medium-font-size);
     line-height: 2.8rem;
     color: var(--header-text);
