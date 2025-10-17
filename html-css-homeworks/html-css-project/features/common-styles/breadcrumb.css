@@ -1,0 +1,26 @@
+:root {
+    --header-text: #171717;
+    --label-text: #737373;
+    --extra-small-font-size: 1.4rem;
+    --content-max-width: 150.4rem;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: start;
+    width: var(--content-max-width);
+    max-width: 100%;
+    font-size: var(--extra-small-font-size);
+}
+
+.breadcrumb p {
+    color: var(--label-text);
+    font-weight: 400;
+    word-spacing: 0.3rem;
+}
+
+.breadcrumb span {
+    color: var(--header-text);
+    font-weight: 500;
+    word-spacing: 0rem;
+}

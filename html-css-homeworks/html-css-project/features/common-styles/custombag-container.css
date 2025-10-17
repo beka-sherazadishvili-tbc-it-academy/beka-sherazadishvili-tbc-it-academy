@@ -73,6 +73,10 @@ body, html {
     outline-offset: 0px;
 }
 
+.bags-img-collections div img {
+    border-radius: 1.2rem;
+}
+
 .bags-img-collections div:first-child:hover {
     outline-offset: 0.4rem;
 }
@@ -294,4 +298,46 @@ div.chosen-add-on > div {
     width: 1.8rem;
     height: 1.6rem;
     background-image: url('../../assets/common/empty-star.svg');
+}
+
+/* custombag header and photo */
+.build-your-bag {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.4rem;
+    width: var(--content-max-width);
+    background: var(--hero-background);
+    border-radius: var(--build-radius);
+    margin: 6.5rem 1.2rem 0rem 0rem;
+    padding: 8rem 0rem 1.3rem 0rem;
+    box-shadow: var(--hero-box-shado);
+}
+
+.build-your-bag h1 {
+    font-size: var(--build-bag-font);
+    padding-bottom: 0.8rem;
+    font-weight: 700;
+    margin: 0.2rem 0rem 1.6rem 0rem;
+    letter-spacing: 0.11rem;
+}
+
+.build-your-bag p {
+    font-size: var(--medium-font-size);
+    letter-spacing: 0.017rem;
+    margin-bottom: 6.4rem;
+}
+
+.custom-bag-details {
+    display: flex;
+    gap: 4.8rem;
+    padding: 0rem 3.2rem 3.2rem 3.2rem;
+}
+
+.custom-bag-img-container {
+    background-color: var(--general-color);
+    width: 65.8%;
+    height: 91.5%;
+    border-radius: var(--img-radius);
+    box-shadow: var(--custom-bag-shadow);
 }
