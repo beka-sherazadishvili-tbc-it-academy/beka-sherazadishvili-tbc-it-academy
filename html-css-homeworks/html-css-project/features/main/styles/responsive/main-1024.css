@@ -85,4 +85,16 @@
         width: 31.5rem;
         height: 42rem;
     }
+
+    .hidden-light-question-mark {
+        display: block;
+    }
+
+    .hidden-light-question-mark:hover {
+        display: none;
+    }
+
+    .hidden-light-question-mark:hover {
+        display: none;
+    }
 }

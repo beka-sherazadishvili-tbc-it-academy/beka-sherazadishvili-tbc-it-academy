@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="stylesheet" href="../../../../../utils/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/shopping-cart.css">
-    <link rel="stylesheet" href="../common-styles/custombag-container.css">
-    <link rel="stylesheet" href="../common-styles/color-options.css">
-    <link rel="stylesheet" href="../common-styles/breadcrumb.css">
-    <link rel="stylesheet" href="../common-styles/cart-items.css">
-    <link rel="stylesheet" href="../iframe/foter/footer.css">
+    <link rel="stylesheet" href="../../common-styles/custombag-container.css">
+    <link rel="stylesheet" href="../../common-styles/color-options.css">
+    <link rel="stylesheet" href="../../common-styles/breadcrumb.css">
+    <link rel="stylesheet" href="../../common-styles/cart-items.css">
+    <link rel="stylesheet" href="../../components/foter/footer.css">
     <title>Bagstore</title>
 </head>
 <body>
-    <iframe src="../iframe/header/header.html" width="100%" height="81" frameborder="0"></iframe>
+    <iframe src="../../components/header/header.html" width="100%" height="81" frameborder="0"></iframe>
     
     <main class="shopping-cart-container">
         <section class="breadcrumb">
@@ -39,7 +39,7 @@
                                 <div>
                                     <div class="cart-label">new</div>
                                     <picture>
-                                        <img src="../../assets/shopping-cart/hobo-small.svg" alt="hobo-small">
+                                        <img src="../../../assets/shopping-cart/hobo-small.svg" alt="hobo-small">
                                     </picture>
                                 </div>
                                 <div class="checkout-items-details">
@@ -65,8 +65,7 @@
                                         <div>+</div>
                                     </div>
                                     <span>$199.00</span>
-                                    <div>
-                                        <img src="../../assets/shopping-cart/delete-icon.svg" alt="">
+                                    <div class="delete-icon">
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +79,7 @@
                                 <div>
                                     <div class="cart-label sales-color">Sale</div>
                                     <picture>
-                                        <img src="../../assets/shopping-cart/hobo-small.svg" alt="hobo-small">
+                                        <img src="../../../assets/shopping-cart/hobo-small.svg" alt="hobo-small">
                                     </picture>
                                 </div>
                                 <div class="checkout-items-details">
@@ -106,8 +105,7 @@
                                         <div>+</div>
                                     </div>
                                     <span>$498.00</span>
-                                    <div>
-                                        <img src="../../assets/shopping-cart/delete-icon.svg" alt="">
+                                    <div class="delete-icon">
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +119,7 @@
                                 <div>
                                     <div class="cart-label custom-color">Custom</div>
                                     <picture>
-                                        <img src="../../assets/shopping-cart/hobo-small.svg" alt="hobo-small">
+                                        <img src="../../../assets/shopping-cart/hobo-small.svg" alt="hobo-small">
                                     </picture>
                                 </div>
                                 <div class="checkout-items-details">
@@ -147,8 +145,7 @@
                                         <div>+</div>
                                     </div>
                                     <span>$214.00</span>
-                                    <div>
-                                        <img src="../../assets/shopping-cart/delete-icon.svg" alt="">
+                                    <div class="delete-icon">
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +153,7 @@
                     </div>
                 </div>
                 <div class="order-summary-btns">
-                    <div><img src="../../assets/shopping-cart/left.svg" alt=""> Continue Shopping</div>
+                    <div><img src="../../../assets/shopping-cart/left.svg" alt=""> <span>Continue Shopping</span></div>
                     <div>Clear Shopping Cart</div>
                 </div>
             </div>
@@ -192,17 +189,17 @@
                     <div class="btn-contianer">
                         <div class="add-to-bag-btn proceed-btn">
                             <a href="">
-                                <span>Proceed to Checkout <img src="../../assets/shopping-cart/arrow.svg" alt=""></span>
+                                <span>Proceed to Checkout <img src="../../../assets/shopping-cart/arrow.svg" alt=""></span>
                             </a>
                         </div>
                     </div>
                     <div class="payment-container">
                             <p>We Accept</p>
-                            <div>
-                                <img src="../../assets/shopping-cart/visa.svg" alt="">
-                                <img src="../../assets/shopping-cart/mastercard.svg" alt="">
-                                <img src="../../assets/shopping-cart/paypal.svg" alt="">
-                                <img src="../../assets/shopping-cart/amex.svg" alt="">
+                            <div class="payments">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
                         </div>
                     </div>
                 </div>
@@ -218,10 +215,10 @@
             <div class="custom-bag-details">
                 <div class="custom-bag-img-container">
                     <picture>
-                    <source srcset="../../assets/main/responsive/responsive-450/custom-bag-450.svg" media="(max-width: 450px)">
-                    <source srcset="../../assets/main/responsive/responsive-800/custom-bag-800.svg" media="(max-width: 800px)">
-                    <source srcset="../../assets/main/responsive/responsive-1024/custom-bag-1024.svg" media="(max-width: 1024px)">
-                    <img src="../../assets/shopping-cart/live-bag.svg" alt="custom bags">
+                    <source srcset="../../../assets/main/responsive/responsive-450/custom-bag-450.svg" media="(max-width: 450px)">
+                    <source srcset="../../../assets/main/responsive/responsive-800/custom-bag-800.svg" media="(max-width: 800px)">
+                    <source srcset="../../../assets/main/responsive/responsive-1024/custom-bag-1024.svg" media="(max-width: 1024px)">
+                    <img src="../../../assets/shopping-cart/live-bag.svg" alt="custom bags">
                     </picture>
                 </div>
                 <div class="custom-bag-choices">
@@ -272,7 +269,7 @@
                         </div>
                         <div class="add-to-bag-btn">
                             <a href="">
-                                <img src="../../assets/main/bucket.svg" alt="">
+                                <img src="../../../assets/main/bucket.svg" alt="">
                                 <span>Add to Bag</span>
                             </a>
                         </div>
@@ -282,6 +279,6 @@
         </section>
     </main>
 
-    <iframe src="../iframe/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe>
+    <iframe src="../../components/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe>
 </body>
 </html>

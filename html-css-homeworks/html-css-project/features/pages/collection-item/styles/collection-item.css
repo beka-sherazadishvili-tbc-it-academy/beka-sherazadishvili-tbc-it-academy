@@ -227,6 +227,10 @@ body, html {
     border: 1px solid #D4D4D4;
 }
 
+.custom-bag-options .wrapper-btn:hover {
+    background-color: #FAFAFA;
+}
+
 .custom-bag-options .wrapper-btn span {
     color: var(--header-text);
 }
@@ -240,6 +244,10 @@ body, html {
     flex-direction: column;
     gap: 4.3rem;
     padding: 4.7rem 0;
+}
+
+.collection-sub-description img:hover {
+    filter: hue-rotate(180deg) saturate(5) brightness(0.5);
 }
 
 .collection-sub-description > div:not(:first-child) {
@@ -359,6 +367,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
 }
+
 .rating-header div {
     display: flex;
     align-items: center;
@@ -369,6 +378,11 @@ body, html {
     border: 2px solid var(--header-border-color);
     font-size: var(--small-font-size);
     font-weight: 600;
+    cursor: pointer;
+}
+
+.rating-header div:hover {
+    background-color: #FAFAFA;
 }
 
 .rating-header h1 {

@@ -211,6 +211,18 @@ body, html {
     opacity: 0;
 }
 
+.hidden-light-question-mark {
+    display: none;
+}
+
+.hidden-bold-question-mark {
+    display: none;
+}
+
+.hidden-exlamation-mark {
+    display: none;
+}
+
 .hidden-brand-img:hover {
     opacity: 1;
 }

@@ -40,6 +40,7 @@
     /* box shadows */
     --filter-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 6%);
     --hero-box-shado: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);
+    --sub-img-shadows: 0px 1px 2px 0px rgba(0, 0, 0, 5%);
 }
 
 body, html {
@@ -68,6 +69,10 @@ body, html {
     gap: 1.6rem;
 }
 
+.bags-img-collections div {
+    cursor: pointer;
+}
+
 .bags-img-collections div:first-child {
     border-radius: 1.2rem;
     outline: 0.2rem solid #171717;
@@ -76,6 +81,7 @@ body, html {
 
 .bags-img-collections div img {
     border-radius: 1.2rem;
+    box-shadow: var(--sub-img-shadows);
 }
 
 .bags-img-collections div:first-child:hover {
@@ -139,6 +145,7 @@ body, html {
     border-radius: var(--button-radius);
     background-color: var(--general-color);
     box-shadow: var(--passive-box-shadow);
+    cursor: pointer;
 }
 
 div.active-custom-btn {
@@ -247,6 +254,11 @@ div.chosen-add-on > div {
     height: 6rem;
     background-color: var(--header-text);
     border-radius: var(--button-radius);
+    cursor: pointer;
+}
+
+.add-to-bag-btn:hover {
+    background-color: var(--custom-bag-color);
 }
 
 .add-to-bag-btn a {
@@ -340,7 +352,6 @@ div.chosen-add-on > div {
     width: 65.8%;
     height: 91.5%;
     border-radius: var(--img-radius);
-    box-shadow: var(--custom-bag-shadow);
 }
 
 /* custom sizes */

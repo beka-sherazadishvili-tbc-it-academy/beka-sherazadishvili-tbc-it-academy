@@ -22,6 +22,7 @@
     --footer-text-color: #9CA3AF;
     --sales-color: #F59E0B;
     --custom-color: #A855F7;
+    --clear-cart-color: #B91C1C;
 
     /* font sizes */
     --extra-small-font-size: 1.4rem;
@@ -222,9 +223,72 @@ body, html {
     letter-spacing: 0.06rem;
 }
 
+.order-summary-btns div:first-child span:hover {
+    font-size: var(--small-font-size);
+    color: var(--general-text);
+    padding-left: 0.5rem;
+}
+
 .order-summary-btns div:last-child {
     font-size: var(--extra-small-font-size);
     color: var(--general-text);
+}
+
+.order-summary-btns div:last-child:hover {
+    color: var(--clear-cart-color);
+    text-decoration: underline;
+}
+
+.delete-icon {
+    height: 3.4rem;
+    width: 3.18rem;
+    background-image: url('../../../../assets/shopping-cart/delete-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    background-image: url('../../../../assets/shopping-cart/red-delete-icon.svg');
+}
+
+.payments div{
+    width: 3.38rem;
+    height: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.payments div:first-child{
+    background-image: url('../../../../assets/shopping-cart/visa.svg');
+}
+
+.payments div:nth-child(2){
+    background-image: url('../../../../assets/shopping-cart/mastercard.svg');
+}
+
+.payments div:nth-child(3){
+    background-image: url('../../../../assets/shopping-cart/paypal.svg');
+}
+
+.payments div:nth-child(4){
+    background-image: url('../../../../assets/shopping-cart/amex.svg');
+}
+
+.payments div:first-child:hover {
+    background-image: url('../../../../assets/shopping-cart/visa-colored.svg');
+}
+
+.payments div:nth-child(2):hover {
+    background-image: url('../../../../assets/shopping-cart/mastercard-colored.svg');
+}
+
+.payments div:nth-child(3):hover {
+    background-image: url('../../../../assets/shopping-cart/paypal-colored.svg');
+}
+
+.payments div:nth-child(4):hover {
+    background-image: url('../../../../assets/shopping-cart/amex-colored.svg');
 }
 
 

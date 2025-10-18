@@ -91,6 +91,8 @@ body, html {
 .search-container {
     width: 49.8rem;
     height: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .filter-box {
@@ -121,6 +123,11 @@ body, html {
     font-size: var(--extra-small-font-size);
     line-height: 2rem;
     color: var(--general-text);
+    cursor: pointer;
+}
+
+.filter-header span:hover {
+    color: var(--header-text);
 }
 
 .filter-categories {
@@ -280,6 +287,7 @@ div.bag-wrapper {
     width: 34.67rem;
     height: 34.67rem;
     border-radius: var(--img-radius);
+    cursor: pointer;
 }
 
 .bags-container .collection-details p:first-of-type {

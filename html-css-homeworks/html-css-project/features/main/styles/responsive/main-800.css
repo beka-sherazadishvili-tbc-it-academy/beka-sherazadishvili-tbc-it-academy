@@ -111,4 +111,20 @@
         top: 48%;
         left: 15.4%;
     }
+
+    .hide-main-circle {
+        display: none;
+    }
+
+    .hidden-exlamation-mark {
+        display: block;
+    }
+
+    .hidden-light-question-mark {
+        display: none;
+    }
+
+    .hidden-brand-img {
+        display: none;
+    }
 }
