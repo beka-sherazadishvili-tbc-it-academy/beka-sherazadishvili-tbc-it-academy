@@ -26,10 +26,6 @@ body, html {
 }
 
 /* footer container */
-footer {
-    border-top: 1px solid var(--header-border-color);
-}
-
 .footer-container {
     padding: 4rem;
     margin: 10.7rem 0rem 0rem 16rem;
