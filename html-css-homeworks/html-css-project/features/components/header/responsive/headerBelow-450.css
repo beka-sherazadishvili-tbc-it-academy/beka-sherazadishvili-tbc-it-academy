@@ -1,0 +1,9 @@
+@media (max-width: 420px) {
+    .logo span {
+        display: none;
+    }
+
+    .header-main-container .header-container {
+        gap: 8rem;
+    }
+}

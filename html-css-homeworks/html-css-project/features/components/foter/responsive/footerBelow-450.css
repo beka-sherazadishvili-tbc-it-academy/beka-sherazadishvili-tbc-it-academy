@@ -1,0 +1,7 @@
+@media (max-width: 420px) {
+    .footer-container .footer-content {
+        grid-template-columns: 20rem;
+        grid-template-rows: 18.95rem 21.6rem 10rem;
+        gap: 10.2rem;
+    }
+}
