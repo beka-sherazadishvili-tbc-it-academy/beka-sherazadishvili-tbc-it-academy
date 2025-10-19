@@ -114,11 +114,10 @@ body, html {
     line-height: 4rem;
 }
 
-.custom-bag-header > p  > span{
+.custom-bag-header > p  > span {
     font-size: var(--medium-font-size);
-    font-weight: medium;
+    font-weight: 400;
     line-height: 2.8rem;
-    padding-left: 1rem;
 }
 
 .collection-container .bags-img-collections div:first-child {
@@ -436,4 +435,8 @@ body, html {
     display: flex;
     align-items: center;
     font-weight: 700;
+}
+
+.mobile-version {
+    display: none;
 }

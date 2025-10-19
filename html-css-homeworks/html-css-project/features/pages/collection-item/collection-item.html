@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../../common-styles/custombag-container.css">
     <link rel="stylesheet" href="../../common-styles/color-options.css">
     <link rel="stylesheet" href="../../common-styles/breadcrumb.css">
+    <link rel="stylesheet" href="./styles/responsive/collectionItem-1024.css">
+    <link rel="stylesheet" href="./styles/responsive/collectionItem-800.css">
+    <link rel="stylesheet" href="./styles/responsive/collectionItem-450.css">
     <title>Bagstore</title>
 </head>
 <body>
@@ -25,34 +28,52 @@
             <div class="custom-bag-img-container">
                 <div class="custom-bag-img">
                     <picture>
-                        <img src="../../../assets/collection-items/collection-main.svg" alt="">
+                        <source srcset="../../../assets/collection-items/responsive/responsive-450/collection-main-450.svg" media="(max-width: 799px)">
+                        <source srcset="../../../assets/collection-items/responsive/responsive-800/collection-main-800.svg" media="(max-width: 1023px)">
+                        <source srcset="../../../assets/collection-items/responsive/responsive-1024/collection-main-1024.svg" media="(max-width: 1560px)">
+                        <img src="../../../assets/collection-items/collection-main.svg" alt="main hobo small">
                     </picture>
                 </div>
 
                 <div class="bags-img-collections">
                     <div>
                         <picture>
-                        <img src="../../../assets/collection-items/col-1.svg" alt="">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-450/col-1-450.svg" media="(max-width: 799px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-800/col-1-800.svg" media="(max-width: 1023px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-1024/col-1-1024.svg" media="(max-width: 1560px)">
+                            <img src="../../../assets/collection-items/col-1.svg" alt="first sub image">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/collection-items/col-2.svg" alt="">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-450/col-2-450.svg" media="(max-width: 799px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-800/col-2-800.svg" media="(max-width: 1023px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-1024/col-2-1024.svg" media="(max-width: 1560px)">
+                            <img src="../../../assets/collection-items/col-2.svg" alt="second sub image">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/collection-items/col-3.svg" alt="">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-450/col-3-450.svg" media="(max-width: 799px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-800/col-3-800.svg" media="(max-width: 800px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-1024/col-3-1024.svg" media="(max-width: 1560px)">
+                            <img src="../../../assets/collection-items/col-3.svg" alt="third sub image">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/collection-items/col-4.svg" alt="">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-450/col-4-450.svg" media="(max-width: 799px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-800/col-4-800.svg" media="(max-width: 1023px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-1024/col-4-1024.svg" media="(max-width: 1560px)">
+                            <img src="../../../assets/collection-items/col-4.svg" alt="fourth sub image">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/collection-items/col-5.svg" alt="">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-450/col-5-450.svg" media="(max-width: 799px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-800/col-5-800.svg" media="(max-width: 1023px)">
+                            <source srcset="../../../assets/collection-items/responsive/responsive-1024/col-5-1024.svg" media="(max-width: 1560px)">
+                            <img src="../../../assets/collection-items/col-5.svg" alt="fifth sub image">
                         </picture>
                     </div>
                 </div>
@@ -78,7 +99,7 @@
                         <p>The Hobo Small is a perfect blend of style and functionality. Crafted from premium vegan leather, it's designed to complement your everyday look while keeping your essentials organized with multiple interior pockets and a secure magnetic closure.</p>
                     </div>
                     <div>
-                        <h3>Color Selection</h3>
+                        <h3>COLOR SELECTION</h3>
                         <div class="color-options">
                             <div class="outer-circle-filter ">
                                 <span class="inner-circle-filter"></span>
@@ -89,7 +110,7 @@
                         </div>
                     </div>
                     <div class="collection-quantity">
-                        <h3>Quantity</h3>
+                        <h3>QUANTITY</h3>
                         <div>
                             <div class="checkout-item-actions">
                                 <div class="quantity-control">
@@ -138,7 +159,13 @@
         </section>
 
         <section class="build-your-bag collection-bag">
-            <div>
+            <div class="mobile-version">
+                <h1>Build Your Perfect Bag</h1>
+                <p>Customize this style or start from scratch to</p>
+                <p>create a bag that's uniquely yours. Every detail</p>
+                <p>crafted to perfection.</p>
+            </div>
+            <div class="all-resolutions">
                 <h1>Build Your Perfect Bag</h1>
                 <p>Customize this style or start from scratch to create a bag that's uniquely yours.</p>
                 <p>Every detail crafted to perfection.</p>
@@ -146,9 +173,9 @@
             <div class="custom-bag-details">
                 <div class="custom-bag-img-container">
                     <picture>
-                    <source srcset="../../../assets/main/responsive/responsive-450/custom-bag-450.svg" media="(max-width: 450px)">
-                    <source srcset="../../../assets/main/responsive/responsive-800/custom-bag-800.svg" media="(max-width: 800px)">
-                    <source srcset="../../../assets/main/responsive/responsive-1024/custom-bag-1024.svg" media="(max-width: 1024px)">
+                    <source srcset="../../../assets/collection-items/responsive/responsive-450/perfect-bag-450.svg" media="(max-width: 799px)">
+                    <source srcset="../../../assets/collection-items/responsive/responsive-800/perfect-bag-800.svg" media="(max-width: 1023px)">
+                    <source srcset="../../../assets/collection-items/responsive/responsive-1024/perfect-bag-1024.svg" media="(max-width: 1560px)">
                     <img src="../../../assets/collection-items/perferct-bag.svg" alt="custom bags">
                     </picture>
                 </div>

@@ -1,0 +1,139 @@
+@media (max-width: 799px) {
+    .collection-container .breadcrumb {
+        margin: 3.2rem 0rem 0rem 0rem;
+    }
+
+    .collection-container .bags-img-collections div:first-child {
+        height: 7.4rem;
+    }
+
+    .collection-container .custom-bag-img {
+        width: 41.5rem;
+    }
+
+    .custom-bag-img img {
+        border-radius: 1.6rem;
+    }
+
+    .collection-container .custom-bag-container {
+        gap: 5.8rem;
+        margin: -0.2rem 0rem 0rem 4rem;
+    }
+
+    .collection-container .bags-img-collections {
+        gap: 1.13rem;
+        margin: 0;
+    }
+
+    .collection-container .sub-description p {
+        width: 41.5rem;
+    }
+
+    .custom-bag-choices h3 {
+        font-size: 1.4rem;
+    }
+
+    .collection-container .color-options {
+        top: -1.9rem;
+        left: -0.2rem;
+        padding-bottom: 1.8rem;
+    }
+
+    .collection-container .collection-quantity {
+        gap: 2.6rem;
+    }
+
+    .collection-container .btn-contianer {
+        flex-direction: column;
+    }
+
+    .custom-bag-container .add-to-bag-btn {
+        width: 101%;
+        height: 6rem;
+    }
+
+    .collection-sub-description {
+        padding: 4.6rem 0;
+    }
+
+    .collection-container .custom-bag-img-container, .collection-container .custom-bag-options {
+        width: 41.5rem;
+    }
+
+    .collection-bag.build-your-bag {
+        margin: 2.5rem 1.2rem 0rem 0.4rem;
+        width: 41.5rem;
+    }
+
+    .all-resolutions {
+        display: none;
+    }
+
+    .mobile-version {
+        display: block;
+    }
+
+    .collection-bag .custom-buttons div {
+        width: 98%;
+    }
+
+    .collection-bag .add-ons-buttons > div {
+        width: 97%;
+    }
+
+    .collection-bag .custom-bag-choices > div {
+        padding: 2.4rem 1.6rem 2.4rem 2.6rem;
+    }
+
+    .add-to-bag-btn {
+        width: 97%;
+        height: 6rem;
+    }
+
+    .collection-container .collection-bag div.outer-circle-filter {
+        margin: 2.7rem 0rem 0rem -1.1rem;
+    }
+
+    .collection-container .collection-bag .color-options div {
+        margin-right: 1.7rem;
+    }
+
+    .collection-container .collection-bag .color-options {
+        left: 1rem;
+    }
+
+    .collection-container .collection-bag .custom-bag-choices > div:nth-child(3) h3 {
+        padding: 1.8rem 0rem;
+    }
+
+    .custom-bag-choices > div:nth-child(4) h3 {
+        padding: 0rem 0rem 2.5rem 0rem;
+    }
+
+    .collection-bag .custom-bag-choices {
+        margin-left: -0.8rem;
+        width: 35.5rem;
+    }
+
+    /* rating */
+
+    .collection-rating {
+        width: 41.5rem;
+        padding: 10.3rem 0rem 8rem 0rem;
+        margin: 1rem 0rem 4.5rem 2rem;
+    }
+
+    .rating-header {
+        flex-direction: column;
+        align-items: start;
+        gap: 2.6rem;
+    }
+
+    .rating-header div {
+        width: 100%;
+    }
+
+    .collection-rating {
+        margin: 1rem 0rem -4.5rem 0rem;
+    }
+}
