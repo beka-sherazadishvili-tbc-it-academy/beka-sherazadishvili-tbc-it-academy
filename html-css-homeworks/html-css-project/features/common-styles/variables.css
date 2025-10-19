@@ -1,0 +1,45 @@
+:root {
+    /* Colors */
+    --header-border-color: #E5E5E5;
+    --hero-background: linear-gradient(167.88deg, #FAFAFA 0%, #F5F5F5 100%);
+    --brand-color: #A3A3A3;
+    --custom-bags-background: #D4D4D4;
+    --secondary-text: #404040;
+    --header-text: #171717;
+    --label-text: #737373;
+    --general-text: #525252;
+    --general-color: #FFFFFF;
+    --hover-color: #FAFAFA;
+    --custom-bag-color: #262626;
+    --checkbox-color: #0075FF;
+    --following-background: #FEF2F2;
+    --notification-icon: #EF4444;
+    --footer-text-color: #9CA3AF;
+    --sales-color: #F59E0B;
+    --custom-color: #A855F7;
+    --clear-cart-color: #B91C1C;
+
+    /* Font Sizes */
+    --extra-small-font-size: 1.4rem;
+    --small-font-size: 1.6rem;
+    --medium-font-size: 1.8rem;
+    --large-font-size: 2rem;
+    --extra-large-font-size: 2.4rem;
+    --build-bag-font: 3.6rem;
+
+    /* Width/Radius */
+    --content-max-width: 150.4rem;
+    --border-radius: 1.6rem;
+    --label-radius: 9999rem;
+    --button-radius: 1.2rem;
+    --img-radius: 1.6rem;
+    --build-radius: 2.4rem;
+
+    /* Box Shadows */
+    --filter-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 6%);
+    --cart-item-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 8%);
+    --perferct-bag-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 6%);
+    --custom-bag-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 10%), 0px 8px 10px -6px rgba(0, 0, 0, 10%);
+    --passive-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 10%), 0px 2px 4px -2px rgba(0, 0, 0, 10%);
+    --hero-box-shado: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);
+}
