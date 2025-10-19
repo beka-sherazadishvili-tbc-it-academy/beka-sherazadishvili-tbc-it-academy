@@ -1,4 +1,4 @@
-@media (min-width: 1024px) and (max-width: 1560px) {
+@media (max-width: 1560px) {
     /* resolutions X: -3, Y: -1 */
     .hero-section {
         width: 99.2rem;
