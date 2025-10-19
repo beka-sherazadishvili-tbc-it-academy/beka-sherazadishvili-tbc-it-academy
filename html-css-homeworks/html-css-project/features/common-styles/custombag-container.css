@@ -269,6 +269,7 @@ div.chosen-add-on > div {
 
 .add-to-bag-btn span {
     padding-left: 0.9rem;
+    font-size: var(--extra-small-font-size);
 }
 
 /* custom bag header */ 
@@ -348,7 +349,6 @@ div.chosen-add-on > div {
 }
 
 .custom-bag-img-container {
-    background-color: var(--general-color);
     width: 65.8%;
     height: 91.5%;
     border-radius: var(--img-radius);

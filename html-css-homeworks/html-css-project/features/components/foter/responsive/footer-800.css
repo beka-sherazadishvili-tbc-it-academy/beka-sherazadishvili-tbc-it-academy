@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (min-width: 800px) and (max-width: 1023px) {
     /* resolutions X: -3, Y: -1 */
     .footer-content {
         grid-template-columns: repeat(2, 35.2rem);

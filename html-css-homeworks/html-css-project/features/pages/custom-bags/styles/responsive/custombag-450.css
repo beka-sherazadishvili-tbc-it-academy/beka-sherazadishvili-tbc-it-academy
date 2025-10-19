@@ -1,0 +1,11 @@
+@media (min-width: 320px) and (max-width: 799px) {
+    .custom-bag-container {
+        flex-direction: column;
+        margin-left: 1.2rem;
+    }
+
+    .custom-bag-img {
+        width: 73.6rem;
+        height: 55.2rem;
+    }
+}

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../common-styles/breadcrumb.css">
     <link rel="stylesheet" href="../../common-styles/cart-items.css">
     <link rel="stylesheet" href="../../common-styles/custombag-container.css">
+    <link rel="stylesheet" href="./styles/responsive/custombag-1024.css">
+    <link rel="stylesheet" href="./styles/responsive/custombag-800.css">
     <title>Bagstore</title>
 </head>
 <body>
@@ -26,29 +28,39 @@
             <div class="custom-bag-img-container">
                 <div class="custom-bag-img">
                     <picture>
-                        <img src="../../../assets/custom-bag/custom-main-bag.svg" alt="">
+                        <source srcset="../../../assets/custom-bag/responsive/responsive-800/custom-bag-800.svg" media="(min-width: 800px) and (max-width: 1023px)">
+                        <source srcset="../../../assets/custom-bag/responsive/responsive-1024/custom-bag-1024.svg" media="(min-width: 1024px) and (max-width: 1560px)">
+                        <img src="../../../assets/custom-bag/custom-main-bag.svg" alt="custom main img">
                     </picture>
                 </div>
 
                 <div class="bags-img-collections">
                     <div>
                         <picture>
-                        <img src="../../../assets/custom-bag/view-1.svg" alt="">
+                            <source srcset="../../../assets/custom-bag/responsive/responsive-800/view-1-800.svg" media="(min-width: 800px) and (max-width: 1023px)">
+                            <source srcset="../../../assets/custom-bag/responsive/responsive-1024/view-1-1024.svg" media="(min-width: 1024px) and (max-width: 1560px)">
+                            <img src="../../../assets/custom-bag/view-1.svg" alt="">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/custom-bag/view-2.svg" alt="">
+                            <source srcset="../../../assets/custom-bag/responsive/responsive-800/view-2-800.svg" media="(min-width: 800px) and (max-width: 1023px)">
+                             <source srcset="../../../assets/custom-bag/responsive/responsive-1024/view-2-1024.svg" media="(min-width: 1024px) and (max-width: 1560px)">
+                            <img src="../../../assets/custom-bag/view-2.svg" alt="">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/custom-bag/view3.svg" alt="">
+                            <source srcset="../../../assets/custom-bag/responsive/responsive-800/view-3-800.svg" media="(min-width: 800px) and (max-width: 1023px)">
+                             <source srcset="../../../assets/custom-bag/responsive/responsive-1024/view-3-1024.svg" media="(min-width: 1024px) and (max-width: 1560px)">
+                            <img src="../../../assets/custom-bag/view3.svg" alt="">
                         </picture>
                     </div>
                     <div>
                         <picture>
-                        <img src="../../../assets/custom-bag/view-4.svg" alt="">
+                            <source srcset="../../../assets/custom-bag/responsive/responsive-800/view-4-800.svg" media="(min-width: 800px) and (max-width: 1023px)">
+                             <source srcset="../../../assets/custom-bag/responsive/responsive-1024/view-4-1024.svg" media="(min-width: 1024px) and (max-width: 1560px)">
+                            <img src="../../../assets/custom-bag/view-4.svg" alt="">
                         </picture>
                     </div>
                 </div>
@@ -73,7 +85,8 @@
                     <div>
                         <h3>1. Choose Your Style</h3>
                         <div class="custom-buttons">
-                            <div class="active-custom-btn">Crossbody</div>
+                            <div class="active-custom-btn first-visible">Crossbody</div>
+                            <div class="active-custom-btn first-hidden">Tote</div>
                             <div>Crossbody</div>
                             <div>Hobo</div>
                         </div>
@@ -136,78 +149,81 @@
             </div>
         </section>
 
-        <section class="proceed-checkout">
+        <section class="checkout-section">
             <h1>Your Shopping Bag (1)</h1>
-            <div class="checkout-items-list">
-                <div class="checkout-item">
-                    <div>
-                        <picture>
-                            <img src="../../../assets/custom-bag/custom-tote-bag.svg" alt="custom bag tote">
-                        </picture>
-                    </div>
-                    <div class="checkout-items-details">
-                        <h3 class="product-title">Your Custom Tote Bag</h3>
-                        <div class="product-options">
-                            <div>
+            <div class="proceed-checkout">
+                <div class="checkout-items-list">
+                    <div class="checkout-item">
+                        <div>
+                            <picture>
+                                <source srcset="../../../assets/custom-bag/responsive/responsive-800/checkout-800.svg" media="(min-width: 800px) and (max-width: 1023px)">
+                                <source srcset="../../../assets/custom-bag/responsive/responsive-1024/checkout-1024.svg" media="(min-width: 1024px) and (max-width: 1560px)">
+                                <img src="../../../assets/custom-bag/custom-tote-bag.svg" alt="custom bag tote">
+                            </picture>
+                        </div>
+                        <div class="checkout-items-details">
+                            <h3 class="product-title">Your Custom Tote Bag</h3>
+                            <div class="product-options">
                                 <div>
-                                    <img src="../../../assets/custom-bag/label.svg" alt="">
-                                    <label>Style: Tote</label>
+                                    <div>
+                                        <img src="../../../assets/custom-bag/label.svg" alt="">
+                                        <label>Style: Tote</label>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/custom-bag/design.svg" alt="">
+                                        <label>Color: Black</label>
+                                    </div>
                                 </div>
                                 <div>
-                                    <img src="../../../assets/custom-bag/design.svg" alt="">
-                                    <label>Color: Black</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="../../../assets/custom-bag/link.svg" alt="">
-                                    <label>Strap: chain</label>
-                                </div>
-                                <div>
-                                    <img src="../../../assets/custom-bag/text.svg" alt="">
-                                    <label>MonogramL J.D.</label>
+                                    <div>
+                                        <img src="../../../assets/custom-bag/link.svg" alt="">
+                                        <label>Strap: chain</label>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/custom-bag/text.svg" alt="">
+                                        <label>MonogramL J.D.</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="checkout-item-actions">
-                        <span>$234.00</span>
-                        <div class="quantity-control">
-                            <div>-</div>
-                            <span>1</span>
-                            <div>+</div>
+                        <div class="checkout-item-actions">
+                            <span>$234.00</span>
+                            <div class="quantity-control">
+                                <div>-</div>
+                                <span>1</span>
+                                <div>+</div>
+                            </div>
+                            <div class="remove-btn">Remove</div>
                         </div>
-                        <div class="remove-btn">Remove</div>
                     </div>
                 </div>
-            </div>
-            <div class="checkout-total">
-                <div class="custom-bag-summary checkout-summary">
-                    <div class="total-price  subtotal-shipping">
-                        <p>Subtotal</p>
-                        <p>$234.00</p>
-                    </div>
-                    <div class="total-price subtotal-shipping">
-                        <p>Shipping</p>
-                        <p>Calculated at next step</p>
-                    </div>
-                    <div class="total-price">
-                        <span>Total:</span>
-                        <span>$234.00</span>
-                    </div>
-                    <div class="btn-contianer">
-                        <div class="add-to-bag-btn proceed-btn">
-                            <a href="">
-                                <span>Proceed to Checkout</span>
-                            </a>
+                <div class="checkout-total">
+                    <div class="custom-bag-summary checkout-summary">
+                        <div class="total-price  subtotal-shipping">
+                            <p>Subtotal</p>
+                            <p>$234.00</p>
+                        </div>
+                        <div class="total-price subtotal-shipping">
+                            <p>Shipping</p>
+                            <p>Calculated at next step</p>
+                        </div>
+                        <div class="total-price">
+                            <span>Total:</span>
+                            <span>$234.00</span>
+                        </div>
+                        <div class="btn-contianer">
+                            <div class="add-to-bag-btn proceed-btn">
+                                <a href="">
+                                    <span>Proceed to Checkout</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <iframe src="../../components/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe>
+    <iframe src="../../components/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe> -->
 </body>
 </html>

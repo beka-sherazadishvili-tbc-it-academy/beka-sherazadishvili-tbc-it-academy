@@ -1,3 +1,175 @@
-@media (max-width: 1024px) {
-    
+@media (min-width: 1024px) and (max-width:1560px) {
+    .breadcrumb {
+        width: 99.2rem;
+        margin: 3.8rem 0rem 0rem 2rem;
+    }
+
+    .custom-bag-img {
+        width: 64.5rem;
+        height: 48.4rem;
+    }
+
+    .custom-bag-options {
+        width: 29.87rem;
+    }
+
+    .custom-bag-img-container {
+        gap: 2rem;
+    }
+
+    .custom-bag-container {
+        margin-left: 2rem;
+    }
+
+    .custom-bag-header > p {
+        line-height: 2.3rem;
+        width: 22.2rem
+    }
+
+    .custom-bag-choices > div:last-child {
+        border-top: none;
+    }
+
+    .custom-buttons .first-visible {
+        display: none;
+    }
+
+    .custom-buttons .first-hidden {
+        display: flex;
+    }
+
+    .custom-buttons div:first-child ,
+    .custom-buttons div:nth-child(2)
+    {
+        width: 7rem;
+    }
+
+    .custom-buttons div:nth-child(3) {
+        width: 9.1rem;
+    }
+
+    .custom-buttons div:nth-child(4) {
+        width: 7.1rem;
+    }
+
+    .custom-bag-header h1 {
+        width: 23.2rem;
+    }
+
+    .custom-buttons {
+        margin-top: -0.2rem;
+    }
+
+    .custom-bag-options .color-options div {
+        width: 3.4rem;
+        height: 4rem;
+    }
+
+    .custom-bag-options span.inner-circle-filter {
+        width: 3.4rem;
+        height: 4rem;
+    }
+
+    .custom-bag-options .color-options {
+        margin: -1.7rem 0rem -0.9rem -1.1rem;
+    }
+
+    .custom-bag-options div.outer-circle-filter {
+        position: relative;
+        border: 4px solid black;
+        width: 4.4rem;
+        height: 5.2rem;
+        top: -6px;
+        left: 4px;
+    }
+
+    .custom-bag-options .custom-bag-choices > div:nth-child(4) h3 {
+        padding: 0.7rem 0rem 1.8rem 0rem;
+    }
+
+    .custom-bag-choices div:nth-child(4) 
+    .custom-buttons div:first-child {
+        width: 8rem;
+    }
+
+    .add-ons-buttons input {
+        width: 21.67rem;
+    }
+
+    .custom-bag-options .add-ons-buttons > div:first-child {
+        width: 23.23rem;
+        height: 7.4rem;
+        font-size: 1.35rem;
+        padding-right: 1rem;
+    }
+
+    .custom-bag-options .add-ons-buttons > div:last-child {
+        width: 23.23rem;
+        height: 5.4rem;
+        font-size: 1.4rem;
+    }
+
+    .custom-bag-choices h3 {
+        padding-bottom: 1.3rem;
+    }
+
+    .custom-bag-options .add-ons-buttons {
+        width: 23.23rem;
+    }
+
+    .total-price {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    .total-price {
+        justify-content: start;
+        gap: 1.6rem;
+    }
+
+    .total-price span:last-child {
+        margin-top: -0.3rem;
+    }
+
+    .add-to-bag-btn {
+        width: 87%;
+    }
+
+    .add-to-bag-btn span {
+        font-size: 1.4rem;
+    }
+
+    .proceed-checkout {
+        width: 99.2rem;
+        margin-left: 1.8rem;
+        gap: 2.8rem;
+        margin-bottom: 13rem;
+    }
+
+    .checkout-section h1 {
+        margin: 1.6rem 0rem 3.7rem 0rem;
+    }
+
+    .checkout-items-details {
+        width: 43.3rem;
+    }
+
+    .quantity-control {
+        top: -6px;
+        right: 81px;
+    }
+
+    .checkout-summary .total-price {
+        justify-content: space-between;
+    }
+
+    .subtotal-shipping {
+        margin-top: 0rem;
+    }
+
+    .proceed-checkout .proceed-btn {
+        height: 5.6rem;
+        margin-top: 1.6rem;
+        width: 100%;
+    }
 }

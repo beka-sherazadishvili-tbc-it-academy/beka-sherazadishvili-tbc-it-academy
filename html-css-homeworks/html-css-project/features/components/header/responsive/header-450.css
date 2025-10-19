@@ -1,4 +1,4 @@
-@media (max-width: 450px) {
+@media (min-width: 320px) and (max-width: 799px) {
     /* header */
     .header-container {
         gap: 0rem;
@@ -9,6 +9,14 @@
     }
 
     .header-container {
-        gap: 13.1rem;
+        gap: 14.6rem;
+    }
+
+    .header-search-box {
+        display: none;
+    }
+
+    .info-container a {
+        display: none;
     }
 }

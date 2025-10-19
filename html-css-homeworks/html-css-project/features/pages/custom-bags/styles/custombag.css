@@ -54,7 +54,7 @@ body, html {
     align-items: center;
     width: 100%;
     padding: 3.3rem 1.6rem;
-    margin-left: -0.8rem;
+    margin: 0rem 0rem -9rem -0.8rem;
     gap: 3.6rem;
     background: linear-gradient(134.794deg, #F8FAFC 0%, #F3F4F6 100%), linear-gradient(#FFFFFF, #FFFFFF);
     border-bottom: 1px solid var(--header-border-color);
@@ -180,13 +180,13 @@ div.custom-bag-options > div > div:nth-child(5) {
 }
 
 .custom-bag-options .wrapper-btn {
-    background-color: #F5F5F5;
+    background-color: var(--general-color);
     color: var(--header-text);
     border: 1px solid #D4D4D4;
 }
 
 .custom-bag-options .wrapper-btn:hover {
-    background-color: var(--general-color);
+    background-color: #FAFAFA;
 }
 
 .custom-bag-options .wrapper-btn span {
@@ -203,4 +203,12 @@ div.custom-bag-options > div > div:nth-child(5) {
 
 .custom-bag-options .color-options div:nth-child(5) {
     background-color: #D97706;
+}
+
+.active-custom-btn.first-hidden {
+    display: none;
+}
+
+.main-custombag-page-conatainer .custom-bag-options .custom-bag-choices > div {
+    border: none;
 }
