@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     /* Colors */
     --header-border-color: #E5E5E5;
@@ -42,4 +46,6 @@
     --custom-bag-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 10%), 0px 8px 10px -6px rgba(0, 0, 0, 10%);
     --passive-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 10%), 0px 2px 4px -2px rgba(0, 0, 0, 10%);
     --hero-box-shado: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);
+    --sub-img-shadows: 0px 1px 2px 0px rgba(0, 0, 0, 5%);
+    --collection-items-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 8%);
 }
