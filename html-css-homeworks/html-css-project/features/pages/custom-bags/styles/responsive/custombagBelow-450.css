@@ -1,0 +1,47 @@
+@media (max-width: 420px) {
+    .custom-bag-img {
+        width: 30rem;
+    }
+
+    .custom-bag-img img {
+        width: 20rem;
+    }
+
+    .bags-img-collections {
+        flex-wrap: wrap;
+        width: 22rem;
+    }
+
+    .breadcrumb {
+        width: 30rem;
+    }
+
+    .custom-bag-img-container {
+        align-items: center;
+    }
+
+    .custom-bag-choices div {
+        width: 30rem;
+    }
+
+        .custom-bag-options {
+        align-items: center;
+        width: 30rem;
+        flex-direction: column;
+        margin-left: 2rem;
+    }
+
+    .proceed-checkout {
+        width: 30rem;
+    }
+
+    .product-options > div {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .checkout-item-actions {
+        margin-top: 2rem;
+    }
+}
+
