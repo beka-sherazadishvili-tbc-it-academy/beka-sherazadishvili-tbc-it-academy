@@ -1,4 +1,4 @@
-@media (min-width: 1024px) and (max-width:1560px) {
+@media (max-width: 1560px) {
     .breadcrumb {
         width: 99.2rem;
         margin: 3.8rem 0rem 0rem 2rem;
@@ -141,9 +141,10 @@
 
     .proceed-checkout {
         width: 99.2rem;
-        margin-left: 1.8rem;
         gap: 2.8rem;
-        margin-bottom: 13rem;
+        margin: 5rem 0rem 13.1rem 2rem;
+        height: 51.85rem;
+        padding: 3.1rem 3.4rem 0rem 3rem;
     }
 
     .checkout-section h1 {
