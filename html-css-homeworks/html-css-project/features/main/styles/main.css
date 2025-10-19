@@ -337,3 +337,32 @@ body, html {
     font-weight: 700;
     z-index: 2;
 }
+
+/* color options */
+.custom-colors.color-options {
+    padding: 0;
+}
+
+.custom-colors.color-options div {
+    width: 4rem;
+    height: 4rem;
+}
+
+.custom-colors div.outer-circle-filter {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
+.custom-colors span.inner-circle-filter {
+    width: 4rem;
+    height: 4rem;
+}
+
+.circle-container.custom-colors {
+    gap: 0.4rem;
+    margin: -0.7rem 0rem 0rem -1rem;
+}
+
+.main-container .custom-bag-choices > div:nth-child(3) h3 {
+    padding: 0rem 0rem 1.6rem 0rem;
+}
