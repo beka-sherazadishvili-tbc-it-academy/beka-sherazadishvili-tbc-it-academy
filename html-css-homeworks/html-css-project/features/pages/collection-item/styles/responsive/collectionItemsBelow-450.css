@@ -1,0 +1,51 @@
+@media (max-width: 420px) {
+    .collection-container .custom-bag-img {
+        width: 20rem;
+    }
+
+    .collection-container .bags-img-collections {
+        flex-wrap: wrap;
+        column-gap: 4.13rem;
+    }
+
+    .collection-container .sub-description p {
+        width: 31rem;
+    }
+
+    .custom-bag-container .add-to-bag-btn {
+        width: 66%;
+    }
+    .collection-sub-description > div:not(:first-child) {
+        justify-content: start;
+        gap: 1rem;
+    }
+
+    .collection-sub-description div {
+        width: 30rem;
+    }
+
+    .collection-bag.build-your-bag {
+        width: 30rem;
+    }
+
+    .collection-bag .custom-bag-img-container img {
+        width: 20rem;
+    }
+
+    .collection-bag .custom-bag-img-container {
+        height: 42.8rem;
+    }
+
+    .collection-container .custom-bag-img-container, .collection-container .custom-bag-options {
+        width: 30rem;
+    }
+
+    .collection-bag .custom-bag-choices > div {
+        width: 26rem;
+    }
+
+    .collection-rating {
+        margin: 1rem 0rem 13.5rem 0rem;
+        width: 30rem;
+    }
+}

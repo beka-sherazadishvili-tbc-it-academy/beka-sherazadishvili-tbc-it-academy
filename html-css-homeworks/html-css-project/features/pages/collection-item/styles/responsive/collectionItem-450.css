@@ -136,4 +136,9 @@
     .collection-rating {
         margin: 1rem 0rem -4.5rem 0rem;
     }
+
+    .collection-sub-description > div:first-child > div img {
+        position: relative;
+        right: -12rem;
+    }
 }
