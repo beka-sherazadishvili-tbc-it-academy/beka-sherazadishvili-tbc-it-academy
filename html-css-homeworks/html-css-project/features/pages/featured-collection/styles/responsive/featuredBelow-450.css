@@ -24,5 +24,9 @@
     .main-featured-page-conatainer {
         margin-bottom: 10rem;
     }
+
+    .bags-container-header div {
+        flex-direction: column;
+    }
 }
 
