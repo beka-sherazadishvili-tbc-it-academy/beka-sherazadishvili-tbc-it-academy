@@ -1,0 +1,140 @@
+@media (max-width: 1560px) {
+    .collection-container .custom-bag-img {
+        width: 46.4rem;
+    }
+
+    .custom-bag-img img {
+        border-radius: 1.2rem;
+    }
+
+    .collection-container .custom-bag-img-container,
+    .collection-container .custom-bag-options {
+        width: 46.4rem;
+    }
+
+    .collection-container .bags-img-collections div:first-child {
+        height: 8.3rem;
+    }
+
+    .collection-container .breadcrumb {
+        margin: 7.2rem 0rem 0rem 2rem;
+    }
+
+    .collection-container .custom-bag-container {
+        margin: -0.2rem 0rem 0rem 2rem;
+    }
+
+    .add-to-bag-btn span {
+        font-size: 1.6rem;
+    }
+
+    .build-your-bag {
+        width: 99.2rem;
+    }
+
+    .collection-bag .custom-buttons div {
+        width: 23rem;
+        height: 6rem;
+    }
+
+    .collection-bag .add-ons-buttons > div {
+        width: 23rem;
+    }
+
+    .collection-bag.build-your-bag {
+        margin: 2.5rem 1.2rem 0rem 2.8rem;
+    }
+
+    .collection-bag .custom-bag-choices > div {
+        padding: 2.4rem 1.6rem 2.4rem 2.4rem;
+    }
+
+    .collection-bag .custom-bag-choices {
+        margin-left: 14rem;
+    }
+
+    .custom-bag-choices h3 {
+        font-size: 1.6rem;
+    }
+
+    .collection-bag .custom-bag-choices > div:nth-child(2) h3 {
+        padding: 0.4rem 0rem 1.8rem 0rem;
+    }
+
+    .collection-container .collection-bag .color-options div {
+        margin-right: 1.3rem;
+    }
+
+    .collection-container .collection-bag .color-options {
+        top: -2.2rem;
+    }
+
+    .collection-container .collection-bag div.outer-circle-filter {
+        margin: 2rem 1.7rem 0rem -1rem;
+    }
+
+    .custom-bag-choices > div:nth-child(4) h3 {
+        padding: 0rem 0rem 2rem 0rem;
+    }
+
+    .total-price span:last-child {
+        letter-spacing: 0.3rem;
+    }
+
+    .add-to-bag-btn {
+        width: 97%;
+    }
+
+    .collection-rating {
+        width: 99.2rem;
+        height: 48.2rem;
+        margin: 1rem 0rem -4.1rem 2rem;
+        gap: 7.4rem;
+    }
+
+    .rating-body {
+        width: 29.9rem;
+        height: 17.6rem;
+        padding: 2.8rem 3.2rem 3.2rem 3.2rem;
+        gap: 3.9rem
+    }
+
+    .rating-body > div:first-child {
+        gap: 3.2rem;
+    }
+
+    .collection-container .sub-description p {
+        padding: 1rem 3rem 0rem 2rem;
+    }
+
+    .collection-container .color-options {
+        top: -1.7rem;
+    }
+
+    .collection-container .color-options div {
+        margin-right: 1.7rem;
+    }
+
+    .collection-container .collection-quantity {
+        align-items: end;
+        gap: 3.4rem;
+        margin-top: -5.3rem;
+    }
+
+    .collection-container .custom-bag-summary {
+        padding: 0.5rem 0.3rem 0.7rem 0rem;
+    }
+
+    .collection-sub-description {
+        padding: 4.6rem 0;
+    }
+
+    .collection-container .custom-bag-choices > div:nth-child(3) h3 {
+        padding: 1.6rem 0rem;
+    }
+
+    div.outer-circle-filter {
+        top: -0.1rem;
+        left: 0.7rem;
+    }
+}

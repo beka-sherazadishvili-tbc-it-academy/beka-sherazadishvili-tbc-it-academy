@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --custom-bags-background: #D4D4D4;
+    --header-border-color: #E5E5E5;
+
+    /* font colors */
+    --header-text: #171717;
+    --general-text: #525252;
+    --general-color: #FFFFFF;
+    --custom-bag-color: #262626;
+    --footer-text-color: #9CA3AF;
+
+    /* font sizes */
+    --extra-small-font-size: 1.4rem;
+    --medium-font-size: 1.8rem;
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+/* footer container */
+.footer-container {
+    padding: 4rem;
+    margin: 10.7rem 0rem 0rem 16rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 35.2rem);
+    gap: 3.2rem;
+}
+
+.newsletter-section h2 {
+    font-size: var(--medium-font-size);
+    font-weight: bold;
+    color: var(--header-text);
+    margin: -0.4rem 0rem 0rem 0rem;
+}
+
+.newsletter-section p {
+    color: var(--general-text);
+    font-size: var(--extra-small-font-size);
+    line-height: 1.7;
+    margin: 1.7rem 0rem 1.5rem 0rem;
+}
+
+.email-form {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.email-input {
+    width: 100%;
+    height: 4.72rem;
+    padding: 1.2rem 6rem 1.2rem 1rem;
+    border: 0.1rem solid var(--custom-bags-background);
+    border-radius: 1.2rem;
+    font-size: var(--extra-small-font-size);
+    color: var(--footer-text-color);
+    outline: none;
+}
+
+.submit-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4.5rem;
+    background: var(--header-text);
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    border: none;
+    color: var(--general-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.submit-btn:hover {
+    background: var(--custom-bag-color);
+}
+
+p.privacy-text {
+    font-size: 1.2rem;
+    color: var(--footer-text-color);
+    margin-top: -0.5rem;
+}
+
+.privacy-text a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+
+.privacy-text a:hover {
+    text-decoration: underline;
+}
+
+.menu-section h3, .support-section h3 {
+    position: relative;
+    font-size: var(--extra-small-font-size);
+    font-weight: 700;
+    color: var(--header-text);
+    margin-bottom: 2rem;
+    top: -0.6rem;
+    left: 0.1px;
+}
+
+.menu-section ul,
+.support-section ul {
+    list-style: none;
+}
+
+.menu-section li,
+.support-section li {
+    margin-bottom: 1.8rem;
+}
+
+.menu-section a,
+.support-section a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    font-size: var(--extra-small-font-size);
+}
+
+.menu-section a:hover,
+.support-section a:hover {
+    color: var(--header-text);
+}

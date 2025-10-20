@@ -1,0 +1,165 @@
+@media (max-width: 1023px) {
+    .custom-bag-container {
+        flex-direction: column;
+        margin-left: 1.2rem;
+    }
+
+    .custom-bag-img {
+        width: 73.6rem;
+        height: 55.2rem;
+    }
+
+    .breadcrumb {
+        margin: 0rem 0rem 0rem 4.8rem;
+    }
+
+    .custom-bag-img-container {
+        width: 100%;
+        /* margin-left: 1rem; */
+        gap: 2.2rem;
+    }
+
+    .custom-bag-options {
+        width: 73.6rem;
+    }
+
+    .main-custombag-page-conatainer
+    .custom-bag-container
+    .custom-bag-options 
+    .custom-bag-choices
+    .custom-buttons div {
+        width: 21.6rem;
+    }
+
+    .custom-buttons .first-visible {
+        display: none;
+    }
+
+    .custom-buttons .first-hidden {
+        display: flex;
+    }
+
+    .custom-bag-options .custom-bag-choices > div:nth-child(2) h3 {
+        padding: 1.5rem 0rem 1.2rem 0rem;
+    }
+
+    .custom-bag-options .custom-bag-choices > div:nth-child(4) h3 {
+        padding: 0.2rem 0rem 1.7rem 0rem;
+    }
+
+    .custom-bag-options .custom-bag-choices h3 {
+        padding: 0rem 0rem 1.5rem 0rem;
+    }
+
+    .custom-bag-choices > div:nth-child(3) h3 {
+        padding: 0.7rem 0rem 1.5em 0rem;
+    }
+
+    .custom-bag-options .color-options {
+        margin: -2rem 0rem 0rem -1.05rem;
+    }
+
+    div.outer-circle-filter {
+        margin-right: 1.4rem;
+    }
+
+    .custom-bag-options .add-ons-buttons {
+        right: 0rem;
+        top: -0.2rem;
+        width: 100%;
+    }
+
+    .custom-bag-options .add-ons-buttons > div:first-child,
+    .custom-bag-options .add-ons-buttons > div:last-child
+    {
+        width: 100%;
+        height: 5.2rem;
+    }
+
+    .custom-bag-header > p {
+        width: 100%;
+    }
+
+    .custom-bag-header h1 {
+        width: 100%;
+    }
+
+    .custom-buttons * {
+       width: initial;
+    }
+
+    .add-ons-buttons input {
+        width: 97.8%;
+    }
+
+    .proceed-checkout {
+        width: 73.6rem;
+        height: 51.8rem;
+        margin: 0rem 0rem 0rem 1.5rem;
+        padding: 3rem 3.4rem 0rem 3rem;
+    }
+
+    .checkout-item-actions {
+        width: 14.4rem;
+    }
+
+    .checkout-items-details {
+        width: 31.9rem;
+    }
+
+    .checkout-section h1 {
+        margin: 1.2rem 0rem 5.1rem -1rem;
+    }
+
+    .quantity-control {
+        top: -2px;
+        right: 16px;
+    }
+
+    .proceed-checkout .checkout-summary {
+        gap: 2.1rem;
+    }
+
+    .checkout-summary .subtotal-shipping {
+        margin: 0rem;
+    }
+
+    .main-custombag-page-conatainer {
+        margin: 0rem 0rem 0.6rem -0.8rem;
+    }
+
+    .custom-bag-options .color-options div {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .custom-bag-options span.inner-circle-filter {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .custom-bag-options div.outer-circle-filter {
+        position: relative;
+        border: 3px solid black;
+        width: 5.1rem;
+        height: 5.1rem;
+        top: -6px;
+        left: 4px;
+    }
+
+    .add-to-bag-btn {
+        width: 100%;
+    }
+
+    .custom-bag-choices .custom-bag-summary .total-price {
+        justify-content: space-between;
+    }
+
+    .custom-bag-summary{
+        gap: 2.7rem;
+    }
+
+    .proceed-checkout .proceed-btn {
+        margin-top: 0.5rem;
+    }
+}

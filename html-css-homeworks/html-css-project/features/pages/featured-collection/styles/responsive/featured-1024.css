@@ -1,0 +1,60 @@
+@media (max-width:1560px) {
+    /* filter */
+    .breadcrumb {
+        width: 99.2rem;
+    }
+
+    .breadcrumb p {
+        margin-left: -0.5rem;
+    }
+
+    .search-container {
+        width: 24rem;
+    }
+
+    .filter-box {
+        height: 81.2rem;
+    }
+
+    .main-featured-page-conatainer {
+        padding: 3.2rem 2.5rem;
+    }
+
+    .color-options {
+       flex-wrap: wrap;
+    }
+
+    .color-options div:nth-child(5),
+    .color-options div:nth-child(6),
+    .color-options div:nth-child(7) {
+        position: relative;
+        top: -13px;
+        left: 10px;
+    }
+
+    .brand-categories {
+        margin-top: -2.9rem;
+    }
+
+    /* bags  */
+    .collection-details picture .img-wrapper {
+        width: 21.87rem;
+        height: 21.87rem;
+        border-radius: 1.2rem;
+    }
+
+    .featured-main-container {
+        width: 73%;
+    }
+
+    .main-featured-page-conatainer {
+        padding: 3.2rem 0rem 3.7rem 2.5rem;
+    }
+
+    .bags-container-header input {
+        width: 23.2rem;
+        letter-spacing: 0.04rem;
+        font-size: 1.4rem;
+        margin: 0rem 0.7rem 0rem 2.6rem;
+    }
+}

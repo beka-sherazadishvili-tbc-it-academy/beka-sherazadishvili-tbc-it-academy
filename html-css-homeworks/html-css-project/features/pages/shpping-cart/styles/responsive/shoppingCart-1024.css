@@ -1,0 +1,129 @@
+@media (max-width: 1560px) {
+    .order-summary-main-container, .breadcrumb {
+        width: 97.6rem;
+        margin-top: -0.5rem;
+    }
+
+    .cart-items-header h1 {
+        margin: 0rem 0rem 0rem 2.8rem;
+    }
+
+    .cart-items-header div {
+        gap: 0rem;
+        margin: 0.8rem 1rem 0rem 0rem;
+    }
+
+    .shopping-cart-container .breadcrumb p {
+        margin: 2.4rem 0rem 0rem 2.5rem;
+    }
+
+    .breadcrumb span {
+        margin-bottom: -2rem;
+    }
+
+    .order-summary .proceed-checkout {
+        width: 64rem;
+        height: 26.3rem;
+        justify-content: center;
+        margin: 1.8rem 0rem 0rem 0rem;
+    }
+
+    .order-summary .checkout-items-details {
+        width: 7.3rem;
+    }
+
+    .cart-label {
+        left: 4rem;
+        top: 1.7rem;
+    }
+
+    .order-summary-main-container .order-summary:nth-child(2) .proceed-checkout {
+        height: 24rem;
+    }
+
+    .order-summary .checkout-item-actions {
+        margin: 6.3rem 0rem 0rem 0.9rem;
+    }
+
+    .order-summary:nth-of-type(2) .checkout-item-actions {
+        margin: 6.2rem 0rem 0rem 2rem;
+    }
+
+    .checkout-item {
+        align-items: start;
+    }
+
+    .product-title {
+        margin: -1.4rem 0rem 0rem 0.3rem;
+        line-height: 2.5rem;
+    }
+
+    .order-summary .product-options {
+        gap: 0.9rem;
+        margin-top: 1.5rem;
+    }
+
+    .order-summary .product-options div:first-child label {
+        line-height: 2.1rem;
+        margin: 0rem 0rem 0rem 0.4rem;
+    }
+
+    .checkout-item img {
+        position: relative;
+        top: 11px;
+        right: 0px;
+    }
+
+    .order-summary:nth-of-type(3) .cart-label
+    {
+        top: 2.3rem;
+        left: 1rem;
+    }
+
+    .order-summary-details {
+        padding: 3rem 1.8rem 3.3rem 3.3rem;
+    }
+
+    .order-summary-main-container .order-summary:nth-child(2) .checkout-items-details h3 {
+        margin-top: -0.4rem;
+    }
+
+    .order-summary-details .submit-btn {
+        width: 6.4rem;
+    }
+
+    .order-summary-btns {
+        margin-top: 5.6rem;
+    }
+
+    .collection-bag .custom-bag-img-container {
+        width: 60rem;
+    }
+
+    .cart-bag .custom-bag-choices {
+        width: 26.7rem;
+    }
+
+    .build-your-bag {
+        width: 94.2rem;
+    }
+
+    .cart-bag.build-your-bag {
+        margin: 4.8rem -2rem 0rem 0rem;
+        padding: 8rem 0rem 1.3rem 0rem;
+    }
+
+    .custom-bag-details {
+        gap: 5.4rem;
+        padding: 0rem 3.2rem 3.2rem 0.7rem;
+    }
+
+    .bag-live-preview {
+        top: 2.2rem;
+        padding: 1.1rem 1.6rem;
+    }
+
+    .cart-bag .add-ons-buttons > div {
+        width: 21.9rem;
+    }
+}

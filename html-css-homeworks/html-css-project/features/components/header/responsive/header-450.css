@@ -1,0 +1,22 @@
+@media (min-width: 320px) and (max-width: 799px) {
+    /* header */
+    .header-container {
+        gap: 0rem;
+    }
+
+    .header-main-nav {
+        display: none;
+    }
+
+    .header-container {
+        gap: 14.6rem;
+    }
+
+    .header-search-box {
+        display: none;
+    }
+
+    .info-container a {
+        display: none;
+    }
+}

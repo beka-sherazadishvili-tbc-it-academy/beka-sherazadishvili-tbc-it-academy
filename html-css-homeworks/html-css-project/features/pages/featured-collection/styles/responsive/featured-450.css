@@ -1,0 +1,76 @@
+@media (max-width:799px) {
+    .breadcrumb {
+        width: 41.8rem;
+    }
+
+    .filter-box {
+        height: 76.9rem;
+        padding: 2.5rem 4rem 2.5rem 1.1rem
+    }
+
+    .search-container {
+        width: 41.8rem;
+    }
+
+    .color-options {
+        margin: 0.1rem 0rem 0rem -1.3rem;
+    }
+
+    .filter-categories > div {
+        margin: 0.2rem 0rem 5rem -0.4rem;
+    }
+
+    .brand-categories {
+        margin-top: -2.3rem;
+    }
+
+    .bags-container-header {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .bags-container-header input {
+        width: 26.9rem;
+    }
+
+    .featured-main-container {
+        width: 100%;
+        margin-left: -1.5rem;
+    }
+
+    .collection-details picture .img-wrapper {
+        width: 41.8rem;
+        height: 41.89rem;
+    }
+
+    .collection-details:not(:first-of-type) picture .img-wrapper {
+        width: 41.8rem;
+        height: 34.67rem;
+    }
+
+    .collection-details:nth-child(2) picture .img-wrapper, 
+    .collection-details:nth-child(3) picture .img-wrapper,
+    .collection-details:nth-child(8) picture .img-wrapper
+    {
+        margin-bottom: 7.1rem;
+    }
+
+    .collection-details:nth-child(4) picture .img-wrapper {
+        margin-bottom: 7.3rem;
+    }
+
+    .collection-details:nth-child(5) picture .img-wrapper {
+        margin-bottom: 7.5rem;
+    }
+
+    .collection-details:nth-child(6) picture .img-wrapper,
+    .collection-details:nth-child(7) picture .img-wrapper 
+    {
+        margin-bottom: 7.2rem;
+    }
+
+    .collection-details:nth-child(5) p {
+        position: relative;
+        top: -0.7rem;
+    }
+}

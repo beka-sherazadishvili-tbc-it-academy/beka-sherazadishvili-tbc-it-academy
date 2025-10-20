@@ -1,0 +1,57 @@
+@media (max-width: 1023px) {
+    .order-summary-main-container,
+    .breadcrumb {
+        width: 97.6rem;
+    }
+
+    .shopping-cart-container .breadcrumb {
+        margin: -1rem 0rem 0rem -0.7rem;
+    }
+
+    .order-summary-main-container, .breadcrumb {
+        width: 75.2rem;
+        margin: -0.4rem 0rem 0rem 5rem;
+    }
+
+    .order-summary .proceed-checkout {
+        width: 72rem;
+        height: 24.4rem;
+    }
+
+    .custom-bag-details {
+        flex-direction: column;
+    }
+
+    .order-summary-main-container, .breadcrumb {
+         flex-direction: column;
+         width: 70.2rem;
+    }
+
+    .build-your-bag {
+        width: 75.2rem;
+    }
+
+    .collection-bag .custom-bag-img-container {
+        height: 53.8rem;
+    }
+
+    .cart-bag .custom-bag-choices {
+        width: 73.7rem;
+    }
+
+    .custom-buttons div {
+        width: 20rem;
+    }
+
+    .custom-buttons {
+        justify-content: space-between;
+    }
+
+    .cart-bag .add-ons-buttons > div {
+        width: 69.9rem;
+    }
+
+    .order-summary .product-options {
+        gap: 0.3rem;
+    }
+}

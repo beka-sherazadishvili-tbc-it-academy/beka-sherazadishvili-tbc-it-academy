@@ -1,0 +1,37 @@
+@media (max-width: 420px) {
+    .main-container .text-content h1 {
+        font-size: 2.6rem;
+        line-height: 3.5rem;
+        overflow-wrap: break-word;
+    }
+
+    .main-container .text-content > div {
+        padding: 0rem 0rem 0rem 2rem;
+    }
+
+    .collection-list {
+        flex-direction: column;
+        align-items: start;
+        margin-top: 7rem;
+    }
+
+    .collection-details picture > img {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    .build-your-bag,
+    .featured-collection,
+    .main-sales-labels {
+        width: 30rem;
+    }
+
+    .build-your-bag {
+        margin: 1.7rem 0rem 0rem;
+    }
+
+    .custom-bag-img-container img {
+        border-radius: 1.2rem;
+        width: 20rem;
+    }
+}

@@ -1,0 +1,32 @@
+@media (max-width: 420px) {
+    .breadcrumb {
+        width: 30rem;
+    }
+    
+    .search-container {
+        width: 30rem;
+    }
+
+    .filter-box {
+        height: 81.9rem;
+    }
+
+    .collection-details picture .img-wrapper {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .collection-details:not(:first-of-type) picture .img-wrapper {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .main-featured-page-conatainer {
+        margin-bottom: 10rem;
+    }
+
+    .bags-container-header div {
+        flex-direction: column;
+    }
+}
+

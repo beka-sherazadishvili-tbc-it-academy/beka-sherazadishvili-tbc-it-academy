@@ -1,0 +1,96 @@
+@media (max-width: 1560px) {
+    /* resolutions X: -3, Y: -1 */
+    .hero-section {
+        width: 99.2rem;
+        margin: 0rem;
+    }
+
+    .image-section div {
+        background-image: url('../.././../../assets/main/responsive/responsive-1024/elegant-luxury-1024.svg');
+    }
+
+    .text-content p {
+        letter-spacing: 0.02rem;
+    }
+
+    .text-content h1 {
+        letter-spacing: 0.2rem;
+    }
+
+    .main-brands span {
+        letter-spacing: 0.07rem;
+        padding: 0;
+    }
+
+    .main-brands-collection div {
+        width: 9.6rem;
+        padding: 0;
+    }
+
+    .collection-navbar {
+        margin-right: -1.6rem;
+    }
+
+    .collection-items {
+        margin-left: 2rem;
+    }
+
+    .collection-details picture > img {
+        height: 22.4rem;
+        width: 22.4rem;
+    }
+
+    .main-sales-labels {
+        margin: 6.3rem 0rem 0rem 0rem;
+        width: 99.2rem;
+    }
+
+    .build-your-bag {
+        width: 99.2rem;
+        margin: 6.3rem -0.4rem 0rem 0rem;
+    }
+
+    .custom-bag-img-container img {
+        border-radius: 1.2rem;
+    }
+
+    .custom-buttons div {
+        margin: 0.2rem 0rem 0rem;
+        width: 8.5rem;
+    }
+
+    .custom-bag-choices > div:nth-child(4) h3 {
+        padding: 0.7rem 0rem 1.8rem 0rem;
+    }
+
+    .add-ons-buttons > div {
+        width: 27.7rem;
+    }
+
+    .custom-bag-details {
+        padding: 0rem 4.2rem 3.2rem 3rem;
+    }
+
+    .custom-bag-summary {
+        gap: 2.6rem;
+        padding-top: 3.6rem;
+    }
+
+    .featured-collection {
+        margin: 6.4rem 0rem 0rem 2rem;
+        width: 99.2rem;
+    }
+
+    .featured-collection img {
+        width: 31.5rem;
+        height: 42rem;
+    }
+
+    .hidden-light-question-mark {
+        display: block;
+    }
+     .hidden-light-question-mark:hover,
+    .hidden-light-question-mark:hover {
+        display: none;
+    }
+}
