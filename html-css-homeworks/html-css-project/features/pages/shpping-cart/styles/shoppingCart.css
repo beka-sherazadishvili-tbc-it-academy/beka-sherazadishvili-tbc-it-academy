@@ -413,3 +413,14 @@ body, html {
     text-decoration: none;
     color: var(--general-color);
 }
+
+.bag-live-preview {
+    position: absolute;
+    top: 7.4rem;
+    left: 2.4rem;
+    width: 11.7rem;
+    padding: 1.1rem 1.6rem;
+    font-size: var(--extra-small-font-size);
+    border-radius: var(--border-radius);
+    background-color: var(--general-color);
+}
