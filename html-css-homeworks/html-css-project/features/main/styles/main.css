@@ -360,3 +360,11 @@ body, html {
 .main-container .custom-bag-choices > div:nth-child(3) h3 {
     padding: 0rem 0rem 1.6rem 0rem;
 }
+
+.main-container .color-options div:nth-child(3) {
+    background-color: #A3A3A3;
+}
+
+.main-container .color-options div:nth-child(4) {
+    background-color: #525252;
+}
