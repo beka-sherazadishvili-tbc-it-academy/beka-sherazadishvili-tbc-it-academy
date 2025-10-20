@@ -54,4 +54,5 @@
     --input-box-shadow: 0rem 0.1rem 0.2rem 0rem rgba(0, 0, 0, 0.05);
     --input-bg-color: linear-gradient(#fff, #fff) padding-box, linear-gradient(96.46deg, #E5E7EB 0%, #F3F4F6 100%) border-box;
     --shipping-cart-container-bg-color: linear-gradient(134.794deg, #F8FAFC 0%, #F3F4F6 100%), linear-gradient(#FFFFFF, #FFFFFF);
+    --hover-box-shadows: 0px 20px 25px -5px rgba(0, 0, 0, 10%), 0px 8px 10px -6px rgba(0, 0, 0, 10%);
 }

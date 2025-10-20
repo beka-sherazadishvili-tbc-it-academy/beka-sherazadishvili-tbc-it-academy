@@ -170,14 +170,8 @@ body, html {
     opacity: 0;
 }
 
-.hidden-light-question-mark {
-    display: none;
-}
-
-.hidden-bold-question-mark {
-    display: none;
-}
-
+.hidden-light-question-mark,
+.hidden-bold-question-mark,
 .hidden-exlamation-mark {
     display: none;
 }

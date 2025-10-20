@@ -15,6 +15,7 @@
 
     .newsletter-section h2 {
         line-height: 2.2rem;
+        letter-spacing: 0.02rem;
     }
 
     .newsletter-section p {
@@ -22,7 +23,7 @@
     }
 
     .submit-btn {
-        right: 1.2rem;
+        right: -0.1rem;
     }
 
     .email-input {
@@ -31,8 +32,9 @@
 
     .menu-section h3, .support-section h3 {
         position: relative;
-        top: 0px;
+        top: 0rem;
         margin-bottom: 2.2rem;
+        left: 0.2rem;
     }
 
     p.privacy-text {

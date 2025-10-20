@@ -89,11 +89,7 @@
     .hidden-light-question-mark {
         display: block;
     }
-
-    .hidden-light-question-mark:hover {
-        display: none;
-    }
-
+     .hidden-light-question-mark:hover,
     .hidden-light-question-mark:hover {
         display: none;
     }

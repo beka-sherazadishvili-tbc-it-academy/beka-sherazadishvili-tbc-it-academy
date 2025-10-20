@@ -20,21 +20,18 @@
         width: 20rem;
     }
 
+    .build-your-bag,
+    .featured-collection,
     .main-sales-labels {
         width: 30rem;
     }
 
     .build-your-bag {
-        width: 30rem;
         margin: 1.7rem 0rem 0rem;
     }
 
     .custom-bag-img-container img {
         border-radius: 1.2rem;
         width: 20rem;
-    }
-
-    .featured-collection {
-        width: 30rem;
     }
 }

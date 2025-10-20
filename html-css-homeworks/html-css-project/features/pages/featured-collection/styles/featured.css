@@ -114,14 +114,13 @@ body, html {
     margin-left: -0.4rem;
 }
 
+.custom-checkbox span,
 .filter-categories input {
     width: 1.5rem;
     height: 1.5rem;
 }
 
 .custom-checkbox span {
-    width: 1.5rem;
-    height: 1.5rem;
     border-radius: 0.25rem; 
     background-color: var(--checkbox-color);
 }
@@ -134,6 +133,7 @@ body, html {
 
 .filter-group input {
     width: 100%;
+    cursor: pointer;
 }
 
 .price-labels {
@@ -170,6 +170,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 .categories {
     margin-bottom: 5rem;
+}
+
+.categories input {
+    cursor: pointer;
 }
 /*  */
 

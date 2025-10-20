@@ -7,7 +7,7 @@
     }
 
     .footer-container {
-        margin: 10.7rem 0rem 0rem -2.5rem;
+        margin: 10.7rem 0rem 0rem -2.9rem;
     }
 
     .newsletter-section p {
@@ -15,8 +15,9 @@
         letter-spacing: -0.01rem;
     }
 
-    .submit-btn {
-        right: 0.2rem;
+    .newsletter-section h2 {
+        margin-bottom: 1.5rem;
+        margin: -0.4rem 0rem 1.8rem 0rem;
     }
 
     p.privacy-text {
@@ -26,5 +27,17 @@
 
     .support-section {
         margin-top: 1rem;
+    }
+
+    .email-input {
+        width: 98%;
+    }
+
+    .submit-btn {
+        right: 0.9rem;
+    }
+
+    .menu-section h3, .support-section h3 {
+        margin: -0.6rem 0rem 2rem 0rem;
     }
 }

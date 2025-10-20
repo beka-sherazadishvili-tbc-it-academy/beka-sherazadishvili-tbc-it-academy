@@ -218,6 +218,7 @@ div.chosen-add-on > div {
 
 .add-to-bag-btn:hover {
     background-color: var(--custom-bag-color);
+    box-shadow: var(--hover-box-shadows);
 }
 
 .add-to-bag-btn a {

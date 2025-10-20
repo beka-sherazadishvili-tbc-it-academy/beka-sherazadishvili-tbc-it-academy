@@ -70,6 +70,18 @@ body, html {
     display: inline-block;
 }
 
+.header-nav-icons img,
+.logo img {
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.header-nav-icons img:hover,
+.logo img:hover {
+    background-color: var(--brand-color);
+    box-shadow: 0 0 0 0.4rem var(--brand-color);
+}
+
 .header-main-nav ul li:not(:first-child) {
     padding-left: 3.2rem;
 }
@@ -103,6 +115,7 @@ body, html {
     border-radius: 0.8rem;
     padding-left: 4.25rem;
     outline: none;
+    background-color: var(--hover-color);
 }
 
 .info-container {
