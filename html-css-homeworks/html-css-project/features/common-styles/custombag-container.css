@@ -364,3 +364,12 @@ div.chosen-add-on > div {
 .collection-bag .custom-bag-img-container img {
     border-radius: var(--border-radius);
 }
+
+.custom-bag-summary a {
+    text-decoration: none;
+    color: var(--general-color);
+}
+
+.custom-bag-summary a span {
+    font-size: var(--medium-font-size);
+}
