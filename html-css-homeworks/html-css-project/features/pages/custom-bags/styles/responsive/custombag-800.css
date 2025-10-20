@@ -162,4 +162,9 @@
     .proceed-checkout .proceed-btn {
         margin-top: 0.5rem;
     }
+
+    .custom-bag-header h1 {
+        width: 100%;
+        margin: 3rem 0rem 0rem 0rem;
+    }
 }
