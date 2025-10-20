@@ -55,7 +55,7 @@ body, html {
 
 
 .custom-bag-options .custom-bag-choices > div:nth-child(2) h3 {
-    padding: 1.1rem 0rem 1.5rem 0rem;
+    padding: -0.9rem 0rem 1.5rem 0rem;
 }
 
 .custom-bag-options .color-options div {
