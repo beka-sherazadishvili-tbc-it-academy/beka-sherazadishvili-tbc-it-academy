@@ -1,0 +1,62 @@
+@media (max-width: 799px) {
+    .card-information {
+        width: 39rem;
+        padding: 0rem 1.7rem 2.5rem 2rem;
+    }
+
+    .order-summary .proceed-checkout {
+        width: 39rem;
+    }
+
+    .shipping-address .two-col-input-line {
+        flex-direction: column;
+    }
+
+    .address-info-container .small-input {
+        margin-left: 0rem;
+        width: 115%;
+    }
+
+    .shipping-address .large-input,
+    .large-input {
+        width: 115%;
+    }
+
+    .address-info-container div:nth-child(4) span:nth-child(1) input, .address-info-container div:nth-child(4) span:nth-child(2) input {
+        margin: 0.3rem 0rem 1rem 0rem;
+        width: 40.7rem;
+    }
+
+    .address-info-container div:last-child span:first-child {
+        position: relative;
+        top: -1.6rem;
+    }
+
+    .payment .large-input, .large-input
+    {
+        width: 103%;
+    }
+
+    .shopping-cart-container .order-summary-details {
+        width: 39rem;
+        padding: 1rem 2.3rem 3.3rem 3.3rem;
+    }
+
+    .custom-bag-info img {
+        width: 10.6rem;
+        height: 10.6rem;
+    }
+
+    .custom-bag-info {
+        margin: 3.5rem 0rem 3rem 0.6rem;
+    }
+
+    .apply-btn {
+        width: 12.7rem;
+        margin-right: -1.5rem;
+    }
+
+    .shopping-cart-container {
+        margin: 0rem 0rem 2.9rem -0.8rem;
+    }
+}

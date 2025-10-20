@@ -1,0 +1,61 @@
+@media (max-width: 1023px) {
+    .order-summary-main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-summary .proceed-checkout {
+        margin: -2.5rem 0rem 0rem -4rem;
+        width: 72.2rem;
+    }
+
+    .large-input {
+        width: 106%;
+    }
+
+    .shipping-address .large-input {
+        width: 106%;
+    }
+
+    .address-info-container .small-input {
+        width: 106%;
+        margin-left: 2.2rem;
+    }
+
+    .address-info-container div:nth-child(4) span:nth-child(1) input,
+    .address-info-container div:nth-child(4) span:nth-child(2) input {
+        margin: 0.3rem 0rem 0rem 0rem;
+        width: 35.7rem;
+    }
+
+    .card-information {
+        width: 72rem;
+    }
+
+    .shopping-cart-container .order-summary-details {
+        width: 72rem;
+        margin: -4.8rem 0rem 9rem -5rem;
+    }
+
+    .checkout-info div {
+        gap: 1.1rem;
+    }
+
+    .color-selection .color-options {
+        margin: -0.4rem 0rem 0rem -0.3rem;
+    }
+
+    .add-ons-buttons > div:first-child {
+        margin: 1.1rem 0rem 0rem 0.5rem;
+    }
+
+    .add-ons-buttons > div:nth-child(2),
+    .add-ons-buttons > div:nth-child(3) {
+        margin-left: 0.4rem;
+    }
+
+    .apply-btn {
+        width: 10.7rem;
+        margin-right: -0.5rem;
+    }
+}

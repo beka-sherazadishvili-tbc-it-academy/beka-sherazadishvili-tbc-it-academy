@@ -1,0 +1,104 @@
+@media (max-width:1560px) {
+    .order-summary-main-container {
+        width: 102.4rem;
+        margin-top: 3.8rem;
+    }
+
+    .shopping-cart-container .order-summary-details {
+        width: 45.6rem;
+    }
+
+    .order-summary .proceed-checkout {
+        width: 45.6rem;
+    }
+
+    .order-summary .proceed-checkout {
+        padding: 1.6rem 4.3rem 3.3rem 0.2rem;
+    }
+
+    .proceed-checkout .checkout p {
+        margin: 1.5rem 0rem 0rem 0.1rem;
+    }
+
+        
+    .proceed-checkout > div > div:first-child {
+        margin: 0.3rem 0rem 0rem -0.3rem;
+    }
+
+    .contact-information > div:last-child p {
+        margin: 3.1rem 0rem 1rem 0rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .two-col-input-line > span {
+      margin: -0.5rem 0rem 0rem -0.3rem;
+    }
+
+    .shipping-address .large-input {
+        width: 99%;
+    }
+
+    .address-info-container div:nth-child(2) {
+        margin: 0.2rem 0rem 0rem 0rem;
+    }
+
+    .address-info-container div:nth-child(3)
+     {
+        margin: -0.1rem 0rem 0rem 0rem
+    }
+
+    .address-info-container div:nth-child(4) span:nth-child(1) input ,
+    .address-info-container div:nth-child(4) span:nth-child(2) input {
+        margin: 0.3rem 0rem 0rem 0rem
+    }
+
+    .address-info-container div:last-child{
+        margin-top: 1rem;
+    }
+
+    .card-information {
+        width: 40.8rem;
+        margin-top: -0.5rem;
+        padding: 0rem 2.7rem 2.5rem 2rem;
+    }
+
+    .checkout-info.finilize-deign div {
+        margin: 3.8rem 0rem 0rem 0.5rem;
+    }
+
+    .checkout-info div {
+        display: flex;
+        gap: 0.5rem;
+        margin: 2rem 0rem 0rem 0.6rem;
+    }
+
+    .custom-bag-info {
+        margin: 3.5rem 0rem 0rem 0.6rem;
+    }
+
+    .color-selection .color-options {
+        margin: -0.4rem 0rem 0rem -0.6rem;
+    }
+
+    .hover-add-on-button {
+        width: 78%;
+    }
+
+    .add-ons-buttons > div:first-child {
+        margin: 1.1rem 0rem 0rem 0.1rem;
+    }  
+    
+    .add-ons-buttons > div:nth-child(2),
+    .add-ons-buttons > div:nth-child(3) {
+        margin-left: 0rem;
+    }
+
+    .apply-btn {
+        width: 11.8rem;
+    }
+
+    .shopping-cart-container {
+        width: 106%;
+        margin: 0rem 0rem -5.4rem -0.8rem;
+    }
+}

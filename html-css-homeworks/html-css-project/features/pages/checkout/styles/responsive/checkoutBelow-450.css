@@ -1,0 +1,32 @@
+@media (max-width: 420px) {
+    .order-summary .proceed-checkout {
+        width: 22rem;
+    }
+
+    .address-info-container div:nth-child(4) span:nth-child(1) input, .address-info-container div:nth-child(4) span:nth-child(2) input {
+        margin: 0.3rem 0rem 1rem 0rem;
+        width: 20.7rem;
+    }
+
+    .card-information {
+        width: 25rem;
+    }
+
+    .custom-bag-info {
+        flex-direction: column;
+    }
+
+    .premium-add-ons .custom-add-on-btns {
+        width: 100%;
+    }
+
+    .shopping-cart-container .order-summary-details {
+        height: 96.2rem;
+        width: 25rem;
+        padding: 1rem 2.3rem 3.3rem 1.3rem;
+    }
+
+    .hover-add-on-button span:last-child {
+        display: none;
+    }
+}
