@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../common-styles/variables.css">
+    <link rel="stylesheet" href="./styles/checkout.css">
+    <link rel="stylesheet" href="../../common-styles/custombag-container.css">
+    <link rel="stylesheet" href="../../common-styles/color-options.css">
+    <link rel="stylesheet" href="../../common-styles/breadcrumb.css">
+    <link rel="stylesheet" href="../../common-styles/cart-items.css">
+    <link rel="stylesheet" href="../../components/foter/footer.css">
+    <title>Bagstore</title>
+</head>
+<body>
+    <iframe src="../../components/header/header.html" width="100%" height="81" frameborder="0"></iframe>
+    
+    <main class="shopping-cart-container">
+        <section class="order-summary-main-container">
+            <div>
+                <div class="order-summary">
+                    <div class="proceed-checkout">
+                        <div class="checkout">
+                            <h1>Checkout</h1>
+                            <p>Complete your purchase in just a few steps</p>
+                        </div>
+                        <div class="contact-information">
+                            <div>
+                                <div class="numbered-circle">1</div>
+                                <h3>Contact Information</h3>
+                            </div>
+                            <p>Already have an account? <span>Log In</span></p>
+                            <div>
+                                <p>Email Adress</p>
+                                <input class="large-input" type="text" placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="shipping-address">
+                            <div>
+                                <div class="numbered-circle secondary-numbers-color">2</div>
+                                <h3>Shipping Address</h3>
+                            </div>
+                            <div class="address-info-container">
+                                <div class="two-col-input-line">
+                                    <span>
+                                        <p>First Name</p>
+                                        <input class="large-input" type="text">
+                                    </span>
+                                    <span>
+                                        <p>Last Name</p>
+                                        <input class="large-input small-input" type="text">
+                                    </span>
+                                </div>
+                                <div>
+                                    <p>Adress</p>
+                                    <input class="large-input" type="text">
+                                </div>
+                                <div>
+                                    <p>Apartment, suite, etc. (optional)</p>
+                                    <input class="large-input" type="text">
+                                </div>
+                                <div class="two-col-input-line">
+                                    <span>
+                                        <p>City</p>
+                                        <input class="large-input" type="text">
+                                    </span>
+                                    <span>
+                                        <p>Country</p>
+                                        <input class="large-input small-input" type="text" placeholder="Canada">
+                                    </span>
+                                </div>
+                                <div class="two-col-input-line">
+                                    <span>
+                                        <p>Province</p>
+                                        <input class="large-input" type="text">
+                                    </span>
+                                    <span>
+                                        <p>Postal Code</p>
+                                        <input class="large-input small-input" type="text">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment">
+                            <div>
+                                <div class="numbered-circle secondary-numbers-color">3</div>
+                                <h3>Payment</h3>
+                            </div>
+                            <div>
+                                <p><img src="../../../assets/checkout/security.svg" alt=""> All transactions are secure and encrypted.</p>
+                            </div>
+                            <div class="card-information">
+                                <div>
+                                    <div class="card-info-header">
+                                        <input type="radio" checked>
+                                        <label>Credit Card</label>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/shopping-cart/visa-colored.svg" alt="">
+                                        <img src="../../../assets/shopping-cart/mastercard-colored.svg" alt="">
+                                        <img src="../../../assets/shopping-cart/amex-colored.svg" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <input class="large-input" type="number" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div>
+                                    <input class="large-input" type="text" placeholder="Name on Card">
+                                </div>
+                                <div class="two-col-input-line">
+                                    <span>
+                                        <input class="large-input" type="text" placeholder="MM / YY">
+                                    </span>
+                                    <span>
+                                        <input class="large-input small-input" type="number" placeholder="CVC">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary-details">
+                <div class="checkout-info">
+                    <div>
+                        <img src="../../../assets/checkout/order.svg" alt="order icon">
+                        <h1>Order Summary</h1>
+                    </div>
+                </div>
+                <div class="custom-bag-info">
+                    <img src="../../../assets/checkout/black-leather.svg" alt="black-leather">
+                    <div>
+                        <h3>Custom Tote Bag</h3>
+                        <p>Color: Midnight Black</p>
+                        <p>Strap: Premium Chain</p>
+                        <p>Add-ons: Extra Pocket</p>
+                    </div>
+                    <div>$214.00</div>
+                </div>
+                <div class="checkout-info finilize-deign">
+                    <div>
+                        <img src="../../../assets/checkout/design.svg" alt="design icon">
+                        <h2>Finalize Your Design</h2>
+                    </div>
+                </div>
+                <div class="color-selection">
+                    <h4>Color Selection</h4>
+                    <div class="color-options">
+                        <div class="outer-circle-filter ">
+                            <span class="inner-circle-filter"></span>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="premium-add-ons">
+                    <h4>Premium Add-ons <span>(+$15 each)</span></h4>
+                    <div class="add-ons-buttons">
+                            <div class="custom-add-on-btns">
+                                <div></div>
+                                <section class="hover-add-on-button"> <!-- using section as div creats another checkbox from common classes-->
+                                    <span>Custom Monogramming</span>
+                                    <span>Add your initials in gold foil</span>
+                                </section>
+                                <img src="../../../assets/checkout/monograming.svg" alt="monogramm aicon">
+                            </div>
+                            <div class="chosen-add-on custom-add-on-btns">
+                                <div></div>
+                                <section class="ctive-custom-btn hover-add-on-button">
+                                    <span>Protective Dust Bag</span>
+                                    <span>Zippered compartment for valuables</span>
+                                </section>
+                                <img src="../../../assets/checkout/extra.svg" alt="extra icon">
+                            </div>
+                            <div class="custom-add-on-btns">
+                                <div></div>
+                                <section class="hover-add-on-button">
+                                    <span>Protective Dust Bag</span>
+                                    <span>Premium cotton storage bag</span>
+                                </section>
+                                <img src="../../../assets/checkout/gray-security-icon.svg" alt="security">
+                            </div>
+                        </div>
+                        <div class="submit-information">
+                            <input class="large-input" type="text" placeholder="Discount code or gift card">
+                            <div class="apply-btn">Apply</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <iframe src="../../components/foter/footer.html" width="100%" height="800"  frameborder="0"></iframe>
+</body>
+</html>

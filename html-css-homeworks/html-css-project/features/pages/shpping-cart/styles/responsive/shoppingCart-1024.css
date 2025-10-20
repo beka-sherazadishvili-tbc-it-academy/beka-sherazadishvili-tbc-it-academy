@@ -1,0 +1,42 @@
+@media (max-width: 1560px) {
+    .order-summary-main-container,
+    .breadcrumb {
+        width: 97.6rem;
+    }
+
+    .cart-items-header h1 {
+        margin: 0rem 0rem 0rem 2.8rem;
+    }
+
+    .cart-items-header div {
+        gap: 0rem;
+        margin: 0.8rem 1rem 0rem 0rem;
+    }
+
+    .shopping-cart-container .breadcrumb p {
+        margin: 2.4rem 0rem 0rem 2.5rem;
+    }
+
+    .breadcrumb span {
+        margin-bottom: -2rem;
+    }
+
+    .order-summary .proceed-checkout {
+        width: 64rem;
+        height: 26.6rem;
+        justify-content: center;
+        margin: 1.8rem 0rem 0rem 0rem;
+    }
+
+    .order-summary .checkout-items-details {
+        width: 7.3rem;
+    }
+
+    .cart-label {
+        left: 4rem;
+    }
+
+    .order-summary-main-container .order-summary:nth-child(2) {
+        
+    }
+}

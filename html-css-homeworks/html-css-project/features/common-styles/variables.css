@@ -6,6 +6,7 @@
     /* Colors */
     --header-border-color: #E5E5E5;
     --hero-background: linear-gradient(167.88deg, #FAFAFA 0%, #F5F5F5 100%);
+    --numbered-circle-bg: linear-gradient(144.736deg, #1F2937 0%, #374151 100%);
     --brand-color: #A3A3A3;
     --custom-bags-background: #D4D4D4;
     --secondary-text: #404040;
@@ -22,6 +23,8 @@
     --sales-color: #F59E0B;
     --custom-color: #A855F7;
     --clear-cart-color: #B91C1C;
+    --color-selection-orange: #D97706;
+    --color-selection-green: #059669;
 
     /* Font Sizes */
     --extra-small-font-size: 1.4rem;
@@ -48,4 +51,7 @@
     --hero-box-shado: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);
     --sub-img-shadows: 0px 1px 2px 0px rgba(0, 0, 0, 5%);
     --collection-items-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 8%);
+    --input-box-shadow: 0rem 0.1rem 0.2rem 0rem rgba(0, 0, 0, 0.05);
+    --input-bg-color: linear-gradient(#fff, #fff) padding-box, linear-gradient(96.46deg, #E5E7EB 0%, #F3F4F6 100%) border-box;
+    --shipping-cart-container-bg-color: linear-gradient(134.794deg, #F8FAFC 0%, #F3F4F6 100%), linear-gradient(#FFFFFF, #FFFFFF);
 }
