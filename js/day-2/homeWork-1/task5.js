@@ -2,41 +2,41 @@
 
 //number guessing game
 function playGuessingGame() {
-    const randomNumber = 5;
-    let userNumber = null;
+    const secretNumber = 5;
+    let guess = null;
 
-    while(userNumber !== randomNumber) {
-        const input = parseInt(prompt("Guess the number between 1 and 20: "));
+    while(guess !== secretNumber) {
+        guess = parseInt(prompt("Guess the number between 1 and 20: "));
 
-        if(isNaN(input) || input < 1 || input > 20) {
+        if(isNaN(guess) || guess < 1 || guess > 20) {
             alert('please enter number in the range');
             continue;
         }
         
-        if(input > randomNumber){
+        if(guess > secretNumber){
             alert('Too high');
-        } else if (input < randomNumber) {
+        } else if (guess < secretNumber) {
             alert('Too low');
         }
-
-        userNumber = input;
     }
 
     return alert('Correct! You win."');
 }
 
 //reverse digits
-function reverseDigits(number) {
-    let reverse = 0;
+function reverseDigits(input) {
+    let output = 0;
 
-    if(isNaN(number) || !isFinite(number) || !Number.isInteger(number)) {
+    if(isNaN(input) || !isFinite(input) || !Number.isInteger(input)) {
         return 'please enter integer number'
     }
 
-    while(number > 0) {
-        reverse =+ reverse * 10 + number % 10;
-        number = (number - number % 10) / 10;
+    while(input > 0) {
+        output =+ output * 10 + input % 10;
+        input = (input - input % 10) / 10;
     }
 
-    return reverse
+    return output;
 }
+
+console.log(reverseDigits(123))

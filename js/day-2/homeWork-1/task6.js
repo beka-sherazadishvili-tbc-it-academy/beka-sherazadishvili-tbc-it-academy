@@ -2,23 +2,23 @@
 
 function sumUntilNegative(){
     let sum = 0;
-    let userinput;
+    let number;
 
     do {
-        userinput = parseInt(prompt('please enter an integer number to sum up'));
+        number = parseInt(prompt('please enter an integer number to sum up'));
 
-        if(isNaN(userinput)) {
+        if(isNaN(number)) {
             alert('please enter the number')
         }
 
-        if(!isFinite(userinput) || !Number.isInteger(userinput)) {
+        if(!isFinite(number) || !Number.isInteger(number)) {
             alert('please enter finite integer number')
         }
 
-        if(userinput >= 0) {
-            sum += userinput;
+        if(number >= 0) {
+            sum += number;
         }
-    } while(userinput >= 0);
+    } while(number >= 0);
 
     return alert(`Total sum is ${ sum }`);
 }
