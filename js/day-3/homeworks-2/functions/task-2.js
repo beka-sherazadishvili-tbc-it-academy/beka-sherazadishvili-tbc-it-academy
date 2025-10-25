@@ -31,8 +31,3 @@ function normalizeSpaces(text) {
     }
 
 }
-
-console.log(normalizeSpaces(' beka             beka.     '))
-console.log(normalizeSpaces('beka         beka.  '))
-console.log(normalizeSpaces('            '))
-console.log(normalizeSpaces(undefined))
