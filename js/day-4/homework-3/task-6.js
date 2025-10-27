@@ -1,8 +1,8 @@
 'use strict'
 
 function rotate(arr, k) {
-    k = Number(k);
     try {
+        k = Number(k);
         if (!Array.isArray(arr)) { throw new TypeError("Input must be an array") };
 
         if(isNaN(k)) {
@@ -26,3 +26,5 @@ function rotate(arr, k) {
         return err.message;
     }
 }
+
+console.log(rotate([1,2,3,4,4,23], Symbol('b')));
