@@ -1,0 +1,20 @@
+body {
+    margin: 50px;
+}
+
+input {
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.btn {
+    display: inline;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    cursor: pointer;
+}

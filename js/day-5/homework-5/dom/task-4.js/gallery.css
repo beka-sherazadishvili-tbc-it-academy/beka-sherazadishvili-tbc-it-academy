@@ -1,0 +1,49 @@
+body {
+    margin: 50px 50px 50px 0px;
+    height: 100vh;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery img{
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+label{
+    position: absolute;
+    right: 11px;
+    top: 4px;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}

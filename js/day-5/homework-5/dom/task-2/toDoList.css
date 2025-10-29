@@ -1,0 +1,35 @@
+body {
+    margin: 50px;
+}
+
+.add-list {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+ul {
+    display: inline-block;
+    width: 300px;
+}
+
+li {
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
