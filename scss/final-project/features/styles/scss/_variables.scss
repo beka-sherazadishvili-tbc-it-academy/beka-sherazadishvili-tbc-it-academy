@@ -1,23 +1,17 @@
 $max-width: 1440px;
 
 // colors
-$header-btn: #2563EB;
-$main-background: #E5E7EB;
-$main-bg-color: #F9FAFB;
-$buttons-background: #EFF6FF;
-$font-color: #FFFFFF;
-$dark-font: #111827;
-$disabled-color: #D1D5DB;
-$border-color: #9CA3AF;
-$green-color: #16A34A;
-$pl-color: #ADAEBC;
-$dark-color: #000000;
-$red-border: #EF4444;
+$cart-amount-color: #D4AF37;
+$general-color: #FFFFFF;
+$korma-color: #8B4513;
+$korma-hover-color: rgba(139, 69, 19, 90%);
 
 
-// font sizes
+// fonts
 $extra-large-font: 30px;
 $header-size: 24px;
 $large-font: 20px;
 $medium-size: 16px;
-$small-size: 15px;
+$small-size: 14px;
+$font-inter: "Inter", sans-serif;
+$font-playfair: "Playfair Display", serif;
