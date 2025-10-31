@@ -1,10 +1,17 @@
 $max-width: 1440px;
 
 // colors
+$footer-text-color: #D1D5DB;
+$customer-bg-color: #FFF8F0;
 $cart-amount-color: #D4AF37;
+$header-nav-color: #4B5563;
+$hero-text-color: #374151;
+$hero-btn-color: #ffe6d7;
 $general-color: #FFFFFF;
 $korma-color: #8B4513;
 $korma-hover-color: rgba(139, 69, 19, 90%);
+$hero-bg-color: linear-gradient(90deg, #FFE5D4 0%, #FFF8F0 100%);
+$special-offers-bg-color: linear-gradient(90deg, #D4AF37 0%, #FACC15 100%);
 
 
 // fonts
@@ -15,3 +22,7 @@ $medium-size: 16px;
 $small-size: 14px;
 $font-inter: "Inter", sans-serif;
 $font-playfair: "Playfair Display", serif;
+
+//shadows
+$header-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+$featured-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);

@@ -11,7 +11,22 @@
     height: 64px;
     padding: 0px 112px;
     font-family: $font-inter;
-    gap: 178.21px;
+    background-color: $general-color;
+    box-shadow: $header-box-shadow;
+
+    @include desktop-responsive {
+        padding: 0px 32px;
+    }
+
+    @include tablet-responsive {
+        padding: 0px 24px;
+    }
+
+    @include mobile-responsive {
+        padding: 0px 16px;
+    }
+
+
 
     .header-logo {
         @include font(24px, 700, 32px);
@@ -20,14 +35,40 @@
     }
 
     .header-navigation {
+        @include mobile-responsive {
+            display: none;
+        }
+
         ul {
             @include flexbox();
             @include font(14px);
             gap: 33px;
             padding-left: 38px;
 
+            @include tablet-responsive {
+                padding-left: 0px;
+                gap: 20px;
+            }
+
             li {
+                color: $header-nav-color;
                 padding: 8px 12px;
+
+                &:hover {
+                    color: $korma-color;
+                }
+
+                @include tablet-responsive {
+                    padding: 8px 25px 8px 0px;
+                }
+            }
+
+            li:first-child {
+                color: $korma-color;
+
+                &:hover {
+                    color: $cart-amount-color;
+                }
             }
         }
     }
@@ -39,12 +80,24 @@
         .header-search-icon {
             @include resolution(18px, 21px);
             @include bg-img('../../../../assets/header/search.svg');
+
+            &:hover {
+                background-image: url('../../../../assets/header/search-hover.svg')
+            }
+
+            @include small-mobile {
+                display: none;
+            }
         }
 
         .header-cart-icon {
             @include resolution(20.25px, 21px);
             @include bg-img('../../../../assets/header/cart.svg');
             position: relative;
+
+            &:hover {
+                background-image: url('../../../../assets/header/cart-hover.svg')
+            }
 
             .cart-amount{
                 @include resolution(20px, 20px);
@@ -57,11 +110,39 @@
                 border-radius: 9999px;
                 background-color: $cart-amount-color;
             }
+
+            @include small-mobile {
+                display: none;
+            }
         }
 
         .header-order-btn {
             @include button(10px, 16px);
             font-size: $small-size;
+
+            span:first-child {
+                display: block;
+
+                @include tablet-responsive {
+                    display: none;
+                }
+
+                @include mobile-responsive {
+                    display: block;
+                }
+            }
+
+            span:last-child {
+                display: none;
+
+                @include tablet-responsive {
+                    display: block;
+                }
+
+                @include mobile-responsive {
+                    display: none;
+                }
+            }
         }
     }
 }

@@ -54,3 +54,20 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+@mixin small-mobile {
+    @media (max-width: 449px) { @content; }
+}
+
+@mixin mobile-responsive{
+    @media (max-width: 799px) { @content; }
+}
+
+@mixin tablet-responsive {
+    @media (max-width: 1023px) { @content; }
+}
+
+@mixin desktop-responsive {
+    @media (max-width: 1439px) { @content; }
+}
+
