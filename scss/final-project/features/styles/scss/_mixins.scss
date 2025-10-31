@@ -41,6 +41,21 @@
   }
 }
 
+@mixin input(
+  $width, 
+  $height, 
+  $border-radius, 
+  $border-size, 
+  $border-color,
+) {
+  width: $width;
+  height: $height;
+  border: $border-size solid $border-color;
+  border-radius: $border-radius;
+  background-color: $input-bg-color;
+  outline: none;
+}
+
 @mixin resolution (
   $width, 
   $height

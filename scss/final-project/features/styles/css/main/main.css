@@ -426,6 +426,10 @@ body .featured-pastries .featured-pastries-list > div {
     height: 400px;
   }
 }
+body .featured-pastries .featured-pastries-list > div picture {
+  display: flex;
+  justify-content: center;
+}
 body .featured-pastries .featured-pastries-list > div img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

@@ -1,0 +1,157 @@
+body .pastries-hero-container .pasrties-flex-container .hero-description h1 {
+  font-family: "Playfair Display", serif;
+  color: #8B4513;
+}
+
+body .pastries-hero-container {
+  height: 400px;
+}
+body .pastries-hero-container .pasrties-flex-container {
+  width: 100%;
+  height: 100%;
+  padding: 12px 224.5px;
+  gap: 48px;
+}
+body .pastries-hero-container .pasrties-flex-container .hero-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px 32px;
+  gap: 16px;
+}
+body .pastries-hero-container .pasrties-flex-container .hero-description h1 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 60px;
+}
+body .pastries-hero-container .pasrties-flex-container .hero-description p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 28px;
+  color: #374151;
+}
+body .filter-container {
+  height: 102px;
+  padding: 33px 110px 33px 112px;
+}
+body .filter-container .filter-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 72px;
+}
+body .filter-container .filter-flex-container .filter-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+body .filter-container .filter-flex-container .filter-categories span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 28px;
+  color: #8B4513;
+  padding-right: 24px;
+}
+body .filter-container .filter-flex-container .filter-categories .filter-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 9px;
+  font-size: 14px;
+}
+body .filter-container .filter-flex-container .filter-categories .filter-btns div {
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #F3F4F6;
+  color: #374151;
+  border: none;
+  cursor: pointer;
+}
+body .filter-container .filter-flex-container .filter-categories .filter-btns div:hover {
+  background-color: rgba(139, 69, 19, 0.9);
+}
+body .filter-container .filter-flex-container .filter-categories .filter-btns div:hover {
+  color: #FFFFFF;
+}
+body .filter-container .filter-flex-container .filter-categories .filter-btns div:first-of-type {
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #8B4513;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+body .filter-container .filter-flex-container .filter-categories .filter-btns div:first-of-type:hover {
+  background-color: rgba(139, 69, 19, 0.9);
+}
+body .filter-container .filter-flex-container .filter-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+body .filter-container .filter-flex-container .filter-inputs label {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 20px;
+  color: #8B4513;
+}
+body .filter-container .filter-flex-container .filter-inputs div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+body .filter-container .filter-flex-container .filter-inputs div:first-child input {
+  width: 108px;
+  height: 37px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  background-color: #EFEFEF;
+  outline: none;
+}
+body .filter-container .filter-flex-container .filter-inputs div:last-child input {
+  width: 167.5px;
+  height: 37px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  background-color: #EFEFEF;
+  outline: none;
+}
+body .main-categories.featured-pastries.pastries-collection {
+  padding: 49px 80px;
+}
+body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div {
+  width: 280px;
+  height: 436px;
+}
+body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div a {
+  padding: 8px 17px;
+  border-radius: 6px;
+  background-color: #8B4513;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div a:hover {
+  background-color: rgba(139, 69, 19, 0.9);
+}
+body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+
+/*# sourceMappingURL=pastries.css.map */

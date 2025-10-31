@@ -337,6 +337,11 @@ body {
                     height: 400px;
                 }
 
+                picture {
+                    display: flex;
+                    justify-content: center;
+                }
+
                 img {
                     border-top-left-radius: 8px;
                     border-top-right-radius: 8px;

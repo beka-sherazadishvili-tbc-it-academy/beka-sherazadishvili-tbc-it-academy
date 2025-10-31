@@ -1,0 +1,112 @@
+@import '../variables';
+@import '../mixins';
+@import '../components.scss';
+
+body {
+    .pastries-hero-container {
+        height: 400px;
+
+        .pasrties-flex-container {
+            @include resolution(100%, 100%);
+            padding: 12px 224.5px;
+            gap: 48px;
+
+            .hero-description {
+                @include flexbox(center, center, column);
+                text-align: center;
+                padding: 0px 32px;
+                gap: 16px;
+
+                h1 {
+                    @include font(60px, 700, 60px);
+                    @extend %playfair-font;
+                }
+
+                p {
+                    @include font(20px, 400, 28px, 0.3px);
+                    color: $hero-text-color;
+                }
+            }
+        }
+    }
+
+
+    .filter-container {
+        height: 102px;
+        padding: 33px 110px 33px 112px;
+
+        .filter-flex-container{
+            @include flexbox(start, center);
+            gap: 72px;
+
+            .filter-categories {
+                @include flexbox(start, center);
+
+                span {
+                    @include font(18px, 600, 28px, 0.2px);
+                    color: $korma-color;
+                    padding-right: 24px;
+                }
+
+                .filter-btns {
+                    @include flexbox();
+                    gap: 9px;
+                    font-size: 14px;
+
+                    div {
+                        @include button(10px, 16px, $filter-btn-color, $hero-text-color);
+
+                        &:hover {
+                            color: $general-color;
+                        }
+                    }
+
+                    div:first-of-type {
+                        @include button(10px, 16px);
+                    }
+                }
+            }
+
+            .filter-inputs {
+                @include flexbox(start, center);
+                gap: 16px;
+
+                label {
+                    @include font(14px, 400, 20px);
+                    color: $korma-color;
+                }
+
+                div {
+                    @include flexbox(start, center);
+                    gap: 10px;
+                }
+
+                div:first-child input {
+                    @include input(108px, 37px, 6px, 1px, $footer-text-color);
+                }
+
+                div:last-child input {
+                    @include input(167.5px, 37px, 6px, 1px, $footer-text-color);
+                }
+            }
+        }
+    }
+
+    .main-categories.featured-pastries.pastries-collection {
+        padding: 49px 80px;
+        
+        .featured-pastries-list {
+            > div {
+                @include resolution(280px, 436px);
+
+                a {
+                    @include button(8px, 17px);
+                }
+
+                p {
+                    @include font(14px, 400, 20px);
+                }
+            }
+        }
+    }
+}
