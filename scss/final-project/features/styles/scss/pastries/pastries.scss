@@ -3,6 +3,9 @@
 @import '../components.scss';
 
 body {
+    max-width: 100%;
+    position: relative;
+
     .pastries-hero-container {
         height: 400px;
 
@@ -10,6 +13,10 @@ body {
             @include resolution(100%, 100%);
             padding: 12px 224.5px;
             gap: 48px;
+
+            @include desktop-responsive {
+                padding: 12px 124.5px;
+            }
 
             .hero-description {
                 @include flexbox(center, center, column);
@@ -36,12 +43,25 @@ body {
         padding: 33px 110px 33px 112px;
         border-bottom: 1px solid $filter-border;
 
+        @include desktop-responsive {
+            padding: 33px
+        }
+
         .filter-flex-container{
             @include flexbox(start, center);
             gap: 72px;
 
+            @include desktop-responsive {
+                gap: 42px;
+                align-items: end;
+            }
+
             .filter-categories {
                 @include flexbox(start, center);
+
+                @include desktop-responsive {
+                    display: block;
+                }
 
                 span {
                     @include font(18px, 600, 28px, 0.2px);
@@ -53,6 +73,10 @@ body {
                     @include flexbox();
                     gap: 9px;
                     font-size: 14px;
+
+                    @include desktop-responsive {
+                        padding-left: 24px;
+                    }
 
                     div {
                         @include button(10px, 16px, $filter-btn-color, $hero-text-color);
@@ -75,11 +99,21 @@ body {
                 label {
                     @include font(14px, 400, 20px);
                     color: $korma-color;
+
+                    span {
+                        @include desktop-responsive {
+                            display: none;
+                        }
+                    }
                 }
 
                 div {
                     @include flexbox(start, center);
                     gap: 10px;
+
+                    @include desktop-responsive {
+                        gap: 14px;
+                    }
                 }
 
                 input {
@@ -104,12 +138,20 @@ body {
         height: 100%;
         margin-bottom: 0px;
 
+        @include desktop-responsive {
+            padding: 76px 0px 48px;
+        }
+
         .featured-pastries-list {
             flex-wrap: wrap;
             > div {
                 @include resolution(280px, 436px);
                 background-color: $general-color;
                 position: relative;
+
+                @include desktop-responsive {
+                    width: 298px;
+                }
 
                 div:first-child {
                     border-top-left-radius: 8px;
@@ -153,12 +195,27 @@ body {
 
             }
 
-            div:nth-child(9),
+            div:nth-child(9) {
+                height: 456px;
+            }
+
             div:nth-child(10),
             div:nth-child(11),
             div:nth-child(12) {
                 height: 456px;
+
+                @include desktop-responsive{
+                    height: 436px;
+                }
             }
+
+            div:nth-child(8),
+            div:nth-child(7) {
+                @include desktop-responsive {
+                    height: 456px;
+                }
+            }
+
         }
 
         .pagination {
@@ -211,6 +268,10 @@ body {
         height: 312px;
         padding: 48px 112px;
         background: $general-color;
+
+        @include desktop-responsive {
+            padding: 48px 32px;
+        }
 
         .special-offers-flex-container {
             background-color: $cart-amount-color;
