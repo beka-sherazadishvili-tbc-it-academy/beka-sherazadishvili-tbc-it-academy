@@ -1,0 +1,20 @@
+@import '../variables';
+@import '../mixins';
+@import '../components.scss';
+
+body {
+    max-width: 100%;
+
+    .main-breadcrumb-container {
+        height: 53px;
+        padding: 17px 112px;
+
+        .breadcrumb-flex-container {
+            @include flexbox();
+            gap: 8px;
+            @include font(14px);
+
+
+        }
+    }
+}

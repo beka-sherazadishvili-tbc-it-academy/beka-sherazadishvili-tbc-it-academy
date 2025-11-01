@@ -1,0 +1,20 @@
+body {
+  max-width: 100%;
+}
+body .main-breadcrumb-container {
+  height: 53px;
+  padding: 17px 112px;
+}
+body .main-breadcrumb-container .breadcrumb-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+
+/*# sourceMappingURL=pastries.css.map */
