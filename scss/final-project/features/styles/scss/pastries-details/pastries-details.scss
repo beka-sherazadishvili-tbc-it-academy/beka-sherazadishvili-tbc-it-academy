@@ -8,11 +8,181 @@ body {
     .main-breadcrumb-container {
         height: 53px;
         padding: 17px 112px;
+        border-bottom: 1px solid $filter-border;
 
         .breadcrumb-flex-container {
-            @include flexbox();
-            gap: 8px;
+            @include flexbox(start, center);
+            gap: 9px;
             @include font(14px);
+
+            p:last-child {
+                color: $korma-color;
+            }
+
+        }
+    }
+
+    .main-pastries-details {
+        height: 603px;
+        padding: 48px 112px;
+
+        .pastries-detail-flex-container {
+            @include flexbox();
+            gap: 48px;
+
+            .pastries-images {
+                @include flexbox(start, start, column);
+                gap: 15px;
+                width: 48%;
+
+                div {
+                    @include flexbox();
+                    gap: 18px;
+
+                    picture:first-child img {
+                    border: 2px solid $korma-color;
+                }
+                }
+
+                img {
+                    border-radius: 8px;
+                }
+            }
+
+            .pastries-details {
+                @include flexbox(start, start, column);
+                gap: 24px;
+
+                .pastries-info {
+                    color: $korma-color;
+
+                    h1 {
+                        @include font(36px, 700, 40px);
+                        font-family: $font-playfair;
+                        padding-bottom: 8px;
+                    }
+
+                    p {
+                        @include font(30px, 700, 36px, 1px);
+                    }
+
+                    .rating {
+                        @include flexbox(start, center);
+                        gap: 17px;
+                        padding-bottom: 16px;
+
+                        p {
+                            @include font(16px, 400, 24px);
+                            color: $header-nav-color;
+                        }
+
+                        div {
+                            @include flexbox();
+                            
+                            div {
+                                @include resolution(18px, 16px);
+                                @include bg-img('../../../../assets/main/star.svg');
+                            }
+                        }
+                    }
+                }
+
+                .pastries-description {
+                    p {
+                        @include font(18px, 400, 29.3px, 0.2px);
+                    }
+                }
+
+                .pastries-quantity {
+                    @include flexbox(start, center);
+                    gap: 16px;
+
+                    p {
+                        @include font(18px, 400, 28px, 0.4px);
+                        color: $korma-color;
+                    }
+
+                    >div {
+                        @include flexbox();
+                        width: 100%;
+
+                        div {
+                            @include flexbox(center, center);
+                            width: 100%;
+                            height: 42px;
+                            border: 1px solid $footer-text-color;
+
+                            &:first-child,
+                            &:last-child {
+                                &:hover {
+                                    background-color: $filter-btn-color;
+                                    color: $korma-color;
+                                }
+                            }
+                        }
+
+                        div:first-child {
+                            width: 33px;
+                            border-radius: 6px 0px 0px 6px;
+                        }
+
+                        div:last-child {
+                            width: 35px;
+                            border-radius: 0 6px 6px 0;
+                        }
+                        
+                        div:nth-child(2) {
+                            width: 42px;
+                            border-right: none;
+                            border-left: none;
+                        }
+                    }
+                }
+
+                .pastries-btns {
+                    @include flexbox();
+                    gap: 16px;
+
+                    div:first-child {
+                        @include button(15px, 207px);
+
+                        img {
+                            position: relative;
+                            top: 2px;
+                            right: 6px;
+                        }
+
+                        span {
+                            position: relative;
+                            right: -7px;
+                        }
+                    }
+
+                    div:last-child {
+                        @include button(23px, 24px, $general-color);
+                        border: 1px solid $korma-color;
+                        @include bg-img('../../../../assets/pastries-details/heart-original.svg');
+
+                        &:hover {
+                            background-color: $korma-color;
+                            background-image: url('../../../../assets/pastries-details/heart-hover.svg');
+                        }
+                    }
+                }
+
+                .pastries-features {
+                    @include resolution(100%, 80px);
+                    padding-top: 24px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 16px;
+                    @include font(14px);
+
+                    img {
+                        padding-right: 8px;
+                    }
+                }
+            }
 
 
         }
