@@ -18,6 +18,18 @@ body {
                 padding: 12px 124.5px;
             }
 
+            @include tablet-responsive {
+                padding: 114px 0px;
+            }
+
+            @include mobile-responsive {
+                padding: 96px 0px;
+            }
+
+            @include small-mobile {
+                padding: 30px 0px;
+            }
+
             .hero-description {
                 @include flexbox(center, center, column);
                 text-align: center;
@@ -27,6 +39,11 @@ body {
                 h1 {
                     @include font(60px, 700, 60px);
                     @extend %playfair-font;
+
+                    @include tablet-responsive {
+                        font-size: 48px;
+                        line-height: 48px;
+                    }
                 }
 
                 p {
@@ -44,7 +61,21 @@ body {
         border-bottom: 1px solid $filter-border;
 
         @include desktop-responsive {
-            padding: 33px
+            padding: 33px;
+        }
+
+        @include desktop-responsive {
+            padding: 33px 24px;
+            height: 154px;
+        }
+
+        @include mobile-responsive {
+            padding: 33px 16px;
+            height: 226px;
+        }
+
+        @include small-mobile {
+            height: 280px;
         }
 
         .filter-flex-container{
@@ -56,6 +87,10 @@ body {
                 align-items: end;
             }
 
+            @include tablet-responsive {
+                display: block
+            }
+
             .filter-categories {
                 @include flexbox(start, center);
 
@@ -63,10 +98,23 @@ body {
                     display: block;
                 }
 
+                @include tablet-responsive {
+                    display: flex;
+                    padding-bottom: 17px;
+                }
+
+                @include mobile-responsive {
+                    display: block;
+                }
+
                 span {
                     @include font(18px, 600, 28px, 0.2px);
                     color: $korma-color;
                     padding-right: 24px;
+
+                    @include tablet-responsive {
+                        padding-right: 0px;
+                    }
                 }
 
                 .filter-btns {
@@ -76,6 +124,10 @@ body {
 
                     @include desktop-responsive {
                         padding-left: 24px;
+                    }
+
+                    @include mobile-responsive {
+                        flex-wrap: wrap;
                     }
 
                     div {
@@ -96,12 +148,25 @@ body {
                 @include flexbox(start, center);
                 gap: 16px;
 
+                @include small-mobile {
+                    flex-direction: column;
+                    align-items: start,
+                }
+
                 label {
                     @include font(14px, 400, 20px);
                     color: $korma-color;
 
                     span {
                         @include desktop-responsive {
+                            display: none;
+                        }
+
+                        @include tablet-responsive {
+                            display: inline;
+                        }
+
+                        @include mobile-responsive {
                             display: none;
                         }
                     }
@@ -113,6 +178,14 @@ body {
 
                     @include desktop-responsive {
                         gap: 14px;
+                    }
+
+                    @include tablet-responsive {
+                        gap: 9px;
+                    }
+
+                    @include mobile-responsive {
+                        gap: 38px;
                     }
                 }
 
@@ -127,6 +200,16 @@ body {
 
                 div:last-child input {
                     @include input(167.5px, 37px, 6px, 1px, $footer-text-color);
+
+                    @include mobile-responsive {
+                        position: relative;
+                        top: 2px;
+                        right: 15px;
+
+                        @include small-mobile {
+                            right: -6px;
+                        }
+                    }
                 }
             }
         }
@@ -142,6 +225,10 @@ body {
             padding: 76px 0px 48px;
         }
 
+        @include tablet-responsive {
+            padding: 49px 0px 48px;
+        }
+
         .featured-pastries-list {
             flex-wrap: wrap;
             > div {
@@ -151,6 +238,18 @@ body {
 
                 @include desktop-responsive {
                     width: 298px;
+                }
+
+                @include tablet-responsive {
+                    width: 360px;
+                }
+
+                @include mobile-responsive {
+                    width: 418px;
+                }
+
+                @include mobile-responsive {
+                    width: 290px;
                 }
 
                 div:first-child {
@@ -197,6 +296,10 @@ body {
 
             div:nth-child(9) {
                 height: 456px;
+
+                @include tablet-responsive {
+                    height: 436px;
+                }
             }
 
             div:nth-child(10),
@@ -207,12 +310,28 @@ body {
                 @include desktop-responsive{
                     height: 436px;
                 }
+
+                @include mobile-responsive{
+                    height: 416px;
+                }
             }
 
             div:nth-child(8),
             div:nth-child(7) {
                 @include desktop-responsive {
                     height: 456px;
+                }
+
+                @include tablet-responsive {
+                    height: 436px;
+                }
+            }
+
+            > div:nth-child(5),
+            div:nth-child(6),
+            div:nth-child(7) {
+                @include mobile-responsive{
+                    height: 416px;
                 }
             }
 
@@ -273,6 +392,21 @@ body {
             padding: 48px 32px;
         }
 
+        @include tablet-responsive {
+            padding: 48px 24px;
+            height: 340px;
+        }
+
+        @include mobile-responsive {
+            padding: 48px 16px;
+            height: 368px;
+        }
+
+        @include small-mobile {
+            padding: 48px 16px;
+            height: 450px;
+        }
+
         .special-offers-flex-container {
             background-color: $cart-amount-color;
             padding: 32px;
@@ -283,9 +417,19 @@ body {
                 line-height: 36px;
             }
 
+            p {
+                @include tablet-responsive {
+                    text-align: center;
+                }
+            }
+
             div {
                 font-size: 16px;
                 @include button(11px, 32px);
+
+                @include small-mobile {
+                    font-size: 14px;
+                }
             }
         }
     }
