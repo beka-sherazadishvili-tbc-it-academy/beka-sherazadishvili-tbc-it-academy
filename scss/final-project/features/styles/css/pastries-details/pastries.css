@@ -21,6 +21,11 @@ body .main-breadcrumb-container {
     padding-inline: 25px;
   }
 }
+@media (max-width: 799px) {
+  body .main-breadcrumb-container {
+    padding-inline: 16px;
+  }
+}
 body .main-breadcrumb-container .breadcrumb-flex-container {
   display: flex;
   flex-direction: row;
@@ -49,6 +54,12 @@ body .main-pastries-details {
   body .main-pastries-details {
     height: 1147px;
     padding-inline: 24px;
+  }
+}
+@media (max-width: 799px) {
+  body .main-pastries-details {
+    height: 1206px;
+    padding-inline: 16px;
   }
 }
 body .main-pastries-details .pastries-detail-flex-container {
@@ -218,9 +229,14 @@ body .main-pastries-details .pastries-detail-flex-container .pastries-details .p
     padding-inline: 143px;
   }
 }
-@media (max-width: 1439px) {
+@media (max-width: 1023px) {
   body .main-pastries-details .pastries-detail-flex-container .pastries-details .pastries-btns div:first-child {
     padding-inline: 291px;
+  }
+}
+@media (max-width: 799px) {
+  body .main-pastries-details .pastries-detail-flex-container .pastries-details .pastries-btns div:first-child {
+    padding-inline: 124px;
   }
 }
 body .main-pastries-details .pastries-detail-flex-container .pastries-details .pastries-btns div:first-child img {
@@ -279,10 +295,16 @@ body .about-pastries-container {
     padding-inline: 32px;
   }
 }
-@media (max-width: 1439px) {
+@media (max-width: 1023px) {
   body .about-pastries-container {
     height: 611px;
     padding-inline: 24px;
+  }
+}
+@media (max-width: 799px) {
+  body .about-pastries-container {
+    height: 815px;
+    padding-inline: 16px;
   }
 }
 body .about-pastries-container .about-pastries-flex-container {
@@ -312,16 +334,36 @@ body .about-pastries-container .about-pastries-flex-container .about-pastries-na
   padding-inline: 33px;
   padding-block: 17px;
 }
+@media (max-width: 799px) {
+  body .about-pastries-container .about-pastries-flex-container .about-pastries-navigation ul li {
+    padding-block: 27px;
+  }
+}
 body .about-pastries-container .about-pastries-flex-container .about-pastries-navigation ul li:first-child {
   padding-block: 16px;
   color: #8B4513;
   border-bottom: 2px solid #8B4513;
 }
+@media (max-width: 799px) {
+  body .about-pastries-container .about-pastries-flex-container .about-pastries-navigation ul li:first-child {
+    padding-block: 27px;
+  }
+}
 body .about-pastries-container .about-pastries-flex-container .about-pastries-navigation ul li:hover {
   color: #8B4513;
 }
+@media (max-width: 799px) {
+  body .about-pastries-container .about-pastries-flex-container .about-pastries-navigation ul li:last-child {
+    display: none;
+  }
+}
 body .about-pastries-container .about-pastries-flex-container .about-this-pastries {
   padding: 32px 42px 32px 32px;
+}
+@media (max-width: 799px) {
+  body .about-pastries-container .about-pastries-flex-container .about-this-pastries {
+    padding: 32px;
+  }
 }
 body .about-pastries-container .about-pastries-flex-container .about-this-pastries h1 {
   font-size: 24px;
@@ -338,6 +380,11 @@ body .about-pastries-container .about-pastries-flex-container .about-this-pastri
 @media (max-width: 1023px) {
   body .about-pastries-container .about-pastries-flex-container .about-this-pastries p span {
     display: block;
+  }
+}
+@media (max-width: 799px) {
+  body .about-pastries-container .about-pastries-flex-container .about-this-pastries p span {
+    display: inline;
   }
 }
 body .about-pastries-container .about-pastries-flex-container .about-this-pastries p, body .about-pastries-container .about-pastries-flex-container .about-this-pastries h1 {
