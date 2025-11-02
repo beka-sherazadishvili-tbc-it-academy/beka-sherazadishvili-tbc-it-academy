@@ -580,6 +580,8 @@ body {
                         padding: 0px 0px 25px;
                         box-shadow: none;
                         gap: 10px;
+                        border-radius: 0px;
+                        border-bottom: 1px solid $filter-border;
 
                         @include desktop-responsive {
                             @include resolution(629px, 153px);
@@ -598,16 +600,31 @@ body {
                         }
                         
                         p {
-                            letter-spacing: 0.1px;
+                            letter-spacing: 0.04px;
                             padding-left: 64px;
                         }
 
                         .customer-details {
+                            width: 100%;
                             .customer-rating {
+                                width: 100%;
                                 gap: 7px;
 
-                                > div {
+                                > div:first-child {
+                                    @include flexbox(space-between, center, row);
+                                    width: 100%;
+                                    padding: 0px;
+
+                                    p {
+                                        font-size: 14px;
+                                        padding: 0px;
+                                        color: $comments-label-color;
+                                    }
+                                }
+
+                                > div:last-child {
                                     width: 95px;
+                                    padding-right: 6px;
 
                                     @include tablet-responsive {
                                         width: 97px;

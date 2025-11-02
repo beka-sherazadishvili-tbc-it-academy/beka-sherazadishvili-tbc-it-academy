@@ -668,6 +668,8 @@ body .customer-reviews-container .customer-reviews-flex-container > div:first-of
   padding: 0px 0px 25px;
   box-shadow: none;
   gap: 10px;
+  border-radius: 0px;
+  border-bottom: 1px solid #E5E7EB;
 }
 @media (max-width: 1439px) {
   body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer {
@@ -694,17 +696,35 @@ body .customer-reviews-container .customer-reviews-flex-container > div:first-of
   }
 }
 body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer p {
-  letter-spacing: 0.1px;
+  letter-spacing: 0.04px;
   padding-left: 64px;
 }
+body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details {
+  width: 100%;
+}
 body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating {
+  width: 100%;
   gap: 7px;
 }
-body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating > div {
+body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+}
+body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating > div:first-child p {
+  font-size: 14px;
+  padding: 0px;
+  color: #6B7280;
+}
+body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating > div:last-child {
   width: 95px;
+  padding-right: 6px;
 }
 @media (max-width: 1023px) {
-  body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating > div {
+  body .customer-reviews-container .customer-reviews-flex-container > div:first-of-type .customer-list .customer .customer-details .customer-rating > div:last-child {
     width: 97px;
   }
 }
