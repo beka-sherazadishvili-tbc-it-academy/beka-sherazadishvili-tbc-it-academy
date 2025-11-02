@@ -85,11 +85,13 @@ body {
                     @include flexbox();
                     gap: 16px;
 
-                    div:first-child {
+                    a {
                         @include button(19px, 33px);
+                        text-decoration: none;
+                        cursor: pointer;
                     }
 
-                    div:last-child {
+                    div {
                         @include button(16px, 34px);
                         border: 2px solid $korma-color;
                         color: $korma-color;
@@ -198,6 +200,7 @@ body {
                         border-radius: 8px;
                         margin-bottom: 16px;
                         box-shadow: $featured-box-shadow;
+                        cursor: pointer;
 
                         @include tablet-responsive {
                             margin-bottom: 15px;
@@ -340,14 +343,14 @@ body {
                 picture {
                     display: flex;
                     justify-content: center;
-                }
 
-                > img {
-                    border-top-left-radius: 8px;
-                    border-top-right-radius: 8px;
+                    > img {
+                        border-radius: 8px 8px 0px 0px;
+                        cursor: pointer;
 
-                    @include small-mobile {
-                        width: 290px;
+                        @include small-mobile {
+                            width: 290px;
+                        }
                     }
                 }
 

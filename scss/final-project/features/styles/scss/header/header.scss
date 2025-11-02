@@ -53,6 +53,7 @@
             li {
                 color: $header-nav-color;
                 padding: 8px 12px;
+                cursor: pointer;
 
                 &:hover {
                     color: $korma-color;
@@ -80,6 +81,7 @@
         .header-search-icon {
             @include resolution(18px, 21px);
             @include bg-img('../../../../assets/header/search.svg');
+            cursor: pointer;
 
             &:hover {
                 background-image: url('../../../../assets/header/search-hover.svg')
@@ -94,6 +96,7 @@
             @include resolution(20.25px, 21px);
             @include bg-img('../../../../assets/header/cart.svg');
             position: relative;
+            cursor: pointer;
 
             &:hover {
                 background-image: url('../../../../assets/header/cart-hover.svg')

@@ -81,7 +81,7 @@ body {
                     }
 
                     picture:first-child img {
-                    border: 2px solid $korma-color;
+                        border: 2px solid $korma-color;
                     }
 
                     img {
@@ -93,6 +93,7 @@ body {
 
                 img {
                     border-radius: 8px;
+                    cursor: pointer;
 
                     @include small-mobile {
                         width: 290px;
@@ -145,6 +146,14 @@ body {
                         @include desktop-responsive {
                             letter-spacing: 0.15px;
                         }
+
+                        @include tablet-responsive {
+                            max-width: 800px;
+                        }
+
+                        @include mobile-responsive {
+                            max-width: 450px;
+                        }
                     }
                 }
 
@@ -169,6 +178,8 @@ body {
 
                             &:first-child,
                             &:last-child {
+                                cursor: pointer;
+
                                 &:hover {
                                     background-color: $filter-btn-color;
                                     color: $korma-color;
@@ -297,6 +308,7 @@ body {
                         @include font(16px, 400, 24px);
                         padding-inline: 33px;
                         padding-block: 17px;
+                        cursor: pointer;
 
                         @include mobile-responsive {
                             padding-block: 27px;

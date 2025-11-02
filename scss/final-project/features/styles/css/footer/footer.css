@@ -129,6 +129,7 @@
 .footer-container .footer-flex-container section .social-networks div {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 .footer-container .footer-flex-container section .social-networks div:first-child {
   background-image: url(../../../../assets/footer/fb.svg);
@@ -167,6 +168,7 @@
 .footer-container .footer-flex-container section li {
   line-height: 24px;
   padding-bottom: 8px;
+  cursor: pointer;
 }
 .footer-container .footer-flex-container section li img {
   padding-right: 9px;

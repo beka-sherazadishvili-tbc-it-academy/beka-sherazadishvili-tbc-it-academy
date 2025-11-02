@@ -108,7 +108,7 @@ body .main-hero-container .hero-flex-container .hero-description .hero-buttons {
   align-items: start;
   gap: 16px;
 }
-body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:first-child {
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons a {
   padding: 19px 33px;
   border-radius: 6px;
   background-color: #8B4513;
@@ -116,10 +116,14 @@ body .main-hero-container .hero-flex-container .hero-description .hero-buttons d
   border: none;
   cursor: pointer;
 }
-body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:first-child:hover {
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons a:hover {
   background-color: rgba(139, 69, 19, 0.9);
 }
-body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:last-child {
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons a {
+  text-decoration: none;
+  cursor: pointer;
+}
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons div {
   padding: 16px 34px;
   border-radius: 6px;
   background-color: #8B4513;
@@ -127,15 +131,15 @@ body .main-hero-container .hero-flex-container .hero-description .hero-buttons d
   border: none;
   cursor: pointer;
 }
-body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:last-child:hover {
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:hover {
   background-color: rgba(139, 69, 19, 0.9);
 }
-body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:last-child {
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons div {
   border: 2px solid #8B4513;
   color: #8B4513;
   background: #ffe6d7;
 }
-body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:last-child:hover {
+body .main-hero-container .hero-flex-container .hero-description .hero-buttons div:hover {
   color: #FFFFFF;
   background: #8B4513;
 }
@@ -255,6 +259,7 @@ body .main-categories .category-flex-container .category-items > div .img-contai
   border-radius: 8px;
   margin-bottom: 16px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 @media (max-width: 1023px) {
   body .main-categories .category-flex-container .category-items > div .img-container {
@@ -430,12 +435,12 @@ body .featured-pastries .featured-pastries-list > div picture {
   display: flex;
   justify-content: center;
 }
-body .featured-pastries .featured-pastries-list > div > img {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+body .featured-pastries .featured-pastries-list > div picture > img {
+  border-radius: 8px 8px 0px 0px;
+  cursor: pointer;
 }
 @media (max-width: 449px) {
-  body .featured-pastries .featured-pastries-list > div > img {
+  body .featured-pastries .featured-pastries-list > div picture > img {
     width: 290px;
   }
 }

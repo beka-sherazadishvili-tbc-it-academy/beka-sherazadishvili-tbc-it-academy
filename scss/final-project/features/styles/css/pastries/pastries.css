@@ -322,13 +322,11 @@ body .main-categories.featured-pastries.pastries-collection .featured-pastries-l
   }
 }
 body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div div:first-child {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 8px 8px 0px 0px;
   overflow: hidden;
 }
 body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div div:first-child img:hover {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 8px 8px 0px 0px;
   transform: scale(1.05);
 }
 body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div a {
@@ -341,6 +339,9 @@ body .main-categories.featured-pastries.pastries-collection .featured-pastries-l
 }
 body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div a:hover {
   background-color: rgba(139, 69, 19, 0.9);
+}
+body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div a {
+  text-decoration: none;
 }
 body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div a img {
   padding-right: 7px;
