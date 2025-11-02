@@ -53,6 +53,11 @@ body {
             padding-inline: 16px;
         }
 
+        @include small-mobile {
+            height: 1340px;
+            padding-inline: 16px;
+        }
+
         .pastries-detail-flex-container {
             @include flexbox();
             gap: 48px;
@@ -71,13 +76,27 @@ body {
                     @include flexbox();
                     gap: 18px;
 
+                    @include small-mobile {
+                        gap: 6px;
+                    }
+
                     picture:first-child img {
                     border: 2px solid $korma-color;
-                }
+                    }
+
+                    img {
+                        @include small-mobile {
+                            width: 67.5px;
+                        }
+                    }
                 }
 
                 img {
                     border-radius: 8px;
+
+                    @include small-mobile {
+                        width: 290px;
+                    }
                 }
             }
 
@@ -194,6 +213,10 @@ body {
                             padding-inline: 124px;
                         }
 
+                        @include small-mobile {
+                            padding-inline: 50px;
+                        }
+
                         img {
                             position: relative;
                             top: 2px;
@@ -254,6 +277,10 @@ body {
             padding-inline: 16px;
         }
 
+        @include small-mobile {
+            height: 1060px;
+        }
+
         .about-pastries-flex-container {
             @include flexbox(start, start, column);
             background-color: $general-color;
@@ -275,6 +302,7 @@ body {
                             padding-block: 27px;
                         }
 
+
                         &:first-child {
                             padding-block: 16px;
                             color: $korma-color;
@@ -282,6 +310,11 @@ body {
 
                             @include mobile-responsive {
                                 padding-block: 27px;
+                            }
+
+                            @include small-mobile{
+                                width: 100%;
+                                text-align: center;
                             }
                         }
 
@@ -291,6 +324,12 @@ body {
 
                         &:last-child {
                             @include mobile-responsive {
+                                display: none;
+                            }
+                        }
+
+                        &:not(:first-child) {
+                            @include small-mobile {
                                 display: none;
                             }
                         }
@@ -345,6 +384,16 @@ body {
             height: 1003px;
             padding-inline: 24px;
             margin: 0px;
+        }
+
+        @include mobile-responsive {
+            height: 1147px;
+            padding-inline: 16px;
+            margin: 0px;
+        }
+
+        @include small-mobile {
+            height: 1320px;
         }
 
         .customer-reviews-flex-container {
@@ -442,6 +491,14 @@ body {
                                     padding-inline: 317.5px;
                                 }
 
+                                @include mobile-responsive {
+                                    padding-inline: 149.5px;
+                                }
+
+                                @include small-mobile {
+                                    padding-inline: 85.5px;
+                                }
+
                                 .star-percentage {
                                     position: absolute;
                                     top: 0px;
@@ -519,6 +576,14 @@ body {
                         @include tablet-responsive {
                            @include resolution(100%, 127px);
                         }
+
+                        @include mobile-responsive {
+                           @include resolution(100%, 177px);
+                        }
+
+                        @include small-mobile {
+                           @include resolution(100%, 244px);
+                        }
                         
                         p {
                             letter-spacing: 0.1px;
@@ -560,6 +625,10 @@ body {
             height: 816px;
         }
 
+        @include mobile-responsive {
+            height: 1572px;
+        }
+
         .category-flex-container {
             gap: 30px;
 
@@ -569,6 +638,7 @@ body {
 
             .featured-pastries-list {
                 > div {
+                    background-color: $general-color;
                     @include tablet-responsive {
                         height: 320px;
                     }
@@ -576,6 +646,10 @@ body {
                     picture {
                             img {
                                 border-radius: 6px 6px 0px 0px;
+
+                                @include small-mobile {
+                                    width: 290px;
+                                }
                             }
                         }
                     > div:last-child {
