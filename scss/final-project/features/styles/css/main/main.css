@@ -624,7 +624,7 @@ body .customers-container > div .customer-list .customer .customer-details .cust
   line-height: 24px;
   color: #8B4513;
 }
-body .customers-container > div .customer-list .customer .customer-details .customer-rating div {
+body .customers-container > div .customer-list .customer .customer-details .customer-rating > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -633,18 +633,18 @@ body .customers-container > div .customer-list .customer .customer-details .cust
   padding-right: 6px;
 }
 @media (max-width: 1023px) {
-  body .customers-container > div .customer-list .customer .customer-details .customer-rating div {
+  body .customers-container > div .customer-list .customer .customer-details .customer-rating > div {
     flex-wrap: wrap;
     width: 90px;
   }
 }
 @media (max-width: 799px) {
-  body .customers-container > div .customer-list .customer .customer-details .customer-rating div {
+  body .customers-container > div .customer-list .customer .customer-details .customer-rating > div {
     flex-wrap: wrap;
     width: 115px;
   }
 }
-body .customers-container > div .customer-list .customer .customer-details .customer-rating div div {
+body .customers-container > div .customer-list .customer .customer-details .customer-rating > div div {
   width: 18px;
   height: 16px;
   background-image: url(../../../../assets/main/star.svg);

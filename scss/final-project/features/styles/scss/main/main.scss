@@ -482,7 +482,7 @@ body {
                                 color: $korma-color;
                            }
 
-                            div {
+                            > div {
                                 @include flexbox(space-between);
                                 width: 116px;
                                 padding-right: 6px;
