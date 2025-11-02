@@ -64,7 +64,7 @@ body {
             padding: 33px;
         }
 
-        @include desktop-responsive {
+        @include tablet-responsive {
             padding: 33px 24px;
             height: 154px;
         }
@@ -248,7 +248,7 @@ body {
                     width: 418px;
                 }
 
-                @include mobile-responsive {
+                @include small-mobile {
                     width: 290px;
                 }
 

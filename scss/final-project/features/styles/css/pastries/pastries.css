@@ -74,7 +74,7 @@ body .filter-container {
     padding: 33px;
   }
 }
-@media (max-width: 1439px) {
+@media (max-width: 1023px) {
   body .filter-container {
     padding: 33px 24px;
     height: 154px;
@@ -316,7 +316,7 @@ body .main-categories.featured-pastries.pastries-collection .featured-pastries-l
     width: 418px;
   }
 }
-@media (max-width: 799px) {
+@media (max-width: 449px) {
   body .main-categories.featured-pastries.pastries-collection .featured-pastries-list > div {
     width: 290px;
   }

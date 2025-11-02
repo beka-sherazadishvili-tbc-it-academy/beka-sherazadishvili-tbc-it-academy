@@ -12,6 +12,7 @@ body {
         position: sticky;
         top: 0px;
         left: 0px;
+        height: 64px;
 
         #navigation {
             li {
@@ -74,7 +75,7 @@ body {
                 padding: 0px 24px;
             }
 
-            @include tablet-responsive {
+            @include mobile-responsive {
                 flex-direction: column;
                 padding: 0px 16.5px 4px;
                 gap: 18px;

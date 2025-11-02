@@ -13,6 +13,7 @@ body header {
   position: sticky;
   top: 0px;
   left: 0px;
+  height: 64px;
 }
 body header #navigation li:hover {
   color: #8B4513;
@@ -75,7 +76,7 @@ body .main-hero-container .hero-flex-container {
     padding: 0px 24px;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 799px) {
   body .main-hero-container .hero-flex-container {
     flex-direction: column;
     padding: 0px 16.5px 4px;
