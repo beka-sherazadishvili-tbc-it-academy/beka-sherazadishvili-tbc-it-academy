@@ -12,6 +12,34 @@ body {
         position: sticky;
         top: 0px;
         left: 0px;
+
+        #navigation {
+            li {
+                &:hover {
+                    color: $korma-color;
+                }
+
+                @include tablet-responsive {
+                    padding: 8px 25px 8px 0px;
+                }
+            }
+
+            li:nth-child(1) {
+                color: $korma-color;
+
+                &:hover {
+                    color: $cart-amount-color;
+                }
+            }
+
+            li:nth-child(2) {
+                color: $header-nav-color;
+
+                &:hover {
+                    color: $korma-color;
+                }
+            }
+        }
     }
 
     .main-hero-container {

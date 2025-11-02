@@ -14,6 +14,26 @@ body header {
   top: 0px;
   left: 0px;
 }
+body header #navigation li:hover {
+  color: #8B4513;
+}
+@media (max-width: 1023px) {
+  body header #navigation li {
+    padding: 8px 25px 8px 0px;
+  }
+}
+body header #navigation li:nth-child(1) {
+  color: #8B4513;
+}
+body header #navigation li:nth-child(1):hover {
+  color: #D4AF37;
+}
+body header #navigation li:nth-child(2) {
+  color: #4B5563;
+}
+body header #navigation li:nth-child(2):hover {
+  color: #8B4513;
+}
 body .main-hero-container {
   height: 600px;
   padding: 108px 79.5px;

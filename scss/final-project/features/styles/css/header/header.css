@@ -73,10 +73,10 @@
     padding: 8px 25px 8px 0px;
   }
 }
-.header-container .header-navigation ul li:first-child {
+.header-container .header-navigation ul li:nth-child(2) {
   color: #8B4513;
 }
-.header-container .header-navigation ul li:first-child:hover {
+.header-container .header-navigation ul li:nth-child(2):hover {
   color: #D4AF37;
 }
 .header-container .header-orders {

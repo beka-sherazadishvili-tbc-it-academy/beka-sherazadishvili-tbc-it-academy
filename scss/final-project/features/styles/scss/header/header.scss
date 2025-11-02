@@ -64,7 +64,7 @@
                 }
             }
 
-            li:first-child {
+            li:nth-child(2) {
                 color: $korma-color;
 
                 &:hover {
