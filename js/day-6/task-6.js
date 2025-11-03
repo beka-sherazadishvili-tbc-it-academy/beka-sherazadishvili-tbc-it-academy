@@ -15,19 +15,16 @@ function groupBy(arr, property) {
             if (!acc[key]) {
                 acc[key] = [];
             }
-            acc[key].push();
+
+            const info = Object.entries(obj)
+                .filter(([key]) => key !== property)
+                .map(([_, value]) => String(value).toLowerCase())
+                .join(' ');
+
+            acc[key].push(info);
             return acc;
     }, {});
     } catch (err) {
         return err.message;
     }
 }
-
-const students = [
-  { name: "Ana", grade: "A" },
-  { name: "Beka", grade: "B" },
-  { name: "Luka", grade: "A" }
-];
-
-const result = groupBy(students, "grade");
-console.log(result);

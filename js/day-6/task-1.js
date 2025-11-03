@@ -5,6 +5,6 @@ const car = {
     model: 'Corolla',
     year: 2020,
     info() {
-        return `${this.brand} ${this.model} (${this.year})`;
+        return `"${this.brand} ${this.model} (${this.year})".`;
     }
 }
