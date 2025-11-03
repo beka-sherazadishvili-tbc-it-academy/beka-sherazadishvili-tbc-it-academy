@@ -1,0 +1,557 @@
+@import '../variables';
+@import '../mixins';
+@import '../components.scss';
+
+body {
+    max-width: 100%;
+    position: relative;
+    font-family: $font-inter;
+    color: $header-nav-color; 
+
+    header {
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        height: 64px;
+
+        #navigation {
+            li {
+                &:hover {
+                    color: $korma-color;
+                }
+
+                @include tablet-responsive {
+                    padding: 8px 25px 8px 0px;
+                }
+            }
+
+            li:nth-child(1) {
+                color: $korma-color;
+
+                &:hover {
+                    color: $cart-amount-color;
+                }
+            }
+
+            li:nth-child(2) {
+                color: $header-nav-color;
+
+                &:hover {
+                    color: $korma-color;
+                }
+            }
+        }
+    }
+
+    .main-hero-container {
+        height: 600px;
+        padding: 108px 79.5px;
+        background: $hero-bg-color;
+
+        @include desktop-responsive {
+            padding: 108px 0px;
+        }
+
+        @include tablet-responsive {
+            padding: 13.5px 0px;
+        }
+
+        @include mobile-responsive {
+            padding: 2px 0px;
+        }
+
+        @include small-mobile {
+            height: 760px
+        }
+
+        .hero-flex-container {
+            @include flexbox(space-between);
+            @include resolution(100%, 100%);
+            padding: 0px 32px;
+            gap: 48px;
+
+            @include tablet-responsive {
+                flex-direction: column;
+                padding: 0px 24px;
+            }
+
+            @include mobile-responsive {
+                flex-direction: column;
+                padding: 0px 16.5px 4px;
+                gap: 18px;
+            }
+
+            .hero-description {
+                @include flexbox(start, start, column);
+                @include resolution(50%, 100%);
+                padding: 33px 0px;
+                gap: 24px;
+
+                @include desktop-responsive {
+                    padding: 18px 0px;
+                }
+
+                @include tablet-responsive {
+                    width: 100%;
+                    padding: 0px;
+                }
+
+                h1 {
+                    @include font(60px, 700, 60px);
+                    @extend %playfair-font;
+
+                    @include tablet-responsive {
+                        font-size: 48px;
+                    }
+                }
+
+                p {
+                    @include font(20px, 400, 32.5px, 0.3px);
+                    color: $hero-text-color;
+                }
+
+                .hero-buttons {
+                    @include flexbox();
+                    gap: 16px;
+
+                    a {
+                        @include button(19px, 33px);
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+                    div {
+                        @include button(16px, 34px);
+                        border: 2px solid $korma-color;
+                        color: $korma-color;
+                        background: $hero-btn-color;
+
+                        &:hover {
+                            color: $general-color;
+                            background: $korma-color;
+                        }
+                    }
+                }
+            }
+
+            img {
+                border-radius: 8px;
+                
+                @include small-mobile {
+                    width: 290px;
+                }
+            }
+        }
+    }
+
+    .main-categories {
+        height: 592px;
+        padding: 66px 80px;
+
+        @include desktop-responsive {
+            height: 616px;
+            padding: 66px 0px;
+        }
+
+        @include tablet-responsive {
+            height: 956px;
+            padding: 66px 0px;
+        }
+
+        @include mobile-responsive {
+            height: 1684px;
+            padding: 66px 0px;
+        }
+
+        .category-flex-container {
+            @include flexbox(start, start, column);
+            @include resolution(100%, 100%);
+            padding: 0px 32px;
+            gap: 48px;
+            
+            @include tablet-responsive {
+                padding: 0px 24px;
+            }
+            
+            @include mobile-responsive {
+                padding: 0px 16px;
+            }
+
+            .categories-header {
+                @include flexbox(center, center, column);
+                width: 100%;
+                gap: 14px;
+
+                h1 {
+                    @include font(36px, 700, 40px);
+                    @extend %playfair-font;
+
+                    @include small-mobile {
+                        font-size: 34px;
+                    }
+                }
+
+                p {
+                    @include font(20px, 400, 28px, 0.2px);
+                }
+            }
+
+            .category-items {
+                @include flexbox(space-between);
+                width: 100%;
+
+                @include tablet-responsive {
+                    flex-wrap: wrap;
+                    row-gap: 32px;
+                }
+                 
+                > div {
+                    width: 280px;
+
+                    @include desktop-responsive {
+                        width: 216px;
+                    }
+
+                    @include tablet-responsive {
+                        width: 360px;
+                    }
+
+                    @include mobile-responsive {
+                        width: 418px;
+                    }
+
+                    @include small-mobile {
+                        width: 290px;
+                    }
+
+                    .img-container {
+                        overflow: hidden;
+                        border-radius: 8px;
+                        margin-bottom: 16px;
+                        box-shadow: $featured-box-shadow;
+                        cursor: pointer;
+
+                        @include tablet-responsive {
+                            margin-bottom: 15px;
+                        }
+
+                        @include small-mobile {
+                            width: 290px;
+                        }
+
+                        &:hover img {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    h3 {
+                        @include font(19.5px, 800, 28px);
+                        @extend %playfair-font;
+                        margin-bottom: 7px;
+                    }
+
+                    p {
+                        letter-spacing: 0.1px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .special-offers {
+        height: 456px;
+        padding: 64px 112px;
+        background: $special-offers-bg-color;
+        
+        @include desktop-responsive {
+            padding: 64px 32px;
+        }
+
+        @include tablet-responsive {
+            padding: 64px 24px;
+        }
+
+        @include mobile-responsive {
+            height: 544px;
+            padding: 64px 16px;
+        }
+
+        @include small-mobile {
+            height: 620px;
+            padding: 64px 16px;
+        }
+
+        .special-offers-flex-container {
+            @include flexbox(start, center, column);
+            @include resolution(100%, 100%);
+            background-color: $general-color;
+            border-radius: 8px;
+            gap: 16px;
+            padding: 48px;
+
+            h1 {
+                @include font(36px, 700, 40px);
+                @extend %playfair-font;
+
+                @include small-mobile {
+                    font-size: 32px
+                }
+            }
+
+            h3 {
+                @include font(24px, 400, 32px, 0.5px);
+                color: $hero-text-color;
+
+                @include mobile-responsive {
+                    text-align: center
+                }
+            }
+
+            p {
+                @include font(18px, 400, 28px, 0.2px);
+                margin: 8px 0px 16px 0px;
+
+                @include mobile-responsive {
+                    text-align: center
+                }
+            }
+
+            div {
+                @include button(16px, 32px);
+                @include font(18px, 600, 28px);
+            }
+        }
+    }
+
+    .featured-pastries {
+        margin-bottom: 112px;
+
+        @include tablet-responsive {
+            height: 1069px;
+        }
+
+        @include mobile-responsive {
+            height: 1656px;
+            margin-bottom: 0px;
+        }
+
+        @include small-mobile {
+            height: 1540px;
+        }
+
+        .featured-pastries-list {
+            @include flexbox(space-between);
+            width: 100%;
+            gap: 32px;
+
+            @include tablet-responsive {
+                flex-wrap: wrap;
+            }
+
+            > div {
+                box-shadow: $featured-box-shadow;
+                border-radius: 8px;
+                height: 100%;
+
+                @include tablet-responsive {
+                    width: 360px;
+                    height: 444px;
+                }
+
+                @include mobile-responsive {
+                    width: 418px;
+                    height: 444px;
+                }
+
+                @include small-mobile {
+                    width: 290px;
+                    height: 400px;
+                }
+
+                picture {
+                    display: flex;
+                    justify-content: center;
+
+                    > img {
+                        border-radius: 8px 8px 0px 0px;
+                        cursor: pointer;
+
+                        @include small-mobile {
+                            width: 290px;
+                        }
+                    }
+                }
+
+                > div:last-child {
+                    @include flexbox(start, start, column);
+                    gap: 8px;
+                    padding: 23px;
+                    
+                    h3 {
+                        @include font(20px, 600, 28px);
+                        @extend %playfair-font;
+                    }
+
+                    p {
+                        @include font(16px, 400, 24px, 0.1px);
+
+                        @include desktop-responsive {
+                            padding-right: 1px
+                        }
+                    }
+
+                    > div {
+                        @include flexbox(space-between, center);
+                        width: 100%;
+                        padding-top: 8px;
+
+                        div:first-child {
+                            @include font(24px, 700, 32px, 0.5px);
+                            color: $korma-color;
+                        }
+
+                        div:last-child {
+                            @include button(8px, 17px);
+                            @include font(16px, 400, 24px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .customers-container {
+        height: 416px;
+        padding: 64px 80px;
+        background-color: $customer-bg-color;
+
+        @include desktop-responsive {
+            padding: 64px 0px;
+            height: 440px;
+        }
+
+        @include tablet-responsive {
+            height: 528px;
+        }
+
+        @include mobile-responsive {
+            height: 728px;
+            margin-bottom: 128px
+        }
+
+        @include small-mobile {
+            height: 780px;
+        }
+
+        > div {
+            @include flexbox(start, center, column);
+            padding: 0px 32px;
+            gap: 48px;
+
+            @include tablet-responsive {
+                padding: 0px 24px;
+            }
+
+            @include mobile-responsive {
+                padding: 0px 16px;
+            }
+
+            h1 {
+                @include font(36px, 700, 40px);
+                @extend %playfair-font;
+            }
+
+            .customer-list {
+                @include flexbox(space-between);
+                width: 100%;
+
+                @include mobile-responsive {
+                    flex-direction: column;
+                    gap: 32px
+                }
+
+                .customer {
+                    @include flexbox(start, start, column);
+                    @include resolution(384px, 200px);
+                    border-radius: 8px;
+                    padding: 32px;
+                    gap: 16px;
+                    background-color: $general-color;
+                    box-shadow: $featured-box-shadow;
+
+                    @include desktop-responsive {
+                        @include resolution(300px, 224px);
+                    }
+
+                    @include tablet-responsive {
+                        @include resolution(229px, 312px);
+                        gap: 18px
+                    }
+
+                    @include mobile-responsive {
+                        @include resolution(418px, 200px);
+                    }
+
+                    @include small-mobile {
+                        @include resolution(290px, 210px);
+                    }
+
+                    .customer-details {
+                        @include flexbox();
+                        gap: 16px;
+
+                        @include tablet-responsive {
+                            align-items: center;
+                        }
+
+                        .customer-rating {
+                           @include flexbox(start, start, column);
+                           gap: 5px;
+                           
+                           span {
+                                @include font(16px, 600, 24px);
+                                color: $korma-color;
+                           }
+
+                            > div {
+                                @include flexbox(space-between);
+                                width: 116px;
+                                padding-right: 6px;
+
+                                @include tablet-responsive {
+                                    flex-wrap: wrap;
+                                    width: 90px;
+                                }
+
+                                @include mobile-responsive {
+                                    flex-wrap: wrap;
+                                    width: 115px;
+                                }
+
+                                div {
+                                    @include resolution(18px, 16px);
+                                    @include bg-img('../../../../assets/main/star.svg');
+                                }
+                           }
+                        }
+                    }
+                }
+
+                .customer:nth-child(2) {
+                    @include mobile-responsive {
+                        height: 176px;
+                    }
+
+                    @include small-mobile {
+                        height: 200px;
+                    }
+                }
+
+                p {
+                    @include font(16px, 400, 24px);
+                }
+            }
+        }
+    }
+}

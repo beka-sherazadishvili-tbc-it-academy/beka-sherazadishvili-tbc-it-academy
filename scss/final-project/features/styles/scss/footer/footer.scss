@@ -1,0 +1,188 @@
+@import '../variables';
+@import '../mixins';
+@import '../components';
+
+.footer-container {
+    width: 100%;
+    height: 841px;
+    padding: 48px 80px;
+    background-color: $korma-color;
+    font-family: $font-inter;
+    color: $footer-text-color;
+
+    @include desktop-responsive {
+        padding: 48px 0px
+    }
+
+    @include mobile-responsive {
+        height: 841px;
+        padding: 48px 0px
+    }
+
+    @include small-mobile {
+        padding: 10px 0px
+    }
+
+    .footer-flex-container {
+        @include flexbox(start, start, column);
+        gap: 32px;
+        padding: 0px 32px;
+
+        @include tablet-responsive {
+            padding: 0px 24px;
+            gap: 74px;
+        }
+
+        @include mobile-responsive {
+            padding: 0px 16px;
+            gap: 32px;
+        }
+
+        @include small-mobile {
+            gap: 16px;
+        }
+
+        .footer-sections {
+            @include flexbox(space-between);
+            width: 100%;
+
+            @include mobile-responsive {
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            @include small-mobile {
+                gap: 16px;
+            }
+        }
+
+        section:nth-child(2) {
+            @include mobile-responsive {
+                height: 164px;
+            }
+        }
+
+        section {
+            @include flexbox(start, start, column);
+            @include resolution(280px, 164px);
+            gap: 16px;
+
+            @include desktop-responsive {
+                width: 216px;
+            }
+
+            @include tablet-responsive {
+                width: 164px;
+            }
+
+            @include mobile-responsive {
+                @include resolution(418px, 132px);
+            }
+
+            @include small-mobile {
+                @include resolution(290px, 160px);
+            }
+
+            h1 {
+                @include font(24px, 700, 32px);
+                @extend %playfair-font;
+                color: $general-color;
+            }
+
+            p {
+                @include font(16px, 400, 24px, 0.1px);
+            }
+
+            .social-networks {
+                @include flexbox();
+                gap: 16px;
+
+                div {
+                    @include resolution(20px, 20px);
+                    cursor: pointer;
+                }
+
+                div:first-child {
+                    @include bg-img('../../../../assets/footer/fb.svg');
+
+                    &:hover {
+                        background-image: url('../../../../assets/footer/fb-hover.svg');
+                    }
+                }
+
+                div:nth-child(2) {
+                     @include bg-img('../../../../assets/footer/instagram.svg');
+
+                    &:hover {
+                        background-image: url('../../../../assets/footer/insta-hover.svg');
+                    }  
+                }
+
+                div:nth-child(3) {
+                    @include bg-img('../../../../assets/footer/twitter.svg');
+
+                    &:hover {
+                        background-image: url('../../../../assets/footer/twitter-hover.svg');
+                    }
+                }
+            }
+
+            h3 {
+                @include font(18px, 600, 28px);
+                color: $general-color;
+            }
+
+            .footer-navigation li:hover {
+                color: $cart-amount-color;
+            }
+            
+            li {
+                line-height: 24px;
+                padding-bottom: 8px;
+                cursor: pointer;
+
+                img {
+                    padding-right: 9px;
+                }
+            }
+
+            .email {
+                img {
+                    @include tablet-responsive {
+                        display: block; 
+                        margin-bottom: 7px;                  
+                    }   
+
+                    @include mobile-responsive {
+                        display: inline-block; 
+                        margin-bottom: 0px;                  
+                    }   
+                }
+            }
+
+            .contact-info {
+                @include tablet-responsive {
+                    word-break: break-all;
+                    padding-right: 4px;
+
+                     li:first-child {
+                        padding-bottom: 15px;
+                     }
+                }
+
+                @include mobile-responsive {
+                     li:first-child {
+                        padding-bottom: 10px;
+                     }
+                }
+            }
+        }
+
+        .copyright-info {
+            @include flexbox(center, end);
+            width: 100%;
+            padding-top: 38px;
+            border-top: 1px solid $header-nav-color;
+        }
+    }
+}

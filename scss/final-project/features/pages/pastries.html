@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../utils/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/css/main/main.css">
+    <link rel="stylesheet" href="../styles/css/pastries/pastries.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <iframe src="../components/header.html" width="100%" height="61" frameborder="0"></iframe>
+    </header>
+
+    <main>
+        <section class="main-hero-container pastries-hero-container">
+            <div class="pasrties-flex-container">
+                <div class="hero-description">
+                    <h1>Our Pastries</h1>
+                    <p>Discover our exquisite collection of handcrafted pastries, each made with premium ingredients and traditional techniques passed down through generations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="filter-container">
+            <div class="filter-flex-container">
+                <div class="filter-categories">
+                    <span>Filter by Category:</span>
+                    <div class="filter-btns">
+                        <div>All</div>
+                        <div>Croissants</div>
+                        <div>Éclairs</div>
+                        <div>Danish</div>
+                        <div>Macarons</div>
+                        <div>Tarts</div>
+                    </div>
+                </div>
+                <div class="filter-inputs">
+                    <div>
+                        <label>Price<span> Range:</span></label>
+                        <input type="text" placeholder="All Prices">
+                    </div>
+                    <div>
+                        <label>Sort<span> by:</span></label>
+                        <input type="text" placeholder="Featured">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-categories featured-pastries pastries-collection">
+            <div class="category-flex-container">
+                <div class="featured-pastries-list">
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-1-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-1-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-1-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-1.svg" alt="">
+                                <div class="pastries-label popular">popular</div>
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Classic Butter Croissant</h3>
+                            <p>Traditional French croissant with 64 layers of buttery perfection</p>
+                            <div>
+                                <div>$2.95</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-2-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-2-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-2-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-2.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Almond Croissant</h3>
+                            <p>Filled with almond cream and topped with sliced almonds</p>
+                            <div>
+                                <div>$4.25</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-3-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-3-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-3-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-3.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Pain au Chocolat</h3>
+                            <p>Croissant dough wrapped around rich Belgian dark chocolate</p>
+                            <div>
+                                <div>$3.50</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-4-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-4-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-4-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-4.svg" alt="">
+                                <div class="pastries-label new">new</div>
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Vanilla Éclair</h3>
+                            <p>Choux pastry filled with vanilla pastry cream and chocolate glaze</p>
+                            <div>
+                                <div>$4.75</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-5-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-5-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-5-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-5.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Coffee Éclair</h3>
+                            <p>Espresso-infused cream with caramel glaze</p>
+                            <div>
+                                <div>$5.25</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-6-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-6-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-6-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-6.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Strawberry Danish</h3>
+                            <p>Flaky pastry with cream cheese and fresh strawberries</p>
+                            <div>
+                                <div>$4.25</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-7-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-7-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-7-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-7.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Apple Cinnamon Danish</h3>
+                            <p>Spiced apple filling with cinnamon and brown sugar</p>
+                            <div>
+                                <div>$3.95</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-8-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-8-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-8-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-8.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Macaron Box (6 pcs)</h3>
+                            <p>Assorted flavors: vanilla, chocolate, raspberry, pistachio</p>
+                            <div>
+                                <div>$18.50</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-9-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-9-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-9-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-9.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Mixed Berry Tart</h3>
+                            <p>Vanilla custard with fresh strawberries, blueberries, and raspberries</p>
+                            <div>
+                                <div>$6.75</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-10-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-10-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-10-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-10.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Lemon Meringue Tart</h3>
+                            <p>Tangy lemon curd topped with fluffy toasted meringue</p>
+                            <div>
+                                <div>$5.95</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-11-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-11-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-11-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-11.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Chocolate Ganache Tart</h3>
+                            <p>Rich dark chocolate ganache in a crispy pastry shell</p>
+                            <div>
+                                <div>$7.25</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <picture>
+                                <source srcset="../../assets/pastries/responsive/pastries-450/img-12-450.svg" media="(max-width: 799px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-800/img-12-800.svg" media="(max-width: 1023px)">
+                                <source srcset="../../assets/pastries/responsive/pastries-1024/img-12-1024.svg" media="(max-width: 1439px)">
+                                <img src="../../assets/pastries/img-12.svg" alt="">
+                            </picture>
+                        </div>
+                        <div>
+                            <h3>Cream Puff</h3>
+                            <p>Light choux pastry filled with fresh whipped cream</p>
+                            <div>
+                                <div>$3.25</div>
+                                <a href="../pages/pastries-details.html"><img src="../../assets/pastries/add.svg" alt="">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offers special-bulk-order">
+            <div class="special-offers-flex-container">
+                <h1>Special Bulk Orders</h1>
+                <p>Order 2 dozen or more pastries and save 15%! Perfect for events, meetings, or celebrations.</p>
+                <div>Contact for Bulk Orders</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <iframe src="../components/footer.html" width="100%" height="841" frameborder="0"></iframe>
+    </footer>
+</html>

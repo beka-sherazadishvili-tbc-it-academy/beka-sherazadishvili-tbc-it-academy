@@ -1,0 +1,88 @@
+@import './variables';
+
+@mixin flexbox(
+  $justify: start, 
+  $align: start, 
+  $direction: row
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font(
+  $size: 16px, 
+  $weight: 400, 
+  $line-height: 20px, 
+  $spacing: 0px
+) {
+    font-size: $size;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+    line-height: $line-height;
+}
+
+@mixin button(
+  $padding-y, 
+  $padding-x, 
+  $bg-color: $korma-color,
+  $color: $general-color
+) {
+  padding: $padding-y $padding-x;
+  border-radius: 6px;
+  background-color: $bg-color;
+  color: $color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $korma-hover-color;
+  }
+}
+
+@mixin input(
+  $width, 
+  $height, 
+  $border-radius, 
+  $border-size, 
+  $border-color,
+) {
+  width: $width;
+  height: $height;
+  border: $border-size solid $border-color;
+  border-radius: $border-radius;
+  background-color: $input-bg-color;
+  outline: none;
+}
+
+@mixin resolution (
+  $width, 
+  $height
+) {
+    width: $width;
+    height: $height;
+}
+
+@mixin bg-img($url){
+  background-image: url(#{$url});
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin small-mobile {
+    @media (max-width: 449px) { @content; }
+}
+
+@mixin mobile-responsive{
+    @media (max-width: 799px) { @content; }
+}
+
+@mixin tablet-responsive {
+    @media (max-width: 1023px) { @content; }
+}
+
+@mixin desktop-responsive {
+    @media (max-width: 1439px) { @content; }
+}
+

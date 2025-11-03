@@ -1,0 +1,740 @@
+@import '../variables';
+@import '../mixins';
+@import '../components.scss';
+
+body {
+    max-width: 100%;
+
+    .main-breadcrumb-container {
+        height: 53px;
+        padding: 17px 112px;
+        border-bottom: 1px solid $filter-border;
+
+        @include desktop-responsive {
+            padding-inline: 32px;
+        }
+
+        @include tablet-responsive {
+            padding-inline: 25px;
+        }
+
+        @include mobile-responsive {
+            padding-inline: 16px;
+        }
+
+        .breadcrumb-flex-container {
+            @include flexbox(start, center);
+            gap: 9px;
+            @include font(14px);
+
+            p:last-child {
+                color: $korma-color;
+            }
+
+        }
+    }
+
+    .main-pastries-details {
+        height: 603px;
+        padding: 48px 112px;
+
+        @include desktop-responsive {
+            height: 662px;
+            padding-inline: 32px;
+        }
+
+        @include tablet-responsive {
+            height: 1147px;
+            padding-inline: 24px;
+        }
+
+        @include mobile-responsive {
+            height: 1206px;
+            padding-inline: 16px;
+        }
+
+        @include small-mobile {
+            height: 1340px;
+            padding-inline: 16px;
+        }
+
+        .pastries-detail-flex-container {
+            @include flexbox();
+            gap: 48px;
+
+            @include tablet-responsive {
+                flex-direction: column;
+                gap: 45px;
+            }
+
+            .pastries-images {
+                @include flexbox(start, start, column);
+                gap: 15px;
+                width: 48%;
+
+                div {
+                    @include flexbox();
+                    gap: 18px;
+
+                    @include small-mobile {
+                        gap: 6px;
+                    }
+
+                    picture:first-child img {
+                        border: 2px solid $korma-color;
+                    }
+
+                    img {
+                        @include small-mobile {
+                            width: 67.5px;
+                        }
+                    }
+                }
+
+                img {
+                    border-radius: 8px;
+                    cursor: pointer;
+
+                    @include small-mobile {
+                        width: 290px;
+                    }
+                }
+            }
+
+            .pastries-details {
+                @include flexbox(start, start, column);
+                gap: 24px;
+
+                .pastries-info {
+                    color: $korma-color;
+
+                    h1 {
+                        @include font(36px, 700, 40px);
+                        font-family: $font-playfair;
+                        padding-bottom: 8px;
+                    }
+
+                    p {
+                        @include font(30px, 700, 36px, 1px);
+                    }
+
+                    .rating {
+                        @include flexbox(start, center);
+                        gap: 17px;
+                        padding-bottom: 16px;
+
+                        p {
+                            @include font(16px, 400, 24px);
+                            color: $header-nav-color;
+                        }
+
+                        div {
+                            @include flexbox();
+                            
+                            div {
+                                @include resolution(18px, 16px);
+                                @include bg-img('../../../../assets/main/star.svg');
+                            }
+                        }
+                    }
+                }
+
+                .pastries-description {
+                    p {
+                        @include font(18px, 400, 29.3px, 0.2px);
+
+                        @include desktop-responsive {
+                            letter-spacing: 0.15px;
+                        }
+
+                        @include tablet-responsive {
+                            max-width: 800px;
+                        }
+
+                        @include mobile-responsive {
+                            max-width: 450px;
+                        }
+                    }
+                }
+
+                .pastries-quantity {
+                    @include flexbox(start, center);
+                    gap: 16px;
+
+                    p {
+                        @include font(18px, 400, 28px, 0.4px);
+                        color: $korma-color;
+                    }
+
+                    >div {
+                        @include flexbox();
+                        width: 100%;
+
+                        div {
+                            @include flexbox(center, center);
+                            width: 100%;
+                            height: 42px;
+                            border: 1px solid $footer-text-color;
+
+                            &:first-child,
+                            &:last-child {
+                                cursor: pointer;
+
+                                &:hover {
+                                    background-color: $filter-btn-color;
+                                    color: $korma-color;
+                                }
+                            }
+                        }
+
+                        div:first-child {
+                            width: 33px;
+                            border-radius: 6px 0px 0px 6px;
+                        }
+
+                        div:last-child {
+                            width: 35px;
+                            border-radius: 0 6px 6px 0;
+                        }
+                        
+                        div:nth-child(2) {
+                            width: 42px;
+                            border-right: none;
+                            border-left: none;
+                        }
+                    }
+                }
+
+                .pastries-btns {
+                    @include flexbox();
+                    gap: 16px;
+
+                    div:first-child {
+                        @include button(15px, 207px);
+
+                        @include desktop-responsive {
+                            padding-inline: 143px;
+                        }
+
+                        @include tablet-responsive {
+                            padding-inline: 291px;
+                        }
+
+                        @include mobile-responsive {
+                            padding-inline: 124px;
+                        }
+
+                        @include small-mobile {
+                            padding-inline: 50px;
+                        }
+
+                        img {
+                            position: relative;
+                            top: 2px;
+                            right: 6px;
+                        }
+
+                        span {
+                            position: relative;
+                            right: -7px;
+                        }
+                    }
+
+                    div:last-child {
+                        @include button(23px, 24px, $general-color);
+                        border: 1px solid $korma-color;
+                        @include bg-img('../../../../assets/pastries-details/heart-original.svg');
+
+                        &:hover {
+                            background-color: $korma-color;
+                            background-image: url('../../../../assets/pastries-details/heart-hover.svg');
+                        }
+                    }
+                }
+
+                .pastries-features {
+                    @include resolution(100%, 80px);
+                    padding-top: 24px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 16px;
+                    @include font(14px);
+
+                    img {
+                        padding-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-pastries-container {
+        height: 481px;
+        padding: 48px 112px;
+        background-color: $customer-bg-color;
+
+        @include desktop-responsive {
+            height: 507px;
+            padding-inline: 32px;
+        }
+
+        @include tablet-responsive {
+            height: 611px;
+            padding-inline: 24px;
+        }
+
+        @include mobile-responsive {
+            height: 815px;
+            padding-inline: 16px;
+        }
+
+        @include small-mobile {
+            height: 1060px;
+        }
+
+        .about-pastries-flex-container {
+            @include flexbox(start, start, column);
+            background-color: $general-color;
+            height: 100%;
+            border-radius: 8px;
+
+            .about-pastries-navigation {
+                width: 100%;
+                border-bottom: 1px solid $filter-border;
+                ul {
+                    @include flexbox();
+
+                    li {
+                        @include font(16px, 400, 24px);
+                        padding-inline: 33px;
+                        padding-block: 17px;
+                        cursor: pointer;
+
+                        @include mobile-responsive {
+                            padding-block: 27px;
+                        }
+
+
+                        &:first-child {
+                            padding-block: 16px;
+                            color: $korma-color;
+                            border-bottom: 2px solid $korma-color;
+
+                            @include mobile-responsive {
+                                padding-block: 27px;
+                            }
+
+                            @include small-mobile{
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+
+                        &:hover {
+                            color: $korma-color;
+                        }
+
+                        &:last-child {
+                            @include mobile-responsive {
+                                display: none;
+                            }
+                        }
+
+                        &:not(:first-child) {
+                            @include small-mobile {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .about-this-pastries {
+                padding: 32px 42px 32px 32px;
+
+                @include mobile-responsive {
+                    padding: 32px;
+                }
+
+                h1 {
+                    @include font(24px, 600, 32px);
+                    @extend %playfair-font;
+                }
+
+                p {
+                    @include font(16px, 400, 26px, 0.08px);
+
+                    span {
+                        @include tablet-responsive {
+                            display: block;
+                        }
+
+                        @include mobile-responsive {
+                            display: inline;
+                        }
+                    }
+                }
+
+                p, h1 {
+                    padding-bottom: 16px;
+                }
+            }
+        }
+    }
+
+    .customer-reviews-container {
+        height: 679px;
+        padding: 48px 80px;
+        background-color: $general-color;
+
+        @include desktop-responsive {
+            padding-inline: 32px;
+            margin-bottom: 24px;
+        }
+
+        @include tablet-responsive {
+            height: 1003px;
+            padding-inline: 24px;
+            margin: 0px;
+        }
+
+        @include mobile-responsive {
+            height: 1147px;
+            padding-inline: 16px;
+            margin: 0px;
+        }
+
+        @include small-mobile {
+            height: 1320px;
+        }
+
+        .customer-reviews-flex-container {
+            align-items: start;
+            gap: 32px;
+
+            @include desktop-responsive {
+                padding: 0px;
+                gap: 31px;
+            }
+
+            h1 {
+                @include font(30px, 400, 36px, 0.4px);
+                @extend %playfair-font;
+            }
+
+            > div:first-of-type {
+                @include flexbox(start, start);
+                width: 100%;
+                gap: 34px;
+
+                @include desktop-responsive {
+                    gap: 28px;
+                }
+
+                @include tablet-responsive {
+                    flex-direction: column;
+                    gap: 32px;
+                }
+
+                .main-rating-container {
+                    background-color: $customer-bg-color;
+                    border-radius: 6px;
+                    width: 31.5%;
+                    padding-bottom: 25px;
+
+                    @include tablet-responsive {
+                        width: 100%;
+                    }
+
+                    .rating-stats {
+                        width: 100%;
+                        padding: 24px 0px 20px 9px;
+                        text-align: center;
+
+                        span {
+                            @include font(36px, 700, 40px);
+                            color: $korma-color;
+                        }
+
+                        > div {
+                            @include flexbox(center, center, column);
+                            gap: 10px;
+                            padding-right: 9px;
+
+                            @include desktop-responsive {
+                                padding-right: 13px;
+                            }
+
+                            > div {
+                                @include flexbox(center, center);
+
+                                div {
+                                    @include resolution(18px, 16px);
+                                    @include bg-img('../../../../assets/main/star.svg'); 
+                                }
+                            }
+
+
+                        } 
+                    }
+
+                    > div:last-child {
+                        @include flexbox(start, start, column);
+                        gap: 8px;
+                        padding-left: 24px;
+
+                        > div {
+                            @include flexbox(center, center);
+                            gap: 8px;
+                            @include font(14px);
+
+                            > div:first-child {
+                                padding-right: 8px;
+                            }
+
+                            div:nth-child(2) {
+                                padding: 4px 140.5px;
+                                border-radius: 6px;
+                                background-color: $filter-border;
+                                color: $general-color;
+                                border: none;
+                                cursor: pointer;
+                                position: relative;
+
+                                @include desktop-responsive {
+                                    padding-inline: 90.5px;
+                                }
+
+                                @include tablet-responsive {
+                                    padding-inline: 317.5px;
+                                }
+
+                                @include mobile-responsive {
+                                    padding-inline: 149.5px;
+                                }
+
+                                @include small-mobile {
+                                    padding-inline: 85.5px;
+                                }
+
+                                .star-percentage {
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 0px;
+                                    height: 100%;
+                                    border-radius: 6px;
+                                    background-color: $cart-amount-color;
+                                }
+                            }
+                        }
+
+                        > div:nth-child(1) {
+                            .star-percentage { width: 85%; }
+                        }
+
+                        > div:nth-child(2) {
+                            @include desktop-responsive {
+                                span {
+                                    position: relative;
+                                    padding-left: 7px;
+                                }
+                            }
+
+                            .star-percentage { width: 12%; }
+                        }
+
+                        > div:nth-child(3) {
+                            .star-percentage {
+                                width: 3%; 
+
+                                @include desktop-responsive {
+                                    width: 12%;
+                                }
+
+                                @include tablet-responsive {
+                                    width: 2%;
+                                }
+                            }
+                        }
+
+                        > div:nth-child(4) {
+                            .star-percentage {
+                                width: 1%;
+                                
+                                @include desktop-responsive {
+                                    width: 12%;
+                                }
+                                
+                                @include tablet-responsive {
+                                    width: 1%;
+                                }
+                            }
+                        }
+
+                        > div:nth-child(3),
+                        > div:nth-child(4),
+                        > div:nth-child(5)
+                        {
+                            @include desktop-responsive {
+                                span {
+                                    position: relative;
+                                    padding-left: 16px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                .customer-list {
+                    flex-direction: column;
+                    gap: 24px;
+                    width: 65%;
+
+                    @include tablet-responsive {
+                        width: 100%;
+                    }
+
+                    .customer:not(:first-child) {
+                        @include desktop-responsive {
+                            height: initial;
+                        }
+                    }
+
+                    .customer {
+                        @include resolution(800px, 129px);
+                        padding: 0px 0px 25px;
+                        box-shadow: none;
+                        gap: 10px;
+                        border-radius: 0px;
+                        border-bottom: 1px solid $filter-border;
+
+                        @include desktop-responsive {
+                            @include resolution(629px, 153px);
+                            padding: 0px 0px 23px;
+                        }
+
+                        @include tablet-responsive {
+                           @include resolution(100%, 127px);
+                        }
+
+                        @include mobile-responsive {
+                           @include resolution(100%, 177px);
+                        }
+
+                        @include small-mobile {
+                           @include resolution(100%, 244px);
+                        }
+                        
+                        p {
+                            letter-spacing: 0.04px;
+                            padding-left: 64px;
+                        }
+
+                        .customer-details {
+                            width: 100%;
+                            .customer-rating {
+                                width: 100%;
+                                gap: 7px;
+
+                                > div:first-child {
+                                    @include flexbox(space-between, center, row);
+                                    width: 100%;
+                                    padding: 0px;
+
+                                    p {
+                                        font-size: 14px;
+                                        padding: 0px;
+                                        color: $comments-label-color;
+                                    }
+                                }
+
+                                > div:last-child {
+                                    width: 95px;
+                                    padding-right: 6px;
+
+                                    @include tablet-responsive {
+                                        width: 97px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            > div:last-of-type {
+                @include button(16px, 0px);
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .main-categories.featured-pastries.suggested-psatries {
+        padding-top: 63px;
+        height: 536px;
+        margin-bottom: 0px;
+        background-color: $customer-bg-color;
+
+        @include tablet-responsive {
+            height: 816px;
+        }
+
+        @include mobile-responsive {
+            height: 1572px;
+        }
+
+        .category-flex-container {
+            gap: 30px;
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .featured-pastries-list {
+                > div {
+                    background-color: $general-color;
+                    @include tablet-responsive {
+                        height: 320px;
+                    }
+
+                    picture {
+                            img {
+                                border-radius: 6px 6px 0px 0px;
+
+                                @include small-mobile {
+                                    width: 290px;
+                                }
+                            }
+                        }
+                    > div:last-child {
+                        padding: 16px;
+
+                        h3 {
+                            font-size: 18px
+                        }
+
+                        p {
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+
+                        > div {
+                            padding: 0px;
+
+                            div:first-child {
+                                font-size: 20px;
+                            }
+
+                            div:last-child {
+                                @include button(2px, 12px);
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
