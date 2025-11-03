@@ -29,7 +29,3 @@ function mergeObjects(obj1, obj2) {
         return err.message;
     }
 }
-
-const a = [1,2,3,4];
-const b = { y: 26, z: 3 };
-console.log(mergeObjects(a, b));
