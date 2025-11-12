@@ -43,6 +43,10 @@ class Assessment {
       throw new Error('Invalid duedate format (must be ISO string)');
     }
 
+    if (date.getTime() < Date.now()) {
+        throw new Error('Due date must be in the future.');
+    }
+
     //checking booleans
     if(typeof locked !== 'boolean') {
         throw new Error('should be boolean type');
