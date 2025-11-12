@@ -1,11 +1,11 @@
-import { convertStringToNumber, integerNumberValidator, stringValidator } from "../ustils/validations.mjs";
+import { isIntegerNumberValidator, isStringValidator, convertStringToNumber } from "../utils/validations.mjs";
 import { Meta } from "./helperModels/meta.mjs";
 
 class Student {
   constructor(id, firstName, lastName, gradeLevel, meta = new Meta()) {
     id = convertStringToNumber(id);
-    integerNumberValidator(id);
-    stringValidator(firstName, lastName, gradeLevel);
+    isIntegerNumberValidator(id);
+    isStringValidator(firstName, lastName, gradeLevel);
 
     if (!(meta instanceof Meta)) {
       throw new Error('meta must be an instance of Meta');

@@ -1,11 +1,11 @@
-import { convertStringToNumber, integerNumberValidator, stringValidator } from "../ustils/validations.mjs";
+import { isIntegerNumberValidator, isStringValidator, convertStringToNumber } from "../utils/validations.mjs";
 
 class Subject {
   constructor(id, code, name, creditHours, gradingSchemeId ) {
     id = convertStringToNumber(id);
     creditHours = convertStringToNumber(creditHours);
-    integerNumberValidator(id, creditHours);
-    stringValidator(code, name);
+    isIntegerNumberValidator(id, creditHours);
+    isStringValidator(code, name);
 
     if (creditHours < 1) {
         throw new Error('VALIDATION_ERROR: credit hours can not be less than one')
