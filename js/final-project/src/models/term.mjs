@@ -23,11 +23,11 @@ class Term {
     const end = new Date(endDate);
 
     if (isNaN(start.getTime()) || isNaN(end.getTime())) {
-      throw new Error("Invalid startDate or endDate format (must be ISO string)");
+      throw new Error('Invalid startDate or endDate format (must be ISO string)');
     }
 
     if (start >= end) {
-      throw new Error("startDate must be earlier than endDate");
+      throw new Error('startDate must be earlier than endDate');
     }
 
     this.#id = id;
@@ -71,7 +71,7 @@ class Term {
   set startDate(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error("Invalid startDate format (must be ISO string)");
+      throw new Error('Invalid startDate format (must be ISO string)');
     }
     this.#startDate = date.toISOString();
   }
@@ -79,10 +79,10 @@ class Term {
   set endDate(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error("Invalid endDate format (must be ISO string)");
+      throw new Error('Invalid endDate format (must be ISO string)');
     }
     if (new Date(this.#startDate) >= date) {
-      throw new Error("endDate must be later than startDate");
+      throw new Error('endDate must be later than startDate');
     }
     this.#endDate = date.toISOString();
   }
