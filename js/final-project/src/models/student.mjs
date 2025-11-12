@@ -2,6 +2,12 @@ import { isIntegerNumberValidator, isStringValidator, convertStringToNumber } fr
 import { Meta } from "./helperModels/meta.mjs";
 
 class Student {
+  #id;
+  #firstName;
+  #lastName;
+  #gradeLevel;
+  #meta;
+
   constructor(id, firstName, lastName, gradeLevel, meta = new Meta()) {
     id = convertStringToNumber(id);
     isIntegerNumberValidator(id);
@@ -11,12 +17,62 @@ class Student {
       throw new Error('meta must be an instance of Meta');
     }
 
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.gradeLevel = gradeLevel;
-    this.meta = meta;
+    this.#id = id;
+    this.#firstName = firstName;
+    this.#lastName = lastName;
+    this.#gradeLevel = gradeLevel;
+    this.#meta = meta;
+  }
+
+  // getters
+  get id() {
+    return this.#id;
+  }
+
+  get firstName() {
+    return this.#firstName;
+  }
+
+  get lastName() {
+    return this.#lastName;
+  }
+
+  get gradeLevel() {
+    return this.#gradeLevel;
+  }
+
+  get meta() {
+    return this.#meta;
+  }
+
+  // setters
+  set id(value) {
+    value = convertStringToNumber(value);
+    isIntegerNumberValidator(value);
+    this.#id = value;
+  }
+
+  set firstName(value) {
+    isStringValidator(value);
+    this.#firstName = value;
+  }
+
+  set lastName(value) {
+    isStringValidator(value);
+    this.#lastName = value;
+  }
+
+  set gradeLevel(value) {
+    isStringValidator(value);
+    this.#gradeLevel = value;
+  }
+
+  set meta(value) {
+    if (!(value instanceof Meta)) {
+      throw new Error('meta must be an instance of Meta');
+    }
+    this.#meta = value;
   }
 }
 
-export { Student }
+export { Student };
