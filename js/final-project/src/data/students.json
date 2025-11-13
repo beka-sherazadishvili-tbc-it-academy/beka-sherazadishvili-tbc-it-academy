@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "firstName": "test",
+    "lastName": "test",
+    "gradeLevel": "master",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  },
+  {
+    "id": 2,
+    "firstName": "beka",
+    "lastName": "beka",
+    "gradeLevel": "test",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  },
+  {
+    "id": 3,
+    "firstName": "beka",
+    "lastName": "shera",
+    "gradeLevel": "test",
+    "meta": {
+      "guardianName": "hasda",
+      "email": "test@gmail.com"
+    }
+  },
+  {
+    "id": 4,
+    "firstName": "tlkasdnas",
+    "lastName": "asfdasdkjfnasdjfnas;djfmasd",
+    "gradeLevel": "laksmkasdms",
+    "meta": {
+      "guardianName": "ljkasndlaskdnas",
+      "email": "test@kasjbdas"
+    }
+  }
+]

@@ -94,6 +94,16 @@ class Student {
           : this.#meta,
     };
   }
+
+  static fromJSON(obj) {
+    return new Student(
+      obj.id,
+      obj.firstName,
+      obj.lastName,
+      obj.gradeLevel,
+      new Meta(obj.meta.guardianName, obj.meta.email)
+    );
+  }
 }
 
 export { Student };
