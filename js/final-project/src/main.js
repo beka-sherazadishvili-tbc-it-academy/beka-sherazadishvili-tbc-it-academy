@@ -1,7 +1,12 @@
-import readline from "readline";
-import { App } from "./core/app.mjs";
-import { validationQuestion } from "./utils/validationQuestion.mjs";
-import { commonValidators, studentValidator } from "./utils/questionValidators.mjs";
+import readline from 'readline';
+import { App } from './core/app.mjs';
+import { validationQuestion } from './utils/validationQuestion.mjs';
+import {
+  commonValidators,
+  studentValidator,
+  subjectValidator,
+  termValidator,
+} from './utils/questionValidators.mjs';
 
 const createStd = new App();
 const rl = readline.createInterface({
@@ -10,24 +15,27 @@ const rl = readline.createInterface({
 });
 
 function mainMenu() {
-  console.log("\n=== School SIS ===");
-  console.log("1) Create Student");
-  console.log("2) Create Subject");
-  console.log("3) Create Term");
-  console.log("4) Enroll Student");
-  console.log("0) Exit");
-  rl.question("> ", async (choice) => {
+  console.log('\n--- School SIS ---');
+  console.log('1) Create Student');
+  console.log('2) Create Subject');
+  console.log('3) Create Term');
+  console.log('4) Enroll Student');
+  console.log('0) Exit');
+  rl.question('> ', async (choice) => {
     switch (choice) {
-      case "1":
+      case '1':
         await createStudent();
         break;
-      case "2":
+      case '2':
         await createSubject();
         break;
-      case "3":
+      case '3':
         await createTerm();
         break;
-      case "0":
+      case '4':
+        await createEnromlent();
+        break;
+      case '0':
         rl.close();
         return;
     }
@@ -39,31 +47,31 @@ function mainMenu() {
 async function createStudent() {
   const firstName = await validationQuestion(
     rl,
-    "First name: ",
-    commonValidators.nonEmptyString("First name")
+    'First name: ',
+    commonValidators.nonEmptyString('First name')
   );
 
   const lastName = await validationQuestion(
     rl,
-    "Last name: ",
-    commonValidators.nonEmptyString("Last name")
+    'Last name: ',
+    commonValidators.nonEmptyString('Last name')
   );
 
   const gradeLevel = await validationQuestion(
     rl,
-    "Grade level: ",
-    commonValidators.gradeLevel()
+    'Grade level: ',
+    commonValidators.nonEmptyString('Grade level')
   );
 
   let email = await validationQuestion(
     rl,
-    "Email (optional, press Enter to skip): ",
+    'Email (optional, press Enter to skip): ',
     studentValidator.email()
   );
 
   let guardianName = await validationQuestion(
     rl,
-    "Guardian name (optional, press Enter to skip): ",
+    'Guardian name (optional, press Enter to skip): ',
     commonValidators.optionalString()
   );
 
@@ -79,44 +87,114 @@ async function createStudent() {
 
 //2. create subject
 async function createSubject() {
-  rl.question("Subject code: ", (code) => {
-    rl.question("Subject name: ", (name) => {
-      rl.question("Credit hours: ", (creditHours) => {
-        rl.question("grading Scheme Id : ", (gradingSchemeId) => {
-          rl.question("mode : ", (mode) => {
-            const result = createStd.services.subjects.createSubcejt({
-              code,
-              name,
-              creditHours,
-              gradingSchemeId,
-              mode,
-            });
-            console.log(result);
+  const code = await validationQuestion(
+    rl,
+    'Subject code: ',
+    commonValidators.nonEmptyString('Subject code')
+  );
 
-            mainMenu();
-          });
-        });
-      });
-    });
+  const name = await validationQuestion(
+    rl,
+    'Subject name: ',
+    commonValidators.nonEmptyString('Subject name')
+  );
+
+  const creditHours = await validationQuestion(
+    rl,
+    'Credit hours: ',
+    subjectValidator.creditHours('Credit hours')
+  );
+
+  const gradingSchemeId = await validationQuestion(
+    rl,
+    'grading Scheme Id: ',
+    commonValidators.nonEmptyString('grading Scheme Id')
+  );
+
+  const mode = await validationQuestion(
+    rl,
+    'mode: ',
+    commonValidators.checkMode('mode')
+  );
+
+  const result = createStd.services.subjects.createSubcejt({
+    code,
+    name,
+    creditHours,
+    gradingSchemeId,
+    mode,
   });
+  console.log(result);
 }
 
 //3. create term
 async function createTerm() {
-  rl.question("Term name: ", (name) => {
-    rl.question("Term start date : ", (startDate) => {
-      rl.question("Term end date : ", (endDate) => {
-        const result = createStd.services.terms.createTerm({
-          name,
-          startDate,
-          endDate,
-        });
-        console.log(result);
+  const name = await validationQuestion(
+    rl,
+    'Term name: ',
+    termValidator.checkTermName('Term name')
+  );
 
-        mainMenu();
-      });
-    });
+  const startDate = await validationQuestion(
+    rl,
+    'Term start date: ',
+    commonValidators.date('Term start date')
+  );
+
+  const endDate = await validationQuestion(
+    rl,
+    'Term end date: ',
+    commonValidators.dateAfter('Term end date', startDate)
+  );
+
+  const result = createStd.services.terms.createTerm({
+    name,
+    startDate,
+    endDate,
   });
+  console.log(result);
+}
+
+//4. create enrollment
+async function createEnromlent() {
+  const studentId = await validationQuestion(
+    rl,
+    'Student Id: ',
+    commonValidators.integerNumber('Student Id')
+  );
+
+  const subjectId = await validationQuestion(
+    rl,
+    'Subject Id: ',
+    commonValidators.integerNumber('Subject Id')
+  );
+
+  const termId = await validationQuestion(
+    rl,
+    'Term Id: ',
+    commonValidators.integerNumber('Term Id')
+  );
+
+  const status = await validationQuestion(
+    rl,
+    'Status: ',
+    commonValidators.nonEmptyString('Status')
+  );
+
+  const overdue = await validationQuestion(
+    rl,
+    'Term end date: ',
+    commonValidators.nonEmptyString('Term end date')
+  );
+
+  const result = createStd.services.terms.createTerm({
+    studentId,
+    subjectId,
+    termId,
+    status,
+    overdue
+  });
+  console.log(result);
 }
 
 mainMenu();

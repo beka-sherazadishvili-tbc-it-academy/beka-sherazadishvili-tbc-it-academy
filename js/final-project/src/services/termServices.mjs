@@ -9,26 +9,20 @@ class TermServices {
 
   createTerm(term) {
     try {
-      if (!/^\d{4}-[A-Za-z]+\d{1,2}$/.test(term.name)) {
-        throw new Error(
-          'Invalid term name format. Please enter something like "2025-S1" or "2025-F2"'
-        );
-      }
+      // const start = new Date(term.startDate);
+      // const end = new Date(term.endDate);
 
-      const start = new Date(term.startDate);
-      const end = new Date(term.endDate);
+      // if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+      //   throw new Error(
+      //     "Invalid startDate or endDate format (must be ISO string)"
+      //   );
+      // }
 
-      if (isNaN(start.getTime()) || isNaN(end.getTime())) {
-        throw new Error(
-          "Invalid startDate or endDate format (must be ISO string)"
-        );
-      }
+      // if (start >= end || start <= Date.now()) {
+      //   throw new Error("startDate must be earlier than endDate and after or equal to current date");
+      // }
 
-      if (start >= end || start <= Date.now()) {
-        throw new Error("startDate must be earlier than endDate and after or equal to current date");
-      }
-
-      const termModel = new Term(null, term.name, start, end);
+      const termModel = new Term(null, term.name, term.startDate, term.endDate);
 
       this.#controller.add(termModel);
       return `Student "${termModel.name} ${termModel.startDate} ${termModel.endDate}" created successfully!`;

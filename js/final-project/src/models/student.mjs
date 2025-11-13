@@ -20,7 +20,6 @@ class Student {
       isIntegerNumberValidator(id);
       this.#id = id;
     }
-    isStringValidator(firstName, lastName, gradeLevel);
 
     if (!(meta instanceof Meta)) {
       throw new Error("meta must be an instance of Meta");
@@ -78,7 +77,7 @@ class Student {
 
   set meta(value) {
     if (!(value instanceof Meta)) {
-      throw new Error("meta must be an instance of Meta");
+      throw new Error('meta must be an instance of Meta');
     }
     this.#meta = value;
   }
@@ -90,7 +89,7 @@ class Student {
       lastName: this.#lastName,
       gradeLevel: this.#gradeLevel,
       meta:
-        this.#meta instanceof Object && typeof this.#meta.toJSON === "function"
+        this.#meta instanceof Object && typeof this.#meta.toJSON === 'function'
           ? this.#meta.toJSON()
           : this.#meta,
     };

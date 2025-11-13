@@ -19,12 +19,10 @@ class Term {
       this.#id = id;
     }
 
-    isStringValidator(name);
-
     this.#id = id;
     this.#name = name;
-    this.#startDate = startDate.toISOString();
-    this.#endDate = endDate.toISOString();
+    this.#startDate = startDate;
+    this.#endDate = endDate;
   }
 
   // getters

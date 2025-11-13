@@ -17,8 +17,6 @@ class Subject {
       this.#id = id;
     }
     creditHours = convertStringToNumber(creditHours);
-    isIntegerNumberValidator(creditHours);
-    isStringValidator(code, name, gradingSchemeId, mode);
 
     this.#id = id;
     this.#code = code;

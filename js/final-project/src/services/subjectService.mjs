@@ -9,14 +9,6 @@ class SubjectServices {
 
     createSubcejt(subject) {
         try {
-            if (subject.creditHours < 1) {
-                throw new Error('VALIDATION_ERROR: credit hours cannot be less than one');
-            }
-
-            if (subject.mode !== 'graded' && subject.mode !== 'passfail') {
-                throw new Error('VALIDATION_ERROR: mode must be "graded" or "passfail"');
-            }
-
             const subjectModel = new Subject(
                 null,
                 subject.code,
