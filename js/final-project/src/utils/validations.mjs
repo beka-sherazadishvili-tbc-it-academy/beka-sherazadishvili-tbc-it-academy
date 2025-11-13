@@ -64,11 +64,3 @@ export function isEmailFormValidator(email) {
       throw new Error('VALIDATION_ERROR: Invalid email format');
     }
 }
-
-// export {
-//     isEmailFormValidator,
-//     isIntegerNumberValidator,
-//     convertStringToNumber,
-//     isStringValidator,
-//     isNumberValidator
-// };

@@ -39,23 +39,23 @@ class Score {
   }
 
   // getters
-  get id() {
+  get getId() {
     return this.#id;
   }
 
-  get assessmentId() {
+  get getAssessmentId() {
     return this.#assessmentId;
   }
 
-  get studentId() {
+  get getStudentId() {
     return this.#studentId;
   }
 
-  get points() {
+  get getPoints() {
     return this.#points;
   }
 
-  get recordedAt() {
+  get gerRecordedAt() {
     return this.#recordedAt;
   }
 

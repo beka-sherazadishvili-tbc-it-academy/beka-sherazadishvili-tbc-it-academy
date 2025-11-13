@@ -1,4 +1,8 @@
-import { isIntegerNumberValidator, isStringValidator, convertStringToNumber } from "../utils/validations.mjs";
+import {
+  isIntegerNumberValidator,
+  isStringValidator,
+  convertStringToNumber,
+} from "../utils/validations.mjs";
 import { Meta } from "./helperModels/meta.mjs";
 
 class Student {
@@ -9,12 +13,17 @@ class Student {
   #meta;
 
   constructor(id, firstName, lastName, gradeLevel, meta = new Meta()) {
-    id = convertStringToNumber(id);
-    isIntegerNumberValidator(id);
+    if (id == null) {
+      this.#id = null;
+    } else {
+      id = convertStringToNumber(id);
+      isIntegerNumberValidator(id);
+      this.#id = id;
+    }
     isStringValidator(firstName, lastName, gradeLevel);
 
     if (!(meta instanceof Meta)) {
-      throw new Error('meta must be an instance of Meta');
+      throw new Error("meta must be an instance of Meta");
     }
 
     this.#id = id;
@@ -69,9 +78,22 @@ class Student {
 
   set meta(value) {
     if (!(value instanceof Meta)) {
-      throw new Error('meta must be an instance of Meta');
+      throw new Error("meta must be an instance of Meta");
     }
     this.#meta = value;
+  }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      firstName: this.#firstName,
+      lastName: this.#lastName,
+      gradeLevel: this.#gradeLevel,
+      meta:
+        this.#meta instanceof Object && typeof this.#meta.toJSON === "function"
+          ? this.#meta.toJSON()
+          : this.#meta,
+    };
   }
 }
 
