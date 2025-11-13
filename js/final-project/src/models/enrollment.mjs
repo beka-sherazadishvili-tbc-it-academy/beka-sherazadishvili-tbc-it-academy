@@ -27,12 +27,18 @@ class Enrollment {
     completedAt = null
   ) {
     // check integers
-    id = convertStringToNumber(id);
+    if (id == null) {
+      this.#id = null;
+    } else {
+      id = convertStringToNumber(id);
+      isIntegerNumberValidator(id);
+      this.#id = id;
+    }
     studentId = convertStringToNumber(studentId);
     subjectId = convertStringToNumber(subjectId);
     termId = convertStringToNumber(termId);
     attemptNumber = convertStringToNumber(attemptNumber);
-    isIntegerNumberValidator(id, studentId, subjectId, termId, attemptNumber);
+    isIntegerNumberValidator(studentId, subjectId, termId, attemptNumber);
 
     if (attemptNumber < 1) {
       throw new Error('attemptNumber must be at least 1.');

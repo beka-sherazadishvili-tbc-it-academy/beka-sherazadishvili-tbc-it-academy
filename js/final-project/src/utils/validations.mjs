@@ -55,6 +55,10 @@ export function isStringValidator(...strings) {
         if (str.trim() === '') {
             throw new Error('VALIDATION_ERROR: String cannot be empty or whitespace only');
         }
+
+        if (!isNaN(str.trim()) && str.trim() !== '') {
+            throw new Error('VALIDATION_ERROR: String cannot be a numeric value');
+        }
     }
     return true;
 }

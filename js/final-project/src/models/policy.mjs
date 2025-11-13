@@ -81,3 +81,5 @@ class Policy {
     }
   }
 }
+
+export { Policy }

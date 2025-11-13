@@ -1,5 +1,7 @@
 import readline from "readline";
 import { App } from "./core/app.mjs";
+import { validationQuestion } from "./utils/validationQuestion.mjs";
+import { commonValidators, studentValidator } from "./utils/questionValidators.mjs";
 
 const createStd = new App();
 const rl = readline.createInterface({
@@ -35,26 +37,44 @@ function mainMenu() {
 
 //1. create student
 async function createStudent() {
-  rl.question("First name: ", (firstName) => {
-    rl.question("Last name: ", (lastName) => {
-      rl.question("Grade level: ", (gradeLevel) => {
-        rl.question("Email (optional): ", (email) => {
-          rl.question("Guardian name (optional): ", (guardianName) => {
-            const result = createStd.services.students.createStudent({
-              firstName,
-              lastName,
-              gradeLevel,
-              email,
-              guardianName,
-            });
-            console.log(result);
+  const firstName = await validationQuestion(
+    rl,
+    "First name: ",
+    commonValidators.nonEmptyString("First name")
+  );
 
-            mainMenu();
-          });
-        });
-      });
-    });
+  const lastName = await validationQuestion(
+    rl,
+    "Last name: ",
+    commonValidators.nonEmptyString("Last name")
+  );
+
+  const gradeLevel = await validationQuestion(
+    rl,
+    "Grade level: ",
+    commonValidators.gradeLevel()
+  );
+
+  let email = await validationQuestion(
+    rl,
+    "Email (optional, press Enter to skip): ",
+    studentValidator.email()
+  );
+
+  let guardianName = await validationQuestion(
+    rl,
+    "Guardian name (optional, press Enter to skip): ",
+    commonValidators.optionalString()
+  );
+
+  const result = createStd.services.students.createStudent({
+    firstName,
+    lastName,
+    gradeLevel,
+    email: email.trim() || null,
+    guardianName: guardianName.trim() || null,
   });
+  console.log(result);
 }
 
 //2. create subject

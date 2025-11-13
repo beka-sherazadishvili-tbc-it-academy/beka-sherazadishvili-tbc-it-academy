@@ -1,5 +1,5 @@
 import { Term } from '../models/term.mjs'
-import { CommonController } from './common-controller.mjs';
+import { CommonController } from './commonController.mjs';
 
 class TermController extends CommonController {
   constructor() {
