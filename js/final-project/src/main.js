@@ -1,46 +1,53 @@
-import readline from 'readline';
-import { App } from './core/app.mjs'
+import readline from "readline";
+import { App } from "./core/app.mjs";
 
 const createStd = new App();
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 function mainMenu() {
-  console.log('\n=== School SIS ===');
-  console.log('1) Create Student');
-  console.log('2) Create Subject');
-  console.log('3) Create Term');
-  console.log('4) Enroll Student');
-  console.log('0) Exit');
-  rl.question('> ', async (choice) => {
+  console.log("\n=== School SIS ===");
+  console.log("1) Create Student");
+  console.log("2) Create Subject");
+  console.log("3) Create Term");
+  console.log("4) Enroll Student");
+  console.log("0) Exit");
+  rl.question("> ", async (choice) => {
     switch (choice) {
-      case '1':
+      case "1":
         await createStudent();
         break;
-      case '2':
+      case "2":
         await createSubject();
         break;
-      case '0':
+      case "3":
+        await createTerm();
+        break;
+      case "0":
         rl.close();
         return;
     }
     mainMenu();
   });
 }
+
 //1. create student
 async function createStudent() {
-  rl.question('First name: ', (firstName) => {
-    rl.question('Last name: ', (lastName) => {
-      rl.question('Grade level: ', (gradeLevel) => {
-        rl.question('Email (optional): ', (email) => {
-          rl.question('Guardian name (optional): ', (guardianName) => {
+  rl.question("First name: ", (firstName) => {
+    rl.question("Last name: ", (lastName) => {
+      rl.question("Grade level: ", (gradeLevel) => {
+        rl.question("Email (optional): ", (email) => {
+          rl.question("Guardian name (optional): ", (guardianName) => {
             const result = createStd.services.students.createStudent({
               firstName,
               lastName,
               gradeLevel,
               email,
-              guardianName
+              guardianName,
             });
-            console.log(result)
+            console.log(result);
 
             mainMenu();
           });
@@ -52,19 +59,19 @@ async function createStudent() {
 
 //2. create subject
 async function createSubject() {
-  rl.question('Subject code: ', (code) => {
-    rl.question('Subject name: ', (name) => {
-      rl.question('Credit hours: ', (creditHours) => {
-        rl.question('grading Scheme Id : ', (gradingSchemeId ) => {
-          rl.question('mode : ', (mode) => {
+  rl.question("Subject code: ", (code) => {
+    rl.question("Subject name: ", (name) => {
+      rl.question("Credit hours: ", (creditHours) => {
+        rl.question("grading Scheme Id : ", (gradingSchemeId) => {
+          rl.question("mode : ", (mode) => {
             const result = createStd.services.subjects.createSubcejt({
               code,
               name,
               creditHours,
               gradingSchemeId,
-              mode
+              mode,
             });
-            console.log(result)
+            console.log(result);
 
             mainMenu();
           });
@@ -74,5 +81,22 @@ async function createSubject() {
   });
 }
 
+//3. create term
+async function createTerm() {
+  rl.question("Term name: ", (name) => {
+    rl.question("Term start date : ", (startDate) => {
+      rl.question("Term end date : ", (endDate) => {
+        const result = createStd.services.terms.createTerm({
+          name,
+          startDate,
+          endDate,
+        });
+        console.log(result);
+
+        mainMenu();
+      });
+    });
+  });
+}
 
 mainMenu();

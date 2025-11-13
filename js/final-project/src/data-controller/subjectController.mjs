@@ -11,7 +11,7 @@ class SubjectController extends CommonController {
       throw new Error(`Object is not subject instance`);
     }
 
-    const alreadyExist = [...this.getAllStudentValues()].find(
+    const alreadyExist = [...this.getAllValues()].find(
         subject => subject.code === item.code
     )
 

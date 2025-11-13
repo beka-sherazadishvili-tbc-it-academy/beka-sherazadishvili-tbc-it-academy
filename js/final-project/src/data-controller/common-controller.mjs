@@ -7,15 +7,15 @@ class CommonController {
     this.#currentClass = currentClass;
   }
 
-  getStudentById(id) {
+  getItemById(id) {
     return this.#items.get(id) || null;
   }
 
-  getAllStudents() {
+  getAllItems() {
     return this.#items;
   }
 
-  getAllStudentValues() {
+  getAllValues() {
     return [...this.#items.values()];
   }
 
