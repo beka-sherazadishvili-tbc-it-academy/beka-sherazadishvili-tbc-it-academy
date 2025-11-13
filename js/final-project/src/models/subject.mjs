@@ -8,19 +8,17 @@ class Subject {
   #gradingSchemeId;
   #mode;
 
-  constructor(id, code, name, creditHours, gradingSchemeId, mode = 'graded') {
-    id = convertStringToNumber(id);
+  constructor(id, code, name, creditHours, gradingSchemeId = 'default', mode = 'graded') {
+    if (id == null) {
+      this.#id = null;
+    } else {
+      id = convertStringToNumber(id);
+      isIntegerNumberValidator(id);
+      this.#id = id;
+    }
     creditHours = convertStringToNumber(creditHours);
-    isIntegerNumberValidator(id, creditHours);
-    isStringValidator(code, name);
-
-    if (creditHours < 1) {
-      throw new Error('VALIDATION_ERROR: credit hours cannot be less than one');
-    }
-
-    if (mode !== 'graded' && mode !== 'passfail') {
-      throw new Error('VALIDATION_ERROR: mode must be "graded" or "passfail"');
-    }
+    isIntegerNumberValidator(creditHours);
+    isStringValidator(code, name, gradingSchemeId, mode);
 
     this.#id = id;
     this.#code = code;

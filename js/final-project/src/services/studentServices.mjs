@@ -2,24 +2,24 @@ import { Meta } from "../models/helperModels/meta.mjs";
 import { Student } from "../models/student.mjs";
 
 class StudentService {
-    #repo;
+    #controller;
 
-    constructor(studentRepo) {
-        this.#repo = studentRepo;
+    constructor(studentController) {
+        this.#controller = studentController;
     }
 
-    createStudent(input) {
+    createStudent(student) {
         try {
-            const meta = new Meta(input.guardianName || null, input.email || null);
-            const student = new Student(
+            const meta = new Meta(student.guardianName || null, student.email || null);
+            const studentModel = new Student(
                 null,
-                input.firstName,
-                input.lastName,
-                input.gradeLevel,
+                student.firstName,
+                student.lastName,
+                student.gradeLevel,
                 meta
             );
-            this.#repo.add(student);
-            return `Student "${student.firstName} ${student.lastName} ${student.meta.email}" created successfully!`;
+            this.#controller.add(studentModel);
+            return `Student "${studentModel.firstName} ${studentModel.lastName} ${studentModel.meta.email}" created successfully!`;
         } catch (error) {
             return error.message;
         }

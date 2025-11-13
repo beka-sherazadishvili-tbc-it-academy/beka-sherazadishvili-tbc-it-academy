@@ -1,6 +1,5 @@
 import readline from 'readline';
 import { App } from './core/app.mjs'
-import { Meta } from './models/helperModels/meta.mjs';
 
 const createStd = new App();
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
@@ -17,6 +16,9 @@ function mainMenu() {
       case '1':
         await createStudent();
         break;
+      case '2':
+        await createSubject();
+        break;
       case '0':
         rl.close();
         return;
@@ -24,7 +26,7 @@ function mainMenu() {
     mainMenu();
   });
 }
-
+//1. create student
 async function createStudent() {
   rl.question('First name: ', (firstName) => {
     rl.question('Last name: ', (lastName) => {
@@ -38,6 +40,31 @@ async function createStudent() {
               email,
               guardianName
             });
+            console.log(result)
+
+            mainMenu();
+          });
+        });
+      });
+    });
+  });
+}
+
+//2. create subject
+async function createSubject() {
+  rl.question('Subject code: ', (code) => {
+    rl.question('Subject name: ', (name) => {
+      rl.question('Credit hours: ', (creditHours) => {
+        rl.question('grading Scheme Id : ', (gradingSchemeId ) => {
+          rl.question('mode : ', (mode) => {
+            const result = createStd.services.subjects.createSubcejt({
+              code,
+              name,
+              creditHours,
+              gradingSchemeId,
+              mode
+            });
+            console.log(result)
 
             mainMenu();
           });
