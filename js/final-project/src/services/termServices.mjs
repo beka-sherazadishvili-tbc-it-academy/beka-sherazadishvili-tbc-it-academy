@@ -24,8 +24,8 @@ class TermServices {
         );
       }
 
-      if (start >= end) {
-        throw new Error("startDate must be earlier than endDate");
+      if (start >= end || start <= Date.now()) {
+        throw new Error("startDate must be earlier than endDate and after or equal to current date");
       }
 
       const termModel = new Term(null, term.name, start, end);
