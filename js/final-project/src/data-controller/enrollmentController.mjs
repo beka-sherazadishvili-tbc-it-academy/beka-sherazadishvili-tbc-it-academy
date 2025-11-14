@@ -2,8 +2,8 @@ import { CommonController } from "./commonController.mjs";
 import { Enrollment } from "../models/enrollment.mjs";
 
 class EnrollmentController extends CommonController {
-  constructor() {
-    super(Enrollment);
+  constructor(jsonPath) {
+    super(Enrollment, jsonPath);
   }
 
   add(item) {
@@ -19,6 +19,8 @@ class EnrollmentController extends CommonController {
         enroll.attemptNumber === item.attemptNumber &&
         enroll.status === 'active'
     );
+
+    console.log(alreadyExist)
 
     if(alreadyExist) {
         throw new Error(`${item} already exists`);

@@ -2,8 +2,8 @@ import { Subject } from "../models/subject.mjs";
 import { CommonController } from "./commonController.mjs";
 
 class SubjectController extends CommonController {
-  constructor() {
-    super(Subject);
+  constructor(filePath) {
+    super(Subject, filePath);
   }
 
   add(item) {

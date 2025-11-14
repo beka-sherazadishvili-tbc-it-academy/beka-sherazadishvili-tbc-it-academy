@@ -17,7 +17,7 @@ class CommonController {
   }
 
   getItemById(id) {
-    return this.#items.get(id) || null;
+    return this.#items.get(Number(id)) || null;
   }
 
   getAllItems() {
@@ -47,7 +47,7 @@ class CommonController {
       throw new Error(`Item with ID ${item.id} already exists`);
     }
 
-    this.#items.set(item.id, item);
+    this.#items.set(Number(item.id), item);
     this.#save();
   }
 
@@ -77,7 +77,7 @@ class CommonController {
         ? this.#currentClass.fromJSON(dataObj)
         : new this.#currentClass(...Object.values(dataObj));
 
-      this.#items.set(instance.id, instance);
+      this.#items.set(Number(instance.id), instance);
 
       if (instance.id > maxId) maxId = instance.id;
     });

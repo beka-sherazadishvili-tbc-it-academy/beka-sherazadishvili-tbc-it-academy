@@ -18,6 +18,13 @@ const commonValidators = {
     }
   },
 
+  booleanValidator: (fieldName) => (input) => {
+    if (!["y", "n"].includes(input)) {
+      throw new Error(`${fieldName} must be "y" or "n".`);
+    }
+    return true;
+  },
+
   optionalString: () => (input) => {
     if (!input || input.trim() === "") {
       return true;

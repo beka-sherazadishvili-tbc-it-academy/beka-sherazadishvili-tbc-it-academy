@@ -87,6 +87,28 @@ class Subject {
     }
     this.#mode = value;
   }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      code: this.#code,
+      name: this.#name,
+      creditHours: this.#creditHours,
+      gradingSchemeId: this.#gradingSchemeId,
+      mode: this.#mode,
+    };
+  }
+
+  static fromJSON(obj) {
+    return new Subject(
+      obj.id,
+      obj.code,
+      obj.name,
+      obj.creditHours,
+      obj.gradingSchemeId,
+      obj.mode
+    );
+  }
 }
 
 export { Subject };

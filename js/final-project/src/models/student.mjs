@@ -96,13 +96,10 @@ class Student {
   }
 
   static fromJSON(obj) {
-    return new Student(
-      obj.id,
-      obj.firstName,
-      obj.lastName,
-      obj.gradeLevel,
-      new Meta(obj.meta.guardianName, obj.meta.email)
-    );
+    const meta = obj.meta
+      ? new Meta(obj.meta.guardianName, obj.meta.email)
+      : null;
+    return new Student(obj.id, obj.firstName, obj.lastName, obj.gradeLevel, meta);
   }
 }
 

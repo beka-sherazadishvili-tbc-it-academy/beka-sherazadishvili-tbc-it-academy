@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "studentId": 1,
+    "subjectId": 1,
+    "termId": 1,
+    "status": "active",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-14T00:11:45.077Z",
+    "droppedAt": null,
+    "completedAt": null
+  }
+]

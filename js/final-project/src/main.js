@@ -33,7 +33,7 @@ function mainMenu() {
         await createTerm();
         break;
       case '4':
-        await createEnromlent();
+        await createEnrollment();
         break;
       case '0':
         rl.close();
@@ -114,7 +114,7 @@ async function createSubject() {
   const mode = await validationQuestion(
     rl,
     'mode: ',
-    commonValidators.checkMode('mode')
+    subjectValidator.checkMode('mode')
   );
 
   const result = createStd.services.subjects.createSubcejt({
@@ -156,7 +156,7 @@ async function createTerm() {
 }
 
 //4. create enrollment
-async function createEnromlent() {
+async function createEnrollment() {
   const studentId = await validationQuestion(
     rl,
     'Student Id: ',
@@ -175,23 +175,16 @@ async function createEnromlent() {
     commonValidators.integerNumber('Term Id')
   );
 
-  const status = await validationQuestion(
-    rl,
-    'Status: ',
-    commonValidators.nonEmptyString('Status')
-  );
-
   const overdue = await validationQuestion(
     rl,
-    'Term end date: ',
-    commonValidators.nonEmptyString('Term end date')
+    'y/n: ',
+    commonValidators.booleanValidator('overdue')
   );
 
-  const result = createStd.services.terms.createTerm({
+  const result = createStd.services.enrollments.createEnrollment({
     studentId,
     subjectId,
     termId,
-    status,
     overdue
   });
   console.log(result);

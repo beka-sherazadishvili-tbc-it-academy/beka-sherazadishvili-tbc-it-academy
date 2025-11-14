@@ -38,40 +38,10 @@ class Enrollment {
     subjectId = convertStringToNumber(subjectId);
     termId = convertStringToNumber(termId);
     attemptNumber = convertStringToNumber(attemptNumber);
-    isIntegerNumberValidator(studentId, subjectId, termId, attemptNumber);
-
-    if (attemptNumber < 1) {
-      throw new Error('attemptNumber must be at least 1.');
-    }
-
-    // check strings
-    isStringValidator(status);
-
+    
     const allowedStatuses = ['active', 'dropped', 'completed', 'withdrawn'];
     if (!allowedStatuses.includes(status)) {
       throw new Error(`Invalid status: ${status}`);
-    }
-
-    // check dates
-    const create = new Date(createdAt);
-    if (isNaN(create.getTime())) {
-      throw new Error('Invalid createdAt format (must be ISO string)');
-    }
-
-    let drop = null;
-    if (droppedAt) {
-      drop = new Date(droppedAt);
-      if (isNaN(drop.getTime())) {
-        throw new Error('Invalid droppedAt format (must be ISO string)');
-      }
-    }
-
-    let complete = null;
-    if (completedAt) {
-      complete = new Date(completedAt);
-      if (isNaN(complete.getTime())) {
-        throw new Error('Invalid completedAt format (must be ISO string)');
-      }
     }
 
     // // Status and dates validation
@@ -91,9 +61,9 @@ class Enrollment {
     this.#termId = termId;
     this.#status = status;
     this.#attemptNumber = attemptNumber;
-    this.#createdAt = create.toISOString();
-    this.#droppedAt = drop ? drop.toISOString() : null;
-    this.#completedAt = complete ? complete.toISOString() : null;
+    this.#createdAt = createdAt;
+    this.#droppedAt = droppedAt;
+    this.#completedAt = completedAt;
   }
 
   // getters
@@ -206,6 +176,34 @@ class Enrollment {
     } else {
       this.#completedAt = null;
     }
+  }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      studentId: this.#studentId,
+      subjectId: this.#subjectId,
+      termId: this.#termId,
+      status: this.#status,
+      attemptNumber: this.#attemptNumber,
+      createdAt: this.#createdAt,
+      droppedAt: this.#droppedAt,
+      completedAt: this.#completedAt,
+    };
+  }
+
+  static fromJSON(obj) {
+    return new Enrollment(
+      obj.id,
+      obj.studentId,
+      obj.subjectId,
+      obj.termId,
+      obj.status,
+      obj.attemptNumber,
+      obj.createdAt,
+      obj.droppedAt,
+      obj.completedAt
+    );
   }
 }
 

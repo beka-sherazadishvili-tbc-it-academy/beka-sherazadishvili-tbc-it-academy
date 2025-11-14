@@ -21,10 +21,10 @@ class EnrollmentService {
     this.#policy = new Policy();
   }
 
-  createEnromlent(input) {
-    const studentItem = this.#studentController.getById(input.studentId);
-    const subjectItem = this.#subjectController.getById(input.subjectId);
-    const termItem = this.#termController.getById(input.termId);
+  createEnrollment(input) {
+    const studentItem = this.#studentController.getItemById(input.studentId);
+    const subjectItem = this.#subjectController.getItemById(input.subjectId);
+    const termItem = this.#termController.getItemById(input.termId);
 
     if (!studentItem || !subjectItem || !termItem) {
       throw new Error(
@@ -32,11 +32,12 @@ class EnrollmentService {
       );
     }
 
+    const isOverride = input.overdue.toLowerCase() === 'y';
     const diffDays = Math.floor(
       (Date.now() - new Date(termItem.startDate)) / (1000 * 60 * 60 * 24)
     );
 
-    if (diffDays > this.#policy.lateEnrollmentCutoff && !input.override) {
+    if (diffDays > this.#policy.lateEnrollmentCutoff && !isOverride) {
       throw new Error(
         `You can not enroll, term started more than ${
           this.#policy.lateEnrollmentCutoff
@@ -46,7 +47,10 @@ class EnrollmentService {
 
     const previousAttempts = this.#controller
       .getAllValues()
-      .filter((e) => e.studentId === studentId && e.subjectId === subjectId)
+      .filter(
+        (e) =>
+          e.studentId === input.studentId && e.subjectId === input.subjectId
+      )
       .map((e) => e.attemptNumber);
 
     const attemptNumber = previousAttempts.length
@@ -60,7 +64,7 @@ class EnrollmentService {
       input.termId,
       "active",
       attemptNumber,
-      new Date().toISOString(),
+      new Date().toISOString()
     );
 
     this.#controller.add(enrollment);
@@ -68,3 +72,5 @@ class EnrollmentService {
     return enrollment;
   }
 }
+
+export { EnrollmentService };

@@ -75,6 +75,19 @@ class Term {
     }
     this.#endDate = date.toISOString();
   }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      name: this.#name,
+      startDate: this.#startDate,
+      endDate: this.#endDate,
+    };
+  }
+
+  static fromJSON(obj) {
+    return new Term(obj.id, obj.name, obj.startDate, obj.endDate);
+  }
 }
 
 export { Term };

@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "code": "math101",
+    "name": "mathematics",
+    "creditHours": 25,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  }
+]
