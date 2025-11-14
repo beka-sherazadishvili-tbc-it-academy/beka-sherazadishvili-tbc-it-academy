@@ -109,6 +109,22 @@ const commonValidators = {
 
     return true;
   },
+
+  statusValidator: (allowed) => (input) => {
+    try {
+      isStringValidator(input);
+
+      if (!allowed.includes(input)) {
+        throw new Error(
+          `VALIDATION_ERROR: must be one of: ${allowed.join(", ")}`
+        );
+      }
+
+      return true;
+    } catch (err) {
+      throw new Error(err.message.replace("VALIDATION_ERROR: ", ""));
+    }
+  },
 };
 
 // student validators
@@ -175,4 +191,51 @@ const termValidator = {
   },
 };
 
-export { termValidator, subjectValidator, commonValidators, studentValidator };
+// enrollment validation
+const enrollmentValidator = {};
+
+//assessment validation
+const assessmentValidation = {
+  weightPercentValidator: () => (input) => {
+    try {
+      const num = convertStringToNumber(input);
+      isIntegerNumberValidator(num);
+      if (num < 0 || num > 100) {
+        throw new Error("weightPercent should be between 0 and 100");
+      }
+      return true;
+    } catch (err) {
+      throw new Error(err.message.replace("VALIDATION_ERROR: ", ""));
+    }
+  },
+
+  pointValidation: () => (input) => {
+    try {
+      const num = convertStringToNumber(input);
+      isIntegerNumberValidator(num);
+      if (num < 0) {
+        throw new Error("point should not be below 0");
+      }
+      return true;
+    } catch (err) {
+      throw new Error(err.message.replace("VALIDATION_ERROR: ", ""));
+    }
+  },
+
+  typeValidation: (input) => {
+    try {
+      isStringValidator(input);
+      const allowedTypes = ["quiz", "exam", "project"];
+      if (!allowedTypes.includes(input)) {
+        throw new Error(
+          `Invalid type: ${input}, please enter one of those values - "quiz", "exam", "project"`
+        );
+      }
+      return true;
+    } catch (err) {
+      throw new Error(err.message.replace("VALIDATION_ERROR: ", ""));
+    }
+  },
+};
+
+export { assessmentValidation, termValidator, subjectValidator, commonValidators, studentValidator };

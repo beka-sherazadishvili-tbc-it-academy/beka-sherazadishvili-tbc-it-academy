@@ -71,6 +71,37 @@ class EnrollmentService {
 
     return enrollment;
   }
+
+  updateEnrollment(input) {
+    const enrollment = this.#controller.getItemById(input.enrollmentId);
+
+    if (enrollment) {
+      throw new Error('Enrollment id does not exists')
+    }
+
+    if(enrollment.status !== 'active') {
+      throw new Error('Enrollmen status should be active')
+    }
+
+    const currentDate = new Date();
+    
+    switch (input.action) {
+      case 'd':
+        enrollment.droppedAt = currentDate;
+        enrollment.status = 'dropped';
+        break;
+      case 'w':
+        enrollment.droppedAt = currentDate;
+        enrollment.status = withdrawn
+        break;
+      case 'c':
+        enrollment.droppedAt = currentDate
+        break;
+    
+      default:
+        break;
+    }
+  }
 }
 
 export { EnrollmentService };

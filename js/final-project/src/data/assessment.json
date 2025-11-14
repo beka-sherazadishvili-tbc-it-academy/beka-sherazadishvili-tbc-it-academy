@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "subjectId": 1,
+    "termId": 1,
+    "name": "test",
+    "type": "quiz",
+    "maxPoints": 20,
+    "weightPercent": 21,
+    "dueDate": "2025-11-19T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 2,
+    "subjectId": 1,
+    "termId": 1,
+    "name": "test1",
+    "type": "exam",
+    "maxPoints": 30,
+    "weightPercent": 30,
+    "dueDate": "2026-01-15T00:00:00.000Z",
+    "locked": false
+  }
+]

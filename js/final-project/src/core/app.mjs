@@ -8,6 +8,8 @@ import { SubjectServices } from "../services/subjectService.mjs";
 import { TermServices } from "../services/termServices.mjs";
 import { EnrollmentController } from "../data-controller/enrollmentController.mjs";
 import { EnrollmentService } from "../services/enrollmentService.mjs";
+import { AssessmentController } from "../data-controller/assessmentController.mjs";
+import { AssessmentService } from "../services/assessmentService.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +25,7 @@ export class App {
       subjects: new SubjectController(`${base}/subject.json`),
       terms: new TermController(`${base}/term.json`),
       enrollments: new EnrollmentController(`${base}/enrollment.json`),
+      assessments: new AssessmentController(`${base}/assessment.json`),
     };
 
     this.#services = {
@@ -32,6 +35,11 @@ export class App {
       enrollments: new EnrollmentService(
         this.#controllers.enrollments,
         this.#controllers.students,
+        this.#controllers.subjects,
+        this.#controllers.terms
+      ),
+      assessments: new AssessmentService(
+        this.#controllers.assessments,
         this.#controllers.subjects,
         this.#controllers.terms
       ),

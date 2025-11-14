@@ -38,22 +38,11 @@ class Enrollment {
     subjectId = convertStringToNumber(subjectId);
     termId = convertStringToNumber(termId);
     attemptNumber = convertStringToNumber(attemptNumber);
-    
+
     const allowedStatuses = ['active', 'dropped', 'completed', 'withdrawn'];
     if (!allowedStatuses.includes(status)) {
       throw new Error(`Invalid status: ${status}`);
     }
-
-    // // Status and dates validation
-    // if (status === 'dropped' && !droppedAt) {
-    //   throw new Error('droppedAt is required when status is 'dropped'');
-    // }
-    // if (status === 'completed' && !completedAt) {
-    //   throw new Error('completedAt is required when status is 'completed'');
-    // }
-    // if ((status === 'active' || status === 'withdrawn') && (droppedAt || completedAt)) {
-    //   throw new Error(`Status '${status}' should not have droppedAt or completedAt`);
-    // }
 
     this.#id = id;
     this.#studentId = studentId;

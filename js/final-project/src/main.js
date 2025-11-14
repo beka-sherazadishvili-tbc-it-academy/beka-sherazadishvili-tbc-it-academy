@@ -1,12 +1,13 @@
-import readline from 'readline';
-import { App } from './core/app.mjs';
-import { validationQuestion } from './utils/validationQuestion.mjs';
+import readline from "readline";
+import { App } from "./core/app.mjs";
+import { validationQuestion } from "./utils/validationQuestion.mjs";
 import {
+  assessmentValidation,
   commonValidators,
   studentValidator,
   subjectValidator,
   termValidator,
-} from './utils/questionValidators.mjs';
+} from "./utils/questionValidators.mjs";
 
 const createStd = new App();
 const rl = readline.createInterface({
@@ -15,27 +16,35 @@ const rl = readline.createInterface({
 });
 
 function mainMenu() {
-  console.log('\n--- School SIS ---');
-  console.log('1) Create Student');
-  console.log('2) Create Subject');
-  console.log('3) Create Term');
-  console.log('4) Enroll Student');
-  console.log('0) Exit');
-  rl.question('> ', async (choice) => {
+  console.log("\n--- School SIS ---");
+  console.log("1) Create Student");
+  console.log("2) Create Subject");
+  console.log("3) Create Term");
+  console.log("4) Enroll Student");
+  console.log("5) Drop / Withdraw / Complete");
+  console.log("6) Create / Update / Delete Assessment");
+  console.log("0) Exit");
+  rl.question("> ", async (choice) => {
     switch (choice) {
-      case '1':
+      case "1":
         await createStudent();
         break;
-      case '2':
+      case "2":
         await createSubject();
         break;
-      case '3':
+      case "3":
         await createTerm();
         break;
-      case '4':
+      case "4":
         await createEnrollment();
         break;
-      case '0':
+      case "5":
+        await updateEnrollment();
+        break;
+      case "6":
+        await assessments();
+        break;
+      case "0":
         rl.close();
         return;
     }
@@ -47,31 +56,31 @@ function mainMenu() {
 async function createStudent() {
   const firstName = await validationQuestion(
     rl,
-    'First name: ',
-    commonValidators.nonEmptyString('First name')
+    "First name: ",
+    commonValidators.nonEmptyString("First name")
   );
 
   const lastName = await validationQuestion(
     rl,
-    'Last name: ',
-    commonValidators.nonEmptyString('Last name')
+    "Last name: ",
+    commonValidators.nonEmptyString("Last name")
   );
 
   const gradeLevel = await validationQuestion(
     rl,
-    'Grade level: ',
-    commonValidators.nonEmptyString('Grade level')
+    "Grade level: ",
+    commonValidators.nonEmptyString("Grade level")
   );
 
   let email = await validationQuestion(
     rl,
-    'Email (optional, press Enter to skip): ',
+    "Email (optional, press Enter to skip): ",
     studentValidator.email()
   );
 
   let guardianName = await validationQuestion(
     rl,
-    'Guardian name (optional, press Enter to skip): ',
+    "Guardian name (optional, press Enter to skip): ",
     commonValidators.optionalString()
   );
 
@@ -89,32 +98,32 @@ async function createStudent() {
 async function createSubject() {
   const code = await validationQuestion(
     rl,
-    'Subject code: ',
-    commonValidators.nonEmptyString('Subject code')
+    "Subject code: ",
+    commonValidators.nonEmptyString("Subject code")
   );
 
   const name = await validationQuestion(
     rl,
-    'Subject name: ',
-    commonValidators.nonEmptyString('Subject name')
+    "Subject name: ",
+    commonValidators.nonEmptyString("Subject name")
   );
 
   const creditHours = await validationQuestion(
     rl,
-    'Credit hours: ',
-    subjectValidator.creditHours('Credit hours')
+    "Credit hours: ",
+    subjectValidator.creditHours("Credit hours")
   );
 
   const gradingSchemeId = await validationQuestion(
     rl,
-    'grading Scheme Id: ',
-    commonValidators.nonEmptyString('grading Scheme Id')
+    "grading Scheme Id: ",
+    commonValidators.nonEmptyString("grading Scheme Id")
   );
 
   const mode = await validationQuestion(
     rl,
-    'mode: ',
-    subjectValidator.checkMode('mode')
+    "mode: ",
+    subjectValidator.checkMode("mode")
   );
 
   const result = createStd.services.subjects.createSubcejt({
@@ -131,20 +140,20 @@ async function createSubject() {
 async function createTerm() {
   const name = await validationQuestion(
     rl,
-    'Term name: ',
-    termValidator.checkTermName('Term name')
+    "Term name: ",
+    termValidator.checkTermName("Term name")
   );
 
   const startDate = await validationQuestion(
     rl,
-    'Term start date: ',
-    commonValidators.date('Term start date')
+    "Term start date: ",
+    commonValidators.date("Term start date")
   );
 
   const endDate = await validationQuestion(
     rl,
-    'Term end date: ',
-    commonValidators.dateAfter('Term end date', startDate)
+    "Term end date: ",
+    commonValidators.dateAfter("Term end date", startDate)
   );
 
   const result = createStd.services.terms.createTerm({
@@ -159,35 +168,153 @@ async function createTerm() {
 async function createEnrollment() {
   const studentId = await validationQuestion(
     rl,
-    'Student Id: ',
-    commonValidators.integerNumber('Student Id')
+    "Student Id: ",
+    commonValidators.integerNumber("Student Id")
   );
 
   const subjectId = await validationQuestion(
     rl,
-    'Subject Id: ',
-    commonValidators.integerNumber('Subject Id')
+    "Subject Id: ",
+    commonValidators.integerNumber("Subject Id")
   );
 
   const termId = await validationQuestion(
     rl,
-    'Term Id: ',
-    commonValidators.integerNumber('Term Id')
+    "Term Id: ",
+    commonValidators.integerNumber("Term Id")
   );
 
   const overdue = await validationQuestion(
     rl,
-    'y/n: ',
-    commonValidators.booleanValidator('overdue')
+    "y/n: ",
+    commonValidators.booleanValidator("overdue")
   );
 
   const result = createStd.services.enrollments.createEnrollment({
     studentId,
     subjectId,
     termId,
-    overdue
+    overdue,
   });
   console.log(result);
+}
+
+//5. Update enrollment
+async function updateEnrollment() {
+  const action = await validationQuestion(
+    rl,
+    "Choose d (drop), w (withdraw), or c (complete),: ",
+    commonValidators.statusValidator(["d", "w", "c"])
+  );
+
+  const enrollmentId = await validationQuestion(
+    rl,
+    "Enrollment ID: ",
+    commonValidators.integerNumber("Enrollment ID")
+  );
+
+  let markIncomplete = false;
+  let overrideAudit = false;
+
+  if (action === "c") {
+    const incomplete = await validationQuestion(
+      rl,
+      "Mark incomplete (y/n)? ",
+      commonValidators.booleanValidator("Mark incomplete")
+    );
+    markIncomplete = incomplete.toLowerCase() === "y";
+
+    const override = await validationQuestion(
+      rl,
+      "Override weight audit (y/n)? ",
+      commonValidators.booleanValidator("Override weight audit")
+    );
+    overrideAudit = override.toLowerCase() === "y";
+  }
+
+  const updatedEnrollment = createStd.services.enrollments.updateEnrollment({
+    enrollmentId,
+    action,
+    markIncomplete,
+    overrideAudit,
+  });
+
+  console.log(updatedEnrollment);
+}
+
+//6. Create / Update / Delete Assessment
+async function assessments() {
+  const chooseOperation = await validationQuestion(
+    rl,
+    "Choose: c (Create) / u (Update) / x (Delete): ",
+    commonValidators.statusValidator(["c", "u", "x"])
+  );
+
+  switch (chooseOperation) {
+    case "c":
+      const subjectId = await validationQuestion(
+        rl,
+        "Provide subjectId: ",
+        commonValidators.integerNumber("Provide subjectId")
+      );
+
+      const termId = await validationQuestion(
+        rl,
+        "Provide termId: ",
+        commonValidators.integerNumber("Provide termId")
+      );
+
+      const name = await validationQuestion(
+        rl,
+        "Provide name: ",
+        commonValidators.nonEmptyString("Provide name")
+      );
+
+      const type = await validationQuestion(
+        rl,
+        "Choose quiz, exam or project: ",
+        commonValidators.statusValidator(["quiz", "exam", "project"])
+      );
+
+      const maxPoints = await validationQuestion(
+        rl,
+        "Enter max Point: ",
+        assessmentValidation.pointValidation()
+      );
+
+      const weightPercent = await validationQuestion(
+        rl,
+        "Enter weight Percent: ",
+        assessmentValidation.weightPercentValidator()
+      );
+
+      const dueDate = await validationQuestion(
+        rl,
+        "Enter due date (optional): ",
+        commonValidators.date('Enter due date (optional):')
+      );
+
+      const locked = await validationQuestion(
+        rl,
+        "is locked (y/n?: ",
+        commonValidators.booleanValidator()
+      );
+
+      const updatedAssessments = createStd.services.assessments.createAssessment(
+        {
+          subjectId,
+          termId,
+          name,
+          type,
+          maxPoints,
+          weightPercent,
+          dueDate,
+          locked
+        }
+      );
+      console.log(updatedAssessments);
+      break;
+  }
 }
 
 mainMenu();

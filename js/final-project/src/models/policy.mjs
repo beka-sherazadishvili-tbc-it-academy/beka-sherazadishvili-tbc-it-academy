@@ -19,7 +19,7 @@ class Policy {
     this.#weightTolerance = 0.01;
     this.#treatMissingAsZero = false;
     this.#lateAttendanceContribution = 0.5;
-    this.#minimumPassingLetter = "D–";
+    this.#minimumPassingLetter = "D-";
     this.#lateEnrollmentCutoff = 14;
     this.#retakePolicy = "latest";
     this.#curve = { type: "none" };
