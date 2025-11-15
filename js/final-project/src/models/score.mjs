@@ -1,4 +1,7 @@
-import { isIntegerNumberValidator, isStringValidator, convertStringToNumber } from '../utils/validations.mjs';
+import {
+  isIntegerNumberValidator,
+  convertStringToNumber,
+} from "../utils/validations.mjs";
 
 class Score {
   #id;
@@ -6,60 +9,72 @@ class Score {
   #studentId;
   #points;
   #recordedAt;
+  #history;
 
-  constructor(
-    id, 
-    assessmentId,
-    studentId, 
-    points,
-    recordedAt
-  ) {
-    // check integers
-    id = convertStringToNumber(id);
+  constructor(id, assessmentId, studentId, points, recordedAt, history = []) {
+    if (id == null) {
+      this.#id = null;
+    } else {
+      id = convertStringToNumber(id);
+      isIntegerNumberValidator(id);
+      this.#id = id;
+    }
+
     assessmentId = convertStringToNumber(assessmentId);
     studentId = convertStringToNumber(studentId);
     points = convertStringToNumber(points);
-    isIntegerNumberValidator(id, assessmentId, studentId, points);
 
-    if (points < 0) {
-      throw new Error('points must be at least 0.');
-    }
-
-    // check dates
     const date = new Date(recordedAt);
     if (isNaN(date.getTime())) {
-      throw new Error('Invalid recordedAt format (must be ISO string)');
+      throw new Error("VALIDATION_ERROR: invalid recordedAt format (must be ISO string)");
     }
 
-    this.#id = id;
     this.#assessmentId = assessmentId;
     this.#studentId = studentId;
     this.#points = points;
     this.#recordedAt = date.toISOString();
+
+    if (!Array.isArray(history)) {
+      throw new Error("VALIDATION_ERROR: history must be array");
+    }
+
+    this.#history = history.map((item) => {
+      const hisotryDate = new Date(item.recordedAt);
+      if (isNaN(hisotryDate.getTime())) {
+        throw new Error("VALIDATION_ERROR: invalid recordedAt format in history");
+      }
+
+      return {
+        points: convertStringToNumber(item.points),
+        recordedAt: hisotryDate.toISOString(),
+      };
+    });
   }
 
-  // getters
-  get getId() {
+  get id() {
     return this.#id;
   }
 
-  get getAssessmentId() {
+  get assessmentId() {
     return this.#assessmentId;
   }
 
-  get getStudentId() {
+  get studentId() {
     return this.#studentId;
   }
 
-  get getPoints() {
+  get points() {
     return this.#points;
   }
 
-  get gerRecordedAt() {
+  get recordedAt() {
     return this.#recordedAt;
   }
 
-  // setters
+  get history() {
+    return this.#history;
+  }
+
   set id(value) {
     value = convertStringToNumber(value);
     isIntegerNumberValidator(value);
@@ -82,7 +97,7 @@ class Score {
     value = convertStringToNumber(value);
     isIntegerNumberValidator(value);
     if (value < 0) {
-      throw new Error('points must be at least 0.');
+      throw new Error("points must be 0 or greater.");
     }
     this.#points = value;
   }
@@ -90,9 +105,31 @@ class Score {
   set recordedAt(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error('Invalid recordedAt format (must be ISO string)');
+      throw new Error("Invalid recordedAt format (must be ISO string)");
     }
     this.#recordedAt = date.toISOString();
+  }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      assessmentId: this.#assessmentId,
+      studentId: this.#studentId,
+      points: this.#points,
+      recordedAt: this.#recordedAt,
+      history: this.#history,
+    };
+  }
+
+  static fromJSON(json) {
+    return new Score(
+      json.id,
+      json.assessmentId,
+      json.studentId,
+      json.points,
+      json.recordedAt,
+      json.history || []
+    );
   }
 }
 

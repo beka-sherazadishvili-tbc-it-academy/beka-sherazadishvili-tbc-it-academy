@@ -3,6 +3,7 @@ class Policy {
 
   #weightTolerance;
   #treatMissingAsZero;
+  #allowScoreUpdateAfterLock;
   #lateAttendanceContribution;
   #minimumPassingLetter;
   #lateEnrollmentCutoff;
@@ -18,6 +19,7 @@ class Policy {
 
     this.#weightTolerance = 0.01;
     this.#treatMissingAsZero = false;
+    this.#allowScoreUpdateAfterLock = false;
     this.#lateAttendanceContribution = 0.5;
     this.#minimumPassingLetter = "D-";
     this.#lateEnrollmentCutoff = 14;
@@ -43,6 +45,10 @@ class Policy {
 
   get treatMissingAsZero() {
     return this.#treatMissingAsZero;
+  }
+
+  get allowScoreUpdateAfterLock() {
+    return this.#allowScoreUpdateAfterLock;
   }
 
   get lateAttendanceContribution() {

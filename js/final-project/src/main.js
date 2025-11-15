@@ -23,6 +23,7 @@ function mainMenu() {
   console.log("4) Enroll Student");
   console.log("5) Drop / Withdraw / Complete");
   console.log("6) Create / Update / Delete Assessment");
+  console.log("7) Record Score");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -43,6 +44,9 @@ function mainMenu() {
         break;
       case "6":
         await assessments();
+        break;
+      case "7":
+        await recordScore();
         break;
       case "0":
         rl.close();
@@ -323,7 +327,16 @@ async function assessments() {
       const fieldToUpdate = await validationQuestion(
         rl,
         "Which field do you want to update? (subjectId, name, termId, type, maxPoints, weightPercent, dueDate, locked): ",
-        commonValidators.statusValidator(['subjectId', 'name', 'termId', 'type', 'maxPoints', 'weightPercent', 'dueDate', 'locked'])
+        commonValidators.statusValidator([
+          "subjectId",
+          "name",
+          "termId",
+          "type",
+          "maxPoints",
+          "weightPercent",
+          "dueDate",
+          "locked",
+        ])
       );
 
       const newValue = await validationQuestion(
@@ -334,7 +347,7 @@ async function assessments() {
 
       const updateAssessment = createStd.services.assessments.updateAssessment({
         id: assessmentId,
-        [fieldToUpdate]: newValue
+        [fieldToUpdate]: newValue,
       });
       console.log(updateAssessment);
       break;
@@ -345,10 +358,39 @@ async function assessments() {
         commonValidators.integerNumber("Provide subjectId")
       );
 
-      const deleteAssessment = createStd.services.assessments.deleteAssessment(id);
+      const deleteAssessment =
+        createStd.services.assessments.deleteAssessment(id);
       console.log(deleteAssessment);
       break;
   }
+}
+
+//7. record score
+async function recordScore() {
+  const assessmentId = await validationQuestion(
+    rl,
+    "Assessment Id: ",
+    commonValidators.integerNumber("assessment Id")
+  );
+
+  const studentId = await validationQuestion(
+    rl,
+    "Student Id: ",
+    commonValidators.integerNumber("Student Id")
+  );
+
+  const points = await validationQuestion(
+    rl,
+    "points: ",
+    commonValidators.integerNumber("points")
+  );
+
+  const result = createStd.services.scores.addScore({
+    assessmentId,
+    studentId,
+    points,
+  });
+  console.log(result);
 }
 
 mainMenu();

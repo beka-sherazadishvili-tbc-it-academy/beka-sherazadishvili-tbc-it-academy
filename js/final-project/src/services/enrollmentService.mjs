@@ -116,7 +116,7 @@ class EnrollmentService {
           if (input.markIncomplete) {
             this.#controller.update(enrollment.id, {
               ...enrollment,
-              status: "completed", //TODO ask about this status
+              status: "incomplete", //TODO ask about this status
               completedAt: null,
               droppedAt: null,
             });

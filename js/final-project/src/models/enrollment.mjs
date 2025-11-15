@@ -39,7 +39,7 @@ class Enrollment {
     termId = convertStringToNumber(termId);
     attemptNumber = convertStringToNumber(attemptNumber);
 
-    const allowedStatuses = ['active', 'dropped', 'completed', 'withdrawn'];
+    const allowedStatuses = ['active', 'dropped', 'completed', 'withdrawn', 'incomplete'];
     if (!allowedStatuses.includes(status)) {
       throw new Error(`Invalid status: ${status}`);
     }
