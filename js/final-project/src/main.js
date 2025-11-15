@@ -214,7 +214,7 @@ async function updateEnrollment() {
   );
 
   let markIncomplete = false;
-  let overrideAudit = false;
+  let override = false;
 
   if (action === "c") {
     const incomplete = await validationQuestion(
@@ -224,19 +224,19 @@ async function updateEnrollment() {
     );
     markIncomplete = incomplete.toLowerCase() === "y";
 
-    const override = await validationQuestion(
+    const overrideAudit = await validationQuestion(
       rl,
       "Override weight audit (y/n)? ",
       commonValidators.booleanValidator("Override weight audit")
     );
-    overrideAudit = override.toLowerCase() === "y";
+    override = overrideAudit.toLowerCase() === "y";
   }
 
   const updatedEnrollment = createStd.services.enrollments.updateEnrollment({
     enrollmentId,
     action,
     markIncomplete,
-    overrideAudit,
+    override,
   });
 
   console.log(updatedEnrollment);
@@ -291,7 +291,7 @@ async function assessments() {
       const dueDate = await validationQuestion(
         rl,
         "Enter due date (optional): ",
-        commonValidators.date('Enter due date (optional):')
+        commonValidators.date("Enter due date (optional):")
       );
 
       const locked = await validationQuestion(
@@ -300,8 +300,8 @@ async function assessments() {
         commonValidators.booleanValidator()
       );
 
-      const updatedAssessments = createStd.services.assessments.createAssessment(
-        {
+      const updatedAssessments =
+        createStd.services.assessments.createAssessment({
           subjectId,
           termId,
           name,
@@ -309,10 +309,44 @@ async function assessments() {
           maxPoints,
           weightPercent,
           dueDate,
-          locked
-        }
-      );
+          locked,
+        });
       console.log(updatedAssessments);
+      break;
+    case "u":
+      const assessmentId = await validationQuestion(
+        rl,
+        "Provide assessmentId: ",
+        commonValidators.integerNumber("Provide subjectId")
+      );
+
+      const fieldToUpdate = await validationQuestion(
+        rl,
+        "Which field do you want to update? (subjectId, name, termId, type, maxPoints, weightPercent, dueDate, locked): ",
+        commonValidators.statusValidator(['subjectId', 'name', 'termId', 'type', 'maxPoints', 'weightPercent', 'dueDate', 'locked'])
+      );
+
+      const newValue = await validationQuestion(
+        rl,
+        `Provide new value for ${fieldToUpdate}: `,
+        assessmentValidation.fieldValidator(fieldToUpdate)
+      );
+
+      const updateAssessment = createStd.services.assessments.updateAssessment({
+        id: assessmentId,
+        [fieldToUpdate]: newValue
+      });
+      console.log(updateAssessment);
+      break;
+    case "x":
+      const id = await validationQuestion(
+        rl,
+        "Provide assessmentId: ",
+        commonValidators.integerNumber("Provide subjectId")
+      );
+
+      const deleteAssessment = createStd.services.assessments.deleteAssessment(id);
+      console.log(deleteAssessment);
       break;
   }
 }

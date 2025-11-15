@@ -236,6 +236,46 @@ const assessmentValidation = {
       throw new Error(err.message.replace("VALIDATION_ERROR: ", ""));
     }
   },
+
+  fieldValidator: (fieldName) => (input) => {
+    try {
+      switch (fieldName) {
+        case "name":
+        case "type":
+        case "dueDate":
+          isStringValidator(input);
+          break;
+
+        case "subjectId":
+        case "termId":
+        case "maxPoints":
+        case "weightPercent": {
+          const num = convertStringToNumber(input);
+          isIntegerNumberValidator(num);
+          break;
+        }
+
+        case "locked":
+          if (!["y", "n"].includes(input)) {
+            throw new Error(`locked must be "y" or "n"`);
+          }
+          break;
+
+        default:
+          throw new Error(`Unknown field: ${fieldName}`);
+      }
+
+      return true;
+    } catch (err) {
+      throw new Error(err.message.replace("VALIDATION_ERROR: ", ""));
+    }
+  },
 };
 
-export { assessmentValidation, termValidator, subjectValidator, commonValidators, studentValidator };
+export {
+  assessmentValidation,
+  termValidator,
+  subjectValidator,
+  commonValidators,
+  studentValidator,
+};

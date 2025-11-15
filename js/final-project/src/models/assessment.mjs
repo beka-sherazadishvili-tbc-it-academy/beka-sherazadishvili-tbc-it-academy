@@ -38,21 +38,6 @@ class Assessment {
     maxPoints = convertStringToNumber(maxPoints);
     weightPercent = convertStringToNumber(weightPercent);
 
-    // check dates
-    const date = new Date(dueDate);
-    if (isNaN(date.getTime())) {
-      throw new Error("Invalid dueDate format (must be ISO string)");
-    }
-
-    if (date.getTime() < Date.now()) {
-      throw new Error("Due date must be in the future.");
-    }
-
-    // check booleans
-    if (typeof locked !== "boolean") {
-      throw new Error("locked should be boolean type");
-    }
-
     this.#id = id;
     this.#subjectId = subjectId;
     this.#termId = termId;
@@ -60,7 +45,7 @@ class Assessment {
     this.#type = type;
     this.#maxPoints = maxPoints;
     this.#weightPercent = weightPercent;
-    this.#dueDate = date;
+    this.#dueDate = dueDate;
     this.#locked = locked;
   }
 

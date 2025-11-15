@@ -28,22 +28,43 @@ export class App {
       assessments: new AssessmentController(`${base}/assessment.json`),
     };
 
-    this.#services = {
-      students: new StudentService(this.#controllers.students),
-      subjects: new SubjectServices(this.#controllers.subjects),
-      terms: new TermServices(this.#controllers.terms),
-      enrollments: new EnrollmentService(
-        this.#controllers.enrollments,
-        this.#controllers.students,
-        this.#controllers.subjects,
-        this.#controllers.terms
-      ),
-      assessments: new AssessmentService(
-        this.#controllers.assessments,
-        this.#controllers.subjects,
-        this.#controllers.terms
-      ),
-    };
+    // this.#services = {
+    //   students: new StudentService(this.#controllers.students),
+    //   subjects: new SubjectServices(this.#controllers.subjects),
+    //   terms: new TermServices(this.#controllers.terms),
+    //   assessments: new AssessmentService(
+    //     this.#controllers.assessments,
+    //     this.#controllers.subjects,
+    //     this.#controllers.terms
+    //   ),
+    //   enrollments: new EnrollmentService(
+    //     this.#controllers.enrollments,
+    //     this.#controllers.students,
+    //     this.#controllers.subjects,
+    //     this.#controllers.terms,
+    //     this.#services.assessments
+    //   ),
+    // };
+
+    this.#services = {};
+
+    this.#services.students = new StudentService(this.#controllers.students);
+    this.#services.subjects = new SubjectServices(this.#controllers.subjects);
+    this.#services.terms = new TermServices(this.#controllers.terms);
+
+    this.#services.assessments = new AssessmentService(
+      this.#controllers.assessments,
+      this.#controllers.subjects,
+      this.#controllers.terms
+    );
+
+    this.#services.enrollments = new EnrollmentService(
+      this.#controllers.enrollments,
+      this.#controllers.students,
+      this.#controllers.subjects,
+      this.#controllers.terms,
+      this.#services.assessments
+    );
   }
 
   get controllers() {

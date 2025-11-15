@@ -51,6 +51,36 @@ class CommonController {
     this.#save();
   }
 
+  update(id, obj) {
+    id = Number(id);
+
+    if (!this.#items.has(id)) {
+      throw new Error('VALIDATION_ERROR: id does not exists')
+    }
+
+    const newInstance = this.#currentClass.fromJSON
+    ? this.#currentClass.fromJSON(obj)
+    : new this.#currentClass(...Object.values(obj));
+
+    this.#items.set(id, newInstance);
+    this.#save();
+  }
+
+  delete(id) {
+    id = Number(id);
+
+    if (!this.#items.has(id)) {
+      throw new Error('VALIDATION_ERROR: id does not exists')
+    }
+
+    this.#items.delete(id);
+    this.#save();
+  }
+
+  _save() {
+    this.#save();
+  }
+  
   #save() {
     if (!this.#path) return;
 

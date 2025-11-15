@@ -12,22 +12,38 @@ class EnrollmentController extends CommonController {
     }
 
     const alreadyExist = [...this.getAllValues()].find(
-      (enroll) => 
+      (enroll) =>
         enroll.studentId === item.studentId &&
         enroll.subjectId === item.subjectId &&
         enroll.termId === item.termId &&
         enroll.attemptNumber === item.attemptNumber &&
-        enroll.status === 'active'
+        enroll.status === "active"
     );
 
-    console.log(alreadyExist)
+    console.log(alreadyExist);
 
-    if(alreadyExist) {
-        throw new Error(`${item} already exists`);
+    if (alreadyExist) {
+      throw new Error(`${item} already exists`);
     }
 
     super.add(item);
   }
+
+  update(id, updates) {
+  id = Number(id);
+
+  const existing = this.getItemById(id);
+  if (!existing) {
+    throw new Error("VALIDATION_ERROR: Enrollment with this ID does not exist");
+  }
+  
+  const updatedData = { ...existing.toJSON(), ...updates };
+  
+  this.getAllItems().set(id, Enrollment.fromJSON(updatedData));
+  this._save();
+
+  return newInstance;
+}
 }
 
-export { EnrollmentController }
+export { EnrollmentController };
