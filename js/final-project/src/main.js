@@ -15,7 +15,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-function mainMenu() {
+function studentMenu() {
   console.log("\n--- School SIS ---");
   console.log("1) Create Student");
   console.log("2) Create Subject");
@@ -24,6 +24,7 @@ function mainMenu() {
   console.log("5) Drop / Withdraw / Complete");
   console.log("6) Create / Update / Delete Assessment");
   console.log("7) Record Score");
+  console.log("8) Record Attendance");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -48,11 +49,14 @@ function mainMenu() {
       case "7":
         await recordScore();
         break;
+      case "8":
+        await recordAttendance();
+        break;
       case "0":
         rl.close();
         return;
     }
-    mainMenu();
+    studentMenu();
   });
 }
 
@@ -295,7 +299,7 @@ async function assessments() {
       const dueDate = await validationQuestion(
         rl,
         "Enter due date (optional): ",
-        commonValidators.date("Enter due date (optional):")
+        commonValidators.date("Enter due date (optional):")//TODO make it optional
       );
 
       const locked = await validationQuestion(
@@ -393,4 +397,46 @@ async function recordScore() {
   console.log(result);
 }
 
-mainMenu();
+//8. record score
+async function recordAttendance() {
+  const studentId = await validationQuestion(
+    rl,
+    "Student Id: ",
+    commonValidators.integerNumber("Student Id")
+  );
+
+  const subjectId = await validationQuestion(
+    rl,
+    "Subject Id: ",
+    commonValidators.integerNumber("subject Id")
+  );
+
+  const termId = await validationQuestion(
+    rl,
+    "Term Id: ",
+    commonValidators.integerNumber("Term Id")
+  );
+
+  const date = await validationQuestion(
+    rl,
+    "Enter Date: ",
+    commonValidators.date("Enter Date")
+  );
+
+  const status = await validationQuestion(
+    rl,
+    "Enter status: ",
+    commonValidators.statusValidator(["P", "A", "L"])
+  );
+
+  const result = createStd.services.attendances.createAttendence({
+    studentId,
+    subjectId,
+    termId,
+    date, 
+    status,
+  });
+  console.log(result);
+}
+
+studentMenu();

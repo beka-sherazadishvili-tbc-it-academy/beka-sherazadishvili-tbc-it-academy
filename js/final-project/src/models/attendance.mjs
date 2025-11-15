@@ -1,4 +1,7 @@
-import { isIntegerNumberValidator, convertStringToNumber } from "../utils/validations.mjs";
+import {
+  isIntegerNumberValidator,
+  convertStringToNumber,
+} from "../utils/validations.mjs";
 
 class Attendance {
   #id;
@@ -9,27 +12,23 @@ class Attendance {
   #status;
 
   constructor(id, studentId, subjectId, termId, date, status) {
-    id = convertStringToNumber(id);
+    if (id == null) {
+      this.#id = null;
+    } else {
+      id = convertStringToNumber(id);
+      isIntegerNumberValidator(id);
+      this.#id = id;
+    }
+
     studentId = convertStringToNumber(studentId);
     subjectId = convertStringToNumber(subjectId);
     termId = convertStringToNumber(termId);
-    isIntegerNumberValidator(id, studentId, subjectId, termId);
-
-    const attendanceDate = new Date(date);
-    if (isNaN(attendanceDate.getTime())) {
-      throw new Error('Invalid date format (must be ISO string)');
-    }
-
-    const allowedStatuses = ["P", "A", "L"];
-    if (!allowedStatuses.includes(status)) {
-      throw new Error(`Invalid attendance status: ${status}`);
-    }
 
     this.#id = id;
     this.#studentId = studentId;
     this.#subjectId = subjectId;
     this.#termId = termId;
-    this.#date = attendanceDate.toISOString();
+    this.#date = date;
     this.#status = status;
   }
 
@@ -57,12 +56,63 @@ class Attendance {
     return this.#status;
   }
 
+  set id(value) {
+    value = convertStringToNumber(value);
+    isIntegerNumberValidator(value);
+    this.#id = value;
+  }
+
+  set studentId(value) {
+    value = convertStringToNumber(value);
+    this.#studentId = value;
+  }
+
+  set subjectId(value) {
+    value = convertStringToNumber(value);
+    this.#subjectId = value;
+  }
+
+  set termId(value) {
+    value = convertStringToNumber(value);
+    this.#termId = value;
+  }
+
+  set date(value) {
+    const date = new Date(value);
+    if (isNaN(date.getTime())) {
+      throw new Error("Invalid date format");
+    }
+    this.#date = date.toISOString();
+  }
+
   set status(newStatus) {
     const allowedStatuses = ["P", "A", "L"];
     if (!allowedStatuses.includes(newStatus)) {
       throw new Error(`Invalid attendance status: ${newStatus}`);
     }
     this.#status = newStatus;
+  }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      studentId: this.#studentId,
+      subjectId: this.#subjectId,
+      termId: this.#termId,
+      date: this.#date,
+      status: this.#status,
+    };
+  }
+
+  static fromJSON(obj) {
+    return new Attendance(
+      obj.id,
+      obj.studentId,
+      obj.subjectId,
+      obj.termId,
+      obj.date,
+      obj.status
+    );
   }
 }
 

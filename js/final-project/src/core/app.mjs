@@ -12,6 +12,8 @@ import { AssessmentController } from "../data-controller/assessmentController.mj
 import { AssessmentService } from "../services/assessmentService.mjs";
 import { ScoreController } from "../data-controller/scoreController.mjs";
 import { ScoreService } from "../services/scoreService.mjs";
+import { AttendanceControler } from "../data-controller/attendanceController.mjs";
+import { AttendanceService } from "../services/attendanceService.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,7 +30,8 @@ export class App {
       terms: new TermController(`${base}/term.json`),
       enrollments: new EnrollmentController(`${base}/enrollment.json`),
       assessments: new AssessmentController(`${base}/assessment.json`),
-      scores: new ScoreController(`${base}/scores.json`)
+      scores: new ScoreController(`${base}/scores.json`),
+      attendances: new AttendanceControler(`${base}/attendance.json`),
     };
 
     this.#services = {};
@@ -56,6 +59,15 @@ export class App {
       this.#controllers.students,
       this.#controllers.assessments,
       this.#controllers.enrollments
+    );
+
+    this.#services.attendances = new AttendanceService(
+      this.#controllers.attendances,
+      this.#controllers.students,
+      this.#controllers.subjects,
+      this.#controllers.terms,
+      // this.#controllers.assessments,
+      // this.#controllers.enrollments
     );
   }
 
