@@ -53,5 +53,29 @@
     "history": [
       { "points": 38, "recordedAt": "2025-12-01T09:55:00.000Z" }
     ]
+  },
+  {
+    "id": 7,
+    "assessmentId": 13,
+    "studentId": 1,
+    "points": 12,
+    "recordedAt": "2026-02-05T10:00:00.000Z",
+    "history": []
+  },
+  {
+    "id": 8,
+    "assessmentId": 14,
+    "studentId": 1,
+    "points": 35,
+    "recordedAt": "2026-03-15T10:00:00.000Z",
+    "history": []
+  },
+  {
+    "id": 9,
+    "assessmentId": 15,
+    "studentId": 1,
+    "points": 85,
+    "recordedAt": "2026-05-18T10:00:00.000Z",
+    "history": []
   }
 ]
