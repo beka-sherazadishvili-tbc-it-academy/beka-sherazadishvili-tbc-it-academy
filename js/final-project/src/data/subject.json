@@ -1,10 +1,82 @@
 [
   {
     "id": 1,
-    "code": "math101",
-    "name": "mathematics",
-    "creditHours": 25,
+    "code": "MATH101",
+    "name": "Mathematics I",
+    "creditHours": 5,
     "gradingSchemeId": "default",
     "mode": "graded"
+  },
+  {
+    "id": 2,
+    "code": "ENG102",
+    "name": "English Literature",
+    "creditHours": 3,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 3,
+    "code": "PHY201",
+    "name": "Physics II",
+    "creditHours": 4,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 4,
+    "code": "CHEM110",
+    "name": "Chemistry Basics",
+    "creditHours": 3,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 5,
+    "code": "BIO150",
+    "name": "Biology Introduction",
+    "creditHours": 3,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 6,
+    "code": "HIST210",
+    "name": "World History",
+    "creditHours": 2,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 7,
+    "code": "CS101",
+    "name": "Computer Science I",
+    "creditHours": 5,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 8,
+    "code": "CS201",
+    "name": "Data Structures",
+    "creditHours": 5,
+    "gradingSchemeId": "default",
+    "mode": "graded"
+  },
+  {
+    "id": 9,
+    "code": "ART110",
+    "name": "Art Fundamentals",
+    "creditHours": 2,
+    "gradingSchemeId": "default",
+    "mode": "passfail"
+  },
+  {
+    "id": 10,
+    "code": "PE100",
+    "name": "Physical Education",
+    "creditHours": 1,
+    "gradingSchemeId": "default",
+    "mode": "passfail"
   }
 ]

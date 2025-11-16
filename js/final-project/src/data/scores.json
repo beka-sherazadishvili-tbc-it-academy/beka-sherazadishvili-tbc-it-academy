@@ -6,10 +6,52 @@
     "points": 20,
     "recordedAt": "2025-11-15T13:33:59.156Z",
     "history": [
-      {
-        "points": 10,
-        "recordedAt": "2025-11-15T13:33:36.578Z"
-      }
+      { "points": 10, "recordedAt": "2025-11-15T13:33:36.578Z" }
+    ]
+  },
+  {
+    "id": 2,
+    "assessmentId": 1,
+    "studentId": 2,
+    "points": 18,
+    "recordedAt": "2025-11-15T14:12:00.000Z",
+    "history": []
+  },
+  {
+    "id": 3,
+    "assessmentId": 1,
+    "studentId": 3,
+    "points": 15,
+    "recordedAt": "2025-11-15T14:18:33.000Z",
+    "history": [
+      { "points": 12, "recordedAt": "2025-11-15T14:10:10.000Z" }
+    ]
+  },
+
+  {
+    "id": 4,
+    "assessmentId": 4,
+    "studentId": 1,
+    "points": 8,
+    "recordedAt": "2025-12-01T10:00:00.000Z",
+    "history": []
+  },
+  {
+    "id": 5,
+    "assessmentId": 5,
+    "studentId": 1,
+    "points": 35,
+    "recordedAt": "2025-12-01T10:01:10.000Z",
+    "history": []
+  },
+  {
+    "id": 6,
+    "assessmentId": 6,
+    "studentId": 1,
+    "points": 42,
+    "recordedAt": "2025-12-01T10:02:20.000Z",
+    "history": [
+      { "points": 38, "recordedAt": "2025-12-01T09:55:00.000Z" }
     ]
   }
 ]

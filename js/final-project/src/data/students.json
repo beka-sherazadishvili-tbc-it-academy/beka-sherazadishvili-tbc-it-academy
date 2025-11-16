@@ -1,12 +1,96 @@
 [
   {
     "id": 1,
-    "firstName": "test",
-    "lastName": "test",
-    "gradeLevel": "master-1",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "gradeLevel": "9th",
     "meta": {
-      "guardianName": "guardian",
-      "email": "test@test.com"
+      "guardianName": "Mary Johnson",
+      "email": "alice.johnson@example.com"
+    }
+  },
+  {
+    "id": 2,
+    "firstName": "Brian",
+    "lastName": "Smith",
+    "gradeLevel": "10th",
+    "meta": {
+      "guardianName": "David Smith",
+      "email": "brian.smith@example.com"
+    }
+  },
+  {
+    "id": 3,
+    "firstName": "Carla",
+    "lastName": "Andrews",
+    "gradeLevel": "11th",
+    "meta": {
+      "guardianName": "Theresa Andrews",
+      "email": "carla.andrews@example.com"
+    }
+  },
+  {
+    "id": 4,
+    "firstName": "Daniel",
+    "lastName": "Lee",
+    "gradeLevel": "12th",
+    "meta": { "guardianName": "Henry Lee", "email": "daniel.lee@example.com" }
+  },
+  {
+    "id": 5,
+    "firstName": "Eva",
+    "lastName": "Martinez",
+    "gradeLevel": "Bachelor-1",
+    "meta": {
+      "guardianName": "Carmen Martinez",
+      "email": "eva.martinez@example.com"
+    }
+  },
+  {
+    "id": 6,
+    "firstName": "Frank",
+    "lastName": "Taylor",
+    "gradeLevel": "Bachelor-2",
+    "meta": {
+      "guardianName": "Robert Taylor",
+      "email": "frank.taylor@example.com"
+    }
+  },
+  {
+    "id": 7,
+    "firstName": "Grace",
+    "lastName": "Kim",
+    "gradeLevel": "Master-1",
+    "meta": { "guardianName": "Anna Kim", "email": "grace.kim@example.com" }
+  },
+  {
+    "id": 8,
+    "firstName": "Henry",
+    "lastName": "Thompson",
+    "gradeLevel": "Master-2",
+    "meta": {
+      "guardianName": "Linda Thompson",
+      "email": "henry.thompson@example.com"
+    }
+  },
+  {
+    "id": 9,
+    "firstName": "Isabella",
+    "lastName": "Davis",
+    "gradeLevel": "PhD-1",
+    "meta": {
+      "guardianName": "Michael Davis",
+      "email": "isabella.davis@example.com"
+    }
+  },
+  {
+    "id": 10,
+    "firstName": "Jack",
+    "lastName": "Wilson",
+    "gradeLevel": "PhD-2",
+    "meta": {
+      "guardianName": "Sarah Wilson",
+      "email": "jack.wilson@example.com"
     }
   }
 ]

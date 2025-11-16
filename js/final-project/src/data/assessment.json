@@ -6,7 +6,7 @@
     "name": "bekabeka",
     "type": "quiz",
     "maxPoints": 20,
-    "weightPercent": 21,
+    "weightPercent": 20,
     "dueDate": "2025-11-19T00:00:00.000Z",
     "locked": false
   },
@@ -19,6 +19,153 @@
     "maxPoints": 30,
     "weightPercent": 30,
     "dueDate": "2026-01-15T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 3,
+    "subjectId": 1,
+    "termId": 1,
+    "name": "test2",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2026-01-15T00:00:00.000Z",
+    "locked": false
+  },
+
+  {
+    "id": 4,
+    "subjectId": 2,
+    "termId": 1,
+    "name": "reading-quiz",
+    "type": "quiz",
+    "maxPoints": 10,
+    "weightPercent": 20,
+    "dueDate": "2025-10-10T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 5,
+    "subjectId": 2,
+    "termId": 1,
+    "name": "analysis-essay",
+    "type": "project",
+    "maxPoints": 40,
+    "weightPercent": 30,
+    "dueDate": "2025-11-15T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 6,
+    "subjectId": 2,
+    "termId": 1,
+    "name": "final-exam",
+    "type": "exam",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2025-12-10T00:00:00.000Z",
+    "locked": false
+  },
+
+  {
+    "id": 7,
+    "subjectId": 3,
+    "termId": 1,
+    "name": "lab1",
+    "type": "project",
+    "maxPoints": 25,
+    "weightPercent": 25,
+    "dueDate": "2025-09-20T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 8,
+    "subjectId": 3,
+    "termId": 1,
+    "name": "midterm",
+    "type": "exam",
+    "maxPoints": 40,
+    "weightPercent": 35,
+    "dueDate": "2025-11-02T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 9,
+    "subjectId": 3,
+    "termId": 1,
+    "name": "final-exam",
+    "type": "exam",
+    "maxPoints": 60,
+    "weightPercent": 40,
+    "dueDate": "2025-12-18T00:00:00.000Z",
+    "locked": false
+  },
+
+  {
+    "id": 10,
+    "subjectId": 4,
+    "termId": 1,
+    "name": "research-outline",
+    "type": "project",
+    "maxPoints": 20,
+    "weightPercent": 15,
+    "dueDate": "2025-09-15T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 11,
+    "subjectId": 4,
+    "termId": 1,
+    "name": "midterm-paper",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 35,
+    "dueDate": "2025-10-20T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 12,
+    "subjectId": 4,
+    "termId": 1,
+    "name": "final-paper",
+    "type": "project",
+    "maxPoints": 80,
+    "weightPercent": 50,
+    "dueDate": "2025-12-16T00:00:00.000Z",
+    "locked": false
+  },
+
+  {
+    "id": 13,
+    "subjectId": 1,
+    "termId": 2,
+    "name": "review-quiz",
+    "type": "quiz",
+    "maxPoints": 15,
+    "weightPercent": 20,
+    "dueDate": "2026-02-01T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 14,
+    "subjectId": 1,
+    "termId": 2,
+    "name": "midterm2",
+    "type": "exam",
+    "maxPoints": 40,
+    "weightPercent": 30,
+    "dueDate": "2026-03-10T00:00:00.000Z",
+    "locked": false
+  },
+  {
+    "id": 15,
+    "subjectId": 1,
+    "termId": 2,
+    "name": "final2",
+    "type": "exam",
+    "maxPoints": 100,
+    "weightPercent": 50,
+    "dueDate": "2026-05-15T00:00:00.000Z",
     "locked": false
   }
 ]

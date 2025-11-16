@@ -24,7 +24,12 @@ class Policy {
     this.#minimumPassingLetter = "D-";
     this.#lateEnrollmentCutoff = 14;
     this.#retakePolicy = "latest";
-    this.#curve = { type: "none" };
+    this.#curve = {
+      type: "none",
+      addPercent: null,
+      maxCap: null,
+      distribution: null,
+    };
     this.#incompleteHandling = { expiresAfterDays: 14 };
     this.#rankingTiebreakers = [
       "GPA desc",
@@ -88,4 +93,4 @@ class Policy {
   }
 }
 
-export { Policy }
+export { Policy };

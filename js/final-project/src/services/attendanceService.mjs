@@ -1,10 +1,12 @@
 import { Attendance } from "../models/attendance.mjs";
+import { Policy } from "../models/policy.mjs";
 
 class AttendanceService {
   #controller;
   #studentController;
   #subjectController;
   #termController;
+  #policy
 
   constructor(
     attendanceService,
@@ -16,6 +18,7 @@ class AttendanceService {
     this.#studentController = studentController,
     this.#subjectController = subjectController,
     this.#termController = termController;
+    this.#policy = new Policy
   }
 
   createAttendence(input) {
@@ -78,6 +81,33 @@ class AttendanceService {
     } catch (err) {
       return err.message;
     }
+  }
+
+  getAttendanceRate(studentId, subjectId, termId) {
+    const attendance = this.#controller
+      .getAllValues()
+      .filter(
+        (att) =>
+          att.studentId === Number(studentId) &&
+          att.subjectId === Number(subjectId) &&
+          att.termId === Number(termId)
+      );
+
+    if (attendance.length === 0) {
+      throw new Error("VALIDATION_ERROR: no such attandace items");
+    }
+
+    let totalPresent = 0;
+
+    for (let record of attendance) {
+      if (record.status === "P") {
+        totalPresent += 1;
+      } else if (record.status === "L") {
+        totalPresent += this.#policy.lateAttendanceContribution;
+      }
+    }
+
+    return ((totalPresent / attendance.length) * 100).toFixed(2);
   }
 }
 

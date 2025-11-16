@@ -14,6 +14,10 @@ import { ScoreController } from "../data-controller/scoreController.mjs";
 import { ScoreService } from "../services/scoreService.mjs";
 import { AttendanceControler } from "../data-controller/attendanceController.mjs";
 import { AttendanceService } from "../services/attendanceService.mjs";
+import { TranscriptService } from "../services/transcriptService.mjs";
+import { CalculationServices } from "../services/calculationServices.mjs";
+import { GradingSchemeController } from "../data-controller/gradingChemeController.mjs";
+import { GradingSchemeService } from "../services/gradingSchemeService.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,6 +36,7 @@ export class App {
       assessments: new AssessmentController(`${base}/assessment.json`),
       scores: new ScoreController(`${base}/scores.json`),
       attendances: new AttendanceControler(`${base}/attendance.json`),
+      gradingSchemes: new GradingSchemeController(`${base}/grading.json`),
     };
 
     this.#services = {};
@@ -65,9 +70,34 @@ export class App {
       this.#controllers.attendances,
       this.#controllers.students,
       this.#controllers.subjects,
+      this.#controllers.terms
+    );
+
+    this.#services.gradingSchemes = new GradingSchemeService(
+      this.#controllers.gradingSchemes
+    );
+
+    this.#services.calculations = new CalculationServices(
+      this.#controllers.students,
+      this.#controllers.subjects,
       this.#controllers.terms,
-      // this.#controllers.assessments,
-      // this.#controllers.enrollments
+      this.#controllers.enrollments,
+      this.#controllers.assessments,
+      this.#controllers.scores,
+      this.#controllers.attendances,
+      this.#services.gradingSchemes
+    );
+
+    this.#services.transcripts = new TranscriptService(
+      this.#controllers.students,
+      this.#controllers.subjects,
+      this.#controllers.terms,
+      this.#controllers.enrollments,
+      this.#controllers.assessments,
+      this.#controllers.scores,
+      this.#services.attendances,
+      this.#services.calculations,
+      this.#services.gradingSchemes
     );
   }
 

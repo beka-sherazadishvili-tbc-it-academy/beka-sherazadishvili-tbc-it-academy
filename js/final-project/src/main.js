@@ -25,6 +25,8 @@ function studentMenu() {
   console.log("6) Create / Update / Delete Assessment");
   console.log("7) Record Score");
   console.log("8) Record Attendance");
+  console.log("9) Transcript (by student)");
+  console.log("10) test rate");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -51,6 +53,9 @@ function studentMenu() {
         break;
       case "8":
         await recordAttendance();
+        break;
+      case "9":
+        await transcriptByStudent();
         break;
       case "0":
         rl.close();
@@ -299,7 +304,7 @@ async function assessments() {
       const dueDate = await validationQuestion(
         rl,
         "Enter due date (optional): ",
-        commonValidators.date("Enter due date (optional):")//TODO make it optional
+        commonValidators.date("Enter due date (optional):") //TODO make it optional
       );
 
       const locked = await validationQuestion(
@@ -433,10 +438,60 @@ async function recordAttendance() {
     studentId,
     subjectId,
     termId,
-    date, 
+    date,
     status,
   });
   console.log(result);
 }
+
+//9. transcript by student
+async function transcriptByStudent() {
+  const studentId = await validationQuestion(
+    rl,
+    "Student Id: ",
+    commonValidators.integerNumber("Student Id")
+  );
+
+  const schemeId = await validationQuestion(
+    rl,
+    "scheme Id: ",
+    commonValidators.integerNumber("scheme Id")
+  );
+
+  const result = createStd.services.transcripts.getTranscript(
+    studentId,
+    schemeId
+  );
+
+  console.log(result);
+}
+
+// //10.
+// async function testAttandanceRate() {
+//   const studentId = await validationQuestion(
+//     rl,
+//     "student Id: ",
+//     commonValidators.integerNumber("Student Id")
+//   );
+
+//   const subjectId = await validationQuestion(
+//     rl,
+//     "subject Id: ",
+//     commonValidators.integerNumber("subject Id")
+//   );
+
+//   const termId = await validationQuestion(
+//     rl,
+//     "terms Id: ",
+//     commonValidators.integerNumber("term Id")
+//   );
+
+//   const result = createStd.services.attendances.getAttendanceRate(
+//     studentId,
+//     subjectId,
+//     termId
+//   );
+//   console.log(result);
+// }
 
 studentMenu();
