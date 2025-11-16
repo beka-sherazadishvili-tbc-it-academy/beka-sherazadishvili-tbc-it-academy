@@ -36,134 +36,123 @@ class TranscriptService {
   }
 
   getTranscript(studentId, schemeId) {
-    const student = this.#studentController.getItemById(Number(studentId));
-    if (!student) {
-      throw new Error("NOT_FOUND: student does not exist");
-    }
+    try {
+      const student = this.#studentController.getItemById(Number(studentId));
+      if (!student) {
+        throw new Error("NOT_FOUND: student does not exist");
+      }
 
-    const terms = this.#termController.getAllValues();
+      const terms = this.#termController.getAllValues();
 
-    const result = {
-      student,
-      terms: [],
-      cumulativeGPA: null,
-    };
+      const result = {
+        student,
+        terms: [],
+        cumulativeGPA: null,
+      };
 
-    for (const term of terms) {
-      const enrollments = this.#enrollmentController
-        .getAllValues()
-        .filter(
-          (enroll) =>
-            enroll.studentId === Number(studentId) && enroll.termId === term.id
-        );
+      for (const term of terms) {
+        const enrollments = this.#enrollmentController
+          .getAllValues()
+          .filter(
+            (enroll) =>
+              enroll.studentId === Number(studentId) &&
+              enroll.termId === term.id
+          );
 
-      if (enrollments.length === 0) continue;
+        if (enrollments.length === 0) continue;
 
-      const subjects = [];
+        const subjects = [];
 
-      for (const enroll of enrollments) {
-        const subject = this.#subjectController.getItemById(enroll.subjectId);
-        let attendanceRate = null;
-        let finalPercent = null;
-        let curvedPercent = null;
-        let letter = null;
-        let gpaPoints = null;
+        for (const enroll of enrollments) {
+          const subject = this.#subjectController.getItemById(enroll.subjectId);
 
-        try {
-          console.log(studentId);
-          console.log(subject.id);
-          console.log(term.id)
-          attendanceRate = this.#attendanceService.getAttendanceRate(
+          const attendanceRate = this.#attendanceService.getAttendanceRate(
             studentId,
             subject.id,
             term.id
           );
-        } catch (err) {
-          return err.message
-        }
 
-        try {
-          finalPercent = this.#calculationService.finalPercentage(
+          const finalPercent = this.#calculationService.finalPercentage(
             studentId,
             subject.id,
             term.id
           );
-        } catch (err) {
-          return err.message;
-        }
 
-        try {
-          curvedPercent = this.#calculationService.curving(
+          const curvedPercent = this.#calculationService.curving(
             studentId,
             subject.id,
             term.id
           );
-        } catch (err) {
-          return err.message;
-        }
 
-        if (subject.mode === "graded" && enroll.status === "completed") {
-          try {
-            letter = this.#gradingSchemeService.getLetter(curvedPercent, schemeId);
+          let letter = null;
+          let gpaPoints = null;
+
+          if (subject.mode === "graded" && enroll.status === "completed") {
+            letter = this.#gradingSchemeService.getLetter(
+              curvedPercent,
+              schemeId
+            );
             gpaPoints = this.#gradingSchemeService.getGPA(letter, schemeId);
-          } catch (err) {
-            return err.message
           }
+
+          subjects.push({
+            subjectId: subject.id,
+            code: subject.code,
+            name: subject.name,
+            status: enroll.status,
+            attendanceRate,
+            finalPercent,
+            curvedPercent,
+            letter,
+            gpaPoints,
+          });
         }
 
-        subjects.push({
-          subjectId: subject.id,
-          code: subject.code,
-          name: subject.name,
-          status: enroll.status,
-          attendanceRate,
-          finalPercent,
-          curvedPercent,
-          letter,
-          gpaPoints,
+        let termGPA = null;
+        const hasCompletedGraded = enrollments.some((enroll) => {
+          const subj = this.#subjectController.getItemById(enroll.subjectId);
+          return (
+            enroll.status === "completed" && subj && subj.mode === "graded"
+          );
+        });
+
+        if (hasCompletedGraded) {
+          termGPA = this.#calculationService.termGPA(
+            studentId,
+            term.id,
+            schemeId
+          );
+        }
+
+        const gradedCredits = enrollments
+          .filter((enroll) => {
+            const subj = this.#subjectController.getItemById(enroll.subjectId);
+            return subj && subj.mode === "graded";
+          })
+          .reduce((sum, enroll) => {
+            const subj = this.#subjectController.getItemById(enroll.subjectId);
+            return sum + (subj?.creditHours || 0);
+          }, 0);
+
+        result.terms.push({
+          termId: term.id,
+          termName: term.name,
+          subjects,
+          termGPA,
+          gradedCredits,
         });
       }
 
-      let termGPA = null;
-      try {
-        termGPA = this.#calculationService.termGPA(
-          studentId,
-          term.id,
-          schemeId
-        );
-      } catch (err) {
-        return err.message
-      }
-
-      const gradedCredits = enrollments
-        .filter((enroll) => {
-          const subj = this.#subjectController.getItemById(enroll.subjectId);
-          return subj && subj.mode === "graded";
-        })
-        .reduce((sum, enroll) => {
-          const subj = this.#subjectController.getItemById(enroll.subjectId);
-          return sum + (subj?.creditHours || 0);
-        }, 0);
-
-      result.terms.push({
-        termId: term.id,
-        termName: term.name,
-        subjects,
-        termGPA,
-        gradedCredits,
-      });
-    }
-
-    try {
       result.cumulativeGPA = this.#calculationService.cumulativeGPA(
         studentId,
         schemeId
       );
+
+      return result;
     } catch (err) {
+      console.error("Error generating transcript:", err);
       return err.message;
     }
-
-    return result;
   }
 }
 
