@@ -8,7 +8,7 @@ class Subject {
   #gradingSchemeId;
   #mode;
 
-  constructor(id, code, name, creditHours, gradingSchemeId = 'default', mode = 'graded') {
+  constructor(id, code, name, creditHours, gradingSchemeId = 1, mode = 'graded') {
     if (id == null) {
       this.#id = null;
     } else {

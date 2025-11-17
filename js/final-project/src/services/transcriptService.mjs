@@ -6,11 +6,10 @@ class TranscriptService {
   #subjectController;
   #termController;
   #enrollmentController;
-  #assessmentController;
-  #scoreController;
   #attendanceService;
   #calculationService;
   #gradingSchemeService;
+  #gradingSchemeController;
   #policy;
 
   constructor(
@@ -18,26 +17,23 @@ class TranscriptService {
     subjectController,
     termController,
     enrollmentController,
-    assessmentController,
-    scoreController,
     attendanceService,
     calculationService,
-    gradingSchemeService
+    gradingSchemeService,
+    gradingSchemeController
   ) {
     this.#studentController = studentController;
     this.#subjectController = subjectController;
     this.#termController = termController;
     this.#enrollmentController = enrollmentController;
-    this.#assessmentController = assessmentController;
-    this.#scoreController = scoreController;
     this.#attendanceService = attendanceService;
     this.#calculationService = calculationService;
     this.#gradingSchemeService = gradingSchemeService;
+    this.#gradingSchemeController = gradingSchemeController;
     this.#policy = new Policy();
   }
 
   getTranscript(studentId) {
-    const schemeId = 1;
     try {
       const student = this.#studentController.getItemById(Number(studentId));
       if (!student) {
@@ -67,6 +63,9 @@ class TranscriptService {
 
         for (const enroll of enrollments) {
           const subject = this.#subjectController.getItemById(enroll.subjectId);
+          const schemeId = this.#gradingSchemeController.getItemById(
+            student.gradingSchemeId
+          );
 
           const attendanceRate = this.#attendanceService.getAttendanceRate(
             studentId,
@@ -157,7 +156,8 @@ class TranscriptService {
     }
   }
 
-  termRanking(termId, schemeId) {
+  termRanking(termId) {
+    const schemeId = 1;
     try {
       const term = this.#termController.getItemById(Number(termId));
       if (!term) {
@@ -235,43 +235,156 @@ class TranscriptService {
   }
 
   leaderBoard(subjectId, termId, limit = 10) {
-    const subject = this.#subjectController.getItemById(Number(subjectId));
-    if (!subject) {
-      throw new Error("NOT_FOUND: subject does not exist");
-    }
+    try {
+      if (!this.#subjectController.getItemById(Number(subjectId))) {
+        throw new Error("NOT_FOUND: subject does not exist");
+      }
 
-    const term = this.#termController.getItemById(Number(termId));
-    if (!term) {
-      throw new Error("NOT_FOUND: term does not exist");
-    }
+      if (!this.#termController.getItemById(Number(termId))) {
+        throw new Error("NOT_FOUND: term does not exist");
+      }
 
-    const enrollments = this.#enrollmentController
-      .getAllValues()
-      .filter(
-        (enroll) =>
-          enroll.subjectId === Number(subjectId) &&
-          enroll.termId === Number(termId) &&
-          enroll.status === "completed"
+      const enrollments = this.#enrollmentController
+        .getAllValues()
+        .filter(
+          (enroll) =>
+            enroll.subjectId === Number(subjectId) &&
+            enroll.termId === Number(termId) &&
+            enroll.status === "completed"
+        );
+
+      if (enrollments.length === 0) {
+        throw new Error("NOT_FOUND: No completed enrollments");
+      }
+
+      const Leaderboard = enrollments.map((enroll) => {
+        const curvedPercent = this.#calculationService.curving(
+          enroll.studentId,
+          enroll.subjectId,
+          enroll.termId
+        );
+
+        return { ...enroll.toJSON(), curvedPercent };
+      });
+
+      return Leaderboard.sort(
+        (a, b) => b.curvedPercent - a.curvedPercent
+      ).slice(0, limit);
+    } catch (err) {
+      return err.message;
+    }
+  }
+
+  gradeDistribution(subjectId, termId, buckets) {
+    try {
+      if (!this.#subjectController.getItemById(Number(subjectId))) {
+        throw new Error("NOT_FOUND: subject does not exist");
+      }
+
+      if (!this.#termController.getItemById(Number(termId))) {
+        throw new Error("NOT_FOUND: term does not exist");
+      }
+
+      const enrollments = this.#enrollmentController
+        .getAllValues()
+        .filter(
+          (enroll) =>
+            enroll.subjectId === Number(subjectId) &&
+            enroll.termId === Number(termId) &&
+            enroll.status === "completed"
+        );
+
+      if (enrollments.length === 0) {
+        throw new Error("NOT_FOUND: No completed enrollments");
+      }
+
+      const scores = enrollments.map((enroll) =>
+        this.#calculationService.curving(
+          enroll.studentId,
+          enroll.subjectId,
+          enroll.termId
+        )
       );
 
-    if (enrollments.length === 0) {
-      throw new Error("NOT_FOUND: No completed enrollments");
-    }
+      if (typeof buckets === "string") {
+        buckets = buckets.split(",").map((bucket) => bucket.trim());
+      }
 
-    const Leaderboard = enrollments.map((enroll) => {
-      const curvedPercent = this.#calculationService.curving(
-        enroll.studentId,
-        enroll.subjectId,
-        enroll.termId
+      if (buckets.every((bucket) => /^[A-F][+-]?$/.test(bucket))) {
+        const subject = this.#subjectController.getItemById(Number(subjectId));
+        const grading = this.#gradingSchemeController.getItemById(
+          Number(subject.gradingSchemeId)
+        );
+
+        let gradeDistribution = new Map();
+        buckets.forEach((b) => gradeDistribution.set(b, 0));
+
+        const filteredScores = [];
+
+        for (const score of scores) {
+          const letter = this.#gradingSchemeService.getLetter(
+            score,
+            grading.id
+          );
+
+          if (gradeDistribution.has(letter)) {
+            gradeDistribution.set(letter, gradeDistribution.get(letter) + 1);
+            filteredScores.push(score);
+          }
+        }
+
+        return {
+          buckets: gradeDistribution,
+          average: filteredScores.length
+            ? this.#calculationService.avg(filteredScores)
+            : null,
+          median: filteredScores.length
+            ? this.#calculationService.median(filteredScores)
+            : null,
+          stddev: filteredScores.length
+            ? this.#calculationService.stddev(filteredScores)
+            : null,
+        };
+      }
+
+      if (buckets.every((bucket) => /^\d+\-\d+$/.test(bucket))) {
+        let gradeDistribution = new Map();
+        buckets.forEach((b) => gradeDistribution.set(b, 0));
+
+        const filteredScores = [];
+
+        for (const score of scores) {
+          for (const bucket of buckets) {
+            const [min, max] = bucket.split("-").map(Number);
+
+            if (score >= min && score <= max) {
+              gradeDistribution.set(bucket, gradeDistribution.get(bucket) + 1);
+              filteredScores.push(score);
+              break;
+            }
+          }
+        }
+
+        return {
+          buckets: gradeDistribution,
+          average: filteredScores.length
+            ? this.#calculationService.avg(filteredScores)
+            : null,
+          median: filteredScores.length
+            ? this.#calculationService.median(filteredScores)
+            : null,
+          stddev: filteredScores.length
+            ? this.#calculationService.stddev(filteredScores)
+            : null,
+        };
+      }
+
+      throw new Error(
+        "VALIDATION_ERROR: use letters (A,B+) or numeric ranges (80-90)."
       );
-
-      return { ...enroll.toJSON(), curvedPercent };
-    });
-
-    return Leaderboard.sort((a, b) => b.curvedPercent - a.curvedPercent).slice(
-      0,
-      limit
-    );
+    } catch (err) {
+      return err.message;
+    }
   }
 }
 

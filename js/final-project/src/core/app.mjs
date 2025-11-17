@@ -93,11 +93,10 @@ export class App {
       this.#controllers.subjects,
       this.#controllers.terms,
       this.#controllers.enrollments,
-      this.#controllers.assessments,
-      this.#controllers.scores,
       this.#services.attendances,
       this.#services.calculations,
-      this.#services.gradingSchemes
+      this.#services.gradingSchemes,
+      this.#controllers.gradingSchemes
     );
   }
 

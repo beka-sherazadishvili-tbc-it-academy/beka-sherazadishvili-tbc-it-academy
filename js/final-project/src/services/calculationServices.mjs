@@ -19,7 +19,7 @@ class CalculationServices {
     assessmentController,
     scoreController,
     attendanceController,
-    gradingSchemeService,
+    gradingSchemeService
   ) {
     this.#studentController = studentController;
     this.#subjectController = subjectController;
@@ -235,6 +235,25 @@ class CalculationServices {
     }
 
     return Number((totalPoints / totalCredits).toFixed(2));
+  }
+
+  avg(arr) {
+    return Number((arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(2));
+  }
+
+  median(arr) {
+    const sorted = [...arr].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    if (sorted.length % 2 === 0)
+      return Number(((sorted[mid - 1] + sorted[mid]) / 2).toFixed(2));
+    return Number(sorted[mid].toFixed(2));
+  }
+
+  stddev(arr) {
+    const mean = arr.reduce((a, b) => a + b, 0) / arr.length;
+    const variance =
+      arr.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / arr.length;
+    return Number(Math.sqrt(variance).toFixed(2));
   }
 }
 

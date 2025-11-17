@@ -28,6 +28,7 @@ function studentMenu() {
   console.log("9) Transcript (by student)");
   console.log("10) Term Ranking");
   console.log("11) Subject Leaderboard");
+  console.log("12) Grade Distribution");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -63,6 +64,9 @@ function studentMenu() {
         break;
       case "11":
         await leaderBoard();
+        break;
+      case "12":
+        await gradeDistribution();
         break;
       case "0":
         rl.close();
@@ -474,22 +478,13 @@ async function transcriptByStudent() {
 
 //10. term ranking
 async function termRanking() {
-  const studentId = await validationQuestion(
+  const termId = await validationQuestion(
     rl,
-    "student Id: ",
-    commonValidators.integerNumber("Student Id")
+    "term Id: ",
+    commonValidators.integerNumber("term Id")
   );
 
-  const schemeId = await validationQuestion(
-    rl,
-    "scheme Id: ",
-    commonValidators.integerNumber("scheme Id")
-  );
-
-  const result = createStd.services.transcripts.termRanking(
-    studentId,
-    schemeId
-  );
+  const result = createStd.services.transcripts.termRanking(termId);
 
   console.log(result);
 }
@@ -509,6 +504,35 @@ async function leaderBoard() {
   );
 
   const result = createStd.services.transcripts.leaderBoard(subjectId, termId);
+
+  console.log(result);
+}
+
+//12. grade gistribution
+async function gradeDistribution() {
+  const subjectId = await validationQuestion(
+    rl,
+    "subject Id: ",
+    commonValidators.integerNumber("subject Id")
+  );
+
+  const termId = await validationQuestion(
+    rl,
+    "term Id: ",
+    commonValidators.integerNumber("term Id")
+  );
+
+  const buckets = await validationQuestion(
+    rl,
+    "grade buckets(please enter (A,B+,B...) or (80-89,90-100...) formats: ",
+    commonValidators.arrayValidator("grade buckets")
+  );
+
+  const result = createStd.services.transcripts.gradeDistribution(
+    subjectId,
+    termId,
+    buckets
+  );
 
   console.log(result);
 }
