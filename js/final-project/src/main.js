@@ -29,6 +29,7 @@ function studentMenu() {
   console.log("10) Term Ranking");
   console.log("11) Subject Leaderboard");
   console.log("12) Grade Distribution");
+  console.log("13) Attendance Summary");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -67,6 +68,9 @@ function studentMenu() {
         break;
       case "12":
         await gradeDistribution();
+        break;
+      case "13":
+        await attendanceSummary();
         break;
       case "0":
         rl.close();
@@ -532,6 +536,28 @@ async function gradeDistribution() {
     subjectId,
     termId,
     buckets
+  );
+
+  console.log(result);
+}
+
+//13. Attendance Summary
+async function attendanceSummary() {
+  const termId = await validationQuestion(
+    rl,
+    "term Id: ",
+    commonValidators.integerNumber("term Id")
+  );
+
+  const subjectId = await validationQuestion(
+    rl,
+    "subject Id: ",
+    commonValidators.integerNumber("subject Id")
+  );
+
+  const result = createStd.services.attendances.getAttendanceSummary(
+    subjectId,
+    termId || null
   );
 
   console.log(result);

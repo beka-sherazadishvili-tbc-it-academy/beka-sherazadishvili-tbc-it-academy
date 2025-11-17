@@ -5,6 +5,7 @@ class Policy {
   #treatMissingAsZero;
   #allowScoreUpdateAfterLock;
   #lateAttendanceContribution;
+  #attendanceThreshold;
   #minimumPassingLetter;
   #lateEnrollmentCutoff;
   #retakePolicy;
@@ -21,6 +22,7 @@ class Policy {
     this.#treatMissingAsZero = false;
     this.#allowScoreUpdateAfterLock = false;
     this.#lateAttendanceContribution = 0.5;
+    this.#attendanceThreshold = 0.8;
     this.#minimumPassingLetter = "D-";
     this.#lateEnrollmentCutoff = 14;
     this.#retakePolicy = "latest";
@@ -58,6 +60,9 @@ class Policy {
 
   get lateAttendanceContribution() {
     return this.#lateAttendanceContribution;
+  }
+  get attendanceThreshold() {
+    return this.#attendanceThreshold;
   }
 
   get minimumPassingLetter() {

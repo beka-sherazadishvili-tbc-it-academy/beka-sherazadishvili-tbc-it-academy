@@ -6,7 +6,7 @@ class AttendanceService {
   #studentController;
   #subjectController;
   #termController;
-  #policy
+  #policy;
 
   constructor(
     attendanceService,
@@ -14,11 +14,11 @@ class AttendanceService {
     subjectController,
     termController
   ) {
-    this.#controller = attendanceService,
-    this.#studentController = studentController,
-    this.#subjectController = subjectController,
-    this.#termController = termController;
-    this.#policy = new Policy
+    (this.#controller = attendanceService),
+      (this.#studentController = studentController),
+      (this.#subjectController = subjectController),
+      (this.#termController = termController);
+    this.#policy = new Policy();
   }
 
   createAttendence(input) {
@@ -108,6 +108,66 @@ class AttendanceService {
     }
 
     return ((totalPresent / attendance.length) * 100).toFixed(2);
+  }
+
+  getAttendanceSummary(termId, subjectId = null) {
+    if (!this.#termController.getItemById(Number(termId))) {
+      throw new Error("NOT_FOUND: term does not exist");
+    }
+
+    let attendanceRecords = this.#controller
+      .getAllValues()
+      .filter((att) => att.termId === Number(termId));
+
+    if (subjectId) {
+      attendanceRecords = attendanceRecords.filter(
+        (att) => att.subjectId === Number(subjectId)
+      );
+    }
+
+    if (attendanceRecords.length === 0) {
+      throw new Error("NOT_FOUND: no attendance for this term");
+    }
+
+    const grouped = new Map();
+
+    for (const att of attendanceRecords) {
+      const key = `${att.studentId}_${att.subjectId}`;
+
+      if (!grouped.has(key)) {
+        grouped.set(key, {
+          studentId: att.studentId,
+          subjectId: att.subjectId,
+          total: 0,
+          present: 0,
+        });
+      }
+
+      const entry = grouped.get(key);
+      entry.total += 1;
+
+      if (att.status === "P") {
+        entry.present += 1;
+      } else if (att.status === "L") {
+        entry.present += this.#policy.lateAttendanceContribution;
+      }
+    }
+
+    const result = [];
+
+    for (const entry of grouped.values()) {
+      const rate = entry.total > 0 ? entry.present / entry.total : 0;
+
+      console.log
+      result.push({
+        studentId: entry.studentId,
+        subjectId: entry.subjectId,
+        attendanceRate: Number(rate.toFixed(4)),
+        flagged: rate > this.#policy.attendanceThreshold,
+      });
+    }
+
+    return result;
   }
 }
 
