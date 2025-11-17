@@ -1,3 +1,4 @@
+import { error } from "console";
 import { Policy } from "../models/policy.mjs";
 
 class TranscriptService {
@@ -35,7 +36,8 @@ class TranscriptService {
     this.#policy = new Policy();
   }
 
-  getTranscript(studentId, schemeId) {
+  getTranscript(studentId) {
+    const schemeId = 1;
     try {
       const student = this.#studentController.getItemById(Number(studentId));
       if (!student) {
@@ -153,6 +155,123 @@ class TranscriptService {
       console.error("Error generating transcript:", err);
       return err.message;
     }
+  }
+
+  termRanking(termId, schemeId) {
+    try {
+      const term = this.#termController.getItemById(Number(termId));
+      if (!term) {
+        throw new Error("NOT_FOUND: term does not exist");
+      }
+
+      const allEnrollments = this.#enrollmentController.getAllValues();
+      const termEnrollments = allEnrollments.filter((enroll) => {
+        return (
+          enroll.termId === Number(termId) && enroll.status === "completed"
+        );
+      });
+
+      if (termEnrollments.length === 0) {
+        throw new Error("NOT_FOUND: No completed enrollments in this term");
+      }
+
+      const students = [];
+
+      for (const enroll of termEnrollments) {
+        const studentId = enroll.studentId;
+
+        let studentEntry = students.find((std) => std.studentId === studentId);
+
+        if (!studentEntry) {
+          studentEntry = {
+            studentId: studentId,
+            credits: 0,
+            termGPA: 0,
+          };
+          students.push(studentEntry);
+        }
+
+        const subject = this.#subjectController.getItemById(enroll.subjectId);
+
+        if (!subject || subject.mode === "passfail") {
+          continue;
+        }
+
+        studentEntry.credits += subject.creditHours;
+      }
+
+      for (const std of students) {
+        std.termGPA = this.#calculationService.termGPA(
+          std.studentId,
+          termId,
+          schemeId
+        );
+      }
+
+      const rankingList = students.map((std) => {
+        const student = this.#studentController.getItemById(std.studentId);
+        return {
+          termGPA: std.termGPA,
+          credits: std.credits,
+          name: `${student.firstName} ${student.lastName}`,
+          studentId: std.studentId,
+        };
+      });
+
+      rankingList.sort((a, b) => {
+        if (b.termGPA !== a.termGPA) {
+          return b.termGPA - a.termGPA;
+        }
+        if (b.credits !== a.credits) {
+          return b.credits - a.credits;
+        }
+        return a.name.localeCompare(b.name);
+      });
+
+      return rankingList;
+    } catch (err) {
+      return err.message;
+    }
+  }
+
+  leaderBoard(subjectId, termId, limit = 10) {
+    const subject = this.#subjectController.getItemById(Number(subjectId));
+    if (!subject) {
+      throw new Error("NOT_FOUND: subject does not exist");
+    }
+
+    const term = this.#termController.getItemById(Number(termId));
+    if (!term) {
+      throw new Error("NOT_FOUND: term does not exist");
+    }
+
+    const enrollments = this.#enrollmentController
+      .getAllValues()
+      .filter(
+        (enroll) =>
+          enroll.subjectId === Number(subjectId) &&
+          enroll.termId === Number(termId) &&
+          enroll.status === "completed"
+      );
+
+    if (enrollments.length === 0) {
+      throw new Error("NOT_FOUND: No completed enrollments");
+    }
+
+    const Leaderboard = enrollments.map((enroll) => {
+      const curvedPercent = this.#calculationService.curving(
+        enroll.studentId,
+        enroll.subjectId,
+        enroll.termId
+      );
+
+      return { ...enroll.toJSON(), curvedPercent };
+    });
+
+    return Leaderboard.sort((a, b) => b.curvedPercent - a.curvedPercent).slice(
+      0,
+      limit
+    );
   }
 }
 

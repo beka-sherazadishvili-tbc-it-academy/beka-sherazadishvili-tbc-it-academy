@@ -26,7 +26,8 @@ function studentMenu() {
   console.log("7) Record Score");
   console.log("8) Record Attendance");
   console.log("9) Transcript (by student)");
-  console.log("10) test rate");
+  console.log("10) Term Ranking");
+  console.log("11) Subject Leaderboard");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -56,6 +57,12 @@ function studentMenu() {
         break;
       case "9":
         await transcriptByStudent();
+        break;
+      case "10":
+        await termRanking();
+        break;
+      case "11":
+        await leaderBoard();
         break;
       case "0":
         rl.close();
@@ -104,6 +111,7 @@ async function createStudent() {
     email: email.trim() || null,
     guardianName: guardianName.trim() || null,
   });
+
   console.log(result);
 }
 
@@ -146,6 +154,7 @@ async function createSubject() {
     gradingSchemeId,
     mode,
   });
+
   console.log(result);
 }
 
@@ -174,6 +183,7 @@ async function createTerm() {
     startDate,
     endDate,
   });
+
   console.log(result);
 }
 
@@ -209,6 +219,7 @@ async function createEnrollment() {
     termId,
     overdue,
   });
+
   console.log(result);
 }
 
@@ -358,6 +369,7 @@ async function assessments() {
         id: assessmentId,
         [fieldToUpdate]: newValue,
       });
+
       console.log(updateAssessment);
       break;
     case "x":
@@ -369,6 +381,7 @@ async function assessments() {
 
       const deleteAssessment =
         createStd.services.assessments.deleteAssessment(id);
+
       console.log(deleteAssessment);
       break;
   }
@@ -399,6 +412,7 @@ async function recordScore() {
     studentId,
     points,
   });
+
   console.log(result);
 }
 
@@ -441,6 +455,7 @@ async function recordAttendance() {
     date,
     status,
   });
+
   console.log(result);
 }
 
@@ -452,13 +467,26 @@ async function transcriptByStudent() {
     commonValidators.integerNumber("Student Id")
   );
 
+  const result = createStd.services.transcripts.getTranscript(studentId);
+
+  console.log(result);
+}
+
+//10. term ranking
+async function termRanking() {
+  const studentId = await validationQuestion(
+    rl,
+    "student Id: ",
+    commonValidators.integerNumber("Student Id")
+  );
+
   const schemeId = await validationQuestion(
     rl,
     "scheme Id: ",
     commonValidators.integerNumber("scheme Id")
   );
 
-  const result = createStd.services.transcripts.getTranscript(
+  const result = createStd.services.transcripts.termRanking(
     studentId,
     schemeId
   );
@@ -466,32 +494,23 @@ async function transcriptByStudent() {
   console.log(result);
 }
 
-// //10.
-// async function testAttandanceRate() {
-//   const studentId = await validationQuestion(
-//     rl,
-//     "student Id: ",
-//     commonValidators.integerNumber("Student Id")
-//   );
+//11. leaderboard
+async function leaderBoard() {
+  const subjectId = await validationQuestion(
+    rl,
+    "subject Id: ",
+    commonValidators.integerNumber("subject Id")
+  );
 
-//   const subjectId = await validationQuestion(
-//     rl,
-//     "subject Id: ",
-//     commonValidators.integerNumber("subject Id")
-//   );
+  const termId = await validationQuestion(
+    rl,
+    "term Id: ",
+    commonValidators.integerNumber("term Id")
+  );
 
-//   const termId = await validationQuestion(
-//     rl,
-//     "terms Id: ",
-//     commonValidators.integerNumber("term Id")
-//   );
+  const result = createStd.services.transcripts.leaderBoard(subjectId, termId);
 
-//   const result = createStd.services.attendances.getAttendanceRate(
-//     studentId,
-//     subjectId,
-//     termId
-//   );
-//   console.log(result);
-// }
+  console.log(result);
+}
 
 studentMenu();

@@ -56,25 +56,49 @@
   },
   {
     "id": 7,
-    "assessmentId": 13,
-    "studentId": 1,
-    "points": 12,
+    "assessmentId": 1,
+    "studentId": 2,
+    "points": 15,
     "recordedAt": "2026-02-05T10:00:00.000Z",
     "history": []
   },
   {
     "id": 8,
-    "assessmentId": 14,
-    "studentId": 1,
-    "points": 35,
+    "assessmentId": 2,
+    "studentId": 2,
+    "points": 25,
     "recordedAt": "2026-03-15T10:00:00.000Z",
     "history": []
   },
   {
     "id": 9,
-    "assessmentId": 15,
-    "studentId": 1,
-    "points": 85,
+    "assessmentId": 3,
+    "studentId": 2,
+    "points": 45,
+    "recordedAt": "2026-05-18T10:00:00.000Z",
+    "history": []
+  },
+  {
+    "id": 10,
+    "assessmentId": 1,
+    "studentId": 3,
+    "points": 10,
+    "recordedAt": "2026-02-05T10:00:00.000Z",
+    "history": []
+  },
+  {
+    "id": 11,
+    "assessmentId": 2,
+    "studentId": 3,
+    "points": 20,
+    "recordedAt": "2026-03-15T10:00:00.000Z",
+    "history": []
+  },
+  {
+    "id": 12,
+    "assessmentId": 3,
+    "studentId": 3,
+    "points": 40,
     "recordedAt": "2026-05-18T10:00:00.000Z",
     "history": []
   }
