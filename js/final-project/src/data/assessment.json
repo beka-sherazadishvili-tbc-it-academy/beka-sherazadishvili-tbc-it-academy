@@ -5,7 +5,7 @@
     "termId": 1,
     "name": "test",
     "type": "quiz",
-    "maxPoints": 20,
+    "maxPoints": 30,
     "weightPercent": 20,
     "dueDate": "2025-12-11",
     "locked": false
@@ -30,6 +30,39 @@
     "maxPoints": 50,
     "weightPercent": 50,
     "dueDate": "2026-06-06",
+    "locked": false
+  },
+  {
+    "id": 4,
+    "subjectId": 2,
+    "termId": 2,
+    "name": "test1",
+    "type": "quiz",
+    "maxPoints": 30,
+    "weightPercent": 20,
+    "dueDate": "2025-12-11",
+    "locked": false
+  },
+  {
+    "id": 6,
+    "subjectId": 2,
+    "termId": 2,
+    "name": "tsts1",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2026-06-06",
+    "locked": false
+  },
+  {
+    "id": 5,
+    "subjectId": 2,
+    "termId": 2,
+    "name": "tst1",
+    "type": "exam",
+    "maxPoints": 30,
+    "weightPercent": 30,
+    "dueDate": "2026-05-05",
     "locked": false
   }
 ]

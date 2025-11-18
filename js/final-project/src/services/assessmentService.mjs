@@ -169,21 +169,56 @@ class AssessmentService {
     }
   }
 
-  deleteAssessment(id) {
-    try {
-      if (!this.#controller.getItemById(Number(id))) {
-        throw new Error(`NOT_FOUND: assessment with id - ${id} not found`);
-      }
+  // deleteAssessment(id) {
+  //   try {
+  //     const assessment = this.#controller.getItemById(Number(id));
+  //     if (!this.#controller.getItemById(Number(id))) {
+  //       throw new Error(`NOT_FOUND: assessment with id - ${id} not found`);
+  //     }
 
-      this.#controller.delete(id);
-      return `Assessment ${id} deleted`;
-    } catch (err) {
-      return err.message;
+  //     const { subjectId, termId } = assessment;
+
+  //     this.checkWeightAudit(subjectId, termId, 0, null);
+
+  //     this.#controller.delete(id);
+  //     return `Assessment ${id} deleted`;
+  //   } catch (err) {
+  //     return err.message;
+  //   }
+  // }
+
+  deleteAssessment(id) {
+  try {
+    const assessment = this.#controller.getItemById(Number(id));
+    if (!assessment) {
+      throw new Error(`NOT_FOUND: assessment with id - ${id} not found`);
     }
+
+    if (assessment.locked) {
+      throw new Error(`CONFLICT: Cannot delete locked assessment`);
+    }
+
+    const { subjectId, termId } = assessment;
+
+    // Delete first
+    this.#controller.delete(id);
+
+    // Then check if weights are still valid
+    try {
+      this.checkWeightAudit(subjectId, termId, 0, null);
+    } catch (auditError) {
+      // Rollback: re-add the assessment
+      this.#controller.add(assessment);
+      throw auditError;
+    }
+
+    return `Assessment ${id} deleted successfully`;
+  } catch (err) {
+    return err.message;
   }
+}
 
   checkWeightAudit(subjectId, termId, weightPercent, updatingId = null) {
-    console.log(this.#controller.getAllValues());
     const assessmentItems = this.#controller
       .getAllValues()
       .filter(
@@ -206,7 +241,6 @@ class AssessmentService {
           att.termId === Number(termId) &&
           att.status === "active"
       );
-
 
     if (isActiveStatus) {
       if (toleranceSum - 100 > this.#policy.weightTolerance) {
