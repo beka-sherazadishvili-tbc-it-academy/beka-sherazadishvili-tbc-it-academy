@@ -48,7 +48,8 @@ export class App {
     this.#services.assessments = new AssessmentService(
       this.#controllers.assessments,
       this.#controllers.subjects,
-      this.#controllers.terms
+      this.#controllers.terms,
+      this.#controllers.enrollments
     );
 
     this.#services.enrollments = new EnrollmentService(

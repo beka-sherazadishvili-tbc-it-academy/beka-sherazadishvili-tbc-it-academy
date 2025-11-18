@@ -5,12 +5,19 @@ class AssessmentService {
   #controller;
   #subjectController;
   #termController;
+  #enrollmentController;
   #policy;
 
-  constructor(assessmentController, subjectController, termController) {
+  constructor(
+    assessmentController,
+    subjectController,
+    termController,
+    enrollmentController
+  ) {
     this.#controller = assessmentController;
     this.#subjectController = subjectController;
     this.#termController = termController;
+    this.#enrollmentController = enrollmentController;
     this.#policy = new Policy();
   }
 
@@ -72,7 +79,7 @@ class AssessmentService {
 
       this.#controller.add(newAssessment);
 
-      return newAssessment;
+      return newAssessment.toJSON();
     } catch (err) {
       return err.message;
     }
@@ -80,13 +87,9 @@ class AssessmentService {
 
   updateAssessment(input) {
     try {
-      const assessmentToUpdate = this.#controller.getItemById(
-        Number(input.id)
-      );
+      const assessmentToUpdate = this.#controller.getItemById(Number(input.id));
       if (!assessmentToUpdate) {
-        throw new Error(
-          `NOT_FOUND: Assessment id ${input.id} not found`
-        );
+        throw new Error(`NOT_FOUND: Assessment id ${input.id} not found`);
       }
 
       const fieldNotAllowed = [
@@ -129,7 +132,9 @@ class AssessmentService {
       }
 
       if (input.dueDate) {
-        const currentTerm = this.#termController.getItemById(assessmentToUpdate.termId);
+        const currentTerm = this.#termController.getItemById(
+          assessmentToUpdate.termId
+        );
         const due = new Date(input.dueDate).getTime();
         const start = new Date(currentTerm.startDate).getTime();
         const end = new Date(currentTerm.endDate).getTime();
@@ -153,10 +158,10 @@ class AssessmentService {
         );
       }
 
-      this.#controller.update(
-        assessmentToUpdate.id,
-        { ...assessmentToUpdate.toJSON(), ...input },
-      );
+      this.#controller.update(assessmentToUpdate.id, {
+        ...assessmentToUpdate.toJSON(),
+        ...input,
+      });
 
       return this.#controller.getItemById(assessmentToUpdate.id);
     } catch (err) {
@@ -167,9 +172,7 @@ class AssessmentService {
   deleteAssessment(id) {
     try {
       if (!this.#controller.getItemById(Number(id))) {
-        throw new Error(
-          `NOT_FOUND: assessment with id - ${id} not found`
-        );
+        throw new Error(`NOT_FOUND: assessment with id - ${id} not found`);
       }
 
       this.#controller.delete(id);
@@ -180,40 +183,66 @@ class AssessmentService {
   }
 
   checkWeightAudit(subjectId, termId, weightPercent, updatingId = null) {
+    console.log(this.#controller.getAllValues());
     const assessmentItems = this.#controller
       .getAllValues()
-      .filter((item) => item.subjectId === subjectId && item.termId === termId);
+      .filter(
+        (item) =>
+          item.subjectId === Number(subjectId) && item.termId === Number(termId)
+      );
 
     const toleranceSum =
       assessmentItems.reduce(
         (acc, item) =>
           item.id === updatingId ? acc : acc + item.weightPercent,
         0
-      ) + weightPercent;
+      ) + Number(weightPercent);
 
-    if (Math.abs(toleranceSum - 100) > this.#policy.weightTolerance) {
-      throw new Error(
-        `CONFLICT: total tolerance shoould not be more than 100 +- ${
-          this.#policy.weightTolerance
-        }`
-      );
-    }
-  }
-
-  checkCurrentAudit(subjectId, termId) {
-    const assessmentItems = this.#controller
+    const isActiveStatus = this.#enrollmentController
       .getAllValues()
-      .filter((item) => item.subjectId === subjectId && item.termId === termId);
+      .find(
+        (att) =>
+          att.subjectId === Number(subjectId) &&
+          att.termId === Number(termId) &&
+          att.status === "active"
+      );
 
-    if (assessmentItems.length === 0) {
-      return false;
+
+    if (isActiveStatus) {
+      if (toleranceSum - 100 > this.#policy.weightTolerance) {
+        throw new Error(
+          `CONFLICT: total tolerance shoould not be more than 100 +- ${
+            this.#policy.weightTolerance
+          }`
+        );
+      }
+    } else {
+      if (Math.abs(toleranceSum - 100) > this.#policy.weightTolerance) {
+        throw new Error(
+          `CONFLICT: total tolerance shoould not be more than 100 +- ${
+            this.#policy.weightTolerance
+          }`
+        );
+      }
     }
-
-    const toleranceSum = assessmentItems.reduce(
-      (acc, item) => acc + item.weightPercent, 0);
-
-    return Math.abs(toleranceSum - 100) <= this.#policy.weightTolerance;
   }
+
+  // checkCurrentAudit(subjectId, termId) {
+  //   const assessmentItems = this.#controller
+  //     .getAllValues()
+  //     .filter((item) => item.subjectId === subjectId && item.termId === termId);
+
+  //   if (assessmentItems.length === 0) {
+  //     return false;
+  //   }
+
+  //   const toleranceSum = assessmentItems.reduce(
+  //     (acc, item) => acc + item.weightPercent,
+  //     0
+  //   );
+
+  //   return Math.abs(toleranceSum - 100) <= this.#policy.weightTolerance;
+  // }
 }
 
 export { AssessmentService };

@@ -278,7 +278,7 @@ async function updateEnrollment() {
 async function assessments() {
   const chooseOperation = await validationQuestion(
     rl,
-    "Choose: c (Create) / u (Update) / x (Delete): ",
+    "c (Create) / u (Update) / x (Delete) Assessment: ",
     commonValidators.statusValidator(["c", "u", "x"])
   );
 
