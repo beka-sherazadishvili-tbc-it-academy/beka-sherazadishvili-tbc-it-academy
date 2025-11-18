@@ -1,34 +1,28 @@
 import { Policy } from "../models/policy.mjs";
 
 class CalculationServices {
-  #studentController;
   #subjectController;
-  #termController;
   #enrollmentController;
   #assessmentController;
   #scoreController;
-  #attendanceController;
   #gradingSchemeService;
+  #enrollmenService
   #policy;
 
   constructor(
-    studentController,
     subjectController,
-    termController,
     enrollmentController,
     assessmentController,
     scoreController,
-    attendanceController,
-    gradingSchemeService
+    gradingSchemeService,
+    enrollmentService
   ) {
-    this.#studentController = studentController;
     this.#subjectController = subjectController;
-    this.#termController = termController;
     this.#enrollmentController = enrollmentController;
     this.#assessmentController = assessmentController;
     this.#scoreController = scoreController;
-    this.#attendanceController = attendanceController;
     this.#gradingSchemeService = gradingSchemeService;
+    this.#enrollmenService = enrollmentService;
     this.#policy = new Policy();
   }
 
@@ -84,6 +78,10 @@ class CalculationServices {
           continue;
         }
 
+        if (dueDate > now) {
+          continue;
+        }
+
         if (currentDate > due && this.#policy.treatMissingAsZero) {
           total += 0 * (weight / 100);
           continue;
@@ -129,6 +127,8 @@ class CalculationServices {
 
   GPAPoints(studentId, subjectId, termId, schemeId) {
     try {
+      this.#enrollmentController.checkIncompleteExpiry();
+
       const percent = this.curving(studentId, subjectId, termId);
 
       const letter = this.#gradingSchemeService.getLetter(percent, schemeId);
@@ -141,6 +141,8 @@ class CalculationServices {
 
   termGPA(studentId, termId, schemeId) {
     try {
+      this.#enrollmenService.checkIncompleteExpiry();
+
       const enrollments = this.#enrollmentController
         .getAllValues()
         .filter((enroll) => {
@@ -192,6 +194,8 @@ class CalculationServices {
   }
 
   cumulativeGPA(studentId, schemeId) {
+    this.#enrollmentController.checkIncompleteExpiry();
+
     const enrollments = this.#enrollmentController
       .getAllValues()
       .filter((enroll) => {

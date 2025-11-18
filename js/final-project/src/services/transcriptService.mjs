@@ -213,20 +213,58 @@ class TranscriptService {
         return {
           termGPA: std.termGPA,
           credits: std.credits,
-          name: `${student.firstName} ${student.lastName}`,
+          name: student.firstName,
+          lastName: student.lastName,
           studentId: std.studentId,
         };
       });
 
       rankingList.sort((a, b) => {
-        if (b.termGPA !== a.termGPA) {
-          return b.termGPA - a.termGPA;
+        for (const tiebreaker of this.#policy.rankingTiebreakers) {
+          const [field, direction] = tiebreaker.split(" ");
+          let comparison = 0;
+
+          switch (field) {
+            case "GPA":
+              comparison = a.termGPA - b.termGPA;
+              break;
+            case "totalEarnedCredits":
+              comparison = a.credits - b.credits;
+              break;
+            case "lastName":
+              comparison = a.lastName.localeCompare(b.lastName);
+              break;
+            case "firstName":
+              comparison = a.firstName.localeCompare(b.firstName);
+              break;
+            case "id":
+              comparison = a.studentId - b.studentId;
+              break;
+            default:
+              continue;
+          }
+
+          if (direction === "desc") {
+            comparison = -comparison;
+          }
+
+          if (comparison !== 0) {
+            return comparison;
+          }
         }
-        if (b.credits !== a.credits) {
-          return b.credits - a.credits;
-        }
-        return a.name.localeCompare(b.name);
+
+        return 0;
       });
+
+      // rankingList.sort((a, b) => {
+      //   if (b.termGPA !== a.termGPA) {
+      //     return b.termGPA - a.termGPA;
+      //   }
+      //   if (b.credits !== a.credits) {
+      //     return b.credits - a.credits;
+      //   }
+      //   return a.name.localeCompare(b.name);
+      // });
 
       return rankingList;
     } catch (err) {

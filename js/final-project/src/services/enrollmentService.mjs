@@ -139,6 +139,30 @@ class EnrollmentService {
       return err.message;
     }
   }
+
+  checkIncompleteExpiry() {
+    const allEnrollments = this.#controller.getAllValues();
+    const currentDate = new Date();
+
+    for (const enroll of allEnrollments) {
+      if (enroll.status === "incomplete") {
+
+        const expiryDate = new Date(enroll.completedAt || enroll.createdAt);
+        expiryDate.setDate(
+          expiryDate.getDate() +
+            this.#policy.incompleteHandling.expiresAfterDays
+        );
+
+        if (currentDate > expiryDate) {
+          this.#controller.update(enroll.id, {
+            ...enroll,
+            status: "F",
+            droppedAt: currentDate.toISOString(),
+          });
+        }
+      }
+    }
+  }
 }
 
 export { EnrollmentService };

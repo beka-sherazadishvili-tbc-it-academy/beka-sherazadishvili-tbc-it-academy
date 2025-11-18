@@ -78,14 +78,12 @@ export class App {
     );
 
     this.#services.calculations = new CalculationServices(
-      this.#controllers.students,
       this.#controllers.subjects,
-      this.#controllers.terms,
       this.#controllers.enrollments,
       this.#controllers.assessments,
       this.#controllers.scores,
-      this.#controllers.attendances,
-      this.#services.gradingSchemes
+      this.#services.gradingSchemes,
+      this.#services.enrollments
     );
 
     this.#services.transcripts = new TranscriptService(

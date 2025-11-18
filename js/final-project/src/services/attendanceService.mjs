@@ -163,7 +163,7 @@ class AttendanceService {
         studentId: entry.studentId,
         subjectId: entry.subjectId,
         attendanceRate: Number(rate.toFixed(4)),
-        flagged: rate > this.#policy.attendanceThreshold,
+        flagged: rate < this.#policy.attendanceThreshold,
       });
     }
 
