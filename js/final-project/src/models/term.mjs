@@ -52,7 +52,7 @@ class Term {
   set name(value) {
     isStringValidator(value);
     if (!/^\d{4}-[A-Za-z]+\d{1,2}$/.test(value)) {
-      throw new Error('Invalid term name format. Please enter something like "2025-S1" or "2025-F2"');
+      throw new Error('VALIDATION_ERROR: invalid term name format. Please enter something like "2025-S1" or "2025-F2"');
     }
     this.#name = value;
   }
@@ -60,7 +60,7 @@ class Term {
   set startDate(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error('Invalid startDate format (must be ISO string)');
+      throw new Error('VALIDATION_ERROR: invalid startDate format (must be ISO string)');
     }
     this.#startDate = date.toISOString();
   }
@@ -68,10 +68,10 @@ class Term {
   set endDate(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error('Invalid endDate format (must be ISO string)');
+      throw new Error('VALIDATION_ERROR: invalid endDate format (must be ISO string)');
     }
     if (new Date(this.#startDate) >= date) {
-      throw new Error('endDate must be later than startDate');
+      throw new Error('VALIDATION_ERROR: endDate must be later than startDate');
     }
     this.#endDate = date.toISOString();
   }

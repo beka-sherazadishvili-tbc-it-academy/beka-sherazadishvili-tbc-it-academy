@@ -39,7 +39,7 @@ class CalculationServices {
 
       if (!enroll) {
         throw new Error(
-          "VALIDATION_ERROR: Student is not enrolled in this subject and term."
+          "NOT_FOUND: Student is not enrolled in this subject and term."
         );
       }
 
@@ -214,7 +214,7 @@ class CalculationServices {
       });
 
     if (enrollments.length === 0) {
-      throw new Error("NOT_FOUND: No completed graded enrollments");
+      throw new Error("NOT_FOUND: no completed graded enrollments");
     }
 
     let totalPoints = 0;

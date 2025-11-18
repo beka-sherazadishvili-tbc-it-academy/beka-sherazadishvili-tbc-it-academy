@@ -23,7 +23,7 @@ class EnrollmentController extends CommonController {
     console.log(alreadyExist);
 
     if (alreadyExist) {
-      throw new Error(`${item} already exists`);
+      throw new Error(`CONFLICT: ${item} already exists`);
     }
 
     super.add(item);

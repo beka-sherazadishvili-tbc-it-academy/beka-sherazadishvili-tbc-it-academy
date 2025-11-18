@@ -97,7 +97,7 @@ class Score {
     value = convertStringToNumber(value);
     isIntegerNumberValidator(value);
     if (value < 0) {
-      throw new Error("points must be 0 or greater.");
+      throw new Error("VALIDATION_ERROR: points must be 0 or greater.");
     }
     this.#points = value;
   }
@@ -105,7 +105,7 @@ class Score {
   set recordedAt(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error("Invalid recordedAt format (must be ISO string)");
+      throw new Error("VALIDATION_ERROR: invalid recordedAt format (must be ISO string)");
     }
     this.#recordedAt = date.toISOString();
   }

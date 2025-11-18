@@ -36,7 +36,7 @@ class CommonController {
 
   add(item) {
     if (!(item instanceof this.#currentClass)) {
-      throw new Error(`Object must be instance of ${this.#currentClass.name}`);
+      throw new Error(`VALIDATION_ERROR: Object must be instance of ${this.#currentClass.name}`);
     }
 
     if (!item.id) {
@@ -44,7 +44,7 @@ class CommonController {
     }
 
     if (this.#items.has(item.id)) {
-      throw new Error(`Item with ID ${item.id} already exists`);
+      throw new Error(`CONFLICT: item with ID ${item.id} already exists`);
     }
 
     this.#items.set(Number(item.id), item);

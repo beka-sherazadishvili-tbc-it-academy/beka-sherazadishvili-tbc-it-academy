@@ -32,7 +32,7 @@ class EnrollmentService {
 
       if (!studentItem || !subjectItem || !termItem) {
         throw new Error(
-          "Invalid entry: such student, subject or term does not exists"
+          "NOT_FOUND: such student, subject or term does not exists"
         );
       }
 
@@ -43,7 +43,7 @@ class EnrollmentService {
 
       if (diffDays > this.#policy.lateEnrollmentCutoff && !isOverride) {
         throw new Error(
-          `You can not enroll, term started more than ${
+          `POLICY_VIOLATION: You can not enroll, term started more than ${
             this.#policy.lateEnrollmentCutoff
           } days ago`
         );
@@ -84,11 +84,11 @@ class EnrollmentService {
       const enrollment = this.#controller.getItemById(input.enrollmentId);
 
       if (!enrollment) {
-        throw new Error("VALIDATION_ERROR: Enrollment id does not exists");
+        throw new Error("NOT_FOUND: Enrollment id does not exists");
       }
 
       if (enrollment.status !== "active") {
-        throw new Error("VALIDATION_ERROR: Enrollmen status should be active");
+        throw new Error("VALIDATION_ERROR: enrollmen status should be active");
       }
 
       const currentDate = new Date().toISOString();
@@ -131,7 +131,7 @@ class EnrollmentService {
           break;
 
         default:
-          throw new Error("Unknown action");
+          throw new Error("VALIDATION_ERROR: Unknown action");
       }
 
       return this.#controller.getItemById(enrollment.id).toJSON();

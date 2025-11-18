@@ -20,12 +20,14 @@ const commonValidators = {
 
   arrayValidator: (fieldName) => (input) => {
     try {
-      if(!Array.isArray(input) && input.length === 0) {
-        throw new Error(`${fieldName}: VALIDATION_ERROR inpiut must be array format`)
+      if (!Array.isArray(input) && input.length === 0) {
+        throw new Error(
+          `${fieldName}: VALIDATION_ERROR inpiut must be array format`
+        );
       }
       return true;
     } catch (err) {
-      return err.message
+      return err.message;
     }
   },
 

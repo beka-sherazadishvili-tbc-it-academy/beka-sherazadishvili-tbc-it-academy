@@ -18,14 +18,14 @@ class AssessmentService {
     try {
       if (!this.#subjectController.getItemById(input.subjectId)) {
         throw new Error(
-          `VALIDATION_ERROR: sibject with id - '${input.subjectId}' does not exists`
+          `NOT_FOUND: sibject with id - '${input.subjectId}' does not exists`
         );
       }
 
       const currentTerm = this.#termController.getItemById(input.termId);
       if (!currentTerm) {
         throw new Error(
-          `VALIDATION_ERROR: term with id - ${input.termId} does not exists`
+          `NOT_FOUND: term with id - ${input.termId} does not exists`
         );
       }
 
@@ -40,7 +40,7 @@ class AssessmentService {
 
       if (isNameExists) {
         throw new Error(
-          `VALIDATION_ERROR: assessment with the '${input.name}' name already exists`
+          `NOT_FOUND: assessment with the '${input.name}' name already exists`
         );
       }
 
@@ -51,7 +51,7 @@ class AssessmentService {
 
         if (due < start || due > end) {
           throw new Error(
-            "VALIDATION_ERROR: dueDate must be inside the term range"
+            "ILLEGAL_STATE: dueDate must be inside the term range"
           );
         }
       }
@@ -85,7 +85,7 @@ class AssessmentService {
       );
       if (!assessmentToUpdate) {
         throw new Error(
-          `VALIDATION_ERROR: Assessment id ${input.id} not found`
+          `NOT_FOUND: Assessment id ${input.id} not found`
         );
       }
 
@@ -104,7 +104,7 @@ class AssessmentService {
             input[filed] !== assessmentToUpdate[filed]
           ) {
             throw new Error(
-              `VALIDATION_ERROR: cannot modify '${filed}' because assessment is locked`
+              `CONFLICT: cannot modify '${filed}' because assessment is locked`
             );
           }
         }
@@ -123,7 +123,7 @@ class AssessmentService {
 
         if (isNameExists) {
           throw new Error(
-            `VALIDATION_ERROR: assessment with the '${input.name}' name already exists`
+            `CONFLICT: assessment with the '${input.name}' name already exists`
           );
         }
       }
@@ -136,7 +136,7 @@ class AssessmentService {
 
         if (due < start || due > end) {
           throw new Error(
-            "VALIDATION_ERROR: dueDate must be inside the term range"
+            "ILLEGAL_STATE: dueDate must be inside the term range"
           );
         }
       }
@@ -168,7 +168,7 @@ class AssessmentService {
     try {
       if (!this.#controller.getItemById(Number(id))) {
         throw new Error(
-          `VALIDATION_ERROR: assessment with id - ${id} not found`
+          `NOT_FOUND: assessment with id - ${id} not found`
         );
       }
 
@@ -193,7 +193,7 @@ class AssessmentService {
 
     if (Math.abs(toleranceSum - 100) > this.#policy.weightTolerance) {
       throw new Error(
-        `total tolerance shoould not be more than 100 +- ${
+        `CONFLICT: total tolerance shoould not be more than 100 +- ${
           this.#policy.weightTolerance
         }`
       );

@@ -34,15 +34,15 @@ class AttendanceService {
       const term = this.#termController.getItemById(Number(input.termId));
 
       if (!student) {
-        throw new Error("VALIDATION_ERROR: this student does not exists");
+        throw new Error("NOT_FOUND: this student does not exists");
       }
 
       if (!subject) {
-        throw new Error("VALIDATION_ERROR: this subject does not exists");
+        throw new Error("NOT_FOUND: this subject does not exists");
       }
 
       if (!term) {
-        throw new Error("VALIDATION_ERROR: this term does not exists");
+        throw new Error("NOT_FOUND: this term does not exists");
       }
 
       const currentDate = new Date(input.date);
@@ -50,7 +50,7 @@ class AttendanceService {
       const endDate = new Date(term.endDate);
 
       if (currentDate < startDate || currentDate > endDate) {
-        throw new Error("VALIDATION_ERROR: currendate is not in the terms");
+        throw new Error("ILLEGAL_STATE: currendate is not in the terms");
       }
 
       const attendanceExists = this.#controller
@@ -64,7 +64,7 @@ class AttendanceService {
         );
 
       if (attendanceExists) {
-        throw new Error("VALIDATION_ERROR: attendance already exists");
+        throw new Error("CONFLICT: attendance already exists");
       }
 
       const newAttendance = new Attendance(
@@ -94,7 +94,7 @@ class AttendanceService {
       );
 
     if (attendance.length === 0) {
-      throw new Error("VALIDATION_ERROR: no such attandace items");
+      throw new Error("NOT_FOUND: no such attandace items");
     }
 
     let totalPresent = 0;

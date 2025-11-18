@@ -41,7 +41,7 @@ class Enrollment {
 
     const allowedStatuses = ['active', 'dropped', 'completed', 'withdrawn', 'incomplete'];
     if (!allowedStatuses.includes(status)) {
-      throw new Error(`Invalid status: ${status}`);
+      throw new Error(`VALIDATION_ERROR: invalid status: ${status}`);
     }
 
     this.#id = id;
@@ -121,7 +121,7 @@ class Enrollment {
     isStringValidator(value);
     const allowedStatuses = ['active', 'dropped', 'completed', 'withdrawn'];
     if (!allowedStatuses.includes(value)) {
-      throw new Error(`Invalid status: ${value}`);
+      throw new Error(`VALIDATION_ERROR: invalid status: ${value}`);
     }
     this.#status = value;
   }
@@ -130,7 +130,7 @@ class Enrollment {
     value = convertStringToNumber(value);
     isIntegerNumberValidator(value);
     if (value < 1) {
-      throw new Error('attemptNumber must be at least 1.');
+      throw new Error('VALIDATION_ERROR: attemptNumber must be at least 1.');
     }
     this.#attemptNumber = value;
   }
@@ -138,7 +138,7 @@ class Enrollment {
   set createdAt(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error('Invalid createdAt format (must be ISO string)');
+      throw new Error('VALIDATION_ERROR: invalid createdAt format (must be ISO string)');
     }
     this.#createdAt = date.toISOString();
   }
@@ -147,7 +147,7 @@ class Enrollment {
     if (value) {
       const date = new Date(value);
       if (isNaN(date.getTime())) {
-        throw new Error('Invalid droppedAt format (must be ISO string)');
+        throw new Error('VALIDATION_ERROR: invalid droppedAt format (must be ISO string)');
       }
       this.#droppedAt = date.toISOString();
     } else {
@@ -159,7 +159,7 @@ class Enrollment {
     if (value) {
       const date = new Date(value);
       if (isNaN(date.getTime())) {
-        throw new Error('Invalid completedAt format (must be ISO string)');
+        throw new Error('VALIDATION_ERROR: invalid completedAt format (must be ISO string)');
       }
       this.#completedAt = date.toISOString();
     } else {

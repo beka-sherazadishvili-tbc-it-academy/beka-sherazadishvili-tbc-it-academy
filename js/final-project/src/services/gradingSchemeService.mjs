@@ -9,7 +9,7 @@ class GradingSchemeService {
     try {
       const scheme = this.#controller.getItemById(Number(schemeId));
       if (!scheme) {
-        throw new Error("VALIDATION_ERROR: Invalid grading scheme");
+        throw new Error("NOT_FOUND: Invalid grading scheme");
       }
 
       for (const brPoint of scheme.breakpoints) {

@@ -32,16 +32,16 @@ class ScoreService {
 
     try {
       if (!student) {
-        throw new Error("VALIDATION_ERROR: this student does not exists");
+        throw new Error("NOT_FOUND: this student does not exists");
       }
 
       if (!assessment) {
-        throw new Error("VALIDATION_ERROR: this student does not exists");
+        throw new Error("NOT_FOUND: this student does not exists");
       }
 
       if (input.points < 0 || input.points > assessment.maxPoints) {
         throw new Error(
-          `VALIDATION_ERROR: score must be between 0 and ${assessment.maxPoints}`
+          `CONFLICT: score must be between 0 and ${assessment.maxPoints}`
         );
       }
 
@@ -60,7 +60,7 @@ class ScoreService {
 
       if (!isEnrolmentExists) {
         throw new Error(
-          "VALIDATION_ERROR: enrollment not found for this subject and term id"
+          "NOT_FOUND: enrollment not found for this subject and term id"
         );
       }
 
@@ -76,7 +76,7 @@ class ScoreService {
 
       if (existingScore) {
         if (assessment.locked && this.#policy.allowScoreUpdateAfterLock) {
-          throw new Error("VALIDATION_ERROR: score can not be updated");
+          throw new Error("POLICY_VIOLATION: score can not be updated");
         }
 
         existingScore.history.push({

@@ -113,7 +113,7 @@ class Assessment {
   set type(value) {
     const allowedTypes = ["quiz", "exam", "project"];
     if (!allowedTypes.includes(value)) {
-      throw new Error(`Invalid type: ${value}`);
+      throw new Error(`VALIDATION_ERROR: Invalid type: ${value}`);
     }
     this.#type = value;
   }
@@ -122,7 +122,7 @@ class Assessment {
     value = convertStringToNumber(value);
     isIntegerNumberValidator(value);
     if (value < 0) {
-      throw new Error("maxPoints must be at least 0.");
+      throw new Error("VALIDATION_ERROR: maxPoints must be at least 0.");
     }
     this.#maxPoints = value;
   }
@@ -131,7 +131,7 @@ class Assessment {
     value = convertStringToNumber(value);
     isIntegerNumberValidator(value);
     if (value < 0 || value > 100) {
-      throw new Error("weightPercent should be between 0 and 100");
+      throw new Error("VALIDATION_ERROR: weightPercent should be between 0 and 100");
     }
     this.#weightPercent = value;
   }
@@ -139,17 +139,17 @@ class Assessment {
   set dueDate(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error("Invalid dueDate format (must be ISO string)");
+      throw new Error("VALIDATION_ERROR: invalid dueDate format (must be ISO string)");
     }
     if (date.getTime() < Date.now()) {
-      throw new Error("Due date must be in the future.");
+      throw new Error("VALIDATION_ERROR: due date must be in the future.");
     }
     this.#dueDate = date.toISOString();
   }
 
   set locked(value) {
     if (typeof value !== "boolean") {
-      throw new Error("locked should be boolean type");
+      throw new Error("VALIDATION_ERROR: locked should be boolean type");
     }
     this.#locked = value;
   }

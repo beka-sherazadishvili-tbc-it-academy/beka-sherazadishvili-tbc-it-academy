@@ -8,7 +8,7 @@ class SubjectController extends CommonController {
 
   add(item) {
     if (!(item instanceof Subject)) {
-      throw new Error(`Object is not subject instance`);
+      throw new Error(`VALIDATION_ERROR: Object is not subject instance`);
     }
 
     const alreadyExist = [...this.getAllValues()].find(
@@ -16,7 +16,7 @@ class SubjectController extends CommonController {
     )
 
     if(alreadyExist) {
-        throw new Error('code already exists');
+        throw new Error('CONFLICT: code already exists');
     }
 
     super.add(item)

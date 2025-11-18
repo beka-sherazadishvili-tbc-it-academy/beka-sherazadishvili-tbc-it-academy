@@ -17,7 +17,7 @@ class GradingScheme {
     }
     
     if (!Array.isArray(breakpoints)) {
-      throw new Error("GradingScheme breakpoints must be an array");
+      throw new Error("VALIDATION_ERROR: gradingScheme breakpoints must be an array");
     }
 
     this.#breakpoints = Object.freeze(

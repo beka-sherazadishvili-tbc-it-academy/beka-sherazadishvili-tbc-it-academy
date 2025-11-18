@@ -256,16 +256,6 @@ class TranscriptService {
         return 0;
       });
 
-      // rankingList.sort((a, b) => {
-      //   if (b.termGPA !== a.termGPA) {
-      //     return b.termGPA - a.termGPA;
-      //   }
-      //   if (b.credits !== a.credits) {
-      //     return b.credits - a.credits;
-      //   }
-      //   return a.name.localeCompare(b.name);
-      // });
-
       return rankingList;
     } catch (err) {
       return err.message;

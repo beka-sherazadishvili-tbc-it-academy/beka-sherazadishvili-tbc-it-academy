@@ -22,7 +22,7 @@ class Student {
     }
 
     if (!(meta instanceof Meta)) {
-      throw new Error("meta must be an instance of Meta");
+      throw new Error("VALIDATION_ERROR: meta must be an instance of Meta");
     }
 
     this.#id = id;
@@ -77,7 +77,7 @@ class Student {
 
   set meta(value) {
     if (!(value instanceof Meta)) {
-      throw new Error('meta must be an instance of Meta');
+      throw new Error('VALIDATION_ERROR: meta must be an instance of Meta');
     }
     this.#meta = value;
   }

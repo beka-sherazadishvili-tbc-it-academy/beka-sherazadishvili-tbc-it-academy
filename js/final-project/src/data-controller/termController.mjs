@@ -8,7 +8,7 @@ class TermController extends CommonController {
 
   add(item) {
     if (!(item instanceof Term)) {
-      throw new Error(`Object is not Term instance`);
+      throw new Error(`VALIDATION_ERROR: Object is not Term instance`);
     }
 
     const alreadyExist = [...this.getAllValues()].find(
@@ -16,7 +16,7 @@ class TermController extends CommonController {
     );
 
     if (alreadyExist) {
-      throw new Error("name already exists");
+      throw new Error("VALIDATION_ERROR: name already exists");
     }
 
     super.add(item);

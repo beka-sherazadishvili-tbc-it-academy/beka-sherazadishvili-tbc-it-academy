@@ -80,7 +80,7 @@ class Attendance {
   set date(value) {
     const date = new Date(value);
     if (isNaN(date.getTime())) {
-      throw new Error("Invalid date format");
+      throw new Error("VALIDATION_ERROR: invalid date format");
     }
     this.#date = date.toISOString();
   }
@@ -88,7 +88,7 @@ class Attendance {
   set status(newStatus) {
     const allowedStatuses = ["P", "A", "L"];
     if (!allowedStatuses.includes(newStatus)) {
-      throw new Error(`Invalid attendance status: ${newStatus}`);
+      throw new Error(`VALIDATION_ERROR: invalid attendance status: ${newStatus}`);
     }
     this.#status = newStatus;
   }
