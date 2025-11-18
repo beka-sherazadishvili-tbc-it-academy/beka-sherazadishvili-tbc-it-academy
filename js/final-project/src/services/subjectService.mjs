@@ -11,14 +11,14 @@ class SubjectServices {
         try {
             const subjectModel = new Subject(
                 null,
-                subject.code,
+                subject.code.toUpperCase(),
                 subject.name,
                 subject.creditHours,
                 subject.gradingSchemeId,
                 subject.mode,
             );
             this.#controller.add(subjectModel);
-            return `Student "${subjectModel.code} ${subjectModel.name} ${subjectModel.creditHours}" created successfully!`;
+            return subjectModel.toJSON();
         } catch (err) {
             return err.message;
         }

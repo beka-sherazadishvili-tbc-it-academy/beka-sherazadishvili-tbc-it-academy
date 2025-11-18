@@ -19,8 +19,7 @@ class StudentService {
                 meta
             );
             this.#controller.add(studentModel);
-            console.log(this.#controller.getAllItems())
-            return `Student "${studentModel.firstName} ${studentModel.lastName} ${studentModel.meta.email}" created successfully!`;
+            return studentModel.toJSON();
         } catch (error) {
             return error.message;
         }

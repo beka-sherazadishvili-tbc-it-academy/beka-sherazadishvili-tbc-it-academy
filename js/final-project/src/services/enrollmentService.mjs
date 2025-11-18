@@ -73,7 +73,7 @@ class EnrollmentService {
 
       this.#controller.add(enrollment);
 
-      return enrollment;
+      return enrollment.toJSON();
     } catch (err) {
       return err.message;
     }
@@ -95,12 +95,23 @@ class EnrollmentService {
 
       switch (input.action) {
         case "d":
-          enrollment.droppedAt = currentDate;
           enrollment.status = "dropped";
+          this.#controller.update(enrollment.id, {
+            ...enrollment,
+            status: "dropped",
+            completedAt: null,
+            droppedAt: currentDate,
+          });
           break;
         case "w":
           enrollment.droppedAt = currentDate;
           enrollment.status = "withdrawn";
+          this.#controller.update(enrollment.id, {
+            ...enrollment,
+            status: "withdrawn",
+            completedAt: null,
+            droppedAt: currentDate,
+          });
           break;
         case "c":
           enrollment.droppedAt = currentDate;
@@ -109,22 +120,21 @@ class EnrollmentService {
             enrollment.termId
           );
 
-          if (!isAuditPassed && !input.override) {
-            throw new Error("VALIDATION_ERROR: audit failed");
-          }
-
           if (input.markIncomplete) {
             this.#controller.update(enrollment.id, {
               ...enrollment,
-              status: "incomplete", //TODO ask about this status
+              status: "Incomplete",
               completedAt: null,
               droppedAt: null,
             });
           } else {
+            if (!isAuditPassed && !input.override) {
+              throw new Error("VALIDATION_ERROR: audit failed");
+            }
             this.#controller.update(enrollment.id, {
               ...enrollment,
               status: "completed",
-              completedAt: now,
+              completedAt: currentDate,
               droppedAt: null,
             });
           }
@@ -146,7 +156,6 @@ class EnrollmentService {
 
     for (const enroll of allEnrollments) {
       if (enroll.status === "incomplete") {
-
         const expiryDate = new Date(enroll.completedAt || enroll.createdAt);
         expiryDate.setDate(
           expiryDate.getDate() +

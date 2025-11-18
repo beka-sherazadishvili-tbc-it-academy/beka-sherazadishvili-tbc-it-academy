@@ -9,10 +9,10 @@ class TermServices {
 
   createTerm(term) {
     try {
-      const termModel = new Term(null, term.name, term.startDate, term.endDate);
+      const termModel = new Term(null, term.name.toUpperCase(), term.startDate, term.endDate);
 
       this.#controller.add(termModel);
-      return `Student "${termModel.name} ${termModel.startDate} ${termModel.endDate}" created successfully!`;
+      return termModel.toJSON();
     } catch (err) {
       return err.message;
     }

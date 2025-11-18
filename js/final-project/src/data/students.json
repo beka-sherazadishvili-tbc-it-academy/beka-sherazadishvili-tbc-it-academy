@@ -1,96 +1,52 @@
 [
   {
     "id": 1,
-    "firstName": "Alice",
-    "lastName": "Johnson",
+    "firstName": "beka",
+    "lastName": "shera",
     "gradeLevel": "9th",
     "meta": {
-      "guardianName": "Mary Johnson",
-      "email": "alice.johnson@example.com"
+      "guardianName": "name",
+      "email": "beka@gmail.com"
     }
   },
   {
     "id": 2,
-    "firstName": "Brian",
-    "lastName": "Smith",
+    "firstName": "akaki",
+    "lastName": "shera",
     "gradeLevel": "10th",
     "meta": {
-      "guardianName": "David Smith",
-      "email": "brian.smith@example.com"
+      "guardianName": null,
+      "email": null
     }
   },
   {
     "id": 3,
-    "firstName": "Carla",
-    "lastName": "Andrews",
-    "gradeLevel": "11th",
+    "firstName": "test",
+    "lastName": "test",
+    "gradeLevel": "bachelor",
     "meta": {
-      "guardianName": "Theresa Andrews",
-      "email": "carla.andrews@example.com"
+      "guardianName": null,
+      "email": null
     }
   },
   {
     "id": 4,
-    "firstName": "Daniel",
-    "lastName": "Lee",
-    "gradeLevel": "12th",
-    "meta": { "guardianName": "Henry Lee", "email": "daniel.lee@example.com" }
+    "firstName": "beka",
+    "lastName": "sherazadishvili",
+    "gradeLevel": "9",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
   },
   {
     "id": 5,
-    "firstName": "Eva",
-    "lastName": "Martinez",
-    "gradeLevel": "Bachelor-1",
+    "firstName": "beka",
+    "lastName": "shera",
+    "gradeLevel": "9",
     "meta": {
-      "guardianName": "Carmen Martinez",
-      "email": "eva.martinez@example.com"
-    }
-  },
-  {
-    "id": 6,
-    "firstName": "Frank",
-    "lastName": "Taylor",
-    "gradeLevel": "Bachelor-2",
-    "meta": {
-      "guardianName": "Robert Taylor",
-      "email": "frank.taylor@example.com"
-    }
-  },
-  {
-    "id": 7,
-    "firstName": "Grace",
-    "lastName": "Kim",
-    "gradeLevel": "Master-1",
-    "meta": { "guardianName": "Anna Kim", "email": "grace.kim@example.com" }
-  },
-  {
-    "id": 8,
-    "firstName": "Henry",
-    "lastName": "Thompson",
-    "gradeLevel": "Master-2",
-    "meta": {
-      "guardianName": "Linda Thompson",
-      "email": "henry.thompson@example.com"
-    }
-  },
-  {
-    "id": 9,
-    "firstName": "Isabella",
-    "lastName": "Davis",
-    "gradeLevel": "PhD-1",
-    "meta": {
-      "guardianName": "Michael Davis",
-      "email": "isabella.davis@example.com"
-    }
-  },
-  {
-    "id": 10,
-    "firstName": "Jack",
-    "lastName": "Wilson",
-    "gradeLevel": "PhD-2",
-    "meta": {
-      "guardianName": "Sarah Wilson",
-      "email": "jack.wilson@example.com"
+      "guardianName": null,
+      "email": null
     }
   }
 ]

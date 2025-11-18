@@ -20,8 +20,6 @@ class EnrollmentController extends CommonController {
         enroll.status === "active"
     );
 
-    console.log(alreadyExist);
-
     if (alreadyExist) {
       throw new Error(`CONFLICT: ${item} already exists`);
     }
@@ -29,21 +27,25 @@ class EnrollmentController extends CommonController {
     super.add(item);
   }
 
-  update(id, updates) {
+update(id, updates) {
   id = Number(id);
 
   const existing = this.getItemById(id);
   if (!existing) {
-    throw new Error("VALIDATION_ERROR: Enrollment with this ID does not exist");
+    throw new Error(
+      "VALIDATION_ERROR: Enrollment with this ID does not exist"
+    );
   }
-  
+
   const updatedData = { ...existing.toJSON(), ...updates };
   
   this.getAllItems().set(id, Enrollment.fromJSON(updatedData));
   this._save();
 
-  return newInstance;
+  return updatedData;
 }
+
+
 }
 
 export { EnrollmentController };

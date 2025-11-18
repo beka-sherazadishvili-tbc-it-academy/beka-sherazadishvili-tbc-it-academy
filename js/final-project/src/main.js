@@ -97,7 +97,7 @@ async function createStudent() {
   const gradeLevel = await validationQuestion(
     rl,
     "Grade level: ",
-    commonValidators.nonEmptyString("Grade level")
+    commonValidators.nonEmptyValue("Grade level")
   );
 
   let email = await validationQuestion(
@@ -146,7 +146,7 @@ async function createSubject() {
   const gradingSchemeId = await validationQuestion(
     rl,
     "grading Scheme Id: ",
-    commonValidators.nonEmptyString("grading Scheme Id")
+    commonValidators.integerNumber("grading Scheme Id")
   );
 
   const mode = await validationQuestion(
@@ -217,7 +217,7 @@ async function createEnrollment() {
 
   const overdue = await validationQuestion(
     rl,
-    "y/n: ",
+    "overdue y/n: ",
     commonValidators.booleanValidator("overdue")
   );
 

@@ -18,6 +18,17 @@ const commonValidators = {
     }
   },
 
+  nonEmptyValue: (fieldName) => (input) => {
+    try {
+      if(input.trim() === '') {
+        throw new Error(`VALIDATION_ERROR: ${fieldName} should not be empty`)
+      }
+      return true;
+    } catch (err) {
+      return err.message;
+    }
+  },
+
   arrayValidator: (fieldName) => (input) => {
     try {
       if (!Array.isArray(input) && input.length === 0) {
