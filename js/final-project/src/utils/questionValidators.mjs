@@ -87,6 +87,36 @@ const commonValidators = {
     }
   },
 
+  decimalNumbers: (fieldName) => (input) => {
+    try {
+      const num = convertStringToNumber(input);
+      isNumberValidator(num);
+
+      if(input < 0 || input > 1) {
+        throw new Error('no in range 0f 0-1');
+      }
+      return true;
+    } catch (err) {
+      const cleanMessage = err.message.replace("VALIDATION_ERROR: ", "");
+      throw new Error(`${fieldName}: ${cleanMessage}`);
+    }
+  },
+
+  validateMaxCap: (fieldName) => (input) => {
+    try {
+      const num = convertStringToNumber(input);
+      isNumberValidator(num);
+
+      if(input < 0 || input > 100) {
+        throw new Error('no in range 0f 0-100');
+      }
+      return true;
+    } catch (err) {
+      const cleanMessage = err.message.replace("VALIDATION_ERROR: ", "");
+      throw new Error(`${fieldName}: ${cleanMessage}`);
+    }
+  },
+
   integerNumber: (fieldName) => (input) => {
     try {
       const num = convertStringToNumber(input);

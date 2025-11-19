@@ -18,6 +18,7 @@ import { TranscriptService } from "../services/transcriptService.mjs";
 import { CalculationServices } from "../services/calculationServices.mjs";
 import { GradingSchemeController } from "../data-controller/gradingChemeController.mjs";
 import { GradingSchemeService } from "../services/gradingSchemeService.mjs";
+import { PolicyService } from "../services/policyService.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -97,6 +98,8 @@ export class App {
       this.#services.gradingSchemes,
       this.#controllers.gradingSchemes
     );
+
+    this.#services.policy = new PolicyService();
   }
 
   get controllers() {

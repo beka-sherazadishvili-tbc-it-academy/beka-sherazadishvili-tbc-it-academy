@@ -30,6 +30,7 @@ function studentMenu() {
   console.log("11) Subject Leaderboard");
   console.log("12) Grade Distribution");
   console.log("13) Attendance Summary");
+  console.log("14) Update Policy / Curve / Retake");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -71,6 +72,9 @@ function studentMenu() {
         break;
       case "13":
         await attendanceSummary();
+        break;
+      case "14":
+        await updatePolicy();
         break;
       case "0":
         rl.close();
@@ -561,6 +565,193 @@ async function attendanceSummary() {
   );
 
   console.log(result);
+}
+
+//14. Policies / Curve / Retake
+async function updatePolicy() {
+  const chooseOperation = await validationQuestion(
+    rl,
+    "(p)olicies / (c)urve / (r)etake: ",
+    commonValidators.statusValidator(["p", "c", "r"])
+  );
+
+  switch (chooseOperation) {
+    case "p":
+      console.log("1) weightTolerance");
+      console.log("2) lateCutoff");
+      console.log("3) incompleteDays");
+      console.log("4) attendanceThreshold (0-1)");
+      console.log("5) minPassLetter");
+
+      const choice = await validationQuestion(
+        rl,
+        "> ",
+        commonValidators.nonEmptyValue()
+      );
+      switch (choice) {
+        case "1":
+          const weightTolerance = await validationQuestion(
+            rl,
+            "tolerance (weight audit slack): ",
+            commonValidators.decimalNumbers("tolerance")
+          );
+
+          createStd.services.policy.updatePolicy({
+            weightTolerance: Number(weightTolerance),
+          });
+
+          console.log(`tolerance updated as ${weightTolerance}`);
+          break;
+        case "2":
+          const lateCutoff = await validationQuestion(
+            rl,
+            "lateCutoff (days): ",
+            commonValidators.integerNumber("lateCutoff")
+          );
+
+          createStd.services.policy.updatePolicy({
+            lateEnrollmentCutoff: Number(lateCutoff),
+          });
+
+          console.log(`lateCutoff updated as ${lateCutoff}`);
+          break;
+        case "3":
+          const incompleteDays = await validationQuestion(
+            rl,
+            "incompleteDays: ",
+            commonValidators.integerNumber("incompleteDays")
+          );
+
+          createStd.services.policy.updatePolicy({
+            incompleteHandling: { expiresAfterDays: Number(incompleteDays) },
+          });
+
+          console.log(`incompleteDays updated as ${incompleteDays}`);
+          break;
+        case "4":
+          const threshold = await validationQuestion(
+            rl,
+            "attendanceThreshold: ",
+            commonValidators.decimalNumbers("attendanceThreshold")
+          );
+          createStd.services.policy.updatePolicy({
+            attendanceThreshold: Number(threshold),
+          });
+          console.log(`attendanceThreshold updated as ${attendanceThreshold}`);
+          break;
+
+        case "5":
+          const minLetter = await validationQuestion(
+            rl,
+            "minPassLetter (for pass/fail subjects): ",
+            commonValidators.nonEmptyString("minPassLetter")
+          );
+          createStd.services.policy.updatePolicy({
+            minimumPassingLetter: minLetter,
+          });
+
+          console.log(`minPassLetter (for pass/fail subjects) as ${minLetter}`);
+          break;
+        case "0":
+          break;
+      }
+
+      break;
+    case "c":
+      console.log("1) None");
+      console.log("2) Linear (add percent + max cap)");
+      console.log("3) Percentile");
+      console.log("0) back");
+
+      const curveChoice = await validationQuestion(
+        rl,
+        "Choose curve type: ",
+        commonValidators.statusValidator(["1", "2", "3", "0"])
+      );
+
+      switch (curveChoice) {
+        case "1":
+          const curved = {
+            type: "none",
+            addPercent: null,
+            maxCap: null,
+            distribution: null,
+          };
+          createStd.services.policy.updatePolicy({
+            curve: curved,
+          });
+          console.log(`curve updated as ${curved}`);
+          break;
+
+        case "2":
+          const addPercent = await validationQuestion(
+            rl,
+            "addPercent: ",
+            commonValidators.number("addPercent")
+          );
+
+          const maxCap = await validationQuestion(
+            rl,
+            "maxCap in range 0-100: ",
+            commonValidators.validateMaxCap("maxCap")
+          );
+
+          createStd.services.policy.updatePolicy({
+            curve: {
+              type: "linear",
+              addPercent: Number(addPercent),
+              maxCap: Number(maxCap),
+              distribution: null,
+            },
+          });
+
+          console.log(
+            `added linear curve: percent - ${addPercent}%, cap - ${maxCap}%)`
+          );
+          break;
+
+        case "3":
+          const medianTarget = await validationQuestion(
+            rl,
+            "Target median percent: ",
+            commonValidators.number("medianTarget")
+          );
+
+          const percentileCap = await validationQuestion(
+            rl,
+            "Percentile cap: ",
+            commonValidators.number("percentileCap")
+          );
+
+          createStd.services.policy.updatePolicy({
+            curve: {
+              type: "percentile",
+              addPercent: null,
+              maxCap: Number(percentileCap),
+              distribution: { medianTarget: Number(medianTarget) },
+            },
+          });
+          console.log(`curve set to percentile - ${medianTarget}`);
+          break;
+
+        case "0":
+          break;
+      }
+      break;
+    case "r":
+      const retake = await validationQuestion(
+        rl,
+        "Retake policy (latest/best/average): ",
+        commonValidators.statusValidator(["latest", "best", "average"])
+      );
+
+      const updated = createStd.services.policy.updatePolicy({
+        retakePolicy: retake,
+      });
+
+      console.log(updated);
+      break;
+  }
 }
 
 studentMenu();
