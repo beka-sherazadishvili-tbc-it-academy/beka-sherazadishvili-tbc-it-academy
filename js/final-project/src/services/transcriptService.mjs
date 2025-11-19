@@ -33,7 +33,7 @@ class TranscriptService {
     this.#policy = new Policy();
   }
 
-  getTranscript(studentId) {
+  getTranscript(studentId, schemeId = 1) {
     try {
       const student = this.#studentController.getItemById(Number(studentId));
       if (!student) {
@@ -63,9 +63,6 @@ class TranscriptService {
 
         for (const enroll of enrollments) {
           const subject = this.#subjectController.getItemById(enroll.subjectId);
-          const schemeId = this.#gradingSchemeController.getItemById(
-            student.gradingSchemeId
-          );
 
           const attendanceRate = this.#attendanceService.getAttendanceRate(
             studentId,
@@ -156,8 +153,7 @@ class TranscriptService {
     }
   }
 
-  termRanking(termId) {
-    const schemeId = 1;
+  termRanking(termId, schemeId = 1) {
     try {
       const term = this.#termController.getItemById(Number(termId));
       if (!term) {

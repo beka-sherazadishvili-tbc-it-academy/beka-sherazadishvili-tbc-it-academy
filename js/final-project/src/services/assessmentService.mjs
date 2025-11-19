@@ -169,24 +169,6 @@ class AssessmentService {
     }
   }
 
-  // deleteAssessment(id) {
-  //   try {
-  //     const assessment = this.#controller.getItemById(Number(id));
-  //     if (!this.#controller.getItemById(Number(id))) {
-  //       throw new Error(`NOT_FOUND: assessment with id - ${id} not found`);
-  //     }
-
-  //     const { subjectId, termId } = assessment;
-
-  //     this.checkWeightAudit(subjectId, termId, 0, null);
-
-  //     this.#controller.delete(id);
-  //     return `Assessment ${id} deleted`;
-  //   } catch (err) {
-  //     return err.message;
-  //   }
-  // }
-
   deleteAssessment(id) {
   try {
     const assessment = this.#controller.getItemById(Number(id));
@@ -199,15 +181,11 @@ class AssessmentService {
     }
 
     const { subjectId, termId } = assessment;
-
-    // Delete first
     this.#controller.delete(id);
 
-    // Then check if weights are still valid
     try {
       this.checkWeightAudit(subjectId, termId, 0, null);
     } catch (auditError) {
-      // Rollback: re-add the assessment
       this.#controller.add(assessment);
       throw auditError;
     }
@@ -260,23 +238,6 @@ class AssessmentService {
       }
     }
   }
-
-  // checkCurrentAudit(subjectId, termId) {
-  //   const assessmentItems = this.#controller
-  //     .getAllValues()
-  //     .filter((item) => item.subjectId === subjectId && item.termId === termId);
-
-  //   if (assessmentItems.length === 0) {
-  //     return false;
-  //   }
-
-  //   const toleranceSum = assessmentItems.reduce(
-  //     (acc, item) => acc + item.weightPercent,
-  //     0
-  //   );
-
-  //   return Math.abs(toleranceSum - 100) <= this.#policy.weightTolerance;
-  // }
 }
 
 export { AssessmentService };

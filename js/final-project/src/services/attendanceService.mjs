@@ -77,97 +77,104 @@ class AttendanceService {
       );
 
       this.#controller.add(newAttendance);
-      return newAttendance;
+      return newAttendance.toJSON();
     } catch (err) {
       return err.message;
     }
   }
 
   getAttendanceRate(studentId, subjectId, termId) {
-    const attendance = this.#controller
-      .getAllValues()
-      .filter(
-        (att) =>
-          att.studentId === Number(studentId) &&
-          att.subjectId === Number(subjectId) &&
-          att.termId === Number(termId)
-      );
+    try {
+      const attendance = this.#controller
+        .getAllValues()
+        .filter(
+          (att) =>
+            att.studentId === Number(studentId) &&
+            att.subjectId === Number(subjectId) &&
+            att.termId === Number(termId)
+        );
 
-    if (attendance.length === 0) {
-      throw new Error("NOT_FOUND: no such attandace items");
-    }
-
-    let totalPresent = 0;
-
-    for (let record of attendance) {
-      if (record.status === "P") {
-        totalPresent += 1;
-      } else if (record.status === "L") {
-        totalPresent += this.#policy.lateAttendanceContribution;
+      if (attendance.length === 0) {
+        throw new Error("NOT_FOUND: no such attandace items");
       }
-    }
 
-    return ((totalPresent / attendance.length) * 100).toFixed(2);
+      let totalPresent = 0;
+
+      for (let record of attendance) {
+        if (record.status === "P") {
+          totalPresent += 1;
+        } else if (record.status === "L") {
+          totalPresent += this.#policy.lateAttendanceContribution;
+        }
+      }
+
+      return ((totalPresent / attendance.length) * 100).toFixed(2);
+    } catch (err) {
+      return err.message;
+    }
   }
 
   getAttendanceSummary(termId, subjectId = null) {
-    if (!this.#termController.getItemById(Number(termId))) {
-      throw new Error("NOT_FOUND: term does not exist");
-    }
+    try {
+      if (!this.#termController.getItemById(Number(termId))) {
+        throw new Error("NOT_FOUND: term does not exist");
+      }
 
-    let attendanceRecords = this.#controller
-      .getAllValues()
-      .filter((att) => att.termId === Number(termId));
+      let attendanceRecords = this.#controller
+        .getAllValues()
+        .filter((att) => att.termId === Number(termId));
 
-    if (subjectId) {
-      attendanceRecords = attendanceRecords.filter(
-        (att) => att.subjectId === Number(subjectId)
-      );
-    }
+      if (subjectId) {
+        attendanceRecords = attendanceRecords.filter(
+          (att) => att.subjectId === Number(subjectId)
+        );
+      }
 
-    if (attendanceRecords.length === 0) {
-      throw new Error("NOT_FOUND: no attendance for this term");
-    }
+      if (attendanceRecords.length === 0) {
+        throw new Error("NOT_FOUND: no attendance for this term");
+      }
 
-    const grouped = new Map();
+      const grouped = new Map();
 
-    for (const att of attendanceRecords) {
-      const key = `${att.studentId}_${att.subjectId}`;
+      for (const att of attendanceRecords) {
+        const key = `${att.studentId}_${att.subjectId}`;
 
-      if (!grouped.has(key)) {
-        grouped.set(key, {
-          studentId: att.studentId,
-          subjectId: att.subjectId,
-          total: 0,
-          present: 0,
+        if (!grouped.has(key)) {
+          grouped.set(key, {
+            studentId: att.studentId,
+            subjectId: att.subjectId,
+            total: 0,
+            present: 0,
+          });
+        }
+
+        const entry = grouped.get(key);
+        entry.total += 1;
+
+        if (att.status === "P") {
+          entry.present += 1;
+        } else if (att.status === "L") {
+          entry.present += this.#policy.lateAttendanceContribution;
+        }
+      }
+
+      const result = [];
+
+      for (const entry of grouped.values()) {
+        const rate = entry.total > 0 ? entry.present / entry.total : 0;
+
+        result.push({
+          studentId: entry.studentId,
+          subjectId: entry.subjectId,
+          attendanceRate: Number(rate.toFixed(4)),
+          flagged: rate < this.#policy.attendanceThreshold,
         });
       }
 
-      const entry = grouped.get(key);
-      entry.total += 1;
-
-      if (att.status === "P") {
-        entry.present += 1;
-      } else if (att.status === "L") {
-        entry.present += this.#policy.lateAttendanceContribution;
-      }
+      return result;
+    } catch (err) {
+      return err.message;
     }
-
-    const result = [];
-
-    for (const entry of grouped.values()) {
-      const rate = entry.total > 0 ? entry.present / entry.total : 0;
-
-      console.log
-      result.push({
-        studentId: entry.studentId,
-        subjectId: entry.subjectId,
-        attendanceRate: Number(rate.toFixed(4)),
-        flagged: rate < this.#policy.attendanceThreshold,
-      });
-    }
-
-    return result;
   }
 }
 

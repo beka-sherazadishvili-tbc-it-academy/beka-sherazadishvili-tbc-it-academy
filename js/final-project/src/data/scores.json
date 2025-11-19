@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "assessmentId": 1,
+    "studentId": 1,
+    "points": 17,
+    "recordedAt": "2025-11-18T23:36:16.152Z",
+    "history": []
+  },
+  {
+    "id": 2,
+    "assessmentId": 2,
+    "studentId": 1,
+    "points": 28,
+    "recordedAt": "2025-11-18T23:36:43.426Z",
+    "history": []
+  },
+  {
+    "id": 3,
+    "assessmentId": 3,
+    "studentId": 1,
+    "points": 45,
+    "recordedAt": "2025-11-18T23:37:11.569Z",
+    "history": []
+  },
+  {
+    "id": 4,
+    "assessmentId": 4,
+    "studentId": 2,
+    "points": 18,
+    "recordedAt": "2025-11-18T23:37:29.647Z",
+    "history": []
+  },
+  {
+    "id": 5,
+    "assessmentId": 5,
+    "studentId": 2,
+    "points": 25,
+    "recordedAt": "2025-11-18T23:37:46.395Z",
+    "history": []
+  },
+  {
+    "id": 6,
+    "assessmentId": 6,
+    "studentId": 2,
+    "points": 44,
+    "recordedAt": "2025-11-18T23:38:26.668Z",
+    "history": []
+  },
+  {
+    "id": 7,
+    "assessmentId": 1,
+    "studentId": 2,
+    "points": 25,
+    "recordedAt": "2025-11-18T23:40:00.000Z",
+    "history": []
+  },
+  {
+    "id": 8,
+    "assessmentId": 2,
+    "studentId": 2,
+    "points": 22,
+    "recordedAt": "2025-11-18T23:40:30.000Z",
+    "history": []
+  },
+  {
+    "id": 9,
+    "assessmentId": 3,
+    "studentId": 2,
+    "points": 40,
+    "recordedAt": "2025-11-18T23:41:00.000Z",
+    "history": []
+  },
+  {
+    "id": 10,
+    "assessmentId": 7,
+    "studentId": 2,
+    "points": 28,
+    "recordedAt": "2025-11-18T23:41:30.000Z",
+    "history": []
+  },
+  {
+    "id": 11,
+    "assessmentId": 8,
+    "studentId": 2,
+    "points": 27,
+    "recordedAt": "2025-11-18T23:42:00.000Z",
+    "history": []
+  },
+  {
+    "id": 12,
+    "assessmentId": 9,
+    "studentId": 2,
+    "points": 48,
+    "recordedAt": "2025-11-18T23:42:30.000Z",
+    "history": []
+  },
+  {
+    "id": 13,
+    "assessmentId": 10,
+    "studentId": 2,
+    "points": 27,
+    "recordedAt": "2025-11-18T23:43:00.000Z",
+    "history": []
+  },
+  {
+    "id": 14,
+    "assessmentId": 11,
+    "studentId": 2,
+    "points": 29,
+    "recordedAt": "2025-11-18T23:43:30.000Z",
+    "history": []
+  },
+  {
+    "id": 15,
+    "assessmentId": 12,
+    "studentId": 2,
+    "points": 49,
+    "recordedAt": "2025-11-18T23:44:00.000Z",
+    "history": []
+  },
+  {
+    "id": 16,
+    "assessmentId": 10,
+    "studentId": 1,
+    "points": 29,
+    "recordedAt": "2025-11-18T23:44:30.000Z",
+    "history": []
+  },
+  {
+    "id": 17,
+    "assessmentId": 11,
+    "studentId": 1,
+    "points": 30,
+    "recordedAt": "2025-11-18T23:45:00.000Z",
+    "history": []
+  },
+  {
+    "id": 18,
+    "assessmentId": 12,
+    "studentId": 1,
+    "points": 50,
+    "recordedAt": "2025-11-18T23:45:30.000Z",
+    "history": []
+  }
+]

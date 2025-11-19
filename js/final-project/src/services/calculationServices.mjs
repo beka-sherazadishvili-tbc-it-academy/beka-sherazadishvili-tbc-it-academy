@@ -127,7 +127,7 @@ class CalculationServices {
 
   GPAPoints(studentId, subjectId, termId, schemeId) {
     try {
-      this.#enrollmentController.checkIncompleteExpiry();
+      this.#enrollmenService.checkIncompleteExpiry();
 
       const percent = this.curving(studentId, subjectId, termId);
 
@@ -194,7 +194,7 @@ class CalculationServices {
   }
 
   cumulativeGPA(studentId, schemeId) {
-    this.#enrollmentController.checkIncompleteExpiry();
+    this.#enrollmenService.checkIncompleteExpiry();
 
     const enrollments = this.#enrollmentController
       .getAllValues()
