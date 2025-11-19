@@ -1,0 +1,586 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstName": "gela",
+      "lastName": "gela",
+      "gradeLevel": "9th",
+      "meta": {
+        "guardianName": "name",
+        "email": "beka@gmail.com"
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "gio",
+      "lastName": "gio",
+      "gradeLevel": "10th",
+      "meta": {
+        "guardianName": null,
+        "email": null
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "iakob",
+      "lastName": "iakob",
+      "gradeLevel": "bachelor",
+      "meta": {
+        "guardianName": null,
+        "email": null
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "burdu",
+      "lastName": "burdu",
+      "gradeLevel": "9",
+      "meta": {
+        "guardianName": null,
+        "email": null
+      }
+    },
+    {
+      "id": 5,
+      "firstName": "elene",
+      "lastName": "elene",
+      "gradeLevel": "9",
+      "meta": {
+        "guardianName": null,
+        "email": null
+      }
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "code": "MATH101",
+      "name": "mathematics",
+      "creditHours": 20,
+      "gradingSchemeId": 1,
+      "mode": "graded"
+    },
+    {
+      "id": 2,
+      "code": "math102",
+      "name": "test",
+      "creditHours": 25,
+      "gradingSchemeId": "1",
+      "mode": "graded"
+    },
+    {
+      "id": 3,
+      "code": "math121",
+      "name": "math",
+      "creditHours": 30,
+      "gradingSchemeId": "1",
+      "mode": "graded"
+    },
+    {
+      "id": 4,
+      "code": "MATH501",
+      "name": "test",
+      "creditHours": 12,
+      "gradingSchemeId": "1",
+      "mode": "graded"
+    }
+  ],
+  "terms": [
+    {
+      "id": 1,
+      "name": "2025-s1",
+      "startDate": "2025-11-20",
+      "endDate": "2026-11-20"
+    },
+    {
+      "id": 2,
+      "name": "2025-S2",
+      "startDate": "2025-11-30",
+      "endDate": "2026-11-11"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "subjectId": 1,
+      "termId": 1,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T13:44:07.415Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "subjectId": 2,
+      "termId": 2,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:14:56.197Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "studentId": 1,
+      "subjectId": 2,
+      "termId": 1,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:15:11.157Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "studentId": 2,
+      "subjectId": 1,
+      "termId": 1,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:21:21.715Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "studentId": 2,
+      "subjectId": 2,
+      "termId": 1,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:21:31.545Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "studentId": 1,
+      "subjectId": 2,
+      "termId": 2,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:21:52.451Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "studentId": 1,
+      "subjectId": 1,
+      "termId": 2,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:22:46.213Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "studentId": 2,
+      "subjectId": 1,
+      "termId": 2,
+      "status": "completed",
+      "attemptNumber": 1,
+      "createdAt": "2025-11-18T14:23:21.610Z",
+      "droppedAt": null,
+      "completedAt": "2025-12-20T10:00:00.000Z"
+    }
+  ],
+  "assessments": [
+    {
+      "id": 1,
+      "subjectId": 1,
+      "termId": 1,
+      "name": "test",
+      "type": "quiz",
+      "maxPoints": 30,
+      "weightPercent": 20,
+      "dueDate": "2025-12-11",
+      "locked": false
+    },
+    {
+      "id": 2,
+      "subjectId": 1,
+      "termId": 1,
+      "name": "tst",
+      "type": "exam",
+      "maxPoints": 30,
+      "weightPercent": 30,
+      "dueDate": "2026-05-05",
+      "locked": false
+    },
+    {
+      "id": 3,
+      "subjectId": 1,
+      "termId": 1,
+      "name": "tsts",
+      "type": "project",
+      "maxPoints": 50,
+      "weightPercent": 50,
+      "dueDate": "2026-06-06",
+      "locked": false
+    },
+    {
+      "id": 4,
+      "subjectId": 2,
+      "termId": 2,
+      "name": "test1",
+      "type": "quiz",
+      "maxPoints": 30,
+      "weightPercent": 20,
+      "dueDate": "2025-12-11",
+      "locked": false
+    },
+    {
+      "id": 6,
+      "subjectId": 2,
+      "termId": 2,
+      "name": "tsts1",
+      "type": "project",
+      "maxPoints": 50,
+      "weightPercent": 50,
+      "dueDate": "2026-06-06",
+      "locked": false
+    },
+    {
+      "id": 5,
+      "subjectId": 2,
+      "termId": 2,
+      "name": "tst1",
+      "type": "exam",
+      "maxPoints": 30,
+      "weightPercent": 30,
+      "dueDate": "2026-05-05",
+      "locked": false
+    },
+    {
+      "id": 7,
+      "subjectId": 2,
+      "termId": 1,
+      "name": "subject2-term1-quiz",
+      "type": "quiz",
+      "maxPoints": 30,
+      "weightPercent": 20,
+      "dueDate": "2025-12-11",
+      "locked": false
+    },
+    {
+      "id": 8,
+      "subjectId": 2,
+      "termId": 1,
+      "name": "subject2-term1-exam",
+      "type": "exam",
+      "maxPoints": 30,
+      "weightPercent": 30,
+      "dueDate": "2026-05-05",
+      "locked": false
+    },
+    {
+      "id": 9,
+      "subjectId": 2,
+      "termId": 1,
+      "name": "subject2-term1-project",
+      "type": "project",
+      "maxPoints": 50,
+      "weightPercent": 50,
+      "dueDate": "2026-06-06",
+      "locked": false
+    },
+    {
+      "id": 10,
+      "subjectId": 1,
+      "termId": 2,
+      "name": "subject1-term2-quiz",
+      "type": "quiz",
+      "maxPoints": 30,
+      "weightPercent": 20,
+      "dueDate": "2025-12-11",
+      "locked": false
+    },
+    {
+      "id": 11,
+      "subjectId": 1,
+      "termId": 2,
+      "name": "subject1-term2-exam",
+      "type": "exam",
+      "maxPoints": 30,
+      "weightPercent": 30,
+      "dueDate": "2026-05-05",
+      "locked": false
+    },
+    {
+      "id": 12,
+      "subjectId": 1,
+      "termId": 2,
+      "name": "subject1-term2-project",
+      "type": "project",
+      "maxPoints": 50,
+      "weightPercent": 50,
+      "dueDate": "2026-06-06",
+      "locked": false
+    }
+  ],
+  "scores": [
+    {
+      "id": 1,
+      "assessmentId": 1,
+      "studentId": 1,
+      "points": 17,
+      "recordedAt": "2025-11-18T23:36:16.152Z",
+      "history": []
+    },
+    {
+      "id": 2,
+      "assessmentId": 2,
+      "studentId": 1,
+      "points": 28,
+      "recordedAt": "2025-11-18T23:36:43.426Z",
+      "history": []
+    },
+    {
+      "id": 3,
+      "assessmentId": 3,
+      "studentId": 1,
+      "points": 45,
+      "recordedAt": "2025-11-18T23:37:11.569Z",
+      "history": []
+    },
+    {
+      "id": 4,
+      "assessmentId": 4,
+      "studentId": 2,
+      "points": 18,
+      "recordedAt": "2025-11-18T23:37:29.647Z",
+      "history": []
+    },
+    {
+      "id": 5,
+      "assessmentId": 5,
+      "studentId": 2,
+      "points": 25,
+      "recordedAt": "2025-11-18T23:37:46.395Z",
+      "history": []
+    },
+    {
+      "id": 6,
+      "assessmentId": 6,
+      "studentId": 2,
+      "points": 44,
+      "recordedAt": "2025-11-18T23:38:26.668Z",
+      "history": []
+    },
+    {
+      "id": 7,
+      "assessmentId": 1,
+      "studentId": 2,
+      "points": 25,
+      "recordedAt": "2025-11-18T23:40:00.000Z",
+      "history": []
+    },
+    {
+      "id": 8,
+      "assessmentId": 2,
+      "studentId": 2,
+      "points": 22,
+      "recordedAt": "2025-11-18T23:40:30.000Z",
+      "history": []
+    },
+    {
+      "id": 9,
+      "assessmentId": 3,
+      "studentId": 2,
+      "points": 40,
+      "recordedAt": "2025-11-18T23:41:00.000Z",
+      "history": []
+    },
+    {
+      "id": 10,
+      "assessmentId": 7,
+      "studentId": 2,
+      "points": 28,
+      "recordedAt": "2025-11-18T23:41:30.000Z",
+      "history": []
+    },
+    {
+      "id": 11,
+      "assessmentId": 8,
+      "studentId": 2,
+      "points": 27,
+      "recordedAt": "2025-11-18T23:42:00.000Z",
+      "history": []
+    },
+    {
+      "id": 12,
+      "assessmentId": 9,
+      "studentId": 2,
+      "points": 48,
+      "recordedAt": "2025-11-18T23:42:30.000Z",
+      "history": []
+    },
+    {
+      "id": 13,
+      "assessmentId": 10,
+      "studentId": 2,
+      "points": 27,
+      "recordedAt": "2025-11-18T23:43:00.000Z",
+      "history": []
+    },
+    {
+      "id": 14,
+      "assessmentId": 11,
+      "studentId": 2,
+      "points": 29,
+      "recordedAt": "2025-11-18T23:43:30.000Z",
+      "history": []
+    },
+    {
+      "id": 15,
+      "assessmentId": 12,
+      "studentId": 2,
+      "points": 49,
+      "recordedAt": "2025-11-18T23:44:00.000Z",
+      "history": []
+    },
+    {
+      "id": 16,
+      "assessmentId": 10,
+      "studentId": 1,
+      "points": 29,
+      "recordedAt": "2025-11-18T23:44:30.000Z",
+      "history": []
+    },
+    {
+      "id": 17,
+      "assessmentId": 11,
+      "studentId": 1,
+      "points": 30,
+      "recordedAt": "2025-11-18T23:45:00.000Z",
+      "history": []
+    },
+    {
+      "id": 18,
+      "assessmentId": 12,
+      "studentId": 1,
+      "points": 50,
+      "recordedAt": "2025-11-18T23:45:30.000Z",
+      "history": []
+    }
+  ],
+  "attendances": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "subjectId": 1,
+      "termId": 1,
+      "date": "2025-12-11T00:00:00.000Z",
+      "status": "P"
+    },
+    {
+      "id": 2,
+      "studentId": 1,
+      "subjectId": 1,
+      "termId": 1,
+      "date": "2025-12-12T00:00:00.000Z",
+      "status": "P"
+    },
+    {
+      "id": 3,
+      "studentId": 1,
+      "subjectId": 2,
+      "termId": 1,
+      "date": "2025-12-13T00:00:00.000Z",
+      "status": "L"
+    },
+    {
+      "id": 4,
+      "studentId": 2,
+      "subjectId": 1,
+      "termId": 1,
+      "date": "2025-12-14T00:00:00.000Z",
+      "status": "A"
+    },
+    {
+      "id": 5,
+      "studentId": 2,
+      "subjectId": 2,
+      "termId": 1,
+      "date": "2025-12-01T00:00:00.000Z",
+      "status": "L"
+    }
+  ],
+  "gradingSchemes": [
+    {
+      "id": 1,
+      "breakpoints": [
+        {
+          "minPercent": 97,
+          "letter": "A+",
+          "gpaPoints": 4
+        },
+        {
+          "minPercent": 93,
+          "letter": "A",
+          "gpaPoints": 4
+        },
+        {
+          "minPercent": 90,
+          "letter": "A-",
+          "gpaPoints": 3.7
+        },
+        {
+          "minPercent": 87,
+          "letter": "B+",
+          "gpaPoints": 3.3
+        },
+        {
+          "minPercent": 83,
+          "letter": "B",
+          "gpaPoints": 3
+        },
+        {
+          "minPercent": 80,
+          "letter": "B-",
+          "gpaPoints": 2.7
+        },
+        {
+          "minPercent": 77,
+          "letter": "C+",
+          "gpaPoints": 2.3
+        },
+        {
+          "minPercent": 73,
+          "letter": "C",
+          "gpaPoints": 2
+        },
+        {
+          "minPercent": 70,
+          "letter": "C-",
+          "gpaPoints": 1.7
+        },
+        {
+          "minPercent": 67,
+          "letter": "D+",
+          "gpaPoints": 1.3
+        },
+        {
+          "minPercent": 63,
+          "letter": "D",
+          "gpaPoints": 1
+        },
+        {
+          "minPercent": 60,
+          "letter": "D-",
+          "gpaPoints": 0.7
+        },
+        {
+          "minPercent": 0,
+          "letter": "F",
+          "gpaPoints": 0
+        }
+      ]
+    }
+  ]
+}

@@ -31,6 +31,7 @@ function studentMenu() {
   console.log("12) Grade Distribution");
   console.log("13) Attendance Summary");
   console.log("14) Update Policy / Curve / Retake");
+  console.log("15) Save JSON / Load JSON");
   console.log("16) Update Policy / Curve / Retake");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
@@ -76,6 +77,9 @@ function studentMenu() {
         break;
       case "14":
         await updatePolicy();
+        break;
+      case "15":
+        await loadAll();
         break;
       case "16":
         await listEntities();
@@ -331,7 +335,7 @@ async function assessments() {
       const dueDate = await validationQuestion(
         rl,
         "Enter due date (optional): ",
-        commonValidators.date("Enter due date (optional):") //TODO make it optional
+        commonValidators.optionalDate("Enter due date (optional):")
       );
 
       const locked = await validationQuestion(
@@ -756,6 +760,11 @@ async function updatePolicy() {
       console.log(updated);
       break;
   }
+}
+
+//15. Save JSON / Load JSON
+async function loadAll() {
+  createStd.saveAll();
 }
 
 //16. list Entities

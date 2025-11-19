@@ -20,8 +20,8 @@ const commonValidators = {
 
   nonEmptyValue: (fieldName) => (input) => {
     try {
-      if(input.trim() === '') {
-        throw new Error(`VALIDATION_ERROR: ${fieldName} should not be empty`)
+      if (input.trim() === "") {
+        throw new Error(`VALIDATION_ERROR: ${fieldName} should not be empty`);
       }
       return true;
     } catch (err) {
@@ -92,8 +92,8 @@ const commonValidators = {
       const num = convertStringToNumber(input);
       isNumberValidator(num);
 
-      if(input < 0 || input > 1) {
-        throw new Error('no in range 0f 0-1');
+      if (input < 0 || input > 1) {
+        throw new Error("no in range 0f 0-1");
       }
       return true;
     } catch (err) {
@@ -107,8 +107,8 @@ const commonValidators = {
       const num = convertStringToNumber(input);
       isNumberValidator(num);
 
-      if(input < 0 || input > 100) {
-        throw new Error('no in range 0f 0-100');
+      if (input < 0 || input > 100) {
+        throw new Error("no in range 0f 0-100");
       }
       return true;
     } catch (err) {
@@ -141,6 +141,23 @@ const commonValidators = {
       throw new Error(`Invalid ${fieldName}, date must be in the future`);
     }
     return true;
+  },
+
+  optionalDate: (fieldName) => (input) => {
+    if (input.trim() !== "") {
+      const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+      if (!dateRegex.test(input)) {
+        throw new Error(
+          `${fieldName} must be in YYYY-MM-DD format (e.g., 2024-01-15)`
+        );
+      }
+
+      const date = new Date(input);
+      if (isNaN(date.getTime()) || date < Date.now()) {
+        throw new Error(`Invalid ${fieldName}, date must be in the future`);
+      }
+      return true;
+    }
   },
 
   dateAfter: (fieldName, afterDate) => (input) => {

@@ -2,10 +2,6 @@ import { isEmailFormValidator, isStringValidator } from "../../utils/validations
 
 class Meta {
   constructor(guardianName = null, email = null) {
-    // if (guardianName === undefined || email === undefined) {
-    //   throw new Error('Meta requires exactly guardianName and email');
-    // }
-
     if (guardianName != null) {
       isStringValidator(guardianName);
     }

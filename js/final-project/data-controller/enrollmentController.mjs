@@ -45,7 +45,6 @@ update(id, updates) {
   return updatedData;
 }
 
-
 }
 
 export { EnrollmentController };

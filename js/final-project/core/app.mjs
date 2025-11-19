@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 import { StudentContoller } from "../data-controller/studentController.mjs";
 import { SubjectController } from "../data-controller/subjectController.mjs";
@@ -111,5 +112,18 @@ export class App {
 
   get services() {
     return this.#services;
+  }
+
+  saveAll(fileName = "data/data.json") {
+    const filePath = path.join(__dirname, "..", fileName);
+
+    const allData = {};
+
+    for (const [key, controller] of Object.entries(this.#controllers)) {
+      allData[key] = controller.getAllValues();
+    }
+
+    fs.writeFileSync(filePath, JSON.stringify(allData, null, 2));
+    return `saved to ${fileName}`;
   }
 }
