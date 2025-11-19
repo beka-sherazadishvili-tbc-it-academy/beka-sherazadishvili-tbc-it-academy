@@ -10,6 +10,9 @@ class TranscriptService {
   #calculationService;
   #gradingSchemeService;
   #gradingSchemeController;
+  #assessmentController;
+  #attendanceController;
+  #scoreController;
   #policy;
 
   constructor(
@@ -20,7 +23,10 @@ class TranscriptService {
     attendanceService,
     calculationService,
     gradingSchemeService,
-    gradingSchemeController
+    gradingSchemeController,
+    assessmentController,
+    attendanceController,
+    scoreCpntroller
   ) {
     this.#studentController = studentController;
     this.#subjectController = subjectController;
@@ -30,6 +36,9 @@ class TranscriptService {
     this.#calculationService = calculationService;
     this.#gradingSchemeService = gradingSchemeService;
     this.#gradingSchemeController = gradingSchemeController;
+    this.#assessmentController = assessmentController;
+    this.#attendanceController = attendanceController;
+    this.#scoreController = scoreCpntroller
     this.#policy = new Policy();
   }
 
@@ -409,6 +418,48 @@ class TranscriptService {
     } catch (err) {
       return err.message;
     }
+  }
+
+  listEntitieset() {
+    console.log('---Students---')
+    this.#studentController
+      .getAllValues()
+      .forEach((student) => console.log(student.toJSON()));
+
+    console.log('---Subjects---')
+    this.#subjectController
+      .getAllValues()
+      .forEach((subject) => console.log(subject.toJSON()));
+
+    console.log('---Term---')
+    this.#termController
+      .getAllValues()
+      .forEach((term) => console.log(term.toJSON()));
+
+    console.log('---Enrollments---')
+    this.#enrollmentController
+      .getAllValues()
+      .forEach((enroll) => console.log(enroll.toJSON()));
+
+    console.log('---Assessments---')
+    this.#assessmentController
+      .getAllValues()
+      .forEach((assess) => console.log(assess.toJSON()));
+
+    console.log('---Attendance---')
+    this.#attendanceController
+      .getAllValues()
+      .forEach((att) => console.log(att.toJSON()));
+
+    console.log('---Score---')
+    this.#scoreController
+      .getAllValues()
+      .forEach((score) => console.log(score.toJSON()));
+
+    console.log('---Grading---')
+    this.#gradingSchemeController
+      .getAllValues()
+      .forEach((grade) => console.log(grade.toJSON()));
   }
 }
 

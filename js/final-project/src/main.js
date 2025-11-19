@@ -31,6 +31,7 @@ function studentMenu() {
   console.log("12) Grade Distribution");
   console.log("13) Attendance Summary");
   console.log("14) Update Policy / Curve / Retake");
+  console.log("16) Update Policy / Curve / Retake");
   console.log("0) Exit");
   rl.question("> ", async (choice) => {
     switch (choice) {
@@ -75,6 +76,9 @@ function studentMenu() {
         break;
       case "14":
         await updatePolicy();
+        break;
+      case "16":
+        await listEntities();
         break;
       case "0":
         rl.close();
@@ -752,6 +756,11 @@ async function updatePolicy() {
       console.log(updated);
       break;
   }
+}
+
+//16. list Entities
+async function listEntities() {
+  createStd.services.transcripts.listEntitieset();
 }
 
 studentMenu();

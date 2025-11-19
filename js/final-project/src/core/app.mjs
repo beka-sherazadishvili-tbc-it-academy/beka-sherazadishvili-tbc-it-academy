@@ -96,7 +96,10 @@ export class App {
       this.#services.attendances,
       this.#services.calculations,
       this.#services.gradingSchemes,
-      this.#controllers.gradingSchemes
+      this.#controllers.gradingSchemes,
+      this.#controllers.assessments,
+      this.#controllers.attendances,
+      this.#controllers.scores,
     );
 
     this.#services.policy = new PolicyService();
