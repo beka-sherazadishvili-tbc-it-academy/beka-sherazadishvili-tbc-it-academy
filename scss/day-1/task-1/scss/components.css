@@ -1,0 +1,446 @@
+.buttons-component {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 39px 33px 28px;
+  width: 1120px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+
+.button-type {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 245.5px;
+  height: 76px;
+  margin-top: 10px;
+}
+
+.btn, body .layout main .button-container .buttons-component > div .button-type div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+body {
+  width: 1440px;
+  font-family: "Inter", sans-serif;
+}
+body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 77px;
+  border-bottom: 1px solid #E5E7EB;
+}
+body header .header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1376px;
+  height: 44px;
+}
+body header .header-container div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 458.45px;
+  height: 32px;
+  gap: 31.5px;
+}
+body header .header-container div:first-child h1 {
+  font-size: 24.5px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  height: auto;
+}
+body header .header-container div:first-child p {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  height: auto;
+  color: #2563EB;
+}
+body header .header-container div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 73px;
+}
+body .layout {
+  display: flex;
+  width: 1440px;
+}
+body .layout aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 255px;
+  gap: 16px;
+  padding: 26px 25px 24px 23px;
+}
+body .layout aside h3 {
+  font-size: 15px;
+}
+body .layout aside nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  font-size: 15px;
+  gap: 25px;
+  margin: 3px 0px 0px 6px;
+  padding: 16px 0px 0px;
+  border-top: 1px solid #E5E7EB;
+}
+body .layout aside nav > div {
+  padding: 0px 7px;
+}
+body .layout aside nav > div label {
+  padding-left: 10px;
+}
+body .layout aside nav > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 203px;
+  height: 36px;
+  background-color: #EFF6FF;
+  border-radius: 8px;
+}
+body .layout aside nav > div:first-child div {
+  width: 12.25px;
+  height: 14px;
+  background-color: #2563EB;
+  border-radius: 2px;
+}
+body .layout aside nav > div:first-child label {
+  color: #2563EB;
+}
+body .layout aside nav > div:last-child label {
+  padding-left: 2px;
+}
+body .layout main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 69px;
+  width: 1184px;
+  background-color: #F9FAFB;
+  border-left: 1px solid #E5E7EB;
+  padding: 34px 32px 32px;
+}
+body .layout main .button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 32px;
+}
+body .layout main .button-container .buttons-component-1 {
+  height: 194px;
+}
+body .layout main .button-container .buttons-component-2 {
+  height: 196px;
+}
+body .layout main .button-container .buttons-component-3 {
+  height: 196px;
+}
+body .layout main .button-container .buttons-component-4 {
+  height: 182px;
+}
+body .layout main .button-container .buttons-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  height: auto;
+  padding-bottom: 17px;
+}
+body .layout main .button-container .buttons-header p {
+  font-size: 16px;
+  letter-spacing: 0.1px;
+}
+body .layout main .button-container .buttons-component h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  height: auto;
+}
+body .layout main .button-container .buttons-component > div {
+  display: flex;
+  gap: 25px;
+}
+body .layout main .button-container .buttons-component > div .button-type p {
+  font-size: 15px;
+}
+body .layout main .button-container .buttons-component-1 .button-type .btn-primary {
+  background-color: #2563EB;
+  color: #FFFFFF;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-1 .button-type .btn-secondary {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-1 .button-type .btn-active {
+  background-color: #1E40AF;
+  color: #FFFFFF;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-1 .button-type .btn-disabled {
+  background-color: #D1D5DB;
+  color: #6B7280;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-2 .button-type .btn-primary {
+  background-color: #F3F4F6;
+  color: #111827;
+  height: 43px;
+  border: 1px solid #D1D5DB;
+}
+body .layout main .button-container .buttons-component-2 .button-type .btn-secondary {
+  background-color: #E5E7EB;
+  color: #111827;
+  height: 43px;
+  border: 1px solid #D1D5DB;
+}
+body .layout main .button-container .buttons-component-2 .button-type .btn-active {
+  background-color: #D1D5DB;
+  color: #111827;
+  height: 43px;
+  border: 1px solid #9CA3AF;
+}
+body .layout main .button-container .buttons-component-2 .button-type .btn-disabled {
+  background-color: #F9FAFB;
+  color: #9CA3AF;
+  height: 43px;
+  border: 1px solid #E5E7EB;
+}
+body .layout main .button-container .buttons-component-3 .button-type .btn-primary {
+  background-color: #2563EB;
+  color: #FFFFFF;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-3 .button-type .btn-secondary {
+  background-color: #16A34A;
+  color: #FFFFFF;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-3 .button-type .btn-active {
+  background-color: #F3F4F6;
+  color: #FFFFFF;
+  height: 40px;
+  height: 43px;
+  border: 1px solid #9CA3AF;
+}
+body .layout main .button-container .buttons-component-3 .button-type .btn-disabled {
+  background-color: #2563EB;
+  color: #FFFFFF;
+  height: 40px;
+}
+body .layout main .button-container .buttons-component-3 .button-type div {
+  gap: 10px;
+}
+body .layout main .button-container .buttons-component-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes {
+  gap: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes > div {
+  display: flex;
+  align-items: center;
+  gap: 4.5px;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes > div span {
+  font-size: 14px;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes > div .btn-primary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes > div .btn-small {
+  width: 60.48px;
+  height: 32px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  color: #FFFFFF;
+  background-color: #2563EB;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes > div .btn-medium {
+  width: 93.77px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  color: #FFFFFF;
+  background-color: #2563EB;
+}
+body .layout main .button-container .buttons-component-4 .button-sizes > div .btn-large {
+  width: 96.75px;
+  height: 52px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  background-color: #2563EB;
+}
+body .layout main .input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 32px;
+}
+body .layout main .input-container .inputs-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  height: auto;
+  padding-bottom: 17px;
+}
+body .layout main .input-container .inputs-header p {
+  font-size: 16px;
+  letter-spacing: 0.1px;
+}
+body .layout main .input-container .input-texts {
+  width: 1120px;
+  height: 452px;
+}
+body .layout main .input-container .input-texts h1 {
+  font-size: 21px;
+}
+body .layout main .input-container .input-texts .input-forms {
+  display: grid;
+  grid-template-columns: 511px 511px;
+  grid-template-rows: 80px 80px 107px;
+  gap: 32px;
+}
+body .layout main .input-container .input-texts .input-forms div {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  gap: 15px;
+}
+body .layout main .input-container .input-texts .input-forms div span {
+  font-size: 14px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-default {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  letter-spacing: 0.5px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-default::-moz-placeholder {
+  color: #ADAEBC;
+}
+body .layout main .input-container .input-texts .input-forms div .input-default::placeholder {
+  color: #ADAEBC;
+}
+body .layout main .input-container .input-texts .input-forms div .input-value {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  letter-spacing: 0.5px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-value::-moz-placeholder {
+  color: #000000;
+}
+body .layout main .input-container .input-texts .input-forms div .input-value::placeholder {
+  color: #000000;
+}
+body .layout main .input-container .input-texts .input-forms div .input-focused {
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid #2563EB;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  letter-spacing: 0.5px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-focused::-moz-placeholder {
+  color: #ADAEBC;
+}
+body .layout main .input-container .input-texts .input-forms div .input-focused::placeholder {
+  color: #ADAEBC;
+}
+body .layout main .input-container .input-texts .input-forms div .input-disabled {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  letter-spacing: 0.5px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-disabled::-moz-placeholder {
+  color: #ADAEBC;
+}
+body .layout main .input-container .input-texts .input-forms div .input-disabled::placeholder {
+  color: #ADAEBC;
+}
+body .layout main .input-container .input-texts .input-forms div .input-invalid {
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid #EF4444;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  letter-spacing: 0.5px;
+  margin: 2px 0px -1px 0px;
+  padding: 2px 1px 3px 8px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-invalid::-moz-placeholder {
+  color: #000000;
+}
+body .layout main .input-container .input-texts .input-forms div .input-invalid::placeholder {
+  color: #000000;
+}
+body .layout main .input-container .input-texts .input-forms div .input-valid {
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid #16A34A;
+  font-size: 16px;
+  padding: 2px 0 0 10px;
+  letter-spacing: 0.5px;
+  margin: 2px 0px -1px 0px;
+  padding: 2px 1px 3px 8px;
+}
+body .layout main .input-container .input-texts .input-forms div .input-valid::-moz-placeholder {
+  color: #000000;
+}
+body .layout main .input-container .input-texts .input-forms div .input-valid::placeholder {
+  color: #000000;
+}
+body .layout main .input-container .input-texts .input-forms div .success {
+  color: #16A34A;
+}
+body .layout main .input-container .input-texts .input-forms div .error {
+  color: #EF4444;
+}/*# sourceMappingURL=components.css.map */
