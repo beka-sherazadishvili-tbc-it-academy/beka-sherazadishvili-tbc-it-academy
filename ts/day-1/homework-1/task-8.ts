@@ -8,3 +8,5 @@ function clamp(n: number, min: number, max: number): number {
 
   return n;
 }
+
+// ვეღარ მოვასწარიი ((
