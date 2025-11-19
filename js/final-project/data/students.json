@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "firstName": "gela",
+    "lastName": "gela",
+    "gradeLevel": "9th",
+    "meta": {
+      "guardianName": "name",
+      "email": "beka@gmail.com"
+    }
+  },
+  {
+    "id": 2,
+    "firstName": "gio",
+    "lastName": "gio",
+    "gradeLevel": "10th",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  },
+  {
+    "id": 3,
+    "firstName": "iakob",
+    "lastName": "iakob",
+    "gradeLevel": "bachelor",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  },
+  {
+    "id": 4,
+    "firstName": "burdu",
+    "lastName": "burdu",
+    "gradeLevel": "9",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  },
+  {
+    "id": 5,
+    "firstName": "sula",
+    "lastName": "sula",
+    "gradeLevel": "9",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  },
+  {
+    "id": 5,
+    "firstName": "elene",
+    "lastName": "elene",
+    "gradeLevel": "9",
+    "meta": {
+      "guardianName": null,
+      "email": null
+    }
+  }
+]

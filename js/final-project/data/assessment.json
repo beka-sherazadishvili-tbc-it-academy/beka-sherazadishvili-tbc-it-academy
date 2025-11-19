@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "subjectId": 1,
+    "termId": 1,
+    "name": "test",
+    "type": "quiz",
+    "maxPoints": 30,
+    "weightPercent": 20,
+    "dueDate": "2025-12-11",
+    "locked": false
+  },
+  {
+    "id": 2,
+    "subjectId": 1,
+    "termId": 1,
+    "name": "tst",
+    "type": "exam",
+    "maxPoints": 30,
+    "weightPercent": 30,
+    "dueDate": "2026-05-05",
+    "locked": false
+  },
+  {
+    "id": 3,
+    "subjectId": 1,
+    "termId": 1,
+    "name": "tsts",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2026-06-06",
+    "locked": false
+  },
+  {
+    "id": 4,
+    "subjectId": 2,
+    "termId": 2,
+    "name": "test1",
+    "type": "quiz",
+    "maxPoints": 30,
+    "weightPercent": 20,
+    "dueDate": "2025-12-11",
+    "locked": false
+  },
+  {
+    "id": 6,
+    "subjectId": 2,
+    "termId": 2,
+    "name": "tsts1",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2026-06-06",
+    "locked": false
+  },
+  {
+    "id": 5,
+    "subjectId": 2,
+    "termId": 2,
+    "name": "tst1",
+    "type": "exam",
+    "maxPoints": 30,
+    "weightPercent": 30,
+    "dueDate": "2026-05-05",
+    "locked": false
+  },  {
+    "id": 7,
+    "subjectId": 2,
+    "termId": 1,
+    "name": "subject2-term1-quiz",
+    "type": "quiz",
+    "maxPoints": 30,
+    "weightPercent": 20,
+    "dueDate": "2025-12-11",
+    "locked": false
+  },
+  {
+    "id": 8,
+    "subjectId": 2,
+    "termId": 1,
+    "name": "subject2-term1-exam",
+    "type": "exam",
+    "maxPoints": 30,
+    "weightPercent": 30,
+    "dueDate": "2026-05-05",
+    "locked": false
+  },
+  {
+    "id": 9,
+    "subjectId": 2,
+    "termId": 1,
+    "name": "subject2-term1-project",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2026-06-06",
+    "locked": false
+  },{
+    "id": 10,
+    "subjectId": 1,
+    "termId": 2,
+    "name": "subject1-term2-quiz",
+    "type": "quiz",
+    "maxPoints": 30,
+    "weightPercent": 20,
+    "dueDate": "2025-12-11",
+    "locked": false
+  },
+  {
+    "id": 11,
+    "subjectId": 1,
+    "termId": 2,
+    "name": "subject1-term2-exam",
+    "type": "exam",
+    "maxPoints": 30,
+    "weightPercent": 30,
+    "dueDate": "2026-05-05",
+    "locked": false
+  },
+  {
+    "id": 12,
+    "subjectId": 1,
+    "termId": 2,
+    "name": "subject1-term2-project",
+    "type": "project",
+    "maxPoints": 50,
+    "weightPercent": 50,
+    "dueDate": "2026-06-06",
+    "locked": false
+  }
+]

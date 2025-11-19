@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "studentId": 1,
+    "subjectId": 1,
+    "termId": 1,
+    "date": "2025-12-11T00:00:00.000Z",
+    "status": "P"
+  },
+  {
+    "id": 2,
+    "studentId": 1,
+    "subjectId": 1,
+    "termId": 1,
+    "date": "2025-12-12T00:00:00.000Z",
+    "status": "P"
+  },
+  {
+    "id": 3,
+    "studentId": 1,
+    "subjectId": 2,
+    "termId": 1,
+    "date": "2025-12-13T00:00:00.000Z",
+    "status": "L"
+  },
+  {
+    "id": 4,
+    "studentId": 2,
+    "subjectId": 1,
+    "termId": 1,
+    "date": "2025-12-14T00:00:00.000Z",
+    "status": "A"
+  },
+  {
+    "id": 5,
+    "studentId": 2,
+    "subjectId": 2,
+    "termId": 1,
+    "date": "2025-12-01T00:00:00.000Z",
+    "status": "L"
+  }
+]

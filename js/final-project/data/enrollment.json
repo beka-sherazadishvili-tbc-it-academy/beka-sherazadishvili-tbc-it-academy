@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "studentId": 1,
+    "subjectId": 1,
+    "termId": 1,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T13:44:07.415Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "studentId": 2,
+    "subjectId": 2,
+    "termId": 2,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:14:56.197Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "studentId": 1,
+    "subjectId": 2,
+    "termId": 1,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:15:11.157Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "studentId": 2,
+    "subjectId": 1,
+    "termId": 1,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:21:21.715Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "studentId": 2,
+    "subjectId": 2,
+    "termId": 1,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:21:31.545Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "studentId": 1,
+    "subjectId": 2,
+    "termId": 2,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:21:52.451Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 7,
+    "studentId": 1,
+    "subjectId": 1,
+    "termId": 2,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:22:46.213Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  },
+  {
+    "id": 8,
+    "studentId": 2,
+    "subjectId": 1,
+    "termId": 2,
+    "status": "completed",
+    "attemptNumber": 1,
+    "createdAt": "2025-11-18T14:23:21.610Z",
+    "droppedAt": null,
+    "completedAt": "2025-12-20T10:00:00.000Z"
+  }
+]

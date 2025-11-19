@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "code": "MATH101",
+    "name": "mathematics",
+    "creditHours": 20,
+    "gradingSchemeId": 1,
+    "mode": "graded"
+  },
+  {
+    "id": 2,
+    "code": "math102",
+    "name": "test",
+    "creditHours": 25,
+    "gradingSchemeId": "1",
+    "mode": "graded"
+  },
+  {
+    "id": 3,
+    "code": "math121",
+    "name": "math",
+    "creditHours": 30,
+    "gradingSchemeId": "1",
+    "mode": "graded"
+  },
+  {
+    "id": 4,
+    "code": "MATH501",
+    "name": "test",
+    "creditHours": 12,
+    "gradingSchemeId": "1",
+    "mode": "graded"
+  }
+]

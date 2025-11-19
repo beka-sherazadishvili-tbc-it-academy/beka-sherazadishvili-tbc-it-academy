@@ -1,0 +1,119 @@
+import fs from "fs";
+import path from "path";
+
+class CommonController {
+  #items = new Map();
+  #counter = 0;
+  #currentClass;
+  #path;
+
+  constructor(currentClass, filePath = null) {
+    this.#currentClass = currentClass;
+    this.#path = filePath;
+
+    if (this.#path) {
+      this.#load();
+    }
+  }
+
+  getItemById(id) {
+    return this.#items.get(Number(id)) || null;
+  }
+
+  getAllItems() {
+    return this.#items;
+  }
+
+  getAllValues() {
+    return [...this.#items.values()];
+  }
+
+  clearAll() {
+    this.#items.clear();
+    this.#counter = 0;
+    this.#save();
+  }
+
+  add(item) {
+    if (!(item instanceof this.#currentClass)) {
+      throw new Error(`VALIDATION_ERROR: Object must be instance of ${this.#currentClass.name}`);
+    }
+
+    if (!item.id) {
+      item.id = ++this.#counter;
+    }
+
+    if (this.#items.has(item.id)) {
+      throw new Error(`CONFLICT: item with ID ${item.id} already exists`);
+    }
+
+    this.#items.set(Number(item.id), item);
+    this.#save();
+  }
+
+  update(id, obj) {
+    id = Number(id);
+
+    if (!this.#items.has(id)) {
+      throw new Error('VALIDATION_ERROR: id does not exists')
+    }
+
+    const newInstance = this.#currentClass.fromJSON
+    ? this.#currentClass.fromJSON(obj)
+    : new this.#currentClass(...Object.values(obj));
+
+    this.#items.set(id, newInstance);
+    this.#save();
+  }
+
+  delete(id) {
+    id = Number(id);
+
+    if (!this.#items.has(id)) {
+      throw new Error('VALIDATION_ERROR: id does not exists')
+    }
+
+    this.#items.delete(id);
+    this.#save();
+  }
+
+  _save() {
+    this.#save();
+  }
+  
+  #save() {
+    if (!this.#path) return;
+
+    const dir = path.dirname(this.#path);
+
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    const arr = [...this.#items.values()];
+    fs.writeFileSync(this.#path, JSON.stringify(arr, null, 2));
+  }
+
+  #load() {
+    if (!fs.existsSync(this.#path)) return;
+
+    const raw = fs.readFileSync(this.#path, "utf8");
+    const arr = JSON.parse(raw || "[]");
+
+    let maxId = 0;
+
+    arr.forEach((dataObj) => {
+      const instance = this.#currentClass.fromJSON
+        ? this.#currentClass.fromJSON(dataObj)
+        : new this.#currentClass(...Object.values(dataObj));
+
+      this.#items.set(Number(instance.id), instance);
+
+      if (instance.id > maxId) maxId = instance.id;
+    });
+
+    this.#counter = maxId;
+  }
+}
+
+export { CommonController };
