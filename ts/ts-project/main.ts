@@ -311,18 +311,20 @@ async function addCard(boardId: string) {
 }
 
 async function viewCard(boardId: string) {
-  app.services.lists.getAllListName(boardId);
+  app.services.cards.getAllCardName(boardId);
 
-  const listIndex = await validationQuestion(
+  const cardIndex = await validationQuestion(
     rl,
     "Choose card (numeric): ",
     Validators.isValidNumber
   );
 
-  app.services.cards.createCard(
+  const cardDetails = app.services.cards.getCardNameByIndex(
     boardId,
-    listIndex,
+    Number(cardIndex) - 1,
   );
+
+  console.log(cardDetails)
 
   return manageCardsMenu(boardId);
 }

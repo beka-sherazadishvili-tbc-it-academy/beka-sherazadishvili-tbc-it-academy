@@ -2,7 +2,7 @@ import { CardController } from "../data-controller/cardController";
 import { randomUUID } from "crypto";
 import { BoardController } from "../data-controller/boardController";
 import { ListController } from "../data-controller/listController";
-import { Card } from "../models/card";
+import { Card, ICard } from "../models/card";
 
 export class CardService {
   constructor(
@@ -55,5 +55,27 @@ export class CardService {
     }
   }
 
-  public getAllCardName(boardId: string): void {}
+  public getAllCardName(boardId: string): void {
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
+
+      for (let i = 0; i < existingBoard.cards.length; i++) {
+        console.log(`${i}) ${existingBoard.cards[i]?.title}`);
+      }
+    } catch (err) {
+      console.error((err as Error).message);
+    }
+  }
+
+  public getCardNameByIndex(boardId: string, index: number): ICard | undefined {
+    const existingBoard = this.boardController.getItemById(boardId);
+    if (!existingBoard) {
+      throw new Error("NOT_FOUND: board not found");
+    }
+
+    return existingBoard.cards[index]?.toJSON();
+  }
 }
