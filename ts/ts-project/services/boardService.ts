@@ -1,7 +1,5 @@
-import { CardController } from "../data-controller/cardController";
 import { randomUUID } from "crypto";
 import { BoardController } from "../data-controller/boardController";
-import { ListController } from "../data-controller/listController";
 import { Board, IBoard } from "../models/board";
 
 export class BoardService {
@@ -44,10 +42,6 @@ export class BoardService {
       }
 
       console.log('--- Board List ---')
-      // for (let i = 0; i < boards.length; i++) {
-      //   console.log(`${i + 1}) ${boards[i]?.name}`);
-      // }
-
       boards.forEach((board, i) => {
         console.log(`${i + 1}) ${board.name}`);
       });

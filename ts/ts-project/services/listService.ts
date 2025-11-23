@@ -1,6 +1,5 @@
 import { randomUUID } from "crypto";
 import { BoardController } from "../data-controller/boardController";
-import { CardController } from "../data-controller/cardController";
 import { ListController } from "../data-controller/listController";
 import { IList, List } from "../models/list";
 import { Board } from "../models/board";

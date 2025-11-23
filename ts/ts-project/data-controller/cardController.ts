@@ -13,18 +13,6 @@ export class CardController {
     return board;
   }
 
-  public getCardsInList(boardId: string, listId: string): Card[] {
-    const board = this.getBoard(boardId);
-    const list = board.lists.find((item) => item.id === listId);
-    if (!list) {
-      throw new Error("NOT_FOUND: list not found");
-    }
-
-    return list.cardOrder
-      .map((cardId) => board.cards.find((card) => card.id === cardId))
-      .filter((card): card is Card => card !== undefined);
-  }
-
   public add(boardId: string, listId: string, card: Card): void {
     const board = this.getBoard(boardId);
     const list = board.lists.find((item) => item.id === listId);

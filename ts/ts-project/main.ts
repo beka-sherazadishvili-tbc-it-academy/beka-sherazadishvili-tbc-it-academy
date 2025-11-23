@@ -258,9 +258,9 @@ async function manageCardsMenu(boardId: string) {
     case "5":
       await moveCard(boardId);
       break;
-    // case "6":
-    //   await reorderCard(boardId);
-    //   break;
+    case "6":
+      await reorderCard(boardId);
+      break;
     case "7":
       return boardMenu(boardId);
     default:
@@ -443,5 +443,65 @@ async function moveCard(boardId: string) {
   console.log("Crad moved");
   return manageCardsMenu(boardId);
 }
+
+async function reorderCard(boardId: string) {
+  console.log("\n--- REORDER CARD ---");
+
+  app.services.lists.getAllListName(boardId);
+
+  const listIndex = Number(
+    await validationQuestion(
+      rl,
+      "Choose list (numeric): ",
+      Validators.isValidNumber
+    )
+  ) - 1;
+
+  const board = app.controllers.boards.getItemById(boardId);
+  if (!board) {
+    console.log("NOT_FOUND: board not found");
+    return manageCardsMenu(boardId);
+  }
+
+  const list = board.lists[listIndex];
+  if (!list) {
+    console.log("NOT_FOUND: list not found");
+    return manageCardsMenu(boardId);
+  }
+
+  console.log("\nCurrent card order:");
+  list.cardOrder.forEach((cardId: string, i: number) => {
+    const card = board.cards.find((card: Card) => card.id === cardId);
+    console.log(`${i + 1}) ${card?.title ?? "[missing]"}`);
+  });
+
+  const cardIndex = Number(
+    await validationQuestion(
+      rl,
+      "Select card (numeric): ",
+      Validators.isValidNumber
+    )
+  ) - 1;
+
+  const newIndex = Number(
+    await validationQuestion(
+      rl,
+      "Move to position (numeric): ",
+      Validators.isValidNumber
+    )
+  ) - 1;
+
+  app.services.cards.reorderCards(
+    boardId,
+    listIndex,
+    cardIndex,
+    newIndex
+  );
+
+  console.log("Card reordered");
+
+  return manageCardsMenu(boardId);
+}
+
 
 mainMenu();

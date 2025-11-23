@@ -32,9 +32,4 @@ export class AppStateController {
   getState(): AppState {
     return this.state;
   }
-
-//   replaceState(newState: AppState) {
-//     this.state = newState;
-//     this.save();
-//   }
 }

@@ -3,6 +3,7 @@ import { randomUUID } from "crypto";
 import { BoardController } from "../data-controller/boardController";
 import { ListController } from "../data-controller/listController";
 import { Card, ICard } from "../models/card";
+import { List } from "../models/list";
 
 export class CardService {
   constructor(
@@ -64,12 +65,16 @@ export class CardService {
   }
 
   public getCardNameByIndex(boardId: string, index: number): ICard | undefined {
-    const existingBoard = this.boardController.getItemById(boardId);
-    if (!existingBoard) {
-      throw new Error("NOT_FOUND: board not found");
-    }
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
 
-    return existingBoard.cards[index]?.toJSON();
+      return existingBoard.cards[index]?.toJSON();
+    } catch (err) {
+      console.error((err as Error).message);
+    }
   }
 
   public updateCard(
@@ -121,31 +126,72 @@ export class CardService {
     }
   }
 
-  public moveCard(
+  public moveCard(boardId: string, cardIndex: number, targetIndex: number) {
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
+
+      const targetItem = existingBoard.lists[targetIndex];
+      if (!targetItem) {
+        throw new Error("NOT_FOUND: card not found");
+      }
+
+      const cardItem = existingBoard.cards[cardIndex];
+      if (!cardItem) {
+        throw new Error("NOT_FOUND: card not found");
+      }
+
+      this.cardController.deleteFromList(boardId, cardItem.id);
+      this.cardController.addExistingCardToList(
+        boardId,
+        targetItem.id,
+        cardItem.id
+      );
+    } catch (err) {
+      console.error((err as Error).message);
+    }
+  }
+
+  public reorderCards(
     boardId: string,
+    listIndex: number,
     cardIndex: number,
-    targetIndex: number
-  ) {
-    const existingBoard = this.boardController.getItemById(boardId);
-    if (!existingBoard) {
-      throw new Error("NOT_FOUND: board not found");
-    }
+    newIndex: number
+  ): void {
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
 
-    const targetItem = existingBoard.lists[targetIndex];
-    if (!targetItem) {
-      throw new Error("NOT_FOUND: card not found");
-    }
+      const listItem = existingBoard.lists[listIndex];
+      if (!listItem) {
+        throw new Error("NOT_FOUND: list not found");
+      }
 
-    const cardItem = existingBoard.cards[cardIndex];
-    if (!cardItem) {
-      throw new Error("NOT_FOUND: card not found");
-    }
+      const cardOrder = listItem.cardOrder;
 
-    this.cardController.deleteFromList(boardId, cardItem.id);
-    this.cardController.addExistingCardToList(
-      boardId,
-      targetItem.id,
-      cardItem.id
-    );
+      if (cardIndex < 0 || cardIndex >= cardOrder.length) {
+        throw new Error("INVALID: card index out of range");
+      }
+
+      if (newIndex < 0 || newIndex >= cardOrder.length) {
+        throw new Error("INVALID: new index out of range");
+      }
+
+      const [cardId] = cardOrder.splice(cardIndex, 1);
+
+      if (!cardId) {
+        throw new Error("NOT_FOUND: no cuch id");
+      }
+
+      cardOrder.splice(newIndex, 0, cardId);
+
+      this.listController.update(boardId, List.fromJSON(listItem));
+    } catch (err) {
+      console.error((err as Error).message);
+    }
   }
 }
