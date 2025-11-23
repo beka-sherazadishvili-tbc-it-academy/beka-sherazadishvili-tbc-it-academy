@@ -5,11 +5,7 @@ import { ListController } from "../data-controller/listController";
 import { Board, IBoard } from "../models/board";
 
 export class BoardService {
-  constructor(
-    private cardController: CardController,
-    private boardController: BoardController,
-    private listController: ListController
-  ) {}
+  constructor(private boardController: BoardController) {}
 
   createBoard(name: string): IBoard | undefined {
     try {

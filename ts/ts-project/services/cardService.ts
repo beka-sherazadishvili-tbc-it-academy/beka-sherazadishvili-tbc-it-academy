@@ -11,34 +11,49 @@ export class CardService {
     private listController: ListController
   ) {}
 
-  createCard(
+  public createCard(
     boardId: string,
-    listId: string,
+    listId: number,
     title: string,
-    description: string = "",
+    description: string,
     labels: string[] = [],
     dueDate: string | null = null
-  ): Card {
-    const existingBoard = this.boardController.getItemById(boardId);
-    if (!existingBoard) {
-      throw new Error("NOT_FOUND: board not found");
+  ): Card | undefined {
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
+
+      const listItem = existingBoard.lists[listId];
+
+      if (!listItem) {
+        throw new Error("NOT_FOUND: no such item in the list");
+      }
+
+      const existingList = this.listController.getItemById(
+        boardId,
+        listItem.id
+      );
+      if (!existingList) {
+        throw new Error("NOT_FOUND: list not found");
+      }
+
+      const card = new Card(
+        randomUUID(),
+        title,
+        description,
+        labels,
+        new Date().toISOString(),
+        dueDate
+      );
+
+      this.cardController.add(boardId, listItem.id, card);
+      return card;
+    } catch (err) {
+      console.error((err as Error).message);
     }
-
-    const existingList = this.listController.getItemById(boardId, listId);
-    if (!existingList) {
-      throw new Error("NOT_FOUND: list not found");
-    }
-
-    const card = new Card(
-      randomUUID(),
-      title,
-      description,
-      labels,
-      new Date().toISOString(),
-      dueDate
-    );
-
-    this.cardController.add(boardId, listId, card);
-    return card;
   }
+
+  public getAllCardName(boardId: string): void {}
 }

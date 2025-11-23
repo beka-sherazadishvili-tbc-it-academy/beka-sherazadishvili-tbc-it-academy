@@ -14,21 +14,16 @@ export class App {
   constructor() {
     const base = path.join(__dirname, "..", "data");
     const statePath: string = path.join(base, "app-state.json");
-    
+
     console.log("Data file path:", statePath);
     this.controllers.state = new AppStateController(statePath);
     this.controllers.boards = new BoardController(this.controllers.state);
     this.controllers.lists = new ListController(this.controllers.state);
     this.controllers.cards = new CardController(this.controllers.state);
 
-    this.services.boards = new BoardService(
-      this.controllers.cards,
-      this.controllers.boards,
-      this.controllers.lists
-    );
-   
+    this.services.boards = new BoardService(this.controllers.boards);
+
     this.services.lists = new ListService(
-      this.controllers.cards,
       this.controllers.boards,
       this.controllers.lists
     );

@@ -7,7 +7,6 @@ import { Board } from "../models/board";
 
 export class ListService {
   constructor(
-    private cardController: CardController,
     private boardController: BoardController,
     private listController: ListController
   ) {}

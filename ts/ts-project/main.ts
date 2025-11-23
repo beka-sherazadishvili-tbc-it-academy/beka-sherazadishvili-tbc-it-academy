@@ -109,7 +109,7 @@ async function boardMenu(boardId: string) {
       await manageListsMenu(boardId);
       break;
     case "3":
-      await deleteBoard();
+      await manageCardsMenu(boardId);
       break;
     case "4":
       await deleteBoard();
@@ -143,7 +143,7 @@ async function showBoardDetails(boardId: string) {
 
       console.log(`${card.title}`);
     }
-    console.log()
+    console.log();
   }
 }
 
@@ -186,7 +186,7 @@ async function addListToBoard(boardId: string) {
     Validators.isValidBoardName
   );
 
-  app.services.lists.addList(boardId ,name);
+  app.services.lists.addList(boardId, name);
   return manageListsMenu(boardId);
 }
 
@@ -220,44 +220,113 @@ async function deleteList(boardId: string) {
   app.services.lists.deleteList(boardId, Number(chooseIndex) - 1);
 }
 
-// async function manageCardsMenu(boardId: string) {
-//   console.log("\n--- CARDS MENU ---");
-//   console.log("1) Add Card");
-//   console.log("2) View Card");
-//   console.log("3) Edit Card");
-//   console.log("4) Delete Card");
-//   console.log("5) Move Card");
-//   console.log("6) Reorder Card");
-//   console.log("7) Back");
+async function manageCardsMenu(boardId: string) {
+  console.log("\n--- CARDS MENU ---");
+  console.log("1) Add Card");
+  console.log("2) View Card");
+  console.log("3) Edit Card");
+  console.log("4) Delete Card");
+  console.log("5) Move Card");
+  console.log("6) Reorder Card");
+  console.log("7) Back");
 
-//   const choice = await ask("> ");
+  const choice = await ask("> ");
 
-//   switch (choice.trim()) {
-//     case "1":
-//       await addCard(boardId);
-//       break;
-//     case "2":
-//       await viewCard(boardId);
-//       break;
-//     case "3":
-//       await editCard(boardId);
-//       break;
-//     case "4":
-//       await deleteCard(boardId);
-//       break;
-//     case "5":
-//       await moveCard(boardId);
-//       break;
-//     case "6":
-//       await reorderCard(boardId);
-//       break;
-//     case "7":
-//       return boardMenu(boardId);
-//     default:
-//       console.log("Invalid choice");
-//   }
+  switch (choice.trim()) {
+    case "1":
+      await addCard(boardId);
+      break;
+    case "2":
+      await viewCard(boardId);
+      break;
+    // case "3":
+    //   await editCard(boardId);
+    //   break;
+    // case "4":
+    //   await deleteCard(boardId);
+    //   break;
+    // case "5":
+    //   await moveCard(boardId);
+    //   break;
+    // case "6":
+    //   await reorderCard(boardId);
+    //   break;
+    case "7":
+      return boardMenu(boardId);
+    default:
+      console.log("Invalid choice");
+  }
 
-//   return manageCardsMenu(boardId);
-// }
+  return manageCardsMenu(boardId);
+}
+
+async function addCard(boardId: string) {
+  app.services.lists.getAllListName(boardId);
+
+  const listIndex = await validationQuestion(
+    rl,
+    "Choose list item(numeric): ",
+    Validators.isValidNumber
+  );
+
+  const title = await validationQuestion(
+    rl,
+    "Card title: ",
+    Validators.isValidBoardName
+  );
+
+  const description = await validationQuestion(
+    rl,
+    "Card description: ",
+    Validators.isValidBoardName
+  );
+
+  const labels = await validationQuestion(
+    rl,
+    "Card label (comma seperated): ",
+    Validators.isValidBoardName
+  );
+
+  const dueDate = await validationQuestion(
+    rl,
+    "Card due date: ",
+    Validators.isValidDate
+  );
+
+  const labelsArr = labels
+    .split(",")
+    .map((label) => label.trim())
+    .filter((label) => label !== "");
+
+  app.services.cards.createCard(
+    boardId,
+    listIndex,
+    title,
+    description,
+    labelsArr,
+    dueDate || null
+  );
+
+  return manageCardsMenu(boardId);
+}
+
+async function viewCard(boardId: string) {
+  app.services.lists.getAllListName(boardId);
+
+  const listIndex = await validationQuestion(
+    rl,
+    "Choose card (numeric): ",
+    Validators.isValidNumber
+  );
+
+  app.services.cards.createCard(
+    boardId,
+    listIndex,
+  );
+
+  return manageCardsMenu(boardId);
+}
+
+
 
 mainMenu();
