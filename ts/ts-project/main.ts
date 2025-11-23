@@ -160,23 +160,19 @@ async function manageListsMenu(boardId: string) {
     case "1":
       await addListToBoard(boardId);
       break;
-
     case "2":
       await renameList(boardId);
       break;
-
     case "3":
       await deleteList(boardId);
       break;
-
     case "4":
       return boardMenu(boardId);
-
     default:
       console.log("Invalid choice");
   }
 
-  return manageListsMenu(boardId);
+  // return manageListsMenu(boardId);
 }
 
 async function addListToBoard(boardId: string) {
@@ -266,8 +262,6 @@ async function manageCardsMenu(boardId: string) {
     default:
       console.log("Invalid choice");
   }
-
-  return manageCardsMenu(boardId);
 }
 
 async function addCard(boardId: string) {
@@ -310,7 +304,7 @@ async function addCard(boardId: string) {
 
   app.services.cards.createCard(
     boardId,
-    listIndex,
+    Number(listIndex) - 1,
     title,
     description,
     labelsArr,
@@ -449,13 +443,14 @@ async function reorderCard(boardId: string) {
 
   app.services.lists.getAllListName(boardId);
 
-  const listIndex = Number(
-    await validationQuestion(
-      rl,
-      "Choose list (numeric): ",
-      Validators.isValidNumber
-    )
-  ) - 1;
+  const listIndex =
+    Number(
+      await validationQuestion(
+        rl,
+        "Choose list (numeric): ",
+        Validators.isValidNumber
+      )
+    ) - 1;
 
   const board = app.controllers.boards.getItemById(boardId);
   if (!board) {
@@ -475,33 +470,29 @@ async function reorderCard(boardId: string) {
     console.log(`${i + 1}) ${card?.title ?? "[missing]"}`);
   });
 
-  const cardIndex = Number(
-    await validationQuestion(
-      rl,
-      "Select card (numeric): ",
-      Validators.isValidNumber
-    )
-  ) - 1;
+  const cardIndex =
+    Number(
+      await validationQuestion(
+        rl,
+        "Select card (numeric): ",
+        Validators.isValidNumber
+      )
+    ) - 1;
 
-  const newIndex = Number(
-    await validationQuestion(
-      rl,
-      "Move to position (numeric): ",
-      Validators.isValidNumber
-    )
-  ) - 1;
+  const newIndex =
+    Number(
+      await validationQuestion(
+        rl,
+        "Move to position (numeric): ",
+        Validators.isValidNumber
+      )
+    ) - 1;
 
-  app.services.cards.reorderCards(
-    boardId,
-    listIndex,
-    cardIndex,
-    newIndex
-  );
+  app.services.cards.reorderCards(boardId, listIndex, cardIndex, newIndex);
 
   console.log("Card reordered");
 
   return manageCardsMenu(boardId);
 }
-
 
 mainMenu();
