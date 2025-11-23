@@ -31,14 +31,6 @@ export class CardService {
         throw new Error("NOT_FOUND: no such item in the list");
       }
 
-      const existingList = this.listController.getItemById(
-        boardId,
-        listItem.id
-      );
-      if (!existingList) {
-        throw new Error("NOT_FOUND: list not found");
-      }
-
       const card = new Card(
         randomUUID(),
         title,
@@ -62,9 +54,10 @@ export class CardService {
         throw new Error("NOT_FOUND: board not found");
       }
 
-      for (let i = 0; i < existingBoard.cards.length; i++) {
-        console.log(`${i}) ${existingBoard.cards[i]?.title}`);
-      }
+      console.log('--- Card List ---')
+      existingBoard.cards.forEach((card, i) => {
+        console.log(`${i + 1}) ${card.title}`);
+      });
     } catch (err) {
       console.error((err as Error).message);
     }
@@ -77,5 +70,28 @@ export class CardService {
     }
 
     return existingBoard.cards[index]?.toJSON();
+  }
+
+  public updateCard(
+    boardId: string,
+    cardIndex: number,
+    update: Partial<ICard>
+  ): void {
+    const existingBoard = this.boardController.getItemById(boardId);
+    if (!existingBoard) {
+      throw new Error("NOT_FOUND: board not found");
+    }
+
+    const cardItem = existingBoard.cards[cardIndex]
+    if (!cardItem) {
+      throw new Error('NOT_FOUND: card not found')
+    }
+
+    const updated: Card =  Card.fromJSON({
+      ...cardItem.toJSON(),
+      ...update
+    });
+
+    this.cardController.update(boardId, cardItem.id, updated);
   }
 }

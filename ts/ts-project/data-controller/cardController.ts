@@ -1,5 +1,5 @@
 import { Board } from "../models/board";
-import { Card } from "../models/card";
+import { Card, ICard } from "../models/card";
 import { AppStateController } from "./appStateController";
 
 export class CardController {
@@ -32,9 +32,6 @@ export class CardController {
       throw new Error("NOT_FOUND: list not found");
     }
 
-    console.log(card)
-    console.log(card.id)
-
     board.cards.push(card);
     list.cardOrder.push(card.id);
     this.state.save();
@@ -58,4 +55,36 @@ export class CardController {
 
     this.state.save();
   }
+
+  public update(
+  boardId: string,
+  cardId: string,
+  updated: Partial<ICard>
+): void {
+  const board = this.getBoard(boardId);
+
+  const cardIndex = board.cards.findIndex((card) => card.id === cardId);
+  if (cardIndex === -1) {
+    throw new Error("NOT_FOUND: card not found");
+  }
+
+  const card = board.cards[cardIndex];
+  if (!card) {
+    throw new Error("NOT_FOUND: card not found");
+  }
+
+  const updatedCard = new Card(
+    card.id,
+    updated.title ?? card.title,
+    updated.description ?? card.description,
+    updated.labels ?? card.labels,
+    card.createdAt,
+    updated.dueDate ?? card.dueDate,
+  );
+
+  board.cards[cardIndex] = updatedCard;
+
+  this.state.save();
+}
+
 }

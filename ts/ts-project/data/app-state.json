@@ -6,7 +6,7 @@
       "lists": [
         {
           "id": "list-1",
-          "name": "test123",
+          "name": "test12",
           "cardOrder": [
             "card-1",
             "card-2"
@@ -60,7 +60,7 @@
         },
         {
           "id": "b5c6e185-84c2-403a-813b-6e75ef113c31",
-          "title": "test1",
+          "title": "newTitle",
           "description": "test1",
           "labels": [
             "test1",

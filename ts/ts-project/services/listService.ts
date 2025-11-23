@@ -2,7 +2,7 @@ import { randomUUID } from "crypto";
 import { BoardController } from "../data-controller/boardController";
 import { CardController } from "../data-controller/cardController";
 import { ListController } from "../data-controller/listController";
-import { List } from "../models/list";
+import { IList, List } from "../models/list";
 import { Board } from "../models/board";
 
 export class ListService {
@@ -26,9 +26,14 @@ export class ListService {
   public getAllListName(boardId: string) {
     const board = this.getBoardById(boardId);
 
-    for (let i = 0; i < board.lists.length; i++) {
-      console.log(`${i + 1}) ${board.lists[i]?.name}`);
-    }
+    console.log('--- List Names ---')
+    // for (let i = 0; i < board.lists.length; i++) {
+    //   console.log(`${i + 1}) ${board.lists[i]?.name}`);
+    // }
+
+    board.lists.forEach((item, i) => {
+        console.log(`${i + 1}) ${item.name}`);
+      });
   }
 
   public addList(boardId: string, name: string): void {
@@ -43,7 +48,11 @@ export class ListService {
     }
   }
 
-  public renameList(boardId: string, newName: string, index: number): void {
+  public renameList(
+    boardId: string,
+    updated: Partial<IList>,
+    index: number
+  ): void {
     try {
       const board = this.getBoardById(boardId);
 
@@ -53,7 +62,10 @@ export class ListService {
         throw new Error("NOT_FOUND: no such item in the list");
       }
 
-      const newList: List = new List(listItem.id, newName, listItem.cardOrder);
+      const newList: List = List.fromJSON({
+        ...listItem.toJSON(),
+        ...updated
+      });
 
       this.listController.update(boardId, newList);
     } catch (err) {

@@ -2,7 +2,7 @@ import readline from "readline";
 import { App } from "./core/app";
 import { Validators } from "./utils/questionValidators";
 import { validationQuestion } from "./utils/validationQuestion";
-import { Card } from "./models/card";
+import { Card, ICard } from "./models/card";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -205,7 +205,11 @@ async function renameList(boardId: string) {
     Validators.isValidBoardName
   );
 
-  app.services.lists.renameList(boardId, newName, Number(chooseIndex) - 1);
+  app.services.lists.renameList(
+    boardId,
+    { name: newName },
+    Number(chooseIndex) - 1
+  );
 }
 
 async function deleteList(boardId: string) {
@@ -239,9 +243,9 @@ async function manageCardsMenu(boardId: string) {
     case "2":
       await viewCard(boardId);
       break;
-    // case "3":
-    //   await editCard(boardId);
-    //   break;
+    case "3":
+      await editCard(boardId);
+      break;
     // case "4":
     //   await deleteCard(boardId);
     //   break;
@@ -321,14 +325,69 @@ async function viewCard(boardId: string) {
 
   const cardDetails = app.services.cards.getCardNameByIndex(
     boardId,
-    Number(cardIndex) - 1,
+    Number(cardIndex) - 1
   );
 
-  console.log(cardDetails)
+  console.log(cardDetails);
 
   return manageCardsMenu(boardId);
 }
 
+async function editCard(boardId: string) {
+  app.services.cards.getAllCardName(boardId);
 
+  const cardIndex = Number(
+    await validationQuestion(
+      rl,
+      "Choose card (numeric): ",
+      Validators.isValidNumber
+    )
+  );
+
+  console.log("\n--- choose field to change ---");
+  console.log("1) Title");
+  console.log("2) Description");
+  console.log("3) Labels");
+  console.log("4) Due Date");
+
+  const choice = (await ask("> ")).trim();
+
+  let update: Partial<ICard> = {};
+
+  switch (choice) {
+    case "1": {
+      const newTitle = await ask("New title: ");
+      update = { title: newTitle };
+      break;
+    }
+    case "2": {
+      const newDesc = await ask("New description: ");
+      update = { description: newDesc };
+      break;
+    }
+    case "3": {
+      const labelsStr = await ask("Labels (comma-separated): ");
+      const newLabels = labelsStr
+        .split(",")
+        .map((item) => item.trim())
+        .filter((item) => item !== "");
+      update = { labels: newLabels };
+      break;
+    }
+    case "4": {
+      const newDue = await ask("New due date (YYYY-MM-DD): ");
+      update = { dueDate: newDue };
+      break;
+    }
+    default:
+      console.log("Invalid choice");
+      return manageCardsMenu(boardId);
+  }
+
+  app.services.cards.updateCard(boardId, Number(cardIndex) - 1, update);
+
+  console.log("Card updated!");
+  return manageCardsMenu(boardId);
+}
 
 mainMenu();

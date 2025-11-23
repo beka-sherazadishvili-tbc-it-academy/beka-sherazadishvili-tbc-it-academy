@@ -43,9 +43,14 @@ export class BoardService {
         throw new Error("NOT_FOUND: board does not exist, please add at first");
       }
 
-      for (let i = 0; i < boards.length; i++) {
-        console.log(`${i + 1}) ${boards[i]?.name}`);
-      }
+      console.log('--- Board List ---')
+      // for (let i = 0; i < boards.length; i++) {
+      //   console.log(`${i + 1}) ${boards[i]?.name}`);
+      // }
+
+      boards.forEach((board, i) => {
+        console.log(`${i + 1}) ${board.name}`);
+      });
     } catch (err) {
       console.error((err as Error).message);
     }
