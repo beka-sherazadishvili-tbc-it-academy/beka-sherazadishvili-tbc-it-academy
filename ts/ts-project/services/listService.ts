@@ -33,46 +33,48 @@ export class ListService {
   }
 
   public addList(boardId: string, name: string): void {
-    this.getBoardById(boardId);
+    try {
+      this.getBoardById(boardId);
 
-    const newList = new List(randomUUID(), name, []);
+      const newList = new List(randomUUID(), name, []);
 
-    this.listController.add(boardId, newList);
+      this.listController.add(boardId, newList);
+    } catch (err) {
+      console.error((err as Error).message);
+    }
   }
 
   public renameList(boardId: string, newName: string, index: number): void {
-    const board = this.getBoardById(boardId);
+    try {
+      const board = this.getBoardById(boardId);
 
-    const listItem = board.lists[index];
+      const listItem = board.lists[index];
 
-    if(!listItem) {
-        throw new Error('NOT_FOUND: no such item in the list')
+      if (!listItem) {
+        throw new Error("NOT_FOUND: no such item in the list");
+      }
+
+      const newList: List = new List(listItem.id, newName, listItem.cardOrder);
+
+      this.listController.update(boardId, newList);
+    } catch (err) {
+      console.error((err as Error).message);
     }
-
-    const newList: List = new List(
-        listItem.id,
-        newName,
-        listItem.cardOrder
-    )
-
-    this.listController.update(boardId, newList);
   }
 
-  public deleteList(boardId: string, newName: string, index: number): void {
-    const board = this.getBoardById(boardId);
+  public deleteList(boardId: string, index: number): void {
+    try {
+      const board = this.getBoardById(boardId);
 
-    const listItem = board.lists[index];
+      const listItem = board.lists[index];
 
-    if(!listItem) {
-        throw new Error('NOT_FOUND: no such item in the list')
+      if (!listItem) {
+        throw new Error("NOT_FOUND: no such item in the list");
+      }
+
+      this.listController.delete(boardId, listItem.id);
+    } catch (err) {
+      console.error((err as Error).message);
     }
-
-    const newList: List = new List(
-        listItem.id,
-        newName,
-        listItem.cardOrder
-    )
-
-    this.listController.update(boardId, newList);
   }
 }

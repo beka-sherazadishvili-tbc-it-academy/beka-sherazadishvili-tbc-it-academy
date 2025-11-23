@@ -11,11 +11,15 @@ export class BoardService {
     private listController: ListController
   ) {}
 
-  createBoard(name: string): IBoard {
-    const board: Board = new Board(randomUUID(), name, [], []);
+  createBoard(name: string): IBoard | undefined {
+    try {
+      const board: Board = new Board(randomUUID(), name, [], []);
 
-    this.boardController.add(board);
-    return board.toJSON();
+      this.boardController.add(board);
+      return board.toJSON();
+    } catch (err) {
+      console.error((err as Error).message);
+    }
   }
 
   public deleteBoard(boardId: string, validate: string): void {
@@ -30,30 +34,38 @@ export class BoardService {
       }
 
       this.boardController.delete(boardId);
-    } catch (error) {
-      console.error((error as Error).message);
+    } catch (err) {
+      console.error((err as Error).message);
     }
   }
 
   public getAllBoard(): void {
-    const boards = this.boardController.getAll();
+    try {
+      const boards = this.boardController.getAll();
 
-    if (boards.length === 0) {
-      throw new Error("NOT_FOUND: board does not exist, please add at first");
-    }
+      if (boards.length === 0) {
+        throw new Error("NOT_FOUND: board does not exist, please add at first");
+      }
 
-    for (let i = 0; i < boards.length; i++) {
-      console.log(`${i + 1}) ${boards[i]?.name}`);
+      for (let i = 0; i < boards.length; i++) {
+        console.log(`${i + 1}) ${boards[i]?.name}`);
+      }
+    } catch (err) {
+      console.error((err as Error).message);
     }
   }
 
-  public getBoardIdByIndex(index: number): string {
-    const board = this.boardController.getAll()[index];
+  public getBoardIdByIndex(index: number): string | undefined {
+    try {
+      const board = this.boardController.getAll()[index];
 
-    if (!board) {
-      throw new Error("NOT_FOUND: board does not exist");
+      if (!board) {
+        throw new Error("NOT_FOUND: board does not exist");
+      }
+
+      return board.id;
+    } catch (err) {
+      console.error((err as Error).message);
     }
-
-    return board.id;
   }
 }

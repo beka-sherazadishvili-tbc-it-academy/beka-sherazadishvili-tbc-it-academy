@@ -209,7 +209,15 @@ async function renameList(boardId: string) {
 }
 
 async function deleteList(boardId: string) {
-  
+  app.services.lists.getAllListName(boardId);
+
+  const chooseIndex = await validationQuestion(
+    rl,
+    "Choose list item(numeric): ",
+    Validators.isValidNumber
+  );
+
+  app.services.lists.deleteList(boardId, Number(chooseIndex) - 1);
 }
 
 // async function manageCardsMenu(boardId: string) {
