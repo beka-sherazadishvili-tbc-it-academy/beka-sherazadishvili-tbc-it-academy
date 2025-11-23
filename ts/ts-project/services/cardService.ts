@@ -54,7 +54,7 @@ export class CardService {
         throw new Error("NOT_FOUND: board not found");
       }
 
-      console.log('--- Card List ---')
+      console.log("--- Card List ---");
       existingBoard.cards.forEach((card, i) => {
         console.log(`${i + 1}) ${card.title}`);
       });
@@ -77,21 +77,47 @@ export class CardService {
     cardIndex: number,
     update: Partial<ICard>
   ): void {
-    const existingBoard = this.boardController.getItemById(boardId);
-    if (!existingBoard) {
-      throw new Error("NOT_FOUND: board not found");
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
+
+      const cardItem = existingBoard.cards[cardIndex];
+      if (!cardItem) {
+        throw new Error("NOT_FOUND: card not found");
+      }
+
+      const updated: Card = Card.fromJSON({
+        ...cardItem.toJSON(),
+        ...update,
+      });
+
+      this.cardController.update(boardId, cardItem.id, updated);
+    } catch (err) {
+      console.error((err as Error).message);
     }
+  }
 
-    const cardItem = existingBoard.cards[cardIndex]
-    if (!cardItem) {
-      throw new Error('NOT_FOUND: card not found')
+  public deleteCard(boardId: string, cardIndex: number, validate: string) {
+    try {
+      if (!(validate.toLowerCase() === "y")) {
+        throw new Error("POLICY: can not delete without confirmation");
+      }
+      
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
+
+      const cardItem = existingBoard.cards[cardIndex];
+      if (!cardItem) {
+        throw new Error("NOT_FOUND: card not found");
+      }
+
+      this.cardController.delete(boardId, cardItem.id);
+    } catch (err) {
+      console.error((err as Error).message);
     }
-
-    const updated: Card =  Card.fromJSON({
-      ...cardItem.toJSON(),
-      ...update
-    });
-
-    this.cardController.update(boardId, cardItem.id, updated);
   }
 }

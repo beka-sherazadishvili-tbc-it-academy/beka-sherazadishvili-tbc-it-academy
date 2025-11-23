@@ -26,14 +26,10 @@ export class ListService {
   public getAllListName(boardId: string) {
     const board = this.getBoardById(boardId);
 
-    console.log('--- List Names ---')
-    // for (let i = 0; i < board.lists.length; i++) {
-    //   console.log(`${i + 1}) ${board.lists[i]?.name}`);
-    // }
-
+    console.log("--- List Names ---");
     board.lists.forEach((item, i) => {
-        console.log(`${i + 1}) ${item.name}`);
-      });
+      console.log(`${i + 1}) ${item.name}`);
+    });
   }
 
   public addList(boardId: string, name: string): void {
@@ -64,7 +60,7 @@ export class ListService {
 
       const newList: List = List.fromJSON({
         ...listItem.toJSON(),
-        ...updated
+        ...updated,
       });
 
       this.listController.update(boardId, newList);
@@ -73,8 +69,12 @@ export class ListService {
     }
   }
 
-  public deleteList(boardId: string, index: number): void {
+  public deleteList(boardId: string, index: number, validate: string): void {
     try {
+      if (!(validate.toLowerCase() === "y")) {
+        throw new Error("POLICY: can not delete without confirmation");
+      }
+
       const board = this.getBoardById(boardId);
 
       const listItem = board.lists[index];

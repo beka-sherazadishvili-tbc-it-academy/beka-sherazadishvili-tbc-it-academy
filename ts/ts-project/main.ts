@@ -221,7 +221,13 @@ async function deleteList(boardId: string) {
     Validators.isValidNumber
   );
 
-  app.services.lists.deleteList(boardId, Number(chooseIndex) - 1);
+  const validate: string = await validationQuestion(
+    rl,
+    "Confirm Detetion y/n: ",
+    (input) => Validators.isValidChoice(input, ["y", "n"])
+  );
+
+  app.services.lists.deleteList(boardId, Number(chooseIndex) - 1, validate);
 }
 
 async function manageCardsMenu(boardId: string) {
@@ -246,9 +252,9 @@ async function manageCardsMenu(boardId: string) {
     case "3":
       await editCard(boardId);
       break;
-    // case "4":
-    //   await deleteCard(boardId);
-    //   break;
+    case "4":
+      await deleteCard(boardId);
+      break;
     // case "5":
     //   await moveCard(boardId);
     //   break;
@@ -387,6 +393,27 @@ async function editCard(boardId: string) {
   app.services.cards.updateCard(boardId, Number(cardIndex) - 1, update);
 
   console.log("Card updated!");
+  return manageCardsMenu(boardId);
+}
+
+async function deleteCard(boardId: string) {
+  app.services.cards.getAllCardName(boardId);
+
+  const cardIndex = await validationQuestion(
+    rl,
+    "Choose card (numeric): ",
+    Validators.isValidNumber
+  );
+
+  const validate: string = await validationQuestion(
+    rl,
+    "Confirm Detetion y/n: ",
+    (input) => Validators.isValidChoice(input, ["y", "n"])
+  );
+
+  app.services.cards.deleteCard(boardId, Number(cardIndex) - 1, validate);
+
+  console.log("Crad Deleted");
   return manageCardsMenu(boardId);
 }
 
