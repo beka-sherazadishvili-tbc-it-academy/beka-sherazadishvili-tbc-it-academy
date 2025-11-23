@@ -1,0 +1,28 @@
+{
+  "boards": [
+    {
+      "id": "77147415-86b4-42af-84f3-9357cb5df433",
+      "name": "test",
+      "lists": [],
+      "cards": []
+    },
+    {
+      "id": "f7e14de8-8483-4dd7-8a23-0eeb6f67c300",
+      "name": "1",
+      "lists": [],
+      "cards": []
+    },
+    {
+      "id": "d36cffb6-c76a-4333-a171-ad50e4491473",
+      "name": "test",
+      "lists": [],
+      "cards": []
+    },
+    {
+      "id": "7b51e505-45a6-48ac-a941-d4c5370c67e2",
+      "name": "test",
+      "lists": [],
+      "cards": []
+    }
+  ]
+}
