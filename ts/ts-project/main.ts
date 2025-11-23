@@ -106,7 +106,7 @@ async function boardMenu(boardId: string) {
       await ask("\nPress Enter to continue...");
       return boardMenu(boardId);
     case "2":
-      await createBoard();
+      await manageListsMenu(boardId);
       break;
     case "3":
       await deleteBoard();
@@ -158,7 +158,7 @@ async function manageListsMenu(boardId: string) {
 
   switch (choice.trim()) {
     case "1":
-      await addList(boardId);
+      await addListToBoard(boardId);
       break;
 
     case "2":
@@ -179,12 +179,33 @@ async function manageListsMenu(boardId: string) {
   return manageListsMenu(boardId);
 }
 
-async function addList(boardId: string) {
-  
+async function addListToBoard(boardId: string) {
+  const name = await validationQuestion(
+    rl,
+    "List name: ",
+    Validators.isValidBoardName
+  );
+
+  app.services.lists.addList(boardId ,name);
+  return manageListsMenu(boardId);
 }
 
 async function renameList(boardId: string) {
-  
+  app.services.lists.getAllListName(boardId);
+
+  const chooseIndex = await validationQuestion(
+    rl,
+    "Choose list item(numeric): ",
+    Validators.isValidNumber
+  );
+
+  const newName = await validationQuestion(
+    rl,
+    "New name: ",
+    Validators.isValidBoardName
+  );
+
+  app.services.lists.renameList(boardId, newName, Number(chooseIndex) - 1);
 }
 
 async function deleteList(boardId: string) {

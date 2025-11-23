@@ -5,6 +5,7 @@ import { BoardController } from "../data-controller/boardController";
 import { ListController } from "../data-controller/listController";
 import { AppStateController } from "../data-controller/appStateController";
 import { BoardService } from "../services/boardService";
+import { ListService } from "../services/listService";
 
 export class App {
   controllers: any = {};
@@ -25,7 +26,13 @@ export class App {
       this.controllers.boards,
       this.controllers.lists
     );
-    // this.services.lists = new ListService(this.controllers.lists, this.controllers.boards);
+   
+    this.services.lists = new ListService(
+      this.controllers.cards,
+      this.controllers.boards,
+      this.controllers.lists
+    );
+
     this.services.cards = new CardService(
       this.controllers.cards,
       this.controllers.boards,

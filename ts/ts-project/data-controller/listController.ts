@@ -15,15 +15,15 @@ export class ListController {
     return board;
   }
 
-  getAll(boardId: string): List[] {
+  public getAll(boardId: string): List[] {
     return this.getBoard(boardId).lists;
   }
 
-  getItemById(boardId: string, listId: string): List | undefined {
+  public getItemById(boardId: string, listId: string): List | undefined {
     return this.getBoard(boardId).lists.find(l => l.id === listId);
   }
 
-  add(boardId: string, list: List): void {
+  public add(boardId: string, list: List): void {
     const board = this.getBoard(boardId);
 
     if (board.lists.find(item => item.id === list.id)) {
@@ -34,9 +34,9 @@ export class ListController {
     this.state.save();
   }
 
-  update(boardId: string, listId: string, updated: List): void {
+  public update(boardId: string, updated: List): void {
     const board = this.getBoard(boardId);
-    const index = board.lists.findIndex(item => item.id === listId);
+    const index = board.lists.findIndex(item => item.id === updated.id);
 
     if (index === -1) {
       throw new Error("NOT_FOUND: list not found");
@@ -46,7 +46,7 @@ export class ListController {
     this.state.save();
   }
 
-  delete(boardId: string, listId: string): void {
+  public delete(boardId: string, listId: string): void {
     const board = this.getBoard(boardId);
     const index = board.lists.findIndex(item => item.id === listId);
 

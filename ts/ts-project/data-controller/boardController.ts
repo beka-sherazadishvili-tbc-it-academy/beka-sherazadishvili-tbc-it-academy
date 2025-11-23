@@ -4,15 +4,15 @@ import { AppStateController } from "./appStateController";
 export class BoardController {
   constructor(private state: AppStateController) {}
 
-  getAll(): Board[] {
+  public getAll(): Board[] {
     return this.state.getState().boards;
   }
 
-  getItemById(id: string): Board | undefined {
+  public getItemById(id: string): Board | undefined {
     return this.state.getState().boards.find(board => board.id === id);
   }
 
-  add(board: Board): void {
+  public add(board: Board): void {
     const boards = this.state.getState().boards;
 
     if (boards.find(item => item.id === board.id)) {
@@ -23,7 +23,7 @@ export class BoardController {
     this.state.save();
   }
 
-  update(id: string, updated: Board): void {
+  public update(id: string, updated: Board): void {
     const boards = this.state.getState().boards;
     const index = boards.findIndex(board => board.id === id);
 
@@ -35,7 +35,7 @@ export class BoardController {
     this.state.save();
   }
 
-  delete(id: string): void {
+  public delete(id: string): void {
     const boards = this.state.getState().boards;
     const index = boards.findIndex(board => board.id === id);
 

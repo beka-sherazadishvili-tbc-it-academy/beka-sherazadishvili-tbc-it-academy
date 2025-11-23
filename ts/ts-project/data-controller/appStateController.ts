@@ -15,7 +15,7 @@ export class AppStateController {
     if (!fs.existsSync(this.filePath)) fs.writeFileSync(this.filePath, JSON.stringify({ boards: [] }, null, 2));
   }
 
-  load(): AppState {
+  public load(): AppState {
     const raw = fs.readFileSync(this.filePath, "utf-8");
     try {
       const obj = JSON.parse(raw || "{}");
@@ -25,7 +25,7 @@ export class AppStateController {
     }
   }
 
-  save() {
+  public save(): void {
     fs.writeFileSync(this.filePath, JSON.stringify(this.state.toJSON(), null, 2));
   }
 

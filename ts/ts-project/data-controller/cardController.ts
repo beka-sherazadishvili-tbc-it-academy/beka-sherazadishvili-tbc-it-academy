@@ -13,7 +13,7 @@ export class CardController {
     return board;
   }
 
-  getCardsInList(boardId: string, listId: string): Card[] {
+  public getCardsInList(boardId: string, listId: string): Card[] {
     const board = this.getBoard(boardId);
     const list = board.lists.find(l => l.id === listId);
     if (!list) {
@@ -25,7 +25,7 @@ export class CardController {
       .filter((card): card is Card => card !== undefined);
   }
 
-  add(boardId: string, listId: string, card: Card): void {
+  public add(boardId: string, listId: string, card: Card): void {
     const board = this.getBoard(boardId);
     const list = board.lists.find(l => l.id === listId);
     if (!list) {
@@ -37,7 +37,7 @@ export class CardController {
     this.state.save();
   }
 
-  delete(boardId: string, cardId: string): void {
+  public delete(boardId: string, cardId: string): void {
     const board = this.getBoard(boardId);
     
     const cardIndex = board.cards.findIndex(c => c.id === cardId);

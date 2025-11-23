@@ -12,7 +12,7 @@ export class BoardService {
   ) {}
 
   createBoard(name: string): IBoard {
-    const board = new Board(randomUUID(), name, [], []);
+    const board: Board = new Board(randomUUID(), name, [], []);
 
     this.boardController.add(board);
     return board.toJSON();
