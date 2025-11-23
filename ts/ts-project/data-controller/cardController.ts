@@ -57,34 +57,61 @@ export class CardController {
   }
 
   public update(
-  boardId: string,
-  cardId: string,
-  updated: Partial<ICard>
-): void {
-  const board = this.getBoard(boardId);
+    boardId: string,
+    cardId: string,
+    updated: Partial<ICard>
+  ): void {
+    const board = this.getBoard(boardId);
 
-  const cardIndex = board.cards.findIndex((card) => card.id === cardId);
-  if (cardIndex === -1) {
-    throw new Error("NOT_FOUND: card not found");
+    const cardIndex = board.cards.findIndex((card) => card.id === cardId);
+    if (cardIndex === -1) {
+      throw new Error("NOT_FOUND: card not found");
+    }
+
+    const card = board.cards[cardIndex];
+    if (!card) {
+      throw new Error("NOT_FOUND: card not found");
+    }
+
+    const updatedCard = new Card(
+      card.id,
+      updated.title ?? card.title,
+      updated.description ?? card.description,
+      updated.labels ?? card.labels,
+      card.createdAt,
+      updated.dueDate ?? card.dueDate
+    );
+
+    board.cards[cardIndex] = updatedCard;
+
+    this.state.save();
   }
 
-  const card = board.cards[cardIndex];
-  if (!card) {
-    throw new Error("NOT_FOUND: card not found");
+  public deleteFromList(boardId: string, cardId: string): void {
+    const board = this.getBoard(boardId);
+
+    board.lists.forEach((list) => {
+      const idx = list.cardOrder.indexOf(cardId);
+      if (idx !== -1) {
+        list.cardOrder.splice(idx, 1);
+      }
+    });
+
+    this.state.save();
   }
 
-  const updatedCard = new Card(
-    card.id,
-    updated.title ?? card.title,
-    updated.description ?? card.description,
-    updated.labels ?? card.labels,
-    card.createdAt,
-    updated.dueDate ?? card.dueDate,
-  );
+  public addExistingCardToList(
+    boardId: string,
+    listId: string,
+    cardId: string
+  ): void {
+    const board = this.getBoard(boardId);
+    const list = board.lists.find((item) => item.id === listId);
+    if (!list) {
+      throw new Error("NOT_FOUND: list not found");
+    }
 
-  board.cards[cardIndex] = updatedCard;
-
-  this.state.save();
-}
-
+    list.cardOrder.push(cardId);
+    this.state.save();
+  }
 }

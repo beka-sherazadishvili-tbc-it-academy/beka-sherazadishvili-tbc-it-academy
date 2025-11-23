@@ -255,9 +255,9 @@ async function manageCardsMenu(boardId: string) {
     case "4":
       await deleteCard(boardId);
       break;
-    // case "5":
-    //   await moveCard(boardId);
-    //   break;
+    case "5":
+      await moveCard(boardId);
+      break;
     // case "6":
     //   await reorderCard(boardId);
     //   break;
@@ -414,6 +414,33 @@ async function deleteCard(boardId: string) {
   app.services.cards.deleteCard(boardId, Number(cardIndex) - 1, validate);
 
   console.log("Crad Deleted");
+  return manageCardsMenu(boardId);
+}
+
+async function moveCard(boardId: string) {
+  app.services.cards.getAllCardName(boardId);
+
+  const cardIndex = await validationQuestion(
+    rl,
+    "Choose card (numeric): ",
+    Validators.isValidNumber
+  );
+
+  app.services.lists.getAllListName(boardId);
+
+  const targetListIndex = await validationQuestion(
+    rl,
+    "Choose card (numeric): ",
+    Validators.isValidNumber
+  );
+
+  app.services.cards.moveCard(
+    boardId,
+    Number(cardIndex) - 1,
+    Number(targetListIndex) - 1
+  );
+
+  console.log("Crad moved");
   return manageCardsMenu(boardId);
 }
 

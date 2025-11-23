@@ -104,7 +104,7 @@ export class CardService {
       if (!(validate.toLowerCase() === "y")) {
         throw new Error("POLICY: can not delete without confirmation");
       }
-      
+
       const existingBoard = this.boardController.getItemById(boardId);
       if (!existingBoard) {
         throw new Error("NOT_FOUND: board not found");
@@ -119,5 +119,33 @@ export class CardService {
     } catch (err) {
       console.error((err as Error).message);
     }
+  }
+
+  public moveCard(
+    boardId: string,
+    cardIndex: number,
+    targetIndex: number
+  ) {
+    const existingBoard = this.boardController.getItemById(boardId);
+    if (!existingBoard) {
+      throw new Error("NOT_FOUND: board not found");
+    }
+
+    const targetItem = existingBoard.lists[targetIndex];
+    if (!targetItem) {
+      throw new Error("NOT_FOUND: card not found");
+    }
+
+    const cardItem = existingBoard.cards[cardIndex];
+    if (!cardItem) {
+      throw new Error("NOT_FOUND: card not found");
+    }
+
+    this.cardController.deleteFromList(boardId, cardItem.id);
+    this.cardController.addExistingCardToList(
+      boardId,
+      targetItem.id,
+      cardItem.id
+    );
   }
 }
