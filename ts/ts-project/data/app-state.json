@@ -3,8 +3,44 @@
     {
       "id": "3e522104-de8d-45e3-b9e0-d01d5cb3974f",
       "name": "test2",
-      "lists": [],
-      "cards": []
+      "lists": [
+        {
+          "id": "list-1",
+          "name": "To Do",
+          "cardOrder": ["card-1", "card-2"]
+        },
+        {
+          "id": "list-2",
+          "name": "Done",
+          "cardOrder": ["card-3"]
+        }
+      ],
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Implement Board Menu",
+          "description": "Add list/card menu logic",
+          "labels": ["backend", "feature"],
+          "createdAt": "2024-01-20T10:00:00.000Z",
+          "dueDate": null
+        },
+        {
+          "id": "card-2",
+          "title": "Write ListController",
+          "description": "CRUD list functions",
+          "labels": ["backend"],
+          "createdAt": "2024-01-20T11:00:00.000Z",
+          "dueDate": "2024-02-10"
+        },
+        {
+          "id": "card-3",
+          "title": "Initial Project Setup",
+          "description": "Create folders and state",
+          "labels": ["setup"],
+          "createdAt": "2024-01-19T09:00:00.000Z",
+          "dueDate": null
+        }
+      ]
     }
   ]
 }

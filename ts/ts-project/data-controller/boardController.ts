@@ -14,13 +14,10 @@ export class BoardController {
 
   add(board: Board): void {
     const boards = this.state.getState().boards;
-    console.log(boards)
 
     if (boards.find(item => item.id === board.id)) {
       throw new Error("CONFLICT: board id already exists");
     }
-
-    console.log(board.toJSON())
 
     boards.push(board);
     this.state.save();
