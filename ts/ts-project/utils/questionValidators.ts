@@ -17,34 +17,6 @@ export class Validators {
     return true;
   }
 
-  static isValidListName(input: string): boolean {
-    const trimmed = input.trim();
-    
-    if (trimmed.length === 0) {
-      throw new Error("List name cannot be empty");
-    }
-    
-    if (trimmed.length > 30) {
-      throw new Error("List name cannot exceed 30 characters");
-    }
-    
-    return true;
-  }
-
-  static isValidCardTitle(input: string): boolean {
-    const trimmed = input.trim();
-    
-    if (trimmed.length === 0) {
-      throw new Error("Card title cannot be empty");
-    }
-    
-    if (trimmed.length > 100) {
-      throw new Error("Card title cannot exceed 100 characters");
-    }
-    
-    return true;
-  }
-
   static isValidDate(dateStr: string): boolean {
     if (!dateStr.trim()) {
       return true;
