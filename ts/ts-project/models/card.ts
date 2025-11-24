@@ -55,7 +55,7 @@ export class Card implements ICard {
     return this._dueDate;
   }
 
-  static fromJSON(obj: ICard) {
+  public static fromJSON(obj: ICard) {
     return new Card(
       obj.id,
       obj.title,
@@ -66,7 +66,7 @@ export class Card implements ICard {
     );
   }
 
-  toJSON() {
+  public toJSON() {
     return {
       id: this._id,
       title: this._title,

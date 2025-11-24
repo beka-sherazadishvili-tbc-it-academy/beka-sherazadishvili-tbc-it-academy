@@ -9,7 +9,7 @@ export class AppStateController {
     this.state = this.load();
   }
 
-  private ensureFile() {
+  private ensureFile(): void {
     const dir = path.dirname(this.filePath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (!fs.existsSync(this.filePath)) fs.writeFileSync(this.filePath, JSON.stringify({ boards: [] }, null, 2));

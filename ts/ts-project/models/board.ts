@@ -42,7 +42,7 @@ export class Board implements IBoard {
     return this._cards;
   }
 
-  static fromJSON(obj: IBoard) {
+  public static fromJSON(obj: IBoard) {
     return new Board(
       obj.id,
       obj.name,
@@ -51,7 +51,7 @@ export class Board implements IBoard {
     );
   }
 
-  toJSON() {
+  public toJSON() {
     return {
       id: this._id,
       name: this._name,

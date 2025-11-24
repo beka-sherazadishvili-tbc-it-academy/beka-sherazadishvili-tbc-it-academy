@@ -4,6 +4,7 @@ import { BoardController } from "../data-controller/boardController";
 import { ListController } from "../data-controller/listController";
 import { Card, ICard } from "../models/card";
 import { List } from "../models/list";
+import { Board } from "../models/board";
 
 export class CardService {
   constructor(
@@ -104,7 +105,7 @@ export class CardService {
     }
   }
 
-  public deleteCard(boardId: string, cardIndex: number, validate: string) {
+  public deleteCard(boardId: string, cardIndex: number, validate: string): void {
     try {
       if (!(validate.toLowerCase() === "y")) {
         throw new Error("POLICY: can not delete without confirmation");
@@ -126,7 +127,7 @@ export class CardService {
     }
   }
 
-  public moveCard(boardId: string, cardIndex: number, targetIndex: number) {
+  public moveCard(boardId: string, cardIndex: number, targetIndex: number): void {
     try {
       const existingBoard = this.boardController.getItemById(boardId);
       if (!existingBoard) {
@@ -174,11 +175,11 @@ export class CardService {
       const cardOrder = listItem.cardOrder;
 
       if (cardIndex < 0 || cardIndex >= cardOrder.length) {
-        throw new Error("INVALID: card index out of range");
+        throw new Error("VALIDATION_ERROR: card index out of range");
       }
 
       if (newIndex < 0 || newIndex >= cardOrder.length) {
-        throw new Error("INVALID: new index out of range");
+        throw new Error("VALIDATION_ERROR: new index out of range");
       }
 
       const [cardId] = cardOrder.splice(cardIndex, 1);
@@ -190,6 +191,89 @@ export class CardService {
       cardOrder.splice(newIndex, 0, cardId);
 
       this.listController.update(boardId, List.fromJSON(listItem));
+    } catch (err) {
+      console.error((err as Error).message);
+    }
+  }
+
+  public searchByText(boardId: string, search: string): void {
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        throw new Error("NOT_FOUND: board not found");
+      }
+
+      const results: { card: Card; listName: string; boardName: string }[] = [];
+
+      for (const list of existingBoard.lists) {
+        for (const cardId of list.cardOrder) {
+          const card = existingBoard.cards.find((card) => card.id === cardId);
+          if (!card) continue;
+
+          const match =
+            card.title.toLowerCase().includes(search) ||
+            card.description.toLowerCase().includes(search);
+
+          if (match) {
+            results.push({
+              card,
+              listName: list.name,
+              boardName: existingBoard.name,
+            });
+          }
+        }
+      }
+
+      console.log("\n--- RESULTS ---");
+      if (results.length === 0) {
+        console.log("No cards found.");
+      } else {
+        results.forEach((item, i) =>
+          console.log(
+            `${i + 1}) ${item.card.title} (List: ${item.listName}, Board: ${
+              item.boardName
+            })`
+          )
+        );
+      }
+    } catch (err) {
+      console.error((err as Error).message);
+    }
+  }
+
+  public searchByLabel(boardId: string, search: string): void {
+    try {
+      const existingBoard = this.boardController.getItemById(boardId);
+      if (!existingBoard) {
+        console.log("NOT_FOUND: board not found");
+        return;
+      }
+
+      const results: { card: Card; listName: string }[] = [];
+
+      for (const list of existingBoard.lists) {
+        for (const cardId of list.cardOrder) {
+          const card = existingBoard.cards.find((card) => card.id === cardId);
+          if (!card) continue;
+
+          const match = card.labels.some(
+            (label: string) => label.toLowerCase() === search
+          );
+
+          if (match) {
+            results.push({ card, listName: list.name });
+          }
+        }
+      }
+
+      console.log("\n--- RESULTS ---");
+      if (results.length === 0) {
+        console.log("No cards found.");
+      } else {
+        results.forEach((item, i) => {
+          console.log(`${i + 1}) ${item.card.title}  (List: ${item.listName})`);
+        });
+      }
     } catch (err) {
       console.error((err as Error).message);
     }

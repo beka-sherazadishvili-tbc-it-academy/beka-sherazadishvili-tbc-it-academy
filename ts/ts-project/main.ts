@@ -112,7 +112,7 @@ async function boardMenu(boardId: string) {
       await manageCardsMenu(boardId);
       break;
     case "4":
-      await deleteBoard();
+      await searchMenu(boardId);
       break;
     case "5":
       return;
@@ -494,5 +494,50 @@ async function reorderCard(boardId: string) {
 
   return manageCardsMenu(boardId);
 }
+
+async function searchMenu(boardId: string) {
+  console.log("\n--- SEARCH ---");
+  console.log("1) Search by text");
+  console.log("2) Search by label");
+  console.log("3) Back");
+
+  const choice: string = await ask("> ");
+
+  switch (choice.trim()) {
+    case "1":
+      await searchByText(boardId);
+      break;
+    case "2":
+      await searchByLabel(boardId);
+      break;
+    case "3":
+      return boardMenu(boardId);
+    default:
+      console.log("Invalid choice");
+  }
+
+  return searchMenu(boardId);
+}
+
+async function searchByText(boardId: string) {
+  const text = await validationQuestion(
+    rl,
+    "Enter search text: ",
+    Validators.isValidBoardName
+  );
+
+  app.services.cards.searchByText(boardId, text.toLowerCase())
+}
+
+async function searchByLabel(boardId: string) {
+  const label = await validationQuestion(
+    rl,
+    "Enter search label: ",
+    Validators.isValidBoardName
+  );
+
+  app.services.cards.searchByLabel(boardId, label.toLowerCase())
+}
+
 
 mainMenu();

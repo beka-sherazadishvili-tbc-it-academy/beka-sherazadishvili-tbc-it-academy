@@ -16,7 +16,7 @@ export class AppState {
     return new AppState(obj.boards.map(Board.fromJSON));
   }
 
-  toJSON() {
+  public toJSON() {
     return {
       boards: this._boards.map(b => b.toJSON()),
     };

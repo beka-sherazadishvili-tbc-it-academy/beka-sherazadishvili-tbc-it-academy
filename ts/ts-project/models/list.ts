@@ -27,11 +27,11 @@ export class List implements IList {
     return this._cardOrder;
   }
 
-  static fromJSON(obj: IList) {
+  public static fromJSON(obj: IList) {
     return new List(obj.id, obj.name, obj.cardOrder ?? []);
   }
 
-  toJSON() {
+  public toJSON() {
     return {
       id: this._id,
       name: this._name,
