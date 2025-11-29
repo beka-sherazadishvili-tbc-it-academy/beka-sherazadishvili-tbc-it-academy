@@ -1,0 +1,207 @@
+$primary: #3b82f6;
+$primary-hover: #2563eb;
+$primary-clicked: #1d4ed8;
+$secondary: #64748b;
+$secondary-hover: #475569;
+$secondary-clicked: #334155;
+$success: #10b981;
+$success-hover: #059669;
+$success-clicked: #047857;
+$warning: #f59e0b;
+$warning-hover: #d97706;
+$warning-clicked: #b45309;
+$danger: #ef4444;
+$danger-hover: #dc2626;
+$danger-clicked: #b91c1c;
+$font-color: #ffffff;
+$main-btn-bg-color: #d1d5db;
+$main-btn-color: #6b7280;
+$outline-buttons: linear-gradient(90deg, #3B82F6 0%, #A855F7 100%);
+$icon-buttons: linear-gradient(90deg, #A855F7 0%, #EC4899 100%);
+
+.btn {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: $font-color;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 16px;
+
+  &:disabled {
+    background: $main-btn-bg-color;
+    color: $main-btn-color;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.primary {
+  background-color: $primary;
+
+  &:hover:not(:disabled):not(.loading) {
+    background-color: $primary-hover;
+  }
+
+  &:active:not(:disabled):not(.loading) {
+    background-color: $primary-clicked;
+  }
+}
+
+.primary.hover {
+  background-color: $primary-hover;
+}
+
+.primary.active {
+  background-color: $primary-clicked;
+}
+
+.secondary {
+  background-color: $secondary;
+
+  &:hover:not(:disabled):not(.loading) {
+    background-color: $secondary-hover;
+  }
+
+  &:active:not(:disabled):not(.loading) {
+    background-color: $secondary-clicked;
+  }
+}
+
+.secondary.active {
+  background-color: $secondary-clicked;
+}
+
+.secondary.hover {
+  background-color: $secondary-hover;
+}
+
+.success {
+  background-color: $success;
+
+  &:hover:not(:disabled):not(.loading) {
+    background-color: $success-hover;
+  }
+
+  &:active:not(:disabled):not(.loading) {
+    background-color: $success-clicked;
+  }
+}
+
+.success.active {
+  background-color: $success-clicked;
+}
+
+.success.hover {
+  background-color: $success-hover;
+}
+
+.warning {
+  background-color: $warning;
+
+  &:hover:not(:disabled):not(.loading) {
+    background-color: $warning-hover;
+  }
+
+  &:active:not(:disabled):not(.loading) {
+    background-color: $warning-clicked;
+  }
+}
+
+.warning.hover {
+  background-color: $warning-hover;
+}
+
+.warning.active {
+  background-color: $warning-clicked;
+}
+
+.danger {
+  background-color: $danger;
+
+  &:hover:not(:disabled):not(.loading) {
+    background-color: $danger-hover;
+  }
+
+  &:active:not(:disabled):not(.loading) {
+    background-color: $danger;
+  }
+}
+
+.danger.hover {
+  background-color: $danger-hover;
+}
+
+.danger.active {
+  background-color: $danger-clicked;
+}
+
+.small {
+  padding: 7px 7px 5px 12px;
+  font-size: 14px;
+}
+
+.medium {
+  padding: 12px 15px 8px 20px;
+  font-size: 16px;
+}
+
+.large {
+  padding: 17px 22px 11px 28px;
+  font-size: 18px;
+}
+
+.extra_large {
+  padding: 18px 30px 14px 36px;
+  font-size: 20px;
+}
+
+.initial {
+  width: 12px;
+  height: 32px;
+  border-radius: 9999px;
+}
+
+.outline.btn {
+  border: 1px solid $font-color;
+  background-color: $font-color;
+}
+
+.outline.primary {
+  color: $primary;
+  border-color: $primary;
+}
+.outline.secondary {
+  color: $secondary;
+  border-color: $secondary;
+}
+.outline.success {
+  color: $success;
+  border-color: $success;
+}
+.outline.warning {
+  color: $warning;
+  border-color: $warning;
+}
+.outline.danger {
+  color: $danger;
+  border-color: $danger;
+}
+.outline.disabled {
+  color: $main-btn-bg-color;
+  border-color: $main-btn-bg-color;
+}
+
+.outline.initial {
+  background: $outline-buttons;
+}
+
+.icon.initial {
+  background: $icon-buttons;
+}

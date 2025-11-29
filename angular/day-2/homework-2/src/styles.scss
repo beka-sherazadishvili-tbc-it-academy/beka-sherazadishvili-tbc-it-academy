@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+$bg-color: linear-gradient(90deg, #F8FAFC 0%, #EFF6FF 100%);
+
+body {
+    background-color: $bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
