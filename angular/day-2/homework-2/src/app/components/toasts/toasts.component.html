@@ -1,1 +1,19 @@
-<p>toasts works!</p>
+<div [ngClass]="[type]" class="status_message">
+  <img src="" alt="" />
+  <div>
+    <ng-container>
+      <div *ngIf="type === 'success'" class="icon success_icon"></div>
+      <div *ngIf="type === 'warning'" class="icon warning_icon"></div>
+      <div *ngIf="type === 'error'" class="icon error_icon"></div>
+    </ng-container>
+  </div>
+  <div>
+    <ng-container [ngSwitch]="type">
+      <h3 *ngSwitchCase="'success'">Success!</h3>
+      <h3 *ngSwitchCase="'warning'">Warning</h3>
+      <h3 *ngSwitchCase="'error'">Error</h3>
+    </ng-container>
+    {{ message }}
+  </div>
+  <div (click)="closeToast()" class="closeBtn">X</div>
+</div>

@@ -1,0 +1,104 @@
+$success-bg-color: linear-gradient(90deg, #ecfdf5 0%, #f0fdf4 100%);
+$success-border-color: #10b981;
+$success-header-color: #065f46;
+$success-text-color: #047857;
+$warning-bg-color: linear-gradient(90deg, #fffbeb 0%, #fff7ed 100%);
+$warning-border-color: #f59e0b;
+$warning-header-color: #92400e;
+$warning-text-color: #92400e;
+$error-bg-color: linear-gradient(90deg, #fef2f2 0%, #fff1f2 100%);
+$error-border-color: #ef4444;
+$error-header-color: #991b1b;
+$error-text-color: #b91c1c;
+
+.status_message {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  position: relative;
+  width: 384px;
+  height: 90px;
+  border-radius: 12px;
+  padding: 20px 20px 20px 0px;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: showStatus 0.3s ease-out;
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+
+.success {
+  background: $success-bg-color;
+  border-left: 4px solid $success-border-color;
+  color: $success-text-color;
+
+  .success_icon {
+    background-color: $success-border-color;
+    background-image: url(../../../assets/icons/success.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  h3 {
+    margin: 0px 0px 10px;
+    color: $success-header-color;
+  }
+}
+
+.warning {
+  background: $warning-bg-color;
+  border-left: 4px solid $warning-border-color;
+  color: $warning-text-color;
+
+  .warning_icon {
+    background-color: $warning-border-color;
+    background-image: url(../../../assets/icons/warning.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  h3 {
+    margin: 0px 0px 10px;
+    color: $warning-header-color;
+  }
+}
+
+.error {
+  background: $error-bg-color;
+  border-left: 4px solid $error-border-color;
+  color: $warning-text-color;
+
+  .error_icon {
+    background-color: $error-border-color;
+    background-image: url(../../../assets/icons/error.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  h3 {
+    margin: 0px 0px 10px;
+    color: $error-header-color;
+  }
+}
+
+@keyframes showStatus {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

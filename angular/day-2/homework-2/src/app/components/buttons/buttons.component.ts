@@ -15,8 +15,6 @@ import {
 })
 export class ButtonsComponent implements OnChanges {
   @Input() label = '';
-  @Input() disabled = false;
-  @Input() loading = false;
   @Input() color: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' =
     'primary';
   @Input() state: 'normal' | 'hover' | 'active' | 'disabled' | 'loading' =
@@ -47,9 +45,12 @@ export class ButtonsComponent implements OnChanges {
   ngOnChanges() {}
 
   onClick(event: MouseEvent) {
-    if (!this.disabled && !(this.state === 'loading') && !(this.size === 'initial')) {
+    if (
+      !(this.state === 'disabled') &&
+      !(this.state === 'loading') &&
+      !(this.size === 'initial')
+    ) {
       this.clicked.emit(event);
-      console.log('clicked');
     }
   }
 }

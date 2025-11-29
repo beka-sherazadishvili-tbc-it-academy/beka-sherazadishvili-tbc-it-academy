@@ -1,4 +1,7 @@
-<p>Comprehensive button components with various states, sizes, and vibrant color schemes</p>
+<p>
+  Comprehensive button components with various states, sizes, and vibrant color
+  schemes
+</p>
 <div class="btn__container">
   <div class="btn__container__header">
     <app-buttons [size]="'initial'" [type]="'primary'"></app-buttons>
@@ -10,21 +13,25 @@
       [label]="'small'"
       [size]="'small'"
       [type]="'primary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'medium'"
       [size]="'medium'"
       [type]="'primary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Large'"
       [size]="'large'"
       [type]="'primary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Extra Large'"
       [size]="'extra_large'"
       [type]="'primary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
@@ -74,21 +81,25 @@
       [label]="'small'"
       [size]="'small'"
       [type]="'secondary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'medium'"
       [size]="'medium'"
       [type]="'secondary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Large'"
       [size]="'large'"
       [type]="'secondary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Extra Large'"
       [size]="'extra_large'"
       [type]="'secondary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
@@ -136,21 +147,25 @@
       [label]="'small'"
       [size]="'small'"
       [type]="'success'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'medium'"
       [size]="'medium'"
       [type]="'success'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Large'"
       [size]="'large'"
       [type]="'success'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Extra Large'"
       [size]="'extra_large'"
       [type]="'success'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
@@ -198,21 +213,25 @@
       [label]="'small'"
       [size]="'small'"
       [type]="'warning'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'medium'"
       [size]="'medium'"
       [type]="'warning'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Large'"
       [size]="'large'"
       [type]="'warning'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Extra Large'"
       [size]="'extra_large'"
       [type]="'warning'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
@@ -259,21 +278,25 @@
       [label]="'small'"
       [size]="'small'"
       [type]="'danger'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'medium'"
       [size]="'medium'"
       [type]="'danger'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Large'"
       [size]="'large'"
       [type]="'danger'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Extra Large'"
       [size]="'extra_large'"
       [type]="'danger'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
@@ -321,30 +344,35 @@
       [size]="'medium'"
       [type]="'outline'"
       [color]="'primary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Secondary'"
       [size]="'medium'"
       [type]="'outline'"
       [color]="'secondary'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Success'"
       [size]="'medium'"
       [type]="'outline'"
       [color]="'success'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Warning'"
       [size]="'medium'"
       [type]="'outline'"
       [color]="'warning'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Danger'"
       [size]="'medium'"
       [type]="'outline'"
       [color]="'danger'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
@@ -382,28 +410,32 @@
       [size]="'medium'"
       [type]="'primary'"
       [icon]="'download'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Confirm'"
       [size]="'medium'"
       [type]="'success'"
       [icon]="'confirm'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Delete'"
       [size]="'medium'"
       [type]="'danger'"
       [icon]="'delete'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
     <app-buttons
       [label]="'Edit'"
       [size]="'medium'"
       [type]="'warning'"
       [icon]="'edit'"
+      (clicked)="eventCatched($event)"
     ></app-buttons>
   </div>
   <div>
-    <h3>States</h3>
+    <h3>Icons Only</h3>
     <app-buttons
       [size]="'medium'"
       [type]="'danger'"
@@ -431,5 +463,5 @@
   </div>
 </div>
 <div class="btn__container">
-    <p>Button Design System - 2025 ✨</p>
+  <p>Button Design System - 2025 ✨</p>
 </div>
