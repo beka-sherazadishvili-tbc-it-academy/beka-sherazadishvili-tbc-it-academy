@@ -1,0 +1,60 @@
+<button
+  class="btn"
+  [ngClass]="[type, size, state, color, icon]"
+  [disabled]="state === 'disabled'"
+  (click)="onClick($event)"
+>
+  <img
+    *ngIf="state === 'loading'"
+    [src]="
+      type === 'outline'
+        ? '../../../assets/icons/loading-outline.svg'
+        : '../../../assets/icons/loading.svg'
+    "
+    alt="loading"
+  />
+
+  <ng-container [ngSwitch]="icon">
+    <img
+      *ngSwitchCase="'download'"
+      src="../../../assets/icons/download.svg"
+      alt="download"
+    />
+    <img
+      *ngSwitchCase="'confirm'"
+      src="../../../assets/icons/confirm.svg"
+      alt="confirm"
+    />
+    <img
+      *ngSwitchCase="'delete'"
+      src="../../../assets/icons/delete.svg"
+      alt="delete"
+    />
+    <img
+      *ngSwitchCase="'edit'"
+      src="../../../assets/icons/edit.svg"
+      alt="edit"
+    />
+    <img
+      *ngSwitchCase="'follow'"
+      src="../../../assets/icons/follow.svg"
+      alt="follow"
+    />
+    <img
+      *ngSwitchCase="'share'"
+      src="../../../assets/icons/share.svg"
+      alt="share"
+    />
+    <img
+      *ngSwitchCase="'rating'"
+      src="../../../assets/icons/rating.svg"
+      alt="rating"
+    />
+    <img
+      *ngSwitchCase="'cancel'"
+      src="../../../assets/icons/cancel.svg"
+      alt="cancel"
+    />
+  </ng-container>
+  {{ label }}
+</button>

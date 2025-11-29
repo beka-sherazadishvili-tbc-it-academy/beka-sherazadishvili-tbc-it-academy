@@ -1,0 +1,70 @@
+$btn-container-border: #f1f5f9;
+$btn-container-bg-color: #ffffff;
+$btn-container-box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 10%),
+  0px 20px 25px 0px rgba(0, 0, 0, 10%);
+$feature-bg-color: #d1fae5;
+
+p {
+  margin-bottom: 48px;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+.component__spec {
+  margin: 64px 0px;
+  padding: 33px;
+  border-radius: 16px;
+  border: 1px solid $btn-container-border;
+  background: $btn-container-bg-color;
+  width: 1100px;
+  height: 350px;
+  box-shadow: $btn-container-box-shadow;
+
+  h1 {
+    font-size: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: start;
+
+    &__features, &__styles {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 50%;
+
+      div {
+        display: flex;
+        gap: 12px;
+      }
+
+      .feature_img, .style_img {
+        width: 20px;
+        height: 20px;
+        background-color: $feature-bg-color;
+        border-radius: 9999px;
+        background-image: url(../../../assets/icons/features.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .style_img {
+        background-image: url(../../../assets/icons/styling.svg);
+        background-color: initial;
+      }
+    }
+  }
+}
+
+.app_toasts {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  gap: 20px;
+}

@@ -1,0 +1,91 @@
+<p>Reusable notification components with auto-dismiss functionality</p>
+
+<div>
+  <h2>Demo Controls</h2>
+
+  <app-buttons
+    [label]="'Show Success'"
+    [size]="'medium'"
+    [type]="'success'"
+    [icon]="'confirm'"
+    (click)="showToast('success', 'Changes saved successfully!', 3000)"
+  ></app-buttons>
+  <app-buttons
+    [label]="'Show Warning'"
+    [size]="'medium'"
+    [type]="'warning'"
+    [state]="'normal'"
+    (click)="showToast('warning', 'Some fields need your attention.', 3000)"
+  ></app-buttons>
+  <app-buttons
+    [label]="'Show Error'"
+    [size]="'medium'"
+    [type]="'danger'"
+    [state]="'normal'"
+    (click)="showToast('error', 'Unable to save. Try again.', 3000)"
+  ></app-buttons>
+</div>
+
+<div class="component__spec">
+  <h1>Component Specifications</h1>
+
+  <div class="component__spec__container">
+    <div class="component__spec__container__features">
+      <h3>Features</h3>
+      <div>
+        <div class="feature_img"></div>
+        <span>Three toast types: Success, Warning, Error</span>
+      </div>
+      <div>
+        <div class="feature_img"></div>
+        <span>Auto-dismiss with progress indicator</span>
+      </div>
+      <div>
+        <div class="feature_img"></div>
+        <span>Manual close button</span>
+      </div>
+      <div>
+        <div class="feature_img"></div>
+        <span>Stacked positioning (top-right)</span>
+      </div>
+      <div>
+        <div class="feature_img"></div>
+        <span>Responsive design</span>
+      </div>
+    </div>
+    <div class="component__spec__container__styles">
+      <h3>Styling</h3>
+      <div>
+        <div class="style_img"></div>
+        <span>Rounded corners (12px)</span>
+      </div>
+      <div>
+        <div class="style_img"></div>
+        <span>Enhanced drop shadow for depth</span>
+      </div>
+      <div>
+        <div class="style_img"></div>
+        <span>Consistent padding (20px)</span>
+      </div>
+      <div>
+        <div class="style_img"></div>
+        <span>Perfect icon-text alignment</span>
+      </div>
+      <div>
+        <div class="style_img"></div>
+        <span>Smooth micro-interactions</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app_toasts">
+  <app-toasts
+    *ngFor="let toast of toastsArr"
+    [id]="toast.id"
+    [type]="toast.type"
+    [message]="toast.message"
+    [duration]="toast.duration"
+    (closeEvent)="removeToast($event)"
+  ></app-toasts>
+</div>
