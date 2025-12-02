@@ -1,0 +1,73 @@
+<div class="guest-card-container">
+  <div class="guest-card">
+    <div class="seat-title">
+      <img src="../../assets/icons/selected.svg" alt="" />
+      Seat {{ formGroup.controls["seatId"].value }}
+    </div>
+
+    <form [formGroup]="formGroup">
+      <div>
+        <label>First Name</label>
+        <input formControlName="firstname" type="text" />
+      </div>
+
+      <div>
+        <label>Last Name</label>
+        <input formControlName="lastname" type="text" />
+      </div>
+
+      <div>
+        <label>Age</label>
+        <input formControlName="age" type="number" />
+      </div>
+
+      <div
+        class="error"
+        *ngIf="
+          formGroup.get('firstname')?.touched &&
+          formGroup.get('firstname')?.invalid
+        "
+      >
+        <span *ngIf="formGroup.get('firstname')?.errors?.['required']"
+          >First name is required</span
+        >
+        <span *ngIf="formGroup.get('firstname')?.errors?.['minlength']"
+          >Minimum length is 2</span
+        >
+        <span *ngIf="formGroup.get('firstname')?.errors?.['numbersNotAllowed']"
+          >Numbers not allowed</span
+        >
+      </div>
+
+      <div
+        class="error"
+        *ngIf="
+          formGroup.get('lastname')?.touched &&
+          formGroup.get('lastname')?.invalid
+        "
+      >
+        <span *ngIf="formGroup.get('lastname')?.errors?.['required']"
+          >Last name is required</span
+        >
+        <span *ngIf="formGroup.get('lastname')?.errors?.['minlength']"
+          >Minimum length is 2</span
+        >
+        <span *ngIf="formGroup.get('lastname')?.errors?.['numbersNotAllowed']"
+          >Numbers not allowed</span
+        >
+      </div>
+
+      <div
+        class="error"
+        *ngIf="formGroup.get('age')?.touched && formGroup.get('age')?.invalid"
+      >
+        <span *ngIf="formGroup.get('age')?.errors?.['required']"
+          >Age is required</span
+        >
+        <span *ngIf="formGroup.get('age')?.errors?.['min']"
+          >Age must be ≥ 5</span
+        >
+      </div>
+    </form>
+  </div>
+</div>

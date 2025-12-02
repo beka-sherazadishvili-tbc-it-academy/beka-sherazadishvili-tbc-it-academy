@@ -1,0 +1,65 @@
+$card-bf-color: #ffffff;
+$card-border-color: #e2e8f0;
+$card-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 10%),
+  0px 10px 15px 0px rgba(0, 0, 0, 10%);
+$seat-title-color: #334155;
+$input-border: #e2e8f0;
+$input-bg-color: #f8fafc;
+$input-border-color-focus: #3b82f6;
+$error-text-color: #d9534f;
+
+.guest-card {
+  background-color: $card-bf-color;
+  padding: 33px;
+  border-radius: 16px;
+  box-shadow: $card-box-shadow;
+  border: 1px solid $card-border-color;
+  margin-bottom: 24px;
+  max-width: 1088px;
+
+  .seat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $seat-title-color;
+    margin-bottom: 24px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    div {
+      label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 11px;
+        color: $seat-title-color;
+      }
+
+      input {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 2px solid $input-border;
+        background-color: $input-bg-color;
+        font-size: 15px;
+        outline: none;
+        transition: 0.2s ease;
+
+        &:focus {
+          border-color: $input-border-color-focus;
+        }
+      }
+    }
+
+    .error {
+      grid-column: span 3;
+      font-size: 14px;
+      color: $error-text-color;
+    }
+  }
+}

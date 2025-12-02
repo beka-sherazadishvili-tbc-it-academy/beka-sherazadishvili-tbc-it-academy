@@ -1,0 +1,45 @@
+<div class="seats_section">
+  <div class="seats_container">
+    <div class="column-numbers">
+      <div class="column-label" *ngFor="let number of columnNumbers">
+        {{ number }}
+      </div>
+    </div>
+
+    <div class="row" *ngFor="let row of rows">
+      <div class="row-label">{{ row }}</div>
+
+      <ng-container *ngFor="let column of columnNumbers">
+        <div
+          class="seat"
+          [ngClass]="{
+            available: getSeatOnClick(row, column)?.status === 'available',
+            selected: getSeatOnClick(row, column)?.status === 'selected',
+            reserved: getSeatOnClick(row, column)?.status === 'reserved'
+          }"
+          (click)="onSeatClick(row, column)"
+        >
+          <img src="../../../assets/icons/available.svg" alt="" />
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="button-states">
+    <app-buttons
+      [label]="'Available'"
+      [size]="'medium'"
+      [icon]="'available'"
+    ></app-buttons>
+    <app-buttons
+      [label]="'Selected'"
+      [size]="'medium'"
+      [icon]="'selected'"
+    ></app-buttons>
+    <app-buttons
+      [label]="'Reserved'"
+      [size]="'medium'"
+      [icon]="'reserved'"
+    ></app-buttons>
+  </div>
+</div>

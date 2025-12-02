@@ -1,0 +1,41 @@
+$header-bg-color: linear-gradient(90deg, #0F172A 0%, #1E3A8A 100%);
+$hero-bg-color: linear-gradient(90deg, #CBD5E1 0%, #94A3B8 100%);
+$font-color: #FFFFFF;
+$hero-section-font-color: #475569;
+
+header {
+    display: flex;
+    align-items: end;
+    max-width: 1440px;
+    height: 144px;
+    padding: 32px 144px;
+    margin-bottom: 32px;
+    background: $header-bg-color;
+    color: $font-color;
+}
+
+.app-guest-container {
+    max-width: 1440px;
+    padding: 0px 144px;
+
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        div {
+            width: 384px;
+            height: 24px;
+            border-radius: 9999px;
+            background: $hero-bg-color;
+        }
+
+        p {
+            font-size: 14px;
+            letter-spacing: 0.7px;
+            color: $hero-section-font-color;
+        }
+    }
+}

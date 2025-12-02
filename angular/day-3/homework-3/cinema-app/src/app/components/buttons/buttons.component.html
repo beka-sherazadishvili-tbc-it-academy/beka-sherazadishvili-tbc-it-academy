@@ -1,0 +1,30 @@
+<button
+  class="btn"
+  [ngClass]="[size, color, icon]"
+  (click)="onClick($event)"
+>
+  <ng-container [ngSwitch]="icon">
+    <img
+      *ngSwitchCase="'save'"
+      src="../../../assets/icons/save.svg"
+      alt="download"
+    />
+    <img
+      *ngSwitchCase="'available'"
+      src="../../../assets/icons/available.svg"
+      alt="confirm"
+    />
+    <img
+      *ngSwitchCase="'selected'"
+      src="../../../assets/icons/selected.svg"
+      alt="delete"
+    />
+    <img
+      *ngSwitchCase="'reserved'"
+      src="../../../assets/icons/reserved.svg"
+      alt="edit"
+    />
+  </ng-container>
+
+  {{ label }}
+</button>

@@ -1,0 +1,19 @@
+<header>
+  <p>Choose your preferred seats and enter guest details</p>
+</header>
+
+<div class="app-guest-container">
+  <section class="hero-section">
+    <div></div>
+    <p>Screen</p>
+  </section>
+
+  <app-seats
+    #seatsComp
+    (selectedSeatsChanged)="selectedSeats = $event"
+  ></app-seats>
+  <app-guest-inputs
+    [selectedSeats]="selectedSeats"
+    (saveGuests)="onSaveGuests($event)"
+  ></app-guest-inputs>
+</div>
