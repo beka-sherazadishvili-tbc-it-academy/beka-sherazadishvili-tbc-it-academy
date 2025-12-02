@@ -6,10 +6,6 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.scss'],
 })
-export class InputsComponent implements OnInit {
+export class InputsComponent {
   @Input() formGroup: FormGroup;
-
-  ngOnInit(): void {
-    console.log(this.formGroup);
-  }
 }

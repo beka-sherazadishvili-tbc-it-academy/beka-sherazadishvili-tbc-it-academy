@@ -72,6 +72,16 @@ export class GuestInputsComponent implements OnChanges {
       return;
     }
 
+    const gusestObj = {
+      seats: this.selectedSeats,
+      guest: this.guestForm.value.map(form => ({
+        firstname: form.firstname,
+        lastname: form.lastname,
+        age: form.age
+      }))
+    };
+
+    console.log(gusestObj);
     this.saveGuests.emit(this.guestForm.value);
   }
 }

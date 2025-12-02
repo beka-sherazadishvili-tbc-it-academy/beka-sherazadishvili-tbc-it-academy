@@ -1,0 +1,37 @@
+$font-color: #334155;
+$secondary-font-color: #475569;
+$form-bg-color: #FFFFFF;
+
+main {
+  width: 448px;
+  height: 900px;
+  border-radius: 16px;
+  padding: 33px;
+  margin: 50px;
+  background-color: $form-bg-color;
+
+  p {
+    color: $secondary-font-color;
+    padding: 7px 0px 32px 0px;
+    font-size: 16px;
+  }
+
+  .gender_section {
+    margin-bottom: 24px;
+
+    h3 {
+        padding-bottom: 12px;
+    }
+
+    div {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

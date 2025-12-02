@@ -14,7 +14,7 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     SeatsComponent,
     GuestInputsComponent,
     InputsComponent,
-    ButtonsComponent
+    ButtonsComponent,
   ],
   imports: [
     BrowserModule,
