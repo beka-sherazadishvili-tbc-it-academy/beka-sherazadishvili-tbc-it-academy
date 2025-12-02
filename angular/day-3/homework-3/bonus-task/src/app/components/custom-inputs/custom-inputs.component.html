@@ -1,0 +1,14 @@
+<div class="input-wrapper" [ngClass]="labelPosition">
+  <label *ngIf="labelPosition === 'top'" class="top-label">
+    {{ label }}
+  </label>
+
+  <div class="input-container">
+    <input [type]="type" [placeholder]="placeholer" />
+
+    <span *ngIf="labelPosition === 'inside'" class="inside-label">
+      {{ label }}
+    </span>
+  </div>
+  <ng-content></ng-content>
+</div>

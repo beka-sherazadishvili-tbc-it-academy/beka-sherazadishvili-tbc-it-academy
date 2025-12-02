@@ -1,0 +1,55 @@
+<main>
+  <p>Join us today and get started with your journey</p>
+  <section class="gender_section">
+    <h3>Gender</h3>
+    <div>
+      <app-custom-inputs
+        [type]="'radio'"
+        [label]="'Male'"
+        [labelPosition]="'inside'"
+      ></app-custom-inputs>
+      <app-custom-inputs
+        [type]="'radio'"
+        [label]="'Female'"
+        [labelPosition]="'inside'"
+      ></app-custom-inputs>
+    </div>
+  </section>
+
+  <section class="input-fields">
+    <app-custom-inputs
+      [label]="'First Name'"
+      [labelPosition]="'top'"
+      [placeholer]="'John'"
+    ></app-custom-inputs>
+    <app-custom-inputs
+      [label]="'Last Name'"
+      [labelPosition]="'top'"
+      [placeholer]="'Smith'"
+    ></app-custom-inputs>
+    <app-custom-inputs
+      [label]="'Email Address'"
+      [labelPosition]="'top'"
+      [placeholer]="'john.smith@email.com'"
+      [type]="'email'"
+    ></app-custom-inputs>
+    <app-custom-inputs
+      [label]="'Password'"
+      [labelPosition]="'top'"
+      [placeholer]="'MyPass123!'"
+      [type]="'password'"
+    ></app-custom-inputs>
+    <app-custom-inputs
+      [label]="'Confirm Password'"
+      [labelPosition]="'top'"
+      [placeholer]="'MyPass123!'"
+      [type]="'password'"
+    ></app-custom-inputs>
+
+    <app-buttons
+      [label]="'Create Account'"
+      [size]="'medium'"
+      [color]="'primary'"
+    ></app-buttons>
+  </section>
+</main>

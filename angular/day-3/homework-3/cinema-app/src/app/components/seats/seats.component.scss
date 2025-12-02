@@ -1,0 +1,65 @@
+$seats-bg-color: #ffffff;
+$seats-border-color: #e2e8f0;
+$seats-box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 10%),
+  0px 20px 25px 0px rgba(0, 0, 0, 10%);
+
+.seats_container {
+  max-width: 1088px;
+  height: 466px;
+  border-radius: 24px;
+  padding: 41px 208px;
+  background-color: $seats-bg-color;
+  border: 1px solid $seats-border-color;
+  box-shadow: $seats-box-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0px;
+
+  .column-numbers {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .column-label {
+    width: 28px;
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .row-label {
+    width: 20px;
+    font-weight: 600;
+  }
+
+  .seat {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    transition: filter 0.3s ease;
+  }
+
+  .seat.selected {
+    filter: invert(39%) sepia(57%) saturate(747%) hue-rotate(195deg)
+      brightness(97%);
+  }
+
+  .seat.reserved {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.button-states {
+  display: flex;
+  justify-content: center;
+}

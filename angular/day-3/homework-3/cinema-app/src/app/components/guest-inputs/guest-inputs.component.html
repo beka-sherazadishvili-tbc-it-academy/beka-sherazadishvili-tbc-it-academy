@@ -1,0 +1,13 @@
+<ng-container *ngIf="guestForm.controls.length > 0">
+  <h1>Guest Details</h1>
+  <div *ngFor="let group of guestForm?.controls" [formGroup]="group">
+    <app-inputs *ngIf="group" [formGroup]="group"></app-inputs>
+  </div>
+  <app-buttons
+    [label]="'Save Guest Details'"
+    [size]="'medium'"
+    [icon]="'save'"
+    [color]="'primary'"
+    (clicked)="onSaveGuestDetails()"
+  ></app-buttons>
+</ng-container>
