@@ -1,14 +1,28 @@
-<div class="input-wrapper" [ngClass]="labelPosition">
-  <label *ngIf="labelPosition === 'top'" class="top-label">
-    {{ label }}
-  </label>
+<div class="input-wrapper">
+  <label class="top-label">{{ label }}</label>
 
-  <div class="input-container">
-    <input [type]="type" [placeholder]="placeholer" />
+  <ng-container *ngIf="type !== 'radio'">
+    <input
+      [type]="type"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="onInput($event)"
+      (blur)="markTouched()"
+    />
+  </ng-container>
 
-    <span *ngIf="labelPosition === 'inside'" class="inside-label">
-      {{ label }}
-    </span>
-  </div>
+  <ng-container *ngIf="type === 'radio'">
+    <div class="radio-group">
+      <label class="radio-option" *ngFor="let opt of options">
+        <input
+          type="radio"
+          [checked]="value === opt.value"
+          (change)="updateValue(opt.value)"
+        />
+        {{ opt.label }}
+      </label>
+    </div>
+  </ng-container>
+
   <ng-content></ng-content>
 </div>

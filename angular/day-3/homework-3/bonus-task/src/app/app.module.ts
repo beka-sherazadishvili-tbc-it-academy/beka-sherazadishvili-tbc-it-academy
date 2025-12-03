@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CustomInputsComponent } from './components/custom-inputs/custom-inputs.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     ButtonsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
