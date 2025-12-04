@@ -1,0 +1,117 @@
+$timer-bg-color: #1f1f1f;
+$timer-font-color: #ffffff;
+$bg-color: #000000;
+$timer-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+$button-color: #333333;
+$button-hover-color: #555555;
+$apply-bg-color: #1abc9c;
+$apply-hover-bg-color: #16a085;
+
+.timer_container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 33px;
+  border-radius: 16px;
+  background: $timer-bg-color;
+  color: $timer-font-color;
+  font-family: "Inter", sans-serif;
+  box-shadow: $timer-box-shadow;
+
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .timer {
+    font-size: 44px;
+    font-weight: 600;
+    padding: 33px;
+    background: $bg-color;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  .speed {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+
+  .controls,
+  .skip_controls,
+  .speed_controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0;
+
+    button {
+      padding: 12px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: $button-color;
+      color: $timer-font-color;
+
+      &:hover {
+        background: $button-hover-color;
+      }
+    }
+  }
+
+  .custom_skip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    input {
+      width: 70px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+      background: $button-color;
+      color: $timer-font-color;
+    }
+
+    button {
+      background: $apply-bg-color;
+
+      &:hover {
+        background: $apply-hover-bg-color;
+      }
+    }
+  }
+
+  .speed_controls {
+    margin-top: 24px;
+
+    button {
+      background: $button-color;
+
+      &.active {
+        background: $apply-bg-color;
+        color: $bg-color;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .laps {
+    margin-top: 24px;
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid $button-color;
+      }
+    }
+  }
+}

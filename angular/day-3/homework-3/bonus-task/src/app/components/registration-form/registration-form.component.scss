@@ -1,10 +1,15 @@
 $font-color: #334155;
 $secondary-font-color: #475569;
 $form-bg-color: #FFFFFF;
+$error-color: #d63031;
+$medium-color: rgb(238, 172, 49);
+$success-color: rgb(85, 239, 110);
+$text-color: #64748B;
+$link-color: #3B82F6;
 
 main {
   width: 448px;
-  height: 900px;
+  height: auto;
   border-radius: 16px;
   padding: 33px;
   margin: 50px;
@@ -35,3 +40,36 @@ main {
     gap: 24px;
   }
 }
+
+.error {
+  color: $error-color;
+  font-size: 12px;
+}
+
+.weak {
+  color: $error-color;
+}
+.medium {
+  color: $medium-color;
+}
+.strong {
+  color: $success-color;
+}
+
+.footer {
+  text-align: center;
+  color: $text-color;
+  font-size: 12px;
+  margin-top: 48px;
+
+  span {
+    color: $link-color;
+    cursor: pointer;
+  }
+}
+
+.submit_btn {
+  width: 100%;
+  height: 56px;
+}
+

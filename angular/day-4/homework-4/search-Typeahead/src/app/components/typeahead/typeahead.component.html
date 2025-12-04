@@ -1,0 +1,22 @@
+<header>
+  <h1>Movies</h1>
+
+  <input
+    type="text"
+    placeholder="Search movie..."
+    [formControl]="searchControl"
+  />
+
+  <span>Sign In</span>
+</header>
+
+<ul *ngIf="result$ | async as results">
+  <li *ngFor="let movie of results">
+    <img src="../../../assets/image/{{movie.img}}" />
+    <div class="movie_desc">
+      <h3>{{ movie.title }}</h3>
+      <span>{{ movie.description }}</span>
+      <span>{{ movie.genre }}</span>
+    </div>
+  </li>
+</ul>

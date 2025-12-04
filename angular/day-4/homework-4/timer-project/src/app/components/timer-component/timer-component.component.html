@@ -1,0 +1,39 @@
+<form class="timer_container" [formGroup]="form">
+  <h1 class="title">Reactive Stopwatch</h1>
+  <div class="timer">{{ timer }}</div>
+  <div class="speed">speed: {{ form.value.speed }}x</div>
+  <div class="controls">
+    <button (click)="start()">Start</button>
+    <button (click)="pause()">Pause</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="lap()">Lap</button>
+  </div>
+
+  <div class="skip_controls">
+    <button (click)="skip(-5)">-5s</button>
+
+    <div class="custom_skip">
+      <input type="number" min="-60" max="60" formControlName="customSkip" />
+      <button (click)="skip()">Apply</button>
+    </div>
+
+    <button (click)="skip(5)">+5s</button>
+  </div>
+
+  <div class="speed_controls">
+    <button [class.active]="form.value.speed===0.5" (click)="setSpeed(0.5)">0.5x</button>
+    <button [class.active]="form.value.speed===1"   (click)="setSpeed(1)">1x</button>
+    <button [class.active]="form.value.speed===2"   (click)="setSpeed(2)">2x</button>
+    <button [class.active]="form.value.speed===5"   (click)="setSpeed(5)">5x</button>
+  </div>
+
+  <div class="laps">
+    <h2>Laps</h2>
+    <ul>
+      <li *ngFor="let lap of laps; let i = index">
+        <span>Lap {{ i + 1 }}</span>
+        <span>{{ lap }}</span>
+      </li>
+    </ul>
+  </div>
+</form>
