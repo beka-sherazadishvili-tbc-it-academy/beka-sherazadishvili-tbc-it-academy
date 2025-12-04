@@ -42,7 +42,7 @@ export class TimerComponentComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  private initTimer() {
+  private initTimer(): void {
     combineLatest([
       this.isRuning$,
       this.form
@@ -82,7 +82,7 @@ export class TimerComponentComponent implements OnInit, OnDestroy {
     this.laps = [this.formatTime(this.time$.value), ...this.laps];
   }
 
-  public skip(amount?: number) {
+  public skip(amount?: number): void {
     if (amount === undefined) {
       amount = Number(this.form.value.customSkip);
     }
@@ -95,7 +95,7 @@ export class TimerComponentComponent implements OnInit, OnDestroy {
     this.timer = this.formatTime(newTime);
   }
 
-  public setSpeed(s: number) {
+  public setSpeed(s: number): void {
     this.form.get('speed')!.setValue(s);
   }
 
