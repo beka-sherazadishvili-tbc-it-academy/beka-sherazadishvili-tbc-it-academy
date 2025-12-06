@@ -1,0 +1,72 @@
+$input-border-color: #afa8a8;
+$button-bg-color: #1976d2;
+$font-color: #ffffff;
+$status-bg-color: #e0e0e0;
+$close-btn-color: rgb(211, 14, 14);
+
+.products {
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    li {
+      width: 200px;
+      height: 200px;
+      border: 1px solid $input-border-color;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 18px;
+
+      img {
+        height: 50%;
+        margin: 0px auto 12px;
+        display: block;
+        background-clip: content-box;
+        object-fit: cover;
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $input-border-color;
+
+    button {
+      margin: 8px;
+      padding: 4px 12px;
+    }
+  }
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 18px;
+  border: none;
+  background: $button-bg-color;
+  color: $font-color;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+<h1>Todo List</h1>
+<div class="todo-container">
+  <div class="input-wrapper">
+    <input type="text" [formControl]="title" />
+    <button (click)="addTodo()">Add</button>
+  </div>
+
+  <div class="controls">
+    <div class="filters">
+      <button
+        (click)="setFilter('all')"
+        [class.active]="todoService.currentFilterValue === 'all'"
+      >
+        All
+      </button>
+      <button
+        (click)="setFilter('active')"
+        [class.active]="todoService.currentFilterValue === 'active'"
+      >
+        Active
+      </button>
+      <button
+        (click)="setFilter('completed')"
+        [class.active]="todoService.currentFilterValue === 'completed'"
+      >
+        Completed
+      </button>
+    </div>
+    
+<select (change)="setSort($event)">
+      <option value="createdAt">Sort by: Created</option>
+      <option value="completedAt">Sort by: Completed</option>
+    </select>
+  </div>
+
+  <ul class="todo-list">
+    <li *ngFor="let todo of todos$ | async" [class.completed]="todo.completed">
+      <input
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="toggleTodo(todo.id)"
+      />
+      <input
+        class="title"
+        [value]="todo.title"
+        (keydown.enter)="updateTitle(todo.id, $event)"
+      />
+      <button class="remove" (click)="removeTodo(todo.id)">✕</button>
+    </li>
+  </ul>
+</div>
