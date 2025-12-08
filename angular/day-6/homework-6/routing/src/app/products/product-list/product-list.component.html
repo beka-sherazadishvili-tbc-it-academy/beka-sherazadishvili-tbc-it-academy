@@ -1,0 +1,27 @@
+<div class="products">
+  <h1>Products</h1>
+
+  <input placeholder="Search" (input)="onSearch($event)" />
+
+  <select (change)="onSort($event)" class="sort-select">
+    <option value="sort">Sort</option>
+    <option value="asc">Price Asc</option>
+    <option value="desc">Price Desc</option>
+  </select>
+
+  <ul>
+    <li *ngFor="let product of filtered">
+      <img [src]="'../../../assets/images/' + product.img" />
+
+      <div>
+        <span>{{ product.name }}</span>
+        <span>{{ product.price | currency : "USD" }}</span>
+      </div>
+
+      <div>
+        <button (click)="addToCart(product)">Add</button>
+        <button [routerLink]="[product.id]">Details</button>
+      </div>
+    </li>
+  </ul>
+</div>

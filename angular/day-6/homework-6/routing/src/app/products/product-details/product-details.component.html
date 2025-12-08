@@ -1,0 +1,28 @@
+<div *ngIf="product; else notFound" class="detail-container">
+
+  <a routerLink="/products" class="back">← Back to Products</a>
+
+  <div class="detail-content">
+    <div class="image-box">
+      <img [src]="'../../../assets/images/' + product.img" [alt]="product.name" />
+    </div>
+
+    <div class="info-box">
+      <h1>{{ product.name }}</h1>
+      <h2 class="price">{{ product.price | currency:'USD' }}</h2>
+
+      <p class="description">
+        {{ product.description || 'No description available.' }}
+      </p>
+
+      <button class="add-btn" (click)="addToCart()">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <p>Product not found.</p>
+  <a routerLink="/products">Back to Products</a>
+</ng-template>

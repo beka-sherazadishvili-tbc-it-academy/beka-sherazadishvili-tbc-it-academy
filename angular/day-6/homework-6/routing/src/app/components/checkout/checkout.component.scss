@@ -1,0 +1,19 @@
+$button-bg-color: #1976d2;
+$font-color: #ffffff;
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    background: $button-bg-color;
+    color: $font-color;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 150px;
+  }
+}
