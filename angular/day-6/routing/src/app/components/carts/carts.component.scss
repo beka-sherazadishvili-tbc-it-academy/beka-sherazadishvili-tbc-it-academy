@@ -9,6 +9,10 @@ $close-btn-color: rgb(211, 14, 14);
   flex-direction: column;
   gap: 24px;
 
+  .total {
+    display: block;
+  }
+
   > div {
     display: flex;
     flex-direction: column;
