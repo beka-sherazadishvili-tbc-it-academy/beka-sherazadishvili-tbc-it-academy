@@ -1,0 +1,13 @@
+<div class="cart-items" *ngIf="cartItems$ | async as cartItems">
+  <h1>Cart Items</h1>
+  <div *ngFor="let item of cartItems">
+    <h3>{{ item.name }} — {{ item.price }}$</h3>
+
+    <div>
+      <span class="total">Total - {{ item.price * item.quantity | currency:'USD' }}</span>
+      <button (click)="decrement(item.id)">-</button>
+      <span>{{ item.quantity }}</span>
+      <button (click)="increment(item.id)">+</button>
+    </div>
+  </div>
+</div>
