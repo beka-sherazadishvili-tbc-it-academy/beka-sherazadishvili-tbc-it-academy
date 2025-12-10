@@ -1,0 +1,12 @@
+<div class="input-wrapper">
+  <input
+    type="number"
+    min="0"
+    placeholder="0.00"
+    [formControl]="controllerName"
+    (input)="onInput($event)"
+    [disabled]="!enabled"
+  />
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+</div>

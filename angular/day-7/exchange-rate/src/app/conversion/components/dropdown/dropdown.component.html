@@ -1,0 +1,8 @@
+<select [formControl]="form">
+  <option [ngValue]="null" *ngIf="isDefaultSelected" disabled>
+    Select account...
+  </option>
+  <option *ngFor="let item of items" [ngValue]="item" [disabled]="isDisabled(item)">
+    {{ displayFn(item) }}
+  </option>
+</select>
