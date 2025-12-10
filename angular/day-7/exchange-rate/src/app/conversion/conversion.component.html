@@ -6,7 +6,7 @@
         [items]="(senderAccount$ | async) ?? []"
         [displayFn]="accountDisplay"
         [(selectedItem)]="selectedSender"
-        [isDefaultSelected]="false"
+        [isDefaultSelected]="true"
         (selectedItemChange)="onSenderChange($event)"
       >
         <ng-template let-account>
