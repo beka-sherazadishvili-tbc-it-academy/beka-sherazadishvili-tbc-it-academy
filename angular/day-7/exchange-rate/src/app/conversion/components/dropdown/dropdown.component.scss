@@ -1,0 +1,9 @@
+$border-color: rgb(157, 153, 153);
+
+select {
+  width: 200px;
+  height: 32px;
+  border: 1px solid $border-color;
+  padding-left: 12px;
+  border-radius: 6px;
+}

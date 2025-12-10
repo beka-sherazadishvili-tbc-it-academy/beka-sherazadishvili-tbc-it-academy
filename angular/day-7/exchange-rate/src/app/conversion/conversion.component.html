@@ -1,0 +1,66 @@
+<div class="main-container">
+  <div>
+    <h3>From</h3>
+    <div class="options">
+      <app-dropdown
+        [items]="(senderAccount$ | async) ?? []"
+        [displayFn]="accountDisplay"
+        [(selectedItem)]="selectedSender"
+        [isDefaultSelected]="false"
+        (selectedItemChange)="onSenderChange($event)"
+      >
+        <ng-template let-account>
+          {{ account.friendlyName }} -
+          {{ account.availableBalance | dynamicCurrency : account.currency }}
+        </ng-template>
+      </app-dropdown>
+
+      <app-input
+        [controllerName]="fromAmountControl"
+        [error]="fromAmountError"
+        [enabled]="!!selectedSender && !!selectedReceiver"
+        (amountEntered)="handleFromAmount($event)"
+      >
+      </app-input>
+    </div>
+  </div>
+
+  <div (click)="onSubmit()">
+    <button [disabled]="isConvertDisabled"></button>
+  </div>
+
+  <div>
+    <h3>To</h3>
+    <div class="options">
+      <app-input
+        [controllerName]="toAmountControl"
+        [error]="toAmountError"
+        [enabled]="!!selectedSender && !!selectedReceiver"
+        (amountEntered)="handleToAmount($event)"
+      >
+      </app-input>
+      <app-dropdown
+        [items]="(receiverAccount$ | async) ?? []"
+        [displayFn]="accountDisplay"
+        [(selectedItem)]="selectedReceiver"
+        [isDefaultSelected]="true"
+        [disabledCurrency]="selectedSender?.currency"
+      >
+        <ng-template let-account>
+          {{ account.friendlyName }} -
+          {{ account.availableBalance | dynamicCurrency : account.currency }}
+        </ng-template>
+      </app-dropdown>
+    </div>
+  </div>
+</div>
+
+<div class="rate-display" *ngIf="currentRateFrom && currentRateTo">
+  1 {{ selectedSender?.currency }} = {{ currentRateFrom }}
+  {{ selectedReceiver?.currency }}
+</div>
+
+<div class="rate-display" *ngIf="currentRateFrom && currentRateTo">
+  1 {{ selectedReceiver?.currency }} = {{ currentRateTo }}
+  {{ selectedSender?.currency }}
+</div>

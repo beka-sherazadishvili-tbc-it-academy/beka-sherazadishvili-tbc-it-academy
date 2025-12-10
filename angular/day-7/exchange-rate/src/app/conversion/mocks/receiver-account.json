@@ -1,0 +1,180 @@
+{
+  "receiverAccounts": [
+    {
+      "id": 822124178,
+      "availableBalance": 500,
+      "currency": "GEL",
+      "iban": "GE75TB7237145064100110",
+      "friendlyName": "Card",
+      "subTypeText": "Ertguli Classic"
+    },
+    {
+      "id": 9176411,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE30TB1100000387867348",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 23156533,
+      "availableBalance": 118.67999999999999,
+      "currency": "USD",
+      "iban": "GE30TB1100000387867348",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 23156534,
+      "availableBalance": 3.88,
+      "currency": "EUR",
+      "iban": "GE30TB1100000387867348",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 815973778,
+      "availableBalance": 18.5,
+      "currency": "GBP",
+      "iban": "GE30TB1100000387867348",
+      "friendlyName": "Card",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 812598982,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE81TB7815839956217131",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 812598983,
+      "availableBalance": 1900.45,
+      "currency": "USD",
+      "iban": "GE81TB7815839956217131",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 812598984,
+      "availableBalance": 0,
+      "currency": "EUR",
+      "iban": "GE81TB7815839956217131",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "TBC CARD"
+    },
+    {
+      "id": 810949056,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE95TB7276104749695679",
+      "friendlyName": "Space ანგარიში",
+      "subTypeText": "Space Card"
+    },
+    {
+      "id": 810887829,
+      "availableBalance": 419.88,
+      "currency": "GEL",
+      "iban": "GE88TB7123216604651958",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "Ertguli Classic"
+    },
+    {
+      "id": 809879695,
+      "availableBalance": 0,
+      "currency": "USD",
+      "iban": "GE73TB7473163984829582",
+      "friendlyName": " ჩემი სეიფი",
+      "subTypeText": "My Safe"
+    },
+    {
+      "id": 801690191,
+      "availableBalance": 0,
+      "currency": "USD",
+      "iban": "GE53TB7008142236283178",
+      "friendlyName": "ჩემი შემნახველი",
+      "subTypeText": "Expired deposits account"
+    },
+    {
+      "id": 60507661,
+      "availableBalance": 0,
+      "currency": "USD",
+      "iban": "GE64TB1192042199409981",
+      "friendlyName": "ჩემი მიმდინარე",
+      "subTypeText": "Current"
+    },
+    {
+      "id": 801669745,
+      "availableBalance": 0,
+      "currency": "RUR",
+      "iban": "GE64TB1192042199409981",
+      "friendlyName": "ჩემი მიმდინარე",
+      "subTypeText": "Current"
+    },
+    {
+      "id": 801089022,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE90TB7007578845813895",
+      "friendlyName": "ჩემი შემნახველი",
+      "subTypeText": "Expired deposits account"
+    },
+    {
+      "id": 11367811,
+      "availableBalance": 168.16,
+      "currency": "GEL",
+      "iban": "GE87TB1100000997701054",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "VISA GOLD"
+    },
+    {
+      "id": 11367911,
+      "availableBalance": 0.38,
+      "currency": "USD",
+      "iban": "GE87TB1100000997701054",
+      "friendlyName": "ჩემი ბარათი",
+      "subTypeText": "VISA GOLD"
+    },
+    {
+      "id": 770844061,
+      "availableBalance": 0,
+      "currency": "EUR",
+      "iban": "GE87TB1100000997701054",
+      "friendlyName": "Card",
+      "subTypeText": "VISA GOLD"
+    },
+    {
+      "id": 188600461,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE31TB1157175887229177",
+      "friendlyName": "ბოლო ზარი",
+      "subTypeText": "My Safe"
+    },
+    {
+      "id": 23193199,
+      "availableBalance": 0,
+      "currency": "USD",
+      "iban": "GE11TB1189747740696973",
+      "friendlyName": "ჩემი შემნახველი",
+      "subTypeText": "Saving"
+    },
+    {
+      "id": 23154943,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE23TB1186960702110146",
+      "friendlyName": "ჩემი მიმდინარე",
+      "subTypeText": "Current"
+    },
+    {
+      "id": 11345311,
+      "availableBalance": 0,
+      "currency": "GEL",
+      "iban": "GE59TB1100000002196863",
+      "friendlyName": "ჩემი სხვა",
+      "subTypeText": "Saving"
+    }
+  ]
+}

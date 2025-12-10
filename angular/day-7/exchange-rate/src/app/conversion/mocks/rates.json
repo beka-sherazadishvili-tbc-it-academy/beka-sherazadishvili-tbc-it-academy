@@ -1,0 +1,28 @@
+{
+  "rates": [
+    {
+      "currencyCode": "USD",
+      "currencyName": "აშშ დოლარი",
+      "standard": {
+        "buy": 2.654,
+        "sell": 2.749
+      }
+    },
+    {
+      "currencyCode": "EUR",
+      "currencyName": "ევრო",
+      "standard": {
+        "buy": 3.089,
+        "sell": 3.245
+      }
+    },
+    {
+      "currencyCode": "GBP",
+      "currencyName": "გირვანქა სტერლინგი",
+      "standard": {
+        "buy": 3.568,
+        "sell": 3.744
+      }
+    }
+  ]
+}
