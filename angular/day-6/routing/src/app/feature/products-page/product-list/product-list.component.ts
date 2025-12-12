@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IProducts, products } from '../product.model';
-import { ProductService } from 'src/app/services/products.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { IProducts, products } from '../models/product.model';
+import { ProductService } from 'src/app/shared/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs';
 
@@ -16,6 +16,7 @@ type ProductQueryParams = {
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductListComponent {
   public productList$ = this.productService.cart$;

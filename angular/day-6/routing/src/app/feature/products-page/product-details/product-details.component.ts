@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { IProducts, products } from '../product.model';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { IProducts, products } from '../models/product.model';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/services/products.service';
+import { ProductService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductDetailsComponent {
   public product: IProducts;

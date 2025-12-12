@@ -1,42 +1,57 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { CartsComponent } from './components/carts/carts.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { authGuard } from './services/auth.guard';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { authGuard } from './core/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    loadChildren: () =>
+      import('./feature/home-page/home-page.module').then(
+        (module) => module.HomePageModule
+      ),
   },
   {
     path: 'products',
     loadChildren: () =>
-      import('./products/products.module').then(
+      import('./feature/products-page/products.module').then(
         (module) => module.ProductsModule
       ),
+    pathMatch: 'full',
   },
   {
     path: 'carts',
-    component: CartsComponent,
-    canActivate: [authGuard]
+    loadChildren: () =>
+      import('./feature/cart-list-page/carts.module').then(
+        (module) => module.CartsModule
+      ),
+    canActivate: [authGuard],
+    pathMatch: 'full',
   },
   {
     path: 'checkout',
-    component: CheckoutComponent,
-    canActivate: [authGuard]
+    loadChildren: () =>
+      import('./feature/checkout-page/checkout.module').then(
+        (module) => module.CheckoutModule
+      ),
+    canActivate: [authGuard],
+    pathMatch: 'full',
   },
   {
     path: 'login',
-    component: LoginPageComponent
+    loadChildren: () =>
+      import('./feature/login-page/login-page.module').then(
+        (module) => module.LoginPageModule
+      ),
+    pathMatch: 'full',
   },
   {
     path: '**',
-    component: ErrorPageComponent
-  }
+    loadChildren: () =>
+      import('./shared/components/error-page/error-page.module').then(
+        (module) => module.ErrorPageModule
+      ),
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

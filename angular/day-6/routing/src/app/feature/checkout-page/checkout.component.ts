@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { ProductService } from 'src/app/services/products.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ProductService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckoutComponent {
   constructor(public productService: ProductService) {}

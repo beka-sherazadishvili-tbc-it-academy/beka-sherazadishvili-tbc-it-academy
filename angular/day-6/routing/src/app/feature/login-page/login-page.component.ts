@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { authService } from 'src/app/services/auth.service';
+import { authService } from 'src/app/core/auth/auth.service';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginPageComponent {
   public loginForm: FormGroup;
@@ -39,7 +40,7 @@ export class LoginPageComponent {
     });
   }
 
-  submit() {
+  public submit() {
     if (!this.loginForm.valid) return;
 
     const { username, password } = this.loginForm.value;

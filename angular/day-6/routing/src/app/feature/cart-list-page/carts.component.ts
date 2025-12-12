@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { IProducts, products } from '../../products/product.model';
-import { ProductService } from '../../services/products.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ProductService } from '../../shared/services/products.service';
 
 @Component({
   selector: 'app-carts',
   templateUrl: './carts.component.html',
   styleUrls: ['./carts.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartsComponent {
   public cartItems$ = this.productService.cart$;
