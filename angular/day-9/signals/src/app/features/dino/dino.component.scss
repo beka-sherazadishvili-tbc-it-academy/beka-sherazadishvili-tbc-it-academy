@@ -1,0 +1,244 @@
+$white: #fff;
+$black: #222;
+$light-gray: #f7f7f7;
+$gray-400: #ccc;
+$gray-500: #555;
+$gray-600: #444;
+$overlay-dark: rgba(0, 0, 0, 0.6);
+$overlay-light: rgba(255, 255, 255, 0.8);
+$danger: #e74c3c;
+$green: #2ecc71;
+$green-dark: #27ae60;
+$green-darker: #1e8449;
+$bird-color: #34495e;
+$speed: 5s;
+$ground-speed: 2s;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  height: 350px;
+  margin: 40px auto;
+  background: $light-gray;
+  overflow: hidden;
+  border: 2px solid $black;
+  border-radius: 8px;
+
+  &.game-over {
+    filter: grayscale(1);
+    pointer-events: none;
+
+    &::after {
+      content: 'GAME OVER';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 48px;
+      color: $danger;
+      background: $overlay-dark;
+      z-index: 100;
+    }
+
+    .ground,
+    .dino,
+    .cactus,
+    .bird {
+      animation-play-state: paused;
+    }
+  }
+
+  .score {
+    display: inline;
+    font-size: 24px;
+    margin-left: 24px;
+  }
+
+  .speed {
+    margin-left: 24px;
+  }
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    -45deg,
+    $gray-600,
+    $gray-600 10px,
+    $gray-500 10px,
+    $gray-500 20px
+  );
+  animation: ground-move $ground-speed linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes ground-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.dino {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  animation: dino-run 0.35s steps(2) infinite;
+  animation-play-state: paused;
+  background-image: url(../../../assets/icons/images.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes dino-run {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dino.jump {
+  animation: jump 0.8s ease-out;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 40px;
+  }
+  40% {
+    bottom: 130px;
+  }
+  100% {
+    bottom: 40px;
+  }
+}
+
+.dino.duck {
+  height: 30px;
+  width: 30px;
+  border-radius: 6px;
+}
+
+.scene.is-playing {
+  .ground,
+  .dino {
+    animation-play-state: running;
+  }
+}
+
+button {
+  background-color: $green;
+  border: 2px solid $green-dark;
+  color: $white;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 10px 5px 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+  background-color: $green-dark;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: $green-darker;
+  transform: scale(0.95);
+}
+
+input[type='number'] {
+  padding: 10px 15px;
+  border: 2px solid $gray-400;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type='number']:focus {
+  border-color: $green;
+  box-shadow: 0 0 5px rgba($green, 0.5);
+}
+
+div > div > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cactus {
+  position: absolute;
+  bottom: 40px;
+  right: -50px;
+  width: 40px;
+  height: 60px;
+  background-image: url(../../../assets/icons/cactus.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+
+  .is-playing & {
+    animation: moveObstacle $speed linear;
+  }
+}
+
+@keyframes moveObstacle {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+.bird {
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+  background-color: $bird-color;
+  border-radius: 4px;
+  background-image: url(../../../assets/icons/mark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 80px;
+
+  .is-playing & {
+    animation: moveObstacle $speed linear;
+  }
+}
