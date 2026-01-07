@@ -33,14 +33,12 @@
       }"
     ></div>
 
-    <div
-      *ngFor="let obs of game.obstacles(); trackBy: game.trackObstacle"
-      [ngClass]="obs.type"
-      [style.animation-duration.s]="game.gameSpeed()"
-    ></div>
+    @for (obs of game.obstacles(); track game.trackObstacle($index, obs)) {
+    <div [ngClass]="obs.type" [style.animation-duration.s]="game.gameSpeed()"></div>
+    }
   </div>
 
-  <div *ngIf="game.isGameOver()" class="game-over-text">
-    Game Over. Your Score is {{ game.score() }}
-  </div>
+  @if (game.isGameOver()) {
+  <div class="game-over-text">Game Over. Your Score is {{ game.score() }}</div>
+  }
 </div>

@@ -7,7 +7,7 @@ import { MinutePipes } from '../../core/pipes/timer.pipe';
 @Component({
   selector: 'app-dino',
   templateUrl: './dino.component.html',
-  styleUrl: './dino.component.scss',
+  styleUrls: ['./dino.component.scss'],
   imports: [CommonModule, ReactiveFormsModule, MinutePipes],
   standalone: true,
 })
