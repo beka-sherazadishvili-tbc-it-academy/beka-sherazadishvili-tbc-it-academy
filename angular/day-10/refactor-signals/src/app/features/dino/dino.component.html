@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <div class="start-game">
+      <input [formControl]="enteredTime" type="number" placeholder="Enter game duration" />
+      <button (click)="startGame()">Start</button>
+      <p>{{ game.totalTime() | minutes }}</p>
+    </div>
+    <div>
+      <button (click)="game.pauseGame()">Pause</button>
+      <button (click)="game.resumeGame()">Resume</button>
+      <button (click)="game.restartGame()">Restart</button>
+    </div>
+  </div>
+  <div
+    class="scene"
+    [ngClass]="{
+      'is-playing': game.gameStartState(),
+      'game-over': game.isGameOver()
+    }"
+    [style.--speed]="game.gameSpeed() + 's'"
+  >
+    <button (click)="game.jump()">Jump</button>
+    <button (click)="game.duck()" [ngClass]="game.duckState">Duck</button>
+    <div class="score">Score: {{ game.score() }}</div>
+    <span class="speed">Speed: {{ (10 / game.gameSpeed()).toFixed(1) }}x</span>
+    <span class="speed">Obstacles: {{ game.obstacleIdCounterPsssed }}</span>
+    <div class="ground"></div>
+    <div
+      class="dino"
+      [ngClass]="{
+        jump: game.jumpState(),
+        duck: game.duckState()
+      }"
+    ></div>
+
+    @for (obs of game.obstacles(); track game.trackObstacle($index, obs)) {
+    <div [ngClass]="obs.type" [style.animation-duration.s]="game.gameSpeed()"></div>
+    }
+  </div>
+
+  @if (game.isGameOver()) {
+  <div class="game-over-text">Game Over. Your Score is {{ game.score() }}</div>
+  }
+</div>

@@ -1,0 +1,13 @@
+import { Component, signal } from '@angular/core';
+import { DinoComponent } from "./features/dino/dino.component";
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.html',
+  standalone: true,
+  styleUrl: './app.scss',
+  imports: [DinoComponent]
+})
+export class App {
+  protected readonly title = signal('signals');
+}
