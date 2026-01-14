@@ -13,6 +13,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { answerQuestion, nextQuestion, previousQuestion } from '../../store/quiz/quiz.actions';
 import { IQuizQuestion } from '../../store/quiz/quiz.state';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -22,6 +23,7 @@ import { RouterLink } from '@angular/router';
 })
 export class Quiz {
   private store = inject(Store);
+  private router = inject(Router);
   public currentQuestion = toSignal(this.store.select(selectCurrentQuestion));
   public currentAnswers = toSignal(this.store.select(selectCurrentQuestionAnswers));
   public isFirst = toSignal(this.store.select(isFirstQuestion));
@@ -47,5 +49,18 @@ export class Quiz {
 
   public previous() {
     this.store.dispatch(previousQuestion());
+  }
+
+  public back() {
+    if (this.isFirst()) {
+      this.router.navigateByUrl('/intro');
+      return;
+    }
+
+    this.previous();
+  }
+
+  public seeDetails() {
+    this.router.navigateByUrl('/intro');
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { canStartQuiz, selectEmail, selectName } from '../../store/user/user.selector';
 import { setUserInfo } from '../../store/user/user.actions';
@@ -14,7 +14,7 @@ import { loadQuiz } from '../../store/quiz/quiz.actions';
   templateUrl: './introduction.html',
   styleUrl: './introduction.scss',
 })
-export class Introduction {
+export class Introduction implements OnInit {
   private router = inject(Router);
   private store = inject(Store);
   public nameSignal = toSignal(this.store.select(selectName));
@@ -34,6 +34,15 @@ export class Introduction {
 
   public setIntroInfo(nameValue: string, emailValue: string) {
     this.store.dispatch(setUserInfo({ name: nameValue, email: emailValue }));
+  }
+
+  public ngOnInit(): void {
+    const name = this.nameSignal() ?? '';
+    const email = this.emailSignal() ?? '';
+
+    if (name !== '' || email !== '') {
+      this.quizModel.set({ name, email });
+    }
   }
 
   public startQuiz() {
