@@ -158,8 +158,6 @@ describe('DinoGameService Integration Tests', () => {
       service.startGame(enteredTime1);
 
       vi.advanceTimersByTime(3000);
-      const score1 = service.score();
-
       const enteredTime2 = new FormControl(1, { nonNullable: true });
       service.startGame(enteredTime2);
 
