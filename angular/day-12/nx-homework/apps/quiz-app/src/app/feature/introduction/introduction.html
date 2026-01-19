@@ -1,0 +1,15 @@
+<form>
+  <label>Name</label>
+  <input type="text" [field]="quizForm.name">
+
+  <label>Email</label>
+  <input type="text" [field]="quizForm.email">
+
+  <button
+    type="button"
+    (click)="startQuiz()"
+    [disabled]="!quizForm.name().valid() || !quizForm.email().valid()"
+  >
+    Start Quiz
+  </button>
+</form>

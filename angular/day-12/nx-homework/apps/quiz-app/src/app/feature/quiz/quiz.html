@@ -1,0 +1,39 @@
+<div class="quiz_contatiner">
+  @if (currentQuestion()) {
+  <div>
+    <div class="progress">
+      <div class="progress-text">Progress: {{ progress() }}%</div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="progress()"></div>
+      </div>
+    </div>
+
+    <h2>{{ currentQuestion()?.questionTitle }}</h2>
+
+    @if(currentQuestion()?.type === 'single') {
+    <app-single-choice-question
+      [question]="currentQuestion() ?? null"
+      [selected]="currentAnswers() ?? []"
+      (answer)="answer(currentQuestion(), $event)"
+    ></app-single-choice-question>
+    } @if(currentQuestion()?.type === 'multiple') {
+    <app-multiple-choice-question
+      [question]="currentQuestion() ?? null"
+      [selected]="currentAnswers() ?? []"
+      (answer)="answer(currentQuestion(), $event)"
+    ></app-multiple-choice-question>
+    }
+
+    <div class="navigation">
+      <button (click)="back()">Back</button>
+      @if(isLast()) {
+      <button [routerLink]="['../results']">Finish</button>
+      } @else {
+      <button (click)="next()">Next</button>
+      }
+    </div>
+    <a class="link-text" (click)="seeDetails()">See details</a>
+  </div>
+  }
+</div>
