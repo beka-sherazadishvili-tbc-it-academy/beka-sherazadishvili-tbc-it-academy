@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { DinoComponent } from "./features/dino/dino.component";
+import { DinoComponent } from "./features/dino/dino";
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,5 @@ import { DinoComponent } from "./features/dino/dino.component";
   imports: [DinoComponent]
 })
 export class App {
-  protected readonly title = signal('signals');
+  protected readonly title = signal('Dino');
 }

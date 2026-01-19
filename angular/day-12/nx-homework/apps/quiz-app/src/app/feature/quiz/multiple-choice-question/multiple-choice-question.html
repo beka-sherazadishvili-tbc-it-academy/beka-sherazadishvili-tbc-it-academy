@@ -1,0 +1,8 @@
+<div class="options">
+  @for (option of question()?.options ?? []; track option.id) {
+    <label>
+      <input type="checkbox" [checked]="selected()?.includes(option.id)" (change)="toggle(option.id)" />
+      {{ option.answerLabel }}
+    </label>
+  }
+</div>

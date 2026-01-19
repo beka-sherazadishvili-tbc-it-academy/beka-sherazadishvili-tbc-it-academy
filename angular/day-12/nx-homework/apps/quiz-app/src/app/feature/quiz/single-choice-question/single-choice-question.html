@@ -1,0 +1,12 @@
+<div class="options">
+  @for (option of question()?.options ?? []; track option.id) {
+    <label>
+      <input
+        type="radio"
+        [checked]="selected()?.includes(option.id)"
+        (change)="select(option.id)"
+      />
+      {{ option.answerLabel }}
+    </label>
+  }
+</div>

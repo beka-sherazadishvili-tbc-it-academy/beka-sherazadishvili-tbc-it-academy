@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "type": "single",
+    "questionTitle": "What does NgRx primarily help with in Angular applications?",
+    "options": [
+      {
+        "id": 1,
+        "answerLabel": "State management",
+        "point": 10
+      },
+      {
+        "id": 2,
+        "answerLabel": "Styling components",
+        "point": 0
+      },
+      {
+        "id": 3,
+        "answerLabel": "Routing between pages",
+        "point": 0
+      },
+      {
+        "id": 4,
+        "answerLabel": "Making HTTP requests",
+        "point": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "multiple",
+    "questionTitle": "Which of the following are core concepts of NgRx?",
+    "options": [
+      {
+        "id": 1,
+        "answerLabel": "Actions",
+        "point": 5
+      },
+      {
+        "id": 2,
+        "answerLabel": "Reducers",
+        "point": 5
+      },
+      {
+        "id": 3,
+        "answerLabel": "Selectors",
+        "point": 5
+      },
+      {
+        "id": 4,
+        "answerLabel": "Components",
+        "point": 0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "type": "single",
+    "questionTitle": "What is the main purpose of a reducer in NgRx?",
+    "options": [
+      {
+        "id": 1,
+        "answerLabel": "To update the state based on actions",
+        "point": 10
+      },
+      {
+        "id": 2,
+        "answerLabel": "To perform API calls",
+        "point": 0
+      },
+      {
+        "id": 3,
+        "answerLabel": "To navigate between routes",
+        "point": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "multiple",
+    "questionTitle": "Which practices help keep NgRx applications maintainable?",
+    "options": [
+      {
+        "id": 1,
+        "answerLabel": "Keeping reducers pure",
+        "point": 5
+      },
+      {
+        "id": 2,
+        "answerLabel": "Placing business logic in selectors",
+        "point": 5
+      },
+      {
+        "id": 3,
+        "answerLabel": "Mutating state directly",
+        "point": 0
+      },
+      {
+        "id": 4,
+        "answerLabel": "Using effects for side effects",
+        "point": 5
+      }
+    ]
+  }
+]
